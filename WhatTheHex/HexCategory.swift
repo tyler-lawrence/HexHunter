@@ -6,5 +6,5 @@
 //
 
 enum HexCategory {
-    case red, green, blue
+    case red, green, blue, alpha
 }

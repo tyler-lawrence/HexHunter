@@ -7,12 +7,9 @@
 
 struct Hexcode {
     
-    var h0: Int = 0
-    var h1: Int = 0
-    var h2: Int = 0
-    var h3: Int = 0
-    var h4: Int = 0
-    var h5: Int = 0
+    var red: Component = Component(hexCategory: .red, v1: 0, v2: 0)
+    var green: Component = Component(hexCategory: .green, v1: 0, v2: 0)
+    var blue: Component = Component(hexCategory: .blue, v1: 0, v2: 0)
     
     static let lookup: [Int: String] = [
         0:"0",

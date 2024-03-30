@@ -10,86 +10,31 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var hex = Hexcode()
-    
     @State private var colorToGuess: Color = Color.random()
-    let rectangleWidth: CGFloat = 450
-    let rectangleHeight: CGFloat = 100
+    let size: CGFloat = 150
     
     var body: some View {
         VStack {
             HStack{
-                Spacer()
-                Text("Color to guess")
-                RoundedRectangle(cornerRadius: 15.0)
-                    .frame(width: rectangleWidth, height: rectangleHeight)
-                    .foregroundStyle(colorToGuess)
+                VStack{
+                    Text("Target")
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .foregroundStyle(colorToGuess)
+                        .frame(width: size, height: size)
+                }
+                VStack{
+                    Text("Your guess")
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .foregroundStyle(Color(hex))
+                        .frame(width: size, height: size)
+                }
             }
             Divider()
+            Text(Color(hex).description)
             HStack{
-                Picker("", selection: $hex.h0){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-                Picker("", selection: $hex.h1){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-                Picker("", selection: $hex.h2){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-                Picker("", selection: $hex.h3){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-                Picker("", selection: $hex.h4){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-                Picker("", selection: $hex.h5){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.lookup[k]{
-                            Text(val)
-                        }
-                        
-                    }
-                }
-                .pickerStyle(.wheel)
-            }
-            Divider()
-            
-            HStack{
-                Spacer()
-                Text("Your guess")
-                RoundedRectangle(cornerRadius: 15.0)
-                    .frame(width: rectangleWidth, height: rectangleHeight)
-                    .foregroundStyle(hex.color)
-                
+                HexComponentPicker(component: $hex.red)
+                HexComponentPicker(component: $hex.green)
+                HexComponentPicker(component: $hex.blue)
             }
         }
         .padding()
