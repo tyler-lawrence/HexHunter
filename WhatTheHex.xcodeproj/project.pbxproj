@@ -11,6 +11,9 @@
 		5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA37A2BB7433900B558EE /* ContentView.swift */; };
 		5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5BA37C2BB7433B00B558EE /* Assets.xcassets */; };
 		5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5BA3802BB7433B00B558EE /* Preview Assets.xcassets */; };
+		5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3872BB745FA00B558EE /* Hexcode.swift */; };
+		5B5BA38A2BB74BB100B558EE /* Color+HexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3892BB74BB100B558EE /* Color+HexInit.swift */; };
+		5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA38D2BB8894900B558EE /* Color+Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		5B5BA37C2BB7433B00B558EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5BA37E2BB7433B00B558EE /* WhatTheHex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatTheHex.entitlements; sourceTree = "<group>"; };
 		5B5BA3802BB7433B00B558EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B5BA3872BB745FA00B558EE /* Hexcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexcode.swift; sourceTree = "<group>"; };
+		5B5BA3892BB74BB100B558EE /* Color+HexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+HexInit.swift"; sourceTree = "<group>"; };
+		5B5BA38D2BB8894900B558EE /* Color+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Random.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
+				5B5BA3892BB74BB100B558EE /* Color+HexInit.swift */,
+				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
+				5B5BA3872BB745FA00B558EE /* Hexcode.swift */,
 				5B5BA37C2BB7433B00B558EE /* Assets.xcassets */,
 				5B5BA37E2BB7433B00B558EE /* WhatTheHex.entitlements */,
 				5B5BA37F2BB7433B00B558EE /* Preview Content */,
@@ -139,7 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
+				5B5BA38A2BB74BB100B558EE /* Color+HexInit.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
+				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
