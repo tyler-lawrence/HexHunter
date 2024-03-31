@@ -7,8 +7,8 @@
 
 struct Component: Hashable {
     let hexCategory: HexCategory
-    var v1: Int
-    var v2: Int
+    var v1: Double
+    var v2: Double
     
     func toColorScale() -> Double {
         Double((v1 * 16) + v2) / 255

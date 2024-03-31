@@ -10,6 +10,22 @@ import SwiftUI
 struct HexComponentPicker: View {
     @Binding var component: Component
     
+    var v1Display: String {
+        let lookupValue: Int = Int(component.v1)
+        if let hexLabel: String = Hexcode.lookup[lookupValue] {
+            return hexLabel
+        }
+        return ""
+    }
+    
+    var v2Display: String {
+        let lookupValue: Int = Int(component.v2)
+        if let hexLabel: String = Hexcode.lookup[lookupValue] {
+            return hexLabel
+        }
+        return ""
+    }
+    
     var pickers: some View {
         HStack{
             Picker("", selection: $component.v1){
@@ -29,9 +45,27 @@ struct HexComponentPicker: View {
         }
     }
     
+    var sliders: some View {
+        VStack{
+            HStack{
+                Text(v1Display)
+                Slider(value: $component.v1, in: 0...15)
+            }
+            HStack {
+                Text(v2Display)
+                Slider(value: $component.v2, in: 0...15)
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 15.0)
+                .foregroundStyle(Material.thickMaterial)
+        )
+    }
+    
     var body: some View {
         #if os(macOS)
-        pickers
+        sliders
         #else
         pickers
             .pickerStyle(.wheel)

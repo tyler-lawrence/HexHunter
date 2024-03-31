@@ -48,7 +48,6 @@
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
-				5B5BA39B2BB8B1BD00B558EE /* HexComponentPicker.swift */,
 				5B5BA3772BB7433900B558EE /* WhatTheHex */,
 				5B5BA3762BB7433900B558EE /* Products */,
 			);
@@ -66,12 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
-				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5B5BA3972BB8B03200B558EE /* Component.swift */,
-				5B5BA3992BB8B05D00B558EE /* HexCategory.swift */,
-				5B5BA3872BB745FA00B558EE /* Hexcode.swift */,
-				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
-				5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */,
+				5B5BA39E2BB9A99200B558EE /* Views */,
+				5B5BA39D2BB9A96400B558EE /* Models */,
+				5B5BA39F2BB9A99E00B558EE /* Extensions */,
 				5B5BA37C2BB7433B00B558EE /* Assets.xcassets */,
 				5B5BA37E2BB7433B00B558EE /* WhatTheHex.entitlements */,
 				5B5BA37F2BB7433B00B558EE /* Preview Content */,
@@ -85,6 +81,34 @@
 				5B5BA3802BB7433B00B558EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B5BA39D2BB9A96400B558EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B5BA3872BB745FA00B558EE /* Hexcode.swift */,
+				5B5BA3972BB8B03200B558EE /* Component.swift */,
+				5B5BA3992BB8B05D00B558EE /* HexCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B5BA39E2BB9A99200B558EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
+				5B5BA39B2BB8B1BD00B558EE /* HexComponentPicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B5BA39F2BB9A99E00B558EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
+				5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
