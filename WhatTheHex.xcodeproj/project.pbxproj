@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3872BB745FA00B558EE /* Hexcode.swift */; };
+		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
+		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
+		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */; };
 		5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA37A2BB7433900B558EE /* ContentView.swift */; };
 		5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5BA37C2BB7433B00B558EE /* Assets.xcassets */; };
@@ -16,10 +20,22 @@
 		5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */; };
 		5B5BA3982BB8B03200B558EE /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
 		5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
-		5B5BA39C2BB8B1BD00B558EE /* HexComponentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA39B2BB8B1BD00B558EE /* HexComponentPicker.swift */; };
+		5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5B1208BD2BBB232B00F36388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B5BA36D2BB7433900B558EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B5BA3742BB7433900B558EE;
+			remoteInfo = WhatTheHex;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheHexApp.swift; sourceTree = "<group>"; };
 		5B5BA37A2BB7433900B558EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,10 +47,17 @@
 		5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+InitFromHex.swift"; sourceTree = "<group>"; };
 		5B5BA3972BB8B03200B558EE /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		5B5BA3992BB8B05D00B558EE /* HexCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexCategory.swift; sourceTree = "<group>"; };
-		5B5BA39B2BB8B1BD00B558EE /* HexComponentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexComponentPicker.swift; sourceTree = "<group>"; };
+		5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexComponentPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B1208B62BBB232B00F36388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5BA3722BB7433900B558EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B1208BA2BBB232B00F36388 /* WhatTheHexTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B1208C62BBB242C00F36388 /* ComponentTests.swift */,
+			);
+			path = WhatTheHexTests;
+			sourceTree = "<group>";
+		};
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
 				5B5BA3772BB7433900B558EE /* WhatTheHex */,
+				5B1208BA2BBB232B00F36388 /* WhatTheHexTests */,
 				5B5BA3762BB7433900B558EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA3752BB7433900B558EE /* WhatTheHex.app */,
+				5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5B5BA39B2BB8B1BD00B558EE /* HexComponentPicker.swift */,
+				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +147,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5B1208B82BBB232B00F36388 /* WhatTheHexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B1208BF2BBB232B00F36388 /* Build configuration list for PBXNativeTarget "WhatTheHexTests" */;
+			buildPhases = (
+				5B1208B52BBB232B00F36388 /* Sources */,
+				5B1208B62BBB232B00F36388 /* Frameworks */,
+				5B1208B72BBB232B00F36388 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B1208BE2BBB232B00F36388 /* PBXTargetDependency */,
+			);
+			name = WhatTheHexTests;
+			productName = WhatTheHexTests;
+			productReference = 5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5B5BA3742BB7433900B558EE /* WhatTheHex */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B5BA3842BB7433B00B558EE /* Build configuration list for PBXNativeTarget "WhatTheHex" */;
@@ -141,6 +192,10 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					5B1208B82BBB232B00F36388 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 5B5BA3742BB7433900B558EE;
+					};
 					5B5BA3742BB7433900B558EE = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -160,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				5B5BA3742BB7433900B558EE /* WhatTheHex */,
+				5B1208B82BBB232B00F36388 /* WhatTheHexTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B1208B72BBB232B00F36388 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5BA3732BB7433900B558EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,12 +240,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5B1208B52BBB232B00F36388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */,
+				5B1208C82BBB245600F36388 /* Component.swift in Sources */,
+				5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */,
+				5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B5BA3712BB7433900B558EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
-				5B5BA39C2BB8B1BD00B558EE /* HexComponentPicker.swift in Sources */,
+				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
@@ -194,7 +268,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5B1208BE2BBB232B00F36388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B5BA3742BB7433900B558EE /* WhatTheHex */;
+			targetProxy = 5B1208BD2BBB232B00F36388 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5B1208C02BBB232B00F36388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PF4YUG536;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatTheHex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhatTheHex";
+			};
+			name = Debug;
+		};
+		5B1208C12BBB232B00F36388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2PF4YUG536;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatTheHex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhatTheHex";
+			};
+			name = Release;
+		};
 		5B5BA3822BB7433B00B558EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -388,6 +514,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5B1208BF2BBB232B00F36388 /* Build configuration list for PBXNativeTarget "WhatTheHexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1208C02BBB232B00F36388 /* Debug */,
+				5B1208C12BBB232B00F36388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5B5BA3702BB7433900B558EE /* Build configuration list for PBXProject "WhatTheHex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

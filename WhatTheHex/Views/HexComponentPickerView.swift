@@ -7,7 +7,29 @@
 
 import SwiftUI
 
-struct HexComponentPicker: View {
+extension Hexcode {
+    static let lookup: [Double: String] = [
+        0:"0",
+        1:"1",
+        2:"2",
+        3:"3",
+        4:"4",
+        5:"5",
+        6:"6",
+        7:"7",
+        8:"8",
+        9:"9",
+        10:"A",
+        11:"B",
+        12:"C",
+        13:"D",
+        14:"E",
+        15:"F"
+    ]
+    static var sortedKeys: [Double] = Array(lookup.keys).sorted(by: <)
+}
+
+struct HexComponentPickerView: View {
     @Binding var component: Component
     
     var v1Display: String {
@@ -26,7 +48,6 @@ struct HexComponentPicker: View {
         return ""
     }
     
-    #if os(iOS)
     var pickers: some View {
         HStack{
             Picker("", selection: $component.v1){
@@ -36,7 +57,6 @@ struct HexComponentPicker: View {
                     }
                 }
             }
-            .pickerStyle(.wheel)
             Picker("", selection: $component.v2){
                 ForEach(Hexcode.sortedKeys, id: \.self){ k in
                     if let val: String = Hexcode.lookup[k] {
@@ -44,10 +64,8 @@ struct HexComponentPicker: View {
                     }
                 }
             }
-            .pickerStyle(.wheel)
         }
     }
-    #endif
     
     var sliders: some View {
         VStack{
@@ -72,13 +90,13 @@ struct HexComponentPicker: View {
         sliders
         #else
         pickers
-//            .pickerStyle(.wheel)
+            .pickerStyle(.wheel)
         #endif
     }
 }
 
 #Preview {
     VStack{
-        HexComponentPicker(component: .constant(Component(hexCategory: .red, v1: 0, v2: 0)))
+        HexComponentPickerView(component: .constant(Component(hexCategory: .red, v1: 0, v2: 0)))
     }
 }

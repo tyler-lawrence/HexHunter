@@ -7,8 +7,10 @@
 
 struct Component: Hashable {
     let hexCategory: HexCategory
+    #warning("make property wrapper to trim?")
     var v1: Double
     var v2: Double
+    
     
     func toColorScale() -> Double {
         Double((v1 * 16) + v2) / 255

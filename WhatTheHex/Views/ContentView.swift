@@ -32,9 +32,9 @@ struct ContentView: View {
             Divider()
             Text(Color(hex).description)
             HStack{
-                HexComponentPicker(component: $hex.red)
-                HexComponentPicker(component: $hex.green)
-                HexComponentPicker(component: $hex.blue)
+                HexComponentPickerView(component: $hex.red)
+                HexComponentPickerView(component: $hex.green)
+                HexComponentPickerView(component: $hex.blue)
             }
         }
         .padding()
