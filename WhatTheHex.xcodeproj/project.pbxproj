@@ -21,6 +21,9 @@
 		5B5BA3982BB8B03200B558EE /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
 		5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */; };
+		5BA3D9CC2BBB64A0003DE2F8 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */; };
+		5BA3D9CE2BBB6CC0003DE2F8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CD2BBB6CC0003DE2F8 /* TestView.swift */; };
+		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		5B5BA3972BB8B03200B558EE /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		5B5BA3992BB8B05D00B558EE /* HexCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexCategory.swift; sourceTree = "<group>"; };
 		5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexComponentPickerView.swift; sourceTree = "<group>"; };
+		5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		5BA3D9CD2BBB6CC0003DE2F8 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
+				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
+				5BA3D9CD2BBB6CC0003DE2F8 /* TestView.swift */,
+				5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */,
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 			);
 			path = Views;
@@ -255,11 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA3D9CC2BBB64A0003DE2F8 /* GameViewModel.swift in Sources */,
 				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
 				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
+				5BA3D9CE2BBB6CC0003DE2F8 /* TestView.swift in Sources */,
+				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,

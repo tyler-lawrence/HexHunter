@@ -5,6 +5,6 @@
 //  Created by Tyler Lawrence1 on 3/30/24.
 //
 
-enum HexCategory {
+enum HexCategory: String {
     case red, green, blue, alpha
 }
