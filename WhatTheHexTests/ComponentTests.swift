@@ -10,7 +10,7 @@ import XCTest
 final class ComponentTests: XCTestCase {
 
     func test_toColorScale_0s_stay_0() {
-        let sut = Component(hexCategory: .red, v1: 0, v2: 0)
+        let sut = Component(hexCategory: .red, digit1: 0, digit2: 0)
         
         let actual: Double = sut.toColorScale()
         
@@ -21,7 +21,7 @@ final class ComponentTests: XCTestCase {
     }
     
     func test_toColorScale_max() {
-        let sut = Component(hexCategory: .red, v1: 15, v2: 15)
+        let sut = Component(hexCategory: .red, digit1: 15, digit2: 15)
         
         let actual: Double = sut.toColorScale()
         

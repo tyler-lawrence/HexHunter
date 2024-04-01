@@ -32,16 +32,16 @@ extension Hexcode {
 struct HexComponentPickerView: View {
     @Binding var component: Component
     
-    var v1Display: String {
-        let lookupValue: Int = Int(component.v1)
+    var digit1: String {
+        let lookupValue: Int = Int(component.digit1)
         if let hexLabel: String = Hexcode.lookup[Double(lookupValue)] {
             return hexLabel
         }
         return ""
     }
     
-    var v2Display: String {
-        let lookupValue: Int = Int(component.v2)
+    var digit2: String {
+        let lookupValue: Int = Int(component.digit2)
         if let hexLabel: String = Hexcode.lookup[Double(lookupValue)] {
             return hexLabel
         }
@@ -50,17 +50,17 @@ struct HexComponentPickerView: View {
     
     var pickers: some View {
         HStack{
-            Picker("", selection: $component.v1){
+            Picker("", selection: $component.digit1){
                 ForEach(Hexcode.sortedKeys, id: \.self){ k in
                     if let val: String = Hexcode.lookup[k] {
-                        Text(val).tag(k)
+                        Text(val)
                     }
                 }
             }
-            Picker("", selection: $component.v2){
+            Picker("", selection: $component.digit2){
                 ForEach(Hexcode.sortedKeys, id: \.self){ k in
                     if let val: String = Hexcode.lookup[k] {
-                        Text(val).tag(k)
+                        Text(val)
                     }
                 }
             }
@@ -70,12 +70,12 @@ struct HexComponentPickerView: View {
     var sliders: some View {
         VStack{
             HStack{
-                Text(v1Display)
-                Slider(value: $component.v1, in: 0...15)
+                Text(digit1)
+                Slider(value: $component.digit1, in: 0...15)
             }
             HStack {
-                Text(v2Display)
-                Slider(value: $component.v2, in: 0...15)
+                Text(digit2)
+                Slider(value: $component.digit2, in: 0...15)
             }
         }
         .padding()
@@ -97,6 +97,6 @@ struct HexComponentPickerView: View {
 
 #Preview {
     VStack{
-        HexComponentPickerView(component: .constant(Component(hexCategory: .red, v1: 0, v2: 0)))
+        HexComponentPickerView(component: .constant(Component(hexCategory: .red, digit1: 0, digit2: 0)))
     }
 }
