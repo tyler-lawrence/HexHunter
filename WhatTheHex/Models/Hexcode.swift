@@ -11,7 +11,7 @@ struct Hexcode {
     var green: Component = Component(hexCategory: .green, v1: 0, v2: 0)
     var blue: Component = Component(hexCategory: .blue, v1: 0, v2: 0)
     
-    static let lookup: [Int: String] = [
+    static let lookup: [Double: String] = [
         0:"0",
         1:"1",
         2:"2",
@@ -29,5 +29,5 @@ struct Hexcode {
         14:"E",
         15:"F"
     ]
-    static var sortedKeys: [Int] = Array(lookup.keys).sorted(by: <)
+    static var sortedKeys: [Double] = Array(lookup.keys).sorted(by: <)
 }

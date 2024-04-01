@@ -12,7 +12,7 @@ struct HexComponentPicker: View {
     
     var v1Display: String {
         let lookupValue: Int = Int(component.v1)
-        if let hexLabel: String = Hexcode.lookup[lookupValue] {
+        if let hexLabel: String = Hexcode.lookup[Double(lookupValue)] {
             return hexLabel
         }
         return ""
@@ -20,30 +20,34 @@ struct HexComponentPicker: View {
     
     var v2Display: String {
         let lookupValue: Int = Int(component.v2)
-        if let hexLabel: String = Hexcode.lookup[lookupValue] {
+        if let hexLabel: String = Hexcode.lookup[Double(lookupValue)] {
             return hexLabel
         }
         return ""
     }
     
+    #if os(iOS)
     var pickers: some View {
         HStack{
             Picker("", selection: $component.v1){
                 ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                    if let val = Hexcode.lookup[k] {
-                        Text(val)
+                    if let val: String = Hexcode.lookup[k] {
+                        Text(val).tag(k)
                     }
                 }
             }
+            .pickerStyle(.wheel)
             Picker("", selection: $component.v2){
                 ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                    if let val = Hexcode.lookup[k] {
-                        Text(val)
+                    if let val: String = Hexcode.lookup[k] {
+                        Text(val).tag(k)
                     }
                 }
             }
+            .pickerStyle(.wheel)
         }
     }
+    #endif
     
     var sliders: some View {
         VStack{
@@ -68,11 +72,13 @@ struct HexComponentPicker: View {
         sliders
         #else
         pickers
-            .pickerStyle(.wheel)
+//            .pickerStyle(.wheel)
         #endif
     }
 }
 
 #Preview {
-    HexComponentPicker(component: .constant(Component(hexCategory: .red, v1: 0, v2: 0)))
+    VStack{
+        HexComponentPicker(component: .constant(Component(hexCategory: .red, v1: 0, v2: 0)))
+    }
 }
