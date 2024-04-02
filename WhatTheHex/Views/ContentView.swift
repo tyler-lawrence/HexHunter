@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         if hasOnboarded {
-            GameView()
+            GameSelectionView()
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded)
         }

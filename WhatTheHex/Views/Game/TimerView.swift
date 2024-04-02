@@ -19,6 +19,7 @@ struct TimerView: View {
                     .foregroundStyle(.blue)
                     .opacity(0.5)
                     .frame(width: 70, height: 70)
+                    .shadow(radius: 10)
             )
             .onReceive(vm.timer){ _ in
                 vm.timeRemaining -= 1

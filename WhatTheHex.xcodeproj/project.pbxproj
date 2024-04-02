@@ -33,6 +33,8 @@
 		5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A572BBC83CA00A38EAD /* BeginView.swift */; };
 		5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A592BBC865C00A38EAD /* Particle.swift */; };
 		5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */; };
+		5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */; };
+		5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		5BB39A572BBC83CA00A38EAD /* BeginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginView.swift; sourceTree = "<group>"; };
 		5BB39A592BBC865C00A38EAD /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystem.swift; sourceTree = "<group>"; };
+		5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
+		5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
+				5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */,
+				5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */,
 				5BA3D9E02BBC71C3003DE2F8 /* Onboarding */,
 				5BB39A562BBC755F00A38EAD /* Game */,
 			);
@@ -342,6 +348,8 @@
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
+				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
+				5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */,
 				5BA3D9DF2BBC5424003DE2F8 /* ScoreExplanationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
