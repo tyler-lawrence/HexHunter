@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 @Observable
 class GameViewModel {
@@ -13,9 +14,30 @@ class GameViewModel {
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
     
+    var timer = Timer.publish(every: 1, on: .main, in: .common)
+    var timerSubscription: Cancellable?
+    let gameTimeMax: Int
+    var timeRemaining: Int
+    
+    var showingAlert: Bool = false
+    
+    init(gameTimeMax: Int = 30){
+        self.gameTimeMax = gameTimeMax
+        self.timeRemaining = gameTimeMax
+        self.timerSubscription = timer.connect()
+    }
+    
+    func gameOver() {
+        showingAlert = true
+        timerSubscription?.cancel()
+    }
+    
     func reset() {
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
+        timeRemaining = gameTimeMax
+        timer = Timer.publish(every: 1, on: .main, in: .common)
+        timerSubscription = timer.connect()
     }
     
     /// Calculates a score representing the difference between two hexes.

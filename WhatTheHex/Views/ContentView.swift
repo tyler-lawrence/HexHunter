@@ -9,19 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var vm = GameViewModel()
-    @State var showingAlert = false
-    
+    @State var vm = GameViewModel(gameTimeMax: 30)
     var alertMessage: String {
         let guessDifference = String(format: "%.1f", vm.calculateScore())
         return "Score: \(guessDifference)"
     }
-    
     var body: some View {
         VStack {
+            TimerView(vm: vm)
             HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: $showingAlert)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: $showingAlert)
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: $vm.showingAlert)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: $vm.showingAlert)
             }
             Spacer()
             Divider()
@@ -32,12 +30,12 @@ struct ContentView: View {
             }
             Spacer()
             Button("Guess"){
-                showingAlert.toggle()
+                vm.showingAlert.toggle()
             }
             .buttonStyle(.borderedProminent)
         }
         .padding()
-        .alert(alertMessage, isPresented: $showingAlert){
+        .alert(alertMessage, isPresented: $vm.showingAlert){
             Button("Play Again"){ vm.reset() }
         }
     }
