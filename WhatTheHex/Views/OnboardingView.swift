@@ -19,10 +19,21 @@ struct OnboardingView: View {
     var body: some View {
         TabView{
             OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "Use the \(playDescriptionSelector) to adjust the hexcode to match the target before time runs out!")
+                .tabItem{
+                    Label("How to Play", systemImage: "doc.questionmark")
+                }
             HexcodeExplanationView()
+                .tabItem{
+                    Label("Hexcode Explanation", systemImage: "brain")
+                }
             BeginView(hasOnboarded: $hasOnboarded)
+                .tabItem{
+                    Label("Start", systemImage: "play")
+                }
         }
+        #if os(iOS)
         .tabViewStyle(.page)
+        #endif
     }
 }
 
