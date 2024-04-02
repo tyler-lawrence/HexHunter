@@ -20,7 +20,7 @@ struct OnboardingView: View {
         TabView{
             OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "Use the \(playDescriptionSelector) to adjust the hexcode to match the target before time runs out!")
             HexcodeExplanationView()
-            ScoreExplanationView()
+//            ScoreExplanationView()
             BeginView(hasOnboarded: $hasOnboarded)
         }
         .tabViewStyle(.page)
