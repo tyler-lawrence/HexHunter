@@ -14,17 +14,6 @@ struct Hexcode {
         "\(red.display)\(green.display)\(blue.display)"
     }
     
-//    mutating func randomize() {
-//        red.digit1 = randomHexDigit()
-//        red.digit2 = randomHexDigit()
-//        green.digit1 = randomHexDigit()
-//        green.digit2 = randomHexDigit()
-//        blue.digit1 = randomHexDigit()
-//        blue.digit2 = randomHexDigit()
-//    }
-//    
-//    private func randomHexDigit() -> Double { Double(Int.random(in: 0 ... 15)) }
-//    
     static func random() -> Hexcode {
         func randomHexDigit() -> Double { Double(Int.random(in: 0 ... 15 )) }
         let redComponent = Component(hexCategory: .red, digit1: randomHexDigit(), digit2: randomHexDigit())
@@ -32,4 +21,18 @@ struct Hexcode {
         let blueComponent = Component(hexCategory: .blue, digit1: randomHexDigit(), digit2: randomHexDigit())
         return Hexcode(red: redComponent, green: greenComponent, blue: blueComponent)
     }
+}
+
+extension Hexcode {
+    static let teal = Hexcode(
+        red: Component(hexCategory: .red, digit1: 2, digit2: 0),
+        green: Component(hexCategory: .green, digit1: 10, digit2: 0),
+        blue: Component(hexCategory: .blue, digit1: 11, digit2: 0)
+    )
+    
+    static let orange = Hexcode(
+        red: Component(hexCategory: .red, digit1: 12, digit2: 13),
+        green: Component(hexCategory: .green, digit1: 8, digit2: 0),
+        blue: Component(hexCategory: .blue, digit1: 0, digit2: 0)
+    )
 }

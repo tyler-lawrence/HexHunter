@@ -45,9 +45,9 @@ class GameViewModel {
     /// - Parameter rhs: Hexcode to compare against
     /// - Returns: Double between 0 and 3
     func calculateScore() -> Double {
-        let redDifference = abs(targetHexcode.red.toColorScale() - playerHexcode.red.toColorScale())
-        let greenDifference = abs(targetHexcode.green.toColorScale() - playerHexcode.green.toColorScale())
-        let blueDifference = abs(targetHexcode.blue.toColorScale() - playerHexcode.blue.toColorScale())
+        let redDifference = abs(targetHexcode.red.colorScaleNormalized() - playerHexcode.red.colorScaleNormalized())
+        let greenDifference = abs(targetHexcode.green.colorScaleNormalized() - playerHexcode.green.colorScaleNormalized())
+        let blueDifference = abs(targetHexcode.blue.colorScaleNormalized() - playerHexcode.blue.colorScaleNormalized())
         return redDifference + greenDifference + blueDifference
     }
 }
