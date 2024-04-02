@@ -30,7 +30,7 @@ struct ScoreExplanationView: View {
     var body: some View {
         VStack{
             Text("Scoring")
-                .font(.largeTitle)
+                .font(.title)
             HStack{
                 ColorSquareView(title: "", hexcode: hex1, showingCode: true)
                 ColorSquareView(title: "", hexcode: hex2, showingCode: true)

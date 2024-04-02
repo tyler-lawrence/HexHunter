@@ -29,19 +29,7 @@ struct HexcodeExplanationView: View {
             }
             .padding(.horizontal)
             Divider()
-            Text("Manipulate the values below to observe the color change")
-            HStack{
-                Text("#\(hexcode.display)")
-                    .font(.largeTitle)
-                    .padding()
-                   ColorSquareView(title: "", hexcode: hexcode, showingCode: false)
-            }
-            HStack{
-                HexComponentPickerView(component: $hexcode.red)
-                HexComponentPickerView(component: $hexcode.green)
-                HexComponentPickerView(component: $hexcode.blue)
-            }
-            .padding(.horizontal)
+            PracticeModeView()
         }
     }
 }
