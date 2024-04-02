@@ -10,13 +10,23 @@ import SwiftUI
 struct GameView: View {
     
     @State var vm = GameViewModel(gameTimeMax: 30)
+    @State var showingSheet = false
     var alertMessage: String {
         let guessDifference = String(format: "%.1f", vm.calculateScore())
         return "Score: \(guessDifference)"
     }
     var body: some View {
         VStack {
-            TimerView(vm: vm)
+            HStack{
+                Spacer()
+                TimerView(vm: vm)
+                Spacer()
+                Button{
+                    showingSheet.toggle()
+                } label: {
+                    Image(systemName: "questionmark")
+                }
+            }
             HStack{
                 ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.showingAlert)
                 ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
@@ -37,6 +47,9 @@ struct GameView: View {
         .padding()
         .alert(alertMessage, isPresented: $vm.showingAlert){
             Button("Play Again"){ vm.reset() }
+        }
+        .sheet(isPresented: $showingSheet){
+            ScoreExplanationView()
         }
     }
 }
