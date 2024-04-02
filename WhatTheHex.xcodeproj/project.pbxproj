@@ -102,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
+				5BA3D9D32BBC2C96003DE2F8 /* ViewModels */,
 				5B5BA39E2BB9A99200B558EE /* Views */,
 				5B5BA39D2BB9A96400B558EE /* Models */,
 				5B5BA39F2BB9A99E00B558EE /* Extensions */,
@@ -135,7 +136,6 @@
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
 				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
-				5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */,
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 			);
 			path = Views;
@@ -148,6 +148,14 @@
 				5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
