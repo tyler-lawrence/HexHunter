@@ -18,8 +18,8 @@ struct HexcodeExplanationView: View {
                     Text("A hexcode is a hexadeicmal representation of a color.")
                     VStack(alignment: .leading){
                         Text("The first two characters represent ") + Text("red ").foregroundStyle(.red).bold()
-                        Text("The first two characters represent ") + Text("green ").foregroundStyle(.green).bold()
-                        Text("The first two characters represent ") + Text("blue ").foregroundStyle(.blue).bold()
+                        Text("The second two characters represent ") + Text("green ").foregroundStyle(.green).bold()
+                        Text("The third two characters represent ") + Text("blue ").foregroundStyle(.blue).bold()
                     }
                     .padding(.vertical)
                     Text("The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail")

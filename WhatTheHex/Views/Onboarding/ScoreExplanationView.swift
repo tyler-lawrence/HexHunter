@@ -74,8 +74,7 @@ struct ScoreExplanationView: View {
                 Text("Score: \(String(format: "%.2f", score))")
                     .padding(.top)
                     .bold()
-                Text("Lower scores are better!")
-                
+                Text("Scores range from 0 to 3. Lower scores are better!")                
             }
         }
         .padding()
