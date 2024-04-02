@@ -13,25 +13,22 @@ struct OnboardingRowView: View {
     let description: String
     let cornerRadius: CGFloat = 20
     var body: some View {
-        HStack{
-            Image(systemName: systemImage)
-                .padding(.trailing, 10)
-                .font(.largeTitle)
-            VStack(alignment: .leading){
-                Text(title)
-                    .font(.title2)
-                    .bold()
-                    .offset(x: -5)
-                Text(description)
+        ZStack{
+            BackgroundView()
+                .ignoresSafeArea()
+            HStack{
+                Image(systemName: systemImage)
+                    .padding(.trailing, 10)
+                    .font(.largeTitle)
+                VStack(alignment: .leading){
+                    Text(title)
+                        .font(.title2)
+                        .bold()
+                        .offset(x: -5)
+                    Text(description)
+                }
             }
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .foregroundStyle(.white)
-                .opacity(0.2)
-        )
-        .padding()
     }
 }
 

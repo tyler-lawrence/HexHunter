@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var hasOnboarded: Bool = UserDefaults.standard.bool(forKey: "hasOnboarded")
+    @AppStorage("hasOnboarded") private var hasOnboarded: Bool = false
     
     var body: some View {
         if hasOnboarded {

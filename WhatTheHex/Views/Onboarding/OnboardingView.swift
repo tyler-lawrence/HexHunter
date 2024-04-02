@@ -18,7 +18,6 @@ struct OnboardingView: View {
     }
     var body: some View {
         ZStack{
-            BackgroundView()
             VStack{
                 Text("What the Hex?")
                     .font(.largeTitle)
