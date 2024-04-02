@@ -10,9 +10,9 @@ import SwiftUI
 extension Color {
     init(_ hex: Hexcode){
         self.init(
-            red: hex.red.toColorScale(),
-            green: hex.green.toColorScale(),
-            blue: hex.blue.toColorScale()
+            red: hex.red.colorScaleNormalized(),
+            green: hex.green.colorScaleNormalized(),
+            blue: hex.blue.colorScaleNormalized()
         )
     }
 }

@@ -56,6 +56,10 @@ struct HexComponentPickerView: View {
     var sliders: some View {
         VStack{
             HStack{
+                Text(component.display)
+                    .font(.largeTitle)
+            }
+            HStack{
                 Text(digit1)
                 Slider(value: $component.digit1, in: 0...15)
             }

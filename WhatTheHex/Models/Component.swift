@@ -15,23 +15,36 @@ struct Component: Hashable {
     /// second digit in a hexcode
     var digit2: Double
     
+    var colorScaleLabel: String {
+        String(format: "%.0f", self.toColorScale())
+    }
+    
+    var normalizedLabel: String {
+        String(format: "%.2f", self.colorScaleNormalized())
+    }
+    
     var display: String {
         guard let display1 = Hexcode.lookup(digit1) else { return "error1" }
         guard let display2 = Hexcode.lookup(digit2) else { return "error2" }
         return "\(display1)\(display2)"
     }
     
-    /// converts a component to a double for use in Color init
+    /// converts a component its numeric representation
+    /// digit 1 * 16 + digit 2
+    /// FF == 15, 15
+    /// 15 * 16 + 15 = 255
+    /// - Returns: color value between 0 and 255
+    func toColorScale() -> Double {
+        Double((digit1 * 16) + digit2)
+    }
+    
+    /// normalizes a color scale to a double between 0 and 1 for use in a color init
     /// digit 1 * 16 + digit 2
     /// FF == 15, 15
     /// 15 * 16 + 15 = 255
     /// - Returns: Double between 0 and 1
-    func toColorScale() -> Double {
-        let scaled = Double((digit1 * 16) + digit2) / 255
-        if scaled < 0 || scaled > 1 {
-            print("unexpected result")
-        }
-        return scaled
+    func colorScaleNormalized() -> Double {
+        self.toColorScale() / 255
     }
 }
 

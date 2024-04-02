@@ -15,7 +15,7 @@ struct ColorSquareView: View {
     var hexLabel: String {
         showingCode ? hexcode.display : " "
     }
-    @Binding var showingCode: Bool
+    var showingCode: Bool
     
     var body: some View {
         VStack{
@@ -29,5 +29,5 @@ struct ColorSquareView: View {
 }
 
 #Preview {
-    ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: .constant(true))
+    ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
 }
