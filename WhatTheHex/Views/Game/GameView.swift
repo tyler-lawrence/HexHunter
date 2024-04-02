@@ -17,16 +17,7 @@ struct GameView: View {
     }
     var body: some View {
         VStack {
-            HStack{
-                Spacer()
-                TimerView(vm: vm)
-                Spacer()
-                Button{
-                    showingScoreSheet.toggle()
-                } label: {
-                    Image(systemName: "questionmark")
-                }
-            }
+            TimerView(vm: vm)
             HStack{
                 ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.showingAlert)
                 ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)

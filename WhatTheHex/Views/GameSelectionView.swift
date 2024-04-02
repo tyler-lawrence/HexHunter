@@ -13,6 +13,9 @@ struct GameSelectionView: View {
             VStack{
                 NavigationLink("practice", destination: PracticeModeView())
                 NavigationLink("timed", destination: GameView())
+                Divider()
+                NavigationLink("scoring", destination: ScoreExplanationView())
+                NavigationLink("hexcode explanation", destination: HexcodeExplanationView())
             }
             .buttonStyle(.borderedProminent)
         }
