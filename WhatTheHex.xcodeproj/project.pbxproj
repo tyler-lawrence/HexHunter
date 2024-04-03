@@ -35,6 +35,8 @@
 		5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */; };
 		5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */; };
 		5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */; };
+		5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */; };
+		5BB39A692BBDA0C800A38EAD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystem.swift; sourceTree = "<group>"; };
 		5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
 		5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
+		5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1208C62BBB242C00F36388 /* ComponentTests.swift */,
+				5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */,
 			);
 			path = WhatTheHexTests;
 			sourceTree = "<group>";
@@ -310,6 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB39A692BBDA0C800A38EAD /* GameViewModel.swift in Sources */,
+				5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */,
 				5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */,
 				5B1208C82BBB245600F36388 /* Component.swift in Sources */,
 				5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */,
