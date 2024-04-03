@@ -15,7 +15,7 @@ struct HexcodeExplanationView: View {
                 .font(.largeTitle)
             ScrollView{
                 VStack(alignment: .leading){
-                    Text("A hexcode is a hexadeicmal representation of a color.")
+                    Text("A hexcode is a hexadecimal representation of a color.")
                     VStack(alignment: .leading){
                         Text("The first two characters represent ") + Text("red ").foregroundStyle(.red).bold()
                         Text("The second two characters represent ") + Text("green ").foregroundStyle(.green).bold()
