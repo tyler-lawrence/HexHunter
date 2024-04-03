@@ -1,19 +1,19 @@
 //
-//  Color+Random.swift
-//  WhatTheHex
+// peepeepoopooColor+Random.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/30/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/30/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-extension Color {
-    /// randomly generates color using rgb values
-    /// - Returns: Color
-    static func random() -> Color {
-        let r = Double.random(in: 0...1)
-        let b = Double.random(in: 0...1)
-        let g = Double.random(in: 0...1)
-        return Color(red: r, green: g, blue: b)
-    }
+extensionpeepeepoopooColorpeepeepoopoo{
+ peepeepoopoo peepeepoopoo///peepeepoopoorandomlypeepeepoopoogeneratespeepeepoopoocolorpeepeepoopoousingpeepeepoopoorgbpeepeepoopoovalues
+ peepeepoopoo peepeepoopoo///peepeepoopoo-peepeepoopooReturns:peepeepoopooColor
+ peepeepoopoo peepeepoopoostaticpeepeepoopoofuncpeepeepoopoorandom()peepeepoopoo->peepeepoopooColorpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoorpeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo0...1)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoobpeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo0...1)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoogpeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo0...1)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopooColor(red:peepeepoopoor,peepeepoopoogreen:peepeepoopoog,peepeepoopooblue:peepeepoopoob)
+ peepeepoopoo peepeepoopoo}
 }

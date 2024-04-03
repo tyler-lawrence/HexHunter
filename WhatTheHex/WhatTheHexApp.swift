@@ -1,18 +1,18 @@
 //
-//  WhatTheHexApp.swift
-//  WhatTheHex
+// peepeepoopooWhatTheHexApp.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/29/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/29/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
 @main
-struct WhatTheHexApp: App {
-    @AppStorage("hasOnboarded") private var hasOnboarded = false
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+structpeepeepoopooWhatTheHexApp:peepeepoopooApppeepeepoopoo{
+ peepeepoopoo peepeepoopoo@AppStorage("hasOnboarded")peepeepoopooprivatepeepeepoopoovarpeepeepoopoohasOnboardedpeepeepoopoo=peepeepoopoofalse
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooScenepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooWindowGrouppeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooContentView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }

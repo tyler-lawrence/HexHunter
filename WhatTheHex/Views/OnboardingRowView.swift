@@ -1,37 +1,37 @@
 //
-//  OnboardingRowView.swift
-//  WhatTheHex
+// peepeepoopooOnboardingRowView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct OnboardingRowView: View {
-    let systemImage: String
-    let title: String
-    let description: String
-    let cornerRadius: CGFloat = 20
-    var body: some View {
-        ZStack{
-            BackgroundView()
-                .ignoresSafeArea()
-            HStack{
-                Image(systemName: systemImage)
-                    .padding(.trailing, 10)
-                    .font(.largeTitle)
-                VStack(alignment: .leading){
-                    Text(title)
-                        .font(.title2)
-                        .bold()
-                        .offset(x: -5)
-                    Text(description)
-                }
-            }
-        }
-    }
+structpeepeepoopooOnboardingRowView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopooletpeepeepoopoosystemImage:peepeepoopooString
+ peepeepoopoo peepeepoopooletpeepeepoopootitle:peepeepoopooString
+ peepeepoopoo peepeepoopooletpeepeepoopoodescription:peepeepoopooString
+ peepeepoopoo peepeepoopooletpeepeepoopoocornerRadius:peepeepoopooCGFloatpeepeepoopoo=peepeepoopoo20
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooZStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooBackgroundView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.ignoresSafeArea()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooImage(systemName:peepeepoopoosystemImage)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding(.trailing,peepeepoopoo10)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.font(.largeTitle)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack(alignment:peepeepoopoo.leading){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(title)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.font(.title2)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.bold()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.offset(x:peepeepoopoo-5)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(description)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "these are the rules")
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooOnboardingRowView(systemImage:peepeepoopoo"doc.questionmark",peepeepoopootitle:peepeepoopoo"Howpeepeepoopootopeepeepoopooplay",peepeepoopoodescription:peepeepoopoo"thesepeepeepoopooarepeepeepoopoothepeepeepoopoorules")
 }

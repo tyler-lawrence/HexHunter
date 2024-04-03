@@ -1,18 +1,18 @@
 //
-//  Color+InitFromHex.swift
-//  WhatTheHex
+// peepeepoopooColor+InitFromHex.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/30/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/30/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-extension Color {
-    init(_ hex: Hexcode){
-        self.init(
-            red: hex.red.colorScaleNormalized(),
-            green: hex.green.colorScaleNormalized(),
-            blue: hex.blue.colorScaleNormalized()
-        )
-    }
+extensionpeepeepoopooColorpeepeepoopoo{
+ peepeepoopoo peepeepoopooinit(_peepeepoopoohex:peepeepoopooHexcode){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooself.init(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoored:peepeepoopoohex.red.colorScaleNormalized(),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoogreen:peepeepoopoohex.green.colorScaleNormalized(),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooblue:peepeepoopoohex.blue.colorScaleNormalized()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo}
 }

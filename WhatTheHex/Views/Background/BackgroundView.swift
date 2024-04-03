@@ -1,62 +1,62 @@
 //
-//  BackgroundView.swift
-//  WhatTheHex
+// peepeepoopooBackgroundView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
-import Foundation
+importpeepeepoopooSwiftUI
+importpeepeepoopooFoundation
 
-struct BackgroundView: View {
-    @State var particleSystem = ParticleSystem(count: 15)
-    @State var degrees: Int = 0
-    @State var colors: [Color] = [.red, .orange, .yellow, .green, .blue, .indigo]
-    
-    var body: some View {
-        LinearGradient(
-            colors: colors,
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .opacity(0.2)
-                .onAppear {
-                    withAnimation(Animation.linear(duration: 20).repeatForever(autoreverses: false)) {
-                        if degrees % 90 == 0{
-                            colors.shuffle()
-                        }
-                        degrees = 360
-                    }
-                }
-        .mask{
-            TimelineView(.animation){ timeline in
-                Canvas{ ctx, size in
-                    particleSystem.update(date: timeline.date.timeIntervalSinceReferenceDate)
-                    
-                    ctx.addFilter(.alphaThreshold(min: 0.5))
-                    ctx.addFilter(.blur(radius: 30))
-                    
-                    ctx.drawLayer { ctx in
-                        for particle in particleSystem.particles {
-                            let rect = CGRect(
-                                x: particle.x * size.width,
-                                y: particle.y * size.height,
-                                width: particle.size,
-                                height: particle.size
-                            )
-                            ctx.fill(Circle().path(in: rect), with: .color(.mint))
-                        }
-                    }
-                    
-                    
-                }
-                
-            }
-        }
-        
-    }
+structpeepeepoopooBackgroundView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@StatepeepeepoopoovarpeepeepoopooparticleSystempeepeepoopoo=peepeepoopooParticleSystem(count:peepeepoopoo15)
+ peepeepoopoo peepeepoopoo@Statepeepeepoopoovarpeepeepoopoodegrees:peepeepoopooIntpeepeepoopoo=peepeepoopoo0
+ peepeepoopoo peepeepoopoo@Statepeepeepoopoovarpeepeepoopoocolors:peepeepoopoo[Color]peepeepoopoo=peepeepoopoo[.red,peepeepoopoo.orange,peepeepoopoo.yellow,peepeepoopoo.green,peepeepoopoo.blue,peepeepoopoo.indigo]
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooLinearGradient(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoocolors:peepeepoopoocolors,
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoostartPoint:peepeepoopoo.topLeading,
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooendPoint:peepeepoopoo.bottomTrailing
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.opacity(0.2)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.onAppearpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoowithAnimation(Animation.linear(duration:peepeepoopoo20).repeatForever(autoreverses:peepeepoopoofalse))peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopoodegreespeepeepoopoo%peepeepoopoo90peepeepoopoo==peepeepoopoo0{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoocolors.shuffle()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoodegreespeepeepoopoo=peepeepoopoo360
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.mask{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooTimelineView(.animation){peepeepoopootimelinepeepeepoopooin
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooCanvas{peepeepoopooctx,peepeepoopoosizepeepeepoopooin
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticleSystem.update(date:peepeepoopootimeline.date.timeIntervalSinceReferenceDate)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooctx.addFilter(.alphaThreshold(min:peepeepoopoo0.5))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooctx.addFilter(.blur(radius:peepeepoopoo30))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooctx.drawLayerpeepeepoopoo{peepeepoopooctxpeepeepoopooin
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooforpeepeepoopooparticlepeepeepoopooinpeepeepoopooparticleSystem.particlespeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoorectpeepeepoopoo=peepeepoopooCGRect(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoox:peepeepoopooparticle.xpeepeepoopoo*peepeepoopoosize.width,
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooy:peepeepoopooparticle.ypeepeepoopoo*peepeepoopoosize.height,
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoowidth:peepeepoopooparticle.size,
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooheight:peepeepoopooparticle.size
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooctx.fill(Circle().path(in:peepeepoopoorect),peepeepoopoowith:peepeepoopoo.color(.mint))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    BackgroundView()
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooBackgroundView()
 }

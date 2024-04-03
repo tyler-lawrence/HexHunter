@@ -1,27 +1,27 @@
 //
-//  GameSelectionView.swift
-//  WhatTheHex
+// peepeepoopooGameSelectionView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct GameSelectionView: View {
-    var body: some View {
-        NavigationStack{
-            VStack{
-                NavigationLink("practice", destination: PracticeModeView())
-                NavigationLink("timed", destination: GameView())
-                Divider()
-                NavigationLink("scoring", destination: ScoreExplanationView())
-                NavigationLink("hexcode explanation", destination: HexcodeExplanationView())
-            }
-            .buttonStyle(.borderedProminent)
-        }
-    }
+structpeepeepoopooGameSelectionView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooNavigationStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooNavigationLink("practice",peepeepoopoodestination:peepeepoopooPracticeModeView())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooNavigationLink("timed",peepeepoopoodestination:peepeepoopooGameView())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooDivider()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooNavigationLink("scoring",peepeepoopoodestination:peepeepoopooScoreExplanationView())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooNavigationLink("hexcodepeepeepoopooexplanation",peepeepoopoodestination:peepeepoopooHexcodeExplanationView())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.buttonStyle(.borderedProminent)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    GameSelectionView()
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooGameSelectionView()
 }

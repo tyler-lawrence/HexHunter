@@ -1,21 +1,21 @@
 //
-//  Particle.swift
-//  WhatTheHex
+// peepeepoopooParticle.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import Foundation
+importpeepeepoopooFoundation
 
-class Particle: Identifiable {
-    let id = UUID()
-    var size = Double.random(in: 100 ... 250)
-    
-    var x = Double.random(in: -0.1 ... 1.1)
-    var y = Double.random(in: -0.25 ... 1.25)
-    
-    var isMovingDown = Bool.random()
-    var isMovingRight = Bool.random()
-    
-    var speed = Double.random(in: 0.01 ... 0.1)
+classpeepeepoopooParticle:peepeepoopooIdentifiablepeepeepoopoo{
+ peepeepoopoo peepeepoopooletpeepeepoopooidpeepeepoopoo=peepeepoopooUUID()
+ peepeepoopoo peepeepoopoovarpeepeepoopoosizepeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo100peepeepoopoo...peepeepoopoo250)
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopooxpeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo-0.1peepeepoopoo...peepeepoopoo1.1)
+ peepeepoopoo peepeepoopoovarpeepeepoopooypeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo-0.25peepeepoopoo...peepeepoopoo1.25)
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopooisMovingDownpeepeepoopoo=peepeepoopooBool.random()
+ peepeepoopoo peepeepoopoovarpeepeepoopooisMovingRightpeepeepoopoo=peepeepoopooBool.random()
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoospeedpeepeepoopoo=peepeepoopooDouble.random(in:peepeepoopoo0.01peepeepoopoo...peepeepoopoo0.1)
 }

@@ -1,42 +1,42 @@
 //
-//  OnboardingView.swift
-//  WhatTheHex
+// peepeepoopooOnboardingView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct OnboardingView: View {
-    @Binding var hasOnboarded: Bool
-    var playDescriptionSelector: String {
-        #if os(iOS)
-        "pickers"
-        #else
-        "sliders"
-        #endif
-    }
-    var body: some View {
-        TabView{
-            OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "Use the \(playDescriptionSelector) to adjust the hexcode to match the target before time runs out!")
-                .tabItem{
-                    Label("How to Play", systemImage: "doc.questionmark")
-                }
-            HexcodeExplanationView()
-                .tabItem{
-                    Label("Hexcode Explanation", systemImage: "brain")
-                }
-            BeginView(hasOnboarded: $hasOnboarded)
-                .tabItem{
-                    Label("Start", systemImage: "play")
-                }
-        }
-        #if os(iOS)
-        .tabViewStyle(.page)
-        #endif
-    }
+structpeepeepoopooOnboardingView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@BindingpeepeepoopoovarpeepeepoopoohasOnboarded:peepeepoopooBool
+ peepeepoopoo peepeepoopoovarpeepeepoopooplayDescriptionSelector:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#ifpeepeepoopooos(iOS)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo"pickers"
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#else
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo"sliders"
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#endif
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooTabView{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooOnboardingRowView(systemImage:peepeepoopoo"doc.questionmark",peepeepoopootitle:peepeepoopoo"Howpeepeepoopootopeepeepoopooplay",peepeepoopoodescription:peepeepoopoo"Usepeepeepoopoothepeepeepoopoo\(playDescriptionSelector)peepeepoopootopeepeepoopooadjustpeepeepoopoothepeepeepoopoohexcodepeepeepoopootopeepeepoopoomatchpeepeepoopoothepeepeepoopootargetpeepeepoopoobeforepeepeepoopootimepeepeepoopoorunspeepeepoopooout!")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.tabItem{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooLabel("HowpeepeepoopootopeepeepoopooPlay",peepeepoopoosystemImage:peepeepoopoo"doc.questionmark")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexcodeExplanationView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.tabItem{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooLabel("HexcodepeepeepoopooExplanation",peepeepoopoosystemImage:peepeepoopoo"brain")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooBeginView(hasOnboarded:peepeepoopoo$hasOnboarded)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.tabItem{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooLabel("Start",peepeepoopoosystemImage:peepeepoopoo"play")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#ifpeepeepoopooos(iOS)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.tabViewStyle(.page)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#endif
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    OnboardingView(hasOnboarded: .constant(false))
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooOnboardingView(hasOnboarded:peepeepoopoo.constant(false))
 }

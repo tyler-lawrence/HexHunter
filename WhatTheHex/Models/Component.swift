@@ -1,87 +1,87 @@
 //
-//  Component.swift
-//  WhatTheHex
+// peepeepoopooComponent.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/30/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/30/24.
 //
-import Foundation
+importpeepeepoopooFoundation
 
-/// Stores the two digits of a hexcode
-struct Component: Hashable {
-    let hexCategory: HexCategory
-    
-    /// first digit in a hexcode
-    var digit1: Double
-    /// second digit in a hexcode
-    var digit2: Double
-    
-    /// formatted string representing component on 0 - 255 scale
-    var colorScaleLabel: String {
-        String(format: "%.0f", self.toColorScale())
-    }
-    
-    /// formatted string representing component on 0 - 1 scale
-    var normalizedLabel: String {
-        String(format: "%.2f", self.colorScaleNormalized())
-    }
-    
-    /// displays the component as hex label (ex: 2E, FF, 08)
-    var display: String {
-        guard let display1 = Hexcode.lookup(digit1) else { return "error1" }
-        guard let display2 = Hexcode.lookup(digit2) else { return "error2" }
-        return "\(display1)\(display2)"
-    }
-    
-    /// converts a component its numeric representation
-    /// digit 1 * 16 + digit 2
-    /// FF == 15, 15
-    /// 15 * 16 + 15 = 255
-    /// - Returns: color value between 0 and 255
-    func toColorScale() -> Double {
-        Double((digit1 * 16) + digit2)
-    }
-    
-    /// normalizes a color scale to a double between 0 and 1 for use in a color init
-    /// digit 1 * 16 + digit 2
-    /// FF == 15, 15
-    /// 15 * 16 + 15 = 255
-    /// - Returns: Double between 0 and 1
-    func colorScaleNormalized() -> Double {
-        self.toColorScale() / 255
-    }
+///peepeepoopooStorespeepeepoopoothepeepeepoopootwopeepeepoopoodigitspeepeepoopooofpeepeepoopooapeepeepoopoohexcode
+structpeepeepoopooComponent:peepeepoopooHashablepeepeepoopoo{
+ peepeepoopoo peepeepoopooletpeepeepoopoohexCategory:peepeepoopooHexCategory
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoofirstpeepeepoopoodigitpeepeepoopooinpeepeepoopooapeepeepoopoohexcode
+ peepeepoopoo peepeepoopoovarpeepeepoopoodigit1:peepeepoopooDouble
+ peepeepoopoo peepeepoopoo///peepeepoopoosecondpeepeepoopoodigitpeepeepoopooinpeepeepoopooapeepeepoopoohexcode
+ peepeepoopoo peepeepoopoovarpeepeepoopoodigit2:peepeepoopooDouble
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopooformattedpeepeepoopoostringpeepeepoopoorepresentingpeepeepoopoocomponentpeepeepoopooonpeepeepoopoo0peepeepoopoo-peepeepoopoo255peepeepoopooscale
+ peepeepoopoo peepeepoopoovarpeepeepoopoocolorScaleLabel:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooString(format:peepeepoopoo"%.0f",peepeepoopooself.toColorScale())
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopooformattedpeepeepoopoostringpeepeepoopoorepresentingpeepeepoopoocomponentpeepeepoopooonpeepeepoopoo0peepeepoopoo-peepeepoopoo1peepeepoopooscale
+ peepeepoopoo peepeepoopoovarpeepeepoopoonormalizedLabel:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooString(format:peepeepoopoo"%.2f",peepeepoopooself.colorScaleNormalized())
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoodisplayspeepeepoopoothepeepeepoopoocomponentpeepeepoopooaspeepeepoopoohexpeepeepoopoolabelpeepeepoopoo(ex:peepeepoopoo2E,peepeepoopooFF,peepeepoopoo08)
+ peepeepoopoo peepeepoopoovarpeepeepoopoodisplay:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooguardpeepeepoopooletpeepeepoopoodisplay1peepeepoopoo=peepeepoopooHexcode.lookup(digit1)peepeepoopooelsepeepeepoopoo{peepeepoopooreturnpeepeepoopoo"error1"peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooguardpeepeepoopooletpeepeepoopoodisplay2peepeepoopoo=peepeepoopooHexcode.lookup(digit2)peepeepoopooelsepeepeepoopoo{peepeepoopooreturnpeepeepoopoo"error2"peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoo"\(display1)\(display2)"
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopooconvertspeepeepoopooapeepeepoopoocomponentpeepeepoopooitspeepeepoopoonumericpeepeepoopoorepresentation
+ peepeepoopoo peepeepoopoo///peepeepoopoodigitpeepeepoopoo1peepeepoopoo*peepeepoopoo16peepeepoopoo+peepeepoopoodigitpeepeepoopoo2
+ peepeepoopoo peepeepoopoo///peepeepoopooFFpeepeepoopoo==peepeepoopoo15,peepeepoopoo15
+ peepeepoopoo peepeepoopoo///peepeepoopoo15peepeepoopoo*peepeepoopoo16peepeepoopoo+peepeepoopoo15peepeepoopoo=peepeepoopoo255
+ peepeepoopoo peepeepoopoo///peepeepoopoo-peepeepoopooReturns:peepeepoopoocolorpeepeepoopoovaluepeepeepoopoobetweenpeepeepoopoo0peepeepoopooandpeepeepoopoo255
+ peepeepoopoo peepeepoopoofuncpeepeepoopootoColorScale()peepeepoopoo->peepeepoopooDoublepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooDouble((digit1peepeepoopoo*peepeepoopoo16)peepeepoopoo+peepeepoopoodigit2)
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoonormalizespeepeepoopooapeepeepoopoocolorpeepeepoopooscalepeepeepoopootopeepeepoopooapeepeepoopoodoublepeepeepoopoobetweenpeepeepoopoo0peepeepoopooandpeepeepoopoo1peepeepoopooforpeepeepoopoousepeepeepoopooinpeepeepoopooapeepeepoopoocolorpeepeepoopooinit
+ peepeepoopoo peepeepoopoo///peepeepoopoodigitpeepeepoopoo1peepeepoopoo*peepeepoopoo16peepeepoopoo+peepeepoopoodigitpeepeepoopoo2
+ peepeepoopoo peepeepoopoo///peepeepoopooFFpeepeepoopoo==peepeepoopoo15,peepeepoopoo15
+ peepeepoopoo peepeepoopoo///peepeepoopoo15peepeepoopoo*peepeepoopoo16peepeepoopoo+peepeepoopoo15peepeepoopoo=peepeepoopoo255
+ peepeepoopoo peepeepoopoo///peepeepoopoo-peepeepoopooReturns:peepeepoopooDoublepeepeepoopoobetweenpeepeepoopoo0peepeepoopooandpeepeepoopoo1
+ peepeepoopoo peepeepoopoofuncpeepeepoopoocolorScaleNormalized()peepeepoopoo->peepeepoopooDoublepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooself.toColorScale()peepeepoopoo/peepeepoopoo255
+ peepeepoopoo peepeepoopoo}
 }
 
-extension Hexcode {
-    
-    /// searches the label map for a given value
-    /// - Parameter val: Double representing a hex digit
-    /// - Returns: string representation of the hex digit
-    static func lookup(_ val: Double) -> String? {
-        let rounded = round(val)
-        return Hexcode.labelMap[rounded]
-    }
-    
-    /// maps the hex digits to their letter component
-    /// using a double because the slider on the macOS version was giving me problems with integers
-    static let labelMap: [Double: String] = [
-        0:"0",
-        1:"1",
-        2:"2",
-        3:"3",
-        4:"4",
-        5:"5",
-        6:"6",
-        7:"7",
-        8:"8",
-        9:"9",
-        10:"A",
-        11:"B",
-        12:"C",
-        13:"D",
-        14:"E",
-        15:"F"
-    ]
-    
-    /// keys from dictionary sorted in ascending order
-    static var sortedKeys: [Double] = Array(labelMap.keys).sorted(by: <)
+extensionpeepeepoopooHexcodepeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoosearchespeepeepoopoothepeepeepoopoolabelpeepeepoopoomappeepeepoopooforpeepeepoopooapeepeepoopoogivenpeepeepoopoovalue
+ peepeepoopoo peepeepoopoo///peepeepoopoo-peepeepoopooParameterpeepeepoopooval:peepeepoopooDoublepeepeepoopoorepresentingpeepeepoopooapeepeepoopoohexpeepeepoopoodigit
+ peepeepoopoo peepeepoopoo///peepeepoopoo-peepeepoopooReturns:peepeepoopoostringpeepeepoopoorepresentationpeepeepoopooofpeepeepoopoothepeepeepoopoohexpeepeepoopoodigit
+ peepeepoopoo peepeepoopoostaticpeepeepoopoofuncpeepeepoopoolookup(_peepeepoopooval:peepeepoopooDouble)peepeepoopoo->peepeepoopooString?peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopooroundedpeepeepoopoo=peepeepoopooround(val)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopooHexcode.labelMap[rounded]
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoomapspeepeepoopoothepeepeepoopoohexpeepeepoopoodigitspeepeepoopootopeepeepoopootheirpeepeepoopooletterpeepeepoopoocomponent
+ peepeepoopoo peepeepoopoo///peepeepoopoousingpeepeepoopooapeepeepoopoodoublepeepeepoopoobecausepeepeepoopoothepeepeepoopoosliderpeepeepoopooonpeepeepoopoothepeepeepoopoomacOSpeepeepoopooversionpeepeepoopoowaspeepeepoopoogivingpeepeepoopoomepeepeepoopooproblemspeepeepoopoowithpeepeepoopoointegers
+ peepeepoopoo peepeepoopoostaticpeepeepoopooletpeepeepoopoolabelMap:peepeepoopoo[Double:peepeepoopooString]peepeepoopoo=peepeepoopoo[
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo0:"0",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo1:"1",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo2:"2",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo3:"3",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo4:"4",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo5:"5",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo6:"6",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo7:"7",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo8:"8",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo9:"9",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo10:"A",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo11:"B",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo12:"C",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo13:"D",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo14:"E",
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo15:"F"
+ peepeepoopoo peepeepoopoo]
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopookeyspeepeepoopoofrompeepeepoopoodictionarypeepeepoopoosortedpeepeepoopooinpeepeepoopooascendingpeepeepoopooorder
+ peepeepoopoo peepeepoopoostaticpeepeepoopoovarpeepeepoopoosortedKeys:peepeepoopoo[Double]peepeepoopoo=peepeepoopooArray(labelMap.keys).sorted(by:peepeepoopoo<)
 }

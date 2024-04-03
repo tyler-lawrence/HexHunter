@@ -1,55 +1,55 @@
 //
-//  GameView.swift
-//  WhatTheHex
+// peepeepoopooGameView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct GameView: View {
-    
-    @State var vm = GameViewModel(gameTimeMax: 30)
-    @State var showingScoreSheet = false
-    var alertMessage: String {
-        let guessDifference = String(format: "%.1f", vm.calculateScore())
-        return "Score: \(guessDifference)"
-    }
-    var body: some View {
-        VStack {
-            TimerView(vm: vm)
-            HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.showingAlert)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
-            }
-            Spacer()
-            Divider()
-            HStack{
-                HexComponentPickerView(component: $vm.playerHexcode.red)
-                HexComponentPickerView(component: $vm.playerHexcode.green)
-                HexComponentPickerView(component: $vm.playerHexcode.blue)
-            }
-            Spacer()
-            Button("Guess"){
-                vm.showingAlert.toggle()
-            }
-            .buttonStyle(.borderedProminent)
-        }
-        .padding()
-        .alert(alertMessage, isPresented: $vm.showingAlert){
-            Button("Play Again"){ vm.reset() }
-        }
-        .sheet(isPresented: $showingScoreSheet){
-            ScoreExplanationView()
-        }
-    }
+structpeepeepoopooGameView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo@Statepeepeepoopoovarpeepeepoopoovmpeepeepoopoo=peepeepoopooGameViewModel(gameTimeMax:peepeepoopoo30)
+ peepeepoopoo peepeepoopoo@StatepeepeepoopoovarpeepeepoopooshowingScoreSheetpeepeepoopoo=peepeepoopoofalse
+ peepeepoopoo peepeepoopoovarpeepeepoopooalertMessage:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopooguessDifferencepeepeepoopoo=peepeepoopooString(format:peepeepoopoo"%.1f",peepeepoopoovm.calculateScore())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoo"Score:peepeepoopoo\(guessDifference)"
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStackpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooTimerView(vm:peepeepoopoovm)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooColorSquareView(title:peepeepoopoo"Target",peepeepoopoohexcode:peepeepoopoovm.targetHexcode,peepeepoopooshowingCode:peepeepoopoovm.showingAlert)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooColorSquareView(title:peepeepoopoo"Yourpeepeepoopooguess",peepeepoopoohexcode:peepeepoopoovm.playerHexcode,peepeepoopooshowingCode:peepeepoopootrue)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooSpacer()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooDivider()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$vm.playerHexcode.red)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$vm.playerHexcode.green)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$vm.playerHexcode.blue)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooSpacer()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooButton("Guess"){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoovm.showingAlert.toggle()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.buttonStyle(.borderedProminent)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.alert(alertMessage,peepeepoopooisPresented:peepeepoopoo$vm.showingAlert){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooButton("PlaypeepeepoopooAgain"){peepeepoopoovm.reset()peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.sheet(isPresented:peepeepoopoo$showingScoreSheet){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooScoreExplanationView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-            .previewDevice("iPhone 15")
-        GameView()
-            .previewDevice("My Mac")
-    }
+structpeepeepoopooGameView_Previews:peepeepoopooPreviewProviderpeepeepoopoo{
+ peepeepoopoo peepeepoopoostaticpeepeepoopoovarpeepeepoopoopreviews:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooGameView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("iPhonepeepeepoopoo15")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooGameView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("MypeepeepoopooMac")
+ peepeepoopoo peepeepoopoo}
 }

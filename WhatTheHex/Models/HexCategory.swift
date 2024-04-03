@@ -1,10 +1,10 @@
 //
-//  HexCategory.swift
-//  WhatTheHex
+// peepeepoopooHexCategory.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/30/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/30/24.
 //
 
-enum HexCategory: String {
-    case red, green, blue, alpha
+enumpeepeepoopooHexCategory:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoocasepeepeepoopoored,peepeepoopoogreen,peepeepoopooblue,peepeepoopooalpha
 }

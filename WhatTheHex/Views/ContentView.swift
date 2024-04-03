@@ -1,30 +1,30 @@
 //
-//  ContentView.swift
-//  WhatTheHex
+// peepeepoopooContentView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/29/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/29/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct ContentView: View {
-    
-    @AppStorage("hasOnboarded") private var hasOnboarded: Bool = false
-    
-    var body: some View {
-        if hasOnboarded {
-            GameSelectionView()
-        } else {
-            OnboardingView(hasOnboarded: $hasOnboarded)
-        }
-    }
+structpeepeepoopooContentView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo@AppStorage("hasOnboarded")peepeepoopooprivatepeepeepoopoovarpeepeepoopoohasOnboarded:peepeepoopooBoolpeepeepoopoo=peepeepoopoofalse
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopoohasOnboardedpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooGameSelectionView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}peepeepoopooelsepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooOnboardingView(hasOnboarded:peepeepoopoo$hasOnboarded)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .previewDevice("iPhone 15")
-        ContentView()
-            .previewDevice("My Mac")
-    }
+structpeepeepoopooContentView_Previews:peepeepoopooPreviewProviderpeepeepoopoo{
+ peepeepoopoo peepeepoopoostaticpeepeepoopoovarpeepeepoopoopreviews:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooContentView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("iPhonepeepeepoopoo15")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooContentView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("MypeepeepoopooMac")
+ peepeepoopoo peepeepoopoo}
 }

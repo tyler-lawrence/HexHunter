@@ -1,39 +1,39 @@
 //
-//  HexcodeExplanation.swift
-//  WhatTheHex
+// peepeepoopooHexcodeExplanation.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct HexcodeExplanationView: View {
-    @State var hexcode = Hexcode()
-    var body: some View {
-        VStack{
-            Text("Hexcodes")
-                .font(.largeTitle)
-            ScrollView{
-                VStack(alignment: .leading){
-                    Text("A hexcode is a hexadeicmal representation of a color.")
-                    VStack(alignment: .leading){
-                        Text("The first two characters represent ") + Text("red ").foregroundStyle(.red).bold()
-                        Text("The second two characters represent ") + Text("green ").foregroundStyle(.green).bold()
-                        Text("The third two characters represent ") + Text("blue ").foregroundStyle(.blue).bold()
-                    }
-                    .padding(.vertical)
-                    Text("The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail")
-                        .padding(.bottom)
-                    Text("To convert the hex to a number you first convert the digit to its corresponding numeric value (if necessary). Then, multiply the first digit by 16 and then add the second digit")
-                }
-            }
-            .padding(.horizontal)
-            Divider()
-            PracticeModeView()
-        }
-    }
+structpeepeepoopooHexcodeExplanationView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@Statepeepeepoopoovarpeepeepoopoohexcodepeepeepoopoo=peepeepoopooHexcode()
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Hexcodes")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.font(.largeTitle)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooScrollView{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack(alignment:peepeepoopoo.leading){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Apeepeepoopoohexcodepeepeepoopooispeepeepoopooapeepeepoopoohexadeicmalpeepeepoopoorepresentationpeepeepoopooofpeepeepoopooapeepeepoopoocolor.")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack(alignment:peepeepoopoo.leading){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Thepeepeepoopoofirstpeepeepoopootwopeepeepoopoocharacterspeepeepoopoorepresentpeepeepoopoo")peepeepoopoo+peepeepoopooText("redpeepeepoopoo").foregroundStyle(.red).bold()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Thepeepeepoopoosecondpeepeepoopootwopeepeepoopoocharacterspeepeepoopoorepresentpeepeepoopoo")peepeepoopoo+peepeepoopooText("greenpeepeepoopoo").foregroundStyle(.green).bold()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Thepeepeepoopoothirdpeepeepoopootwopeepeepoopoocharacterspeepeepoopoorepresentpeepeepoopoo")peepeepoopoo+peepeepoopooText("bluepeepeepoopoo").foregroundStyle(.blue).bold()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding(.vertical)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Thepeepeepoopooscalepeepeepoopoogoespeepeepoopoofrompeepeepoopoo00peepeepoopootopeepeepoopooFF.peepeepoopooThepeepeepoopooletterspeepeepoopooarepeepeepoopoointroducedpeepeepoopoowhenpeepeepoopoowepeepeepoopoowouldpeepeepoopoogetpeepeepoopootopeepeepoopoodoublepeepeepoopoodigitpeepeepoopoonumbers.peepeepoopoo10peepeepoopoobecomespeepeepoopooA,peepeepoopoo11peepeepoopoobecomespeepeepoopooB,peepeepoopoo12peepeepoopoobecomespeepeepoopooC,peepeepoopooetc.peepeepoopooThepeepeepoopoofirstpeepeepoopoonumberpeepeepoopooispeepeepoopooapeepeepoopoolargepeepeepoopooscalepeepeepoopoochangepeepeepoopooandpeepeepoopoothepeepeepoopoosecondpeepeepoopoocharacterpeepeepoopooispeepeepoopoofinerpeepeepoopoodetail")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding(.bottom)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Topeepeepoopooconvertpeepeepoopoothepeepeepoopoohexpeepeepoopootopeepeepoopooapeepeepoopoonumberpeepeepoopooyoupeepeepoopoofirstpeepeepoopooconvertpeepeepoopoothepeepeepoopoodigitpeepeepoopootopeepeepoopooitspeepeepoopoocorrespondingpeepeepoopoonumericpeepeepoopoovaluepeepeepoopoo(ifpeepeepoopoonecessary).peepeepoopooThen,peepeepoopoomultiplypeepeepoopoothepeepeepoopoofirstpeepeepoopoodigitpeepeepoopoobypeepeepoopoo16peepeepoopooandpeepeepoopoothenpeepeepoopooaddpeepeepoopoothepeepeepoopoosecondpeepeepoopoodigit")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding(.horizontal)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooDivider()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooPracticeModeView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    HexcodeExplanationView()
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooHexcodeExplanationView()
 }

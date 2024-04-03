@@ -1,50 +1,50 @@
 //
-//  ParticleSystem.swift
-//  WhatTheHex
+// peepeepoopooParticleSystem.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import Foundation
+importpeepeepoopooFoundation
 
-class ParticleSystem {
-    
-    let particles: [Particle]
-    var lastUpdate = Date.now.timeIntervalSinceReferenceDate
-    
-    func update(date: TimeInterval) {
-        let delta = date - lastUpdate
-        lastUpdate = date
-        for particle in particles {
-            
-            if particle.isMovingDown {
-                particle.y += particle.speed * delta
-                if particle.y > 1.25 {
-                    particle.isMovingDown = false
-                }
-            }else {
-                particle.y -= particle.speed * delta
-                if particle.y < -0.25 {
-                    particle.isMovingDown = true
-                }
-            }
-            
-            if particle.isMovingRight {
-                particle.x += particle.speed * delta
-                if particle.x > 1.25 {
-                    particle.isMovingRight = false
-                }
-            } else {
-                particle.x -= particle.speed * delta
-                if particle.x < -1.25 {
-                    particle.isMovingRight = true
-                }
-            }
-        }
-    }
-    
-    init(count: Int) {
-        particles = (0..<count).map{_ in Particle()}
-    }
-    
+classpeepeepoopooParticleSystempeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopooletpeepeepoopooparticles:peepeepoopoo[Particle]
+ peepeepoopoo peepeepoopoovarpeepeepoopoolastUpdatepeepeepoopoo=peepeepoopooDate.now.timeIntervalSinceReferenceDate
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoofuncpeepeepoopooupdate(date:peepeepoopooTimeInterval)peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoodeltapeepeepoopoo=peepeepoopoodatepeepeepoopoo-peepeepoopoolastUpdate
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoolastUpdatepeepeepoopoo=peepeepoopoodate
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooforpeepeepoopooparticlepeepeepoopooinpeepeepoopooparticlespeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.isMovingDownpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.ypeepeepoopoo+=peepeepoopooparticle.speedpeepeepoopoo*peepeepoopoodelta
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.ypeepeepoopoo>peepeepoopoo1.25peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.isMovingDownpeepeepoopoo=peepeepoopoofalse
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}elsepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.ypeepeepoopoo-=peepeepoopooparticle.speedpeepeepoopoo*peepeepoopoodelta
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.ypeepeepoopoo<peepeepoopoo-0.25peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.isMovingDownpeepeepoopoo=peepeepoopootrue
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.isMovingRightpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.xpeepeepoopoo+=peepeepoopooparticle.speedpeepeepoopoo*peepeepoopoodelta
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.xpeepeepoopoo>peepeepoopoo1.25peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.isMovingRightpeepeepoopoo=peepeepoopoofalse
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}peepeepoopooelsepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.xpeepeepoopoo-=peepeepoopooparticle.speedpeepeepoopoo*peepeepoopoodelta
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooparticle.xpeepeepoopoo<peepeepoopoo-1.25peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticle.isMovingRightpeepeepoopoo=peepeepoopootrue
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopooinit(count:peepeepoopooInt)peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooparticlespeepeepoopoo=peepeepoopoo(0..<count).map{_peepeepoopooinpeepeepoopooParticle()}
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
 }

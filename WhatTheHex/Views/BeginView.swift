@@ -1,26 +1,26 @@
 //
-//  BeginView.swift
-//  WhatTheHex
+// peepeepoopooBeginView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct BeginView: View {
-    @Binding var hasOnboarded: Bool
-    var body: some View {
-        ZStack{
-            BackgroundView()
-                .ignoresSafeArea()
-            Button("start guessing"){
-                hasOnboarded = true
-            }
-            .buttonStyle(.borderedProminent)
-        }
-    }
+structpeepeepoopooBeginView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@BindingpeepeepoopoovarpeepeepoopoohasOnboarded:peepeepoopooBool
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooZStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooBackgroundView()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.ignoresSafeArea()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooButton("startpeepeepoopooguessing"){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoohasOnboardedpeepeepoopoo=peepeepoopootrue
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.buttonStyle(.borderedProminent)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    BeginView(hasOnboarded: .constant(false))
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooBeginView(hasOnboarded:peepeepoopoo.constant(false))
 }

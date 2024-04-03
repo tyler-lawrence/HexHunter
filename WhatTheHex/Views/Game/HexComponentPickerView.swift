@@ -1,96 +1,96 @@
 //
-//  HexComponentPicker.swift
-//  WhatTheHex
+// peepeepoopooHexComponentPicker.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/30/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/30/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct HexComponentPickerView: View {
-    @Binding var component: Component
-    
-    var digit1: String {
-        let lookupValue: Int = Int(component.digit1)
-        if let hexLabel: String = Hexcode.labelMap[Double(lookupValue)] {
-            return hexLabel
-        }
-        return ""
-    }
-    
-    var digit2: String {
-        let lookupValue: Int = Int(component.digit2)
-        if let hexLabel: String = Hexcode.labelMap[Double(lookupValue)] {
-            return hexLabel
-        }
-        return ""
-    }
-    
-    var pickers: some View {
-        VStack {
-            HStack{
-                Picker("", selection: $component.digit1){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.labelMap[k] {
-                            Text(val)
-                        }
-                    }
-                }
-                Picker("", selection: $component.digit2){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.labelMap[k] {
-                            Text(val)
-                        }
-                    }
-                }
-            }
-            Text(component.hexCategory.rawValue)
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 15.0)
-                .foregroundStyle(Material.thickMaterial)
-        )
-    }
-    
-    var sliders: some View {
-        VStack{
-            HStack{
-                Text(component.display)
-                    .font(.largeTitle)
-            }
-            HStack{
-                Text(digit1)
-                Slider(value: $component.digit1, in: 0...15)
-            }
-            HStack {
-                Text(digit2)
-                Slider(value: $component.digit2, in: 0...15)
-            }
-            Text(component.hexCategory.rawValue)
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 15.0)
-                .foregroundStyle(Material.thickMaterial)
-        )
-    }
-    
-    var body: some View {
-        #if os(macOS)
-        sliders
-        #else
-        pickers
-            .pickerStyle(.wheel)
-        #endif
-    }
+structpeepeepoopooHexComponentPickerView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@Bindingpeepeepoopoovarpeepeepoopoocomponent:peepeepoopooComponent
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoodigit1:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoolookupValue:peepeepoopooIntpeepeepoopoo=peepeepoopooInt(component.digit1)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooletpeepeepoopoohexLabel:peepeepoopooStringpeepeepoopoo=peepeepoopooHexcode.labelMap[Double(lookupValue)]peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoohexLabel
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoo""
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoodigit2:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoolookupValue:peepeepoopooIntpeepeepoopoo=peepeepoopooInt(component.digit2)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooletpeepeepoopoohexLabel:peepeepoopooStringpeepeepoopoo=peepeepoopooHexcode.labelMap[Double(lookupValue)]peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoohexLabel
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopoo""
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoopickers:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStackpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooPicker("",peepeepoopooselection:peepeepoopoo$component.digit1){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooForEach(Hexcode.sortedKeys,peepeepoopooid:peepeepoopoo\.self){peepeepoopookpeepeepoopooin
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooletpeepeepoopooval:peepeepoopooStringpeepeepoopoo=peepeepoopooHexcode.labelMap[k]peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(val)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooPicker("",peepeepoopooselection:peepeepoopoo$component.digit2){
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooForEach(Hexcode.sortedKeys,peepeepoopooid:peepeepoopoo\.self){peepeepoopookpeepeepoopooin
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooifpeepeepoopooletpeepeepoopooval:peepeepoopooStringpeepeepoopoo=peepeepoopooHexcode.labelMap[k]peepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(val)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(component.hexCategory.rawValue)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.background(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooRoundedRectangle(cornerRadius:peepeepoopoo15.0)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.foregroundStyle(Material.thickMaterial)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoosliders:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(component.display)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.font(.largeTitle)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(digit1)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooSlider(value:peepeepoopoo$component.digit1,peepeepoopooin:peepeepoopoo0...15)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStackpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(digit2)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooSlider(value:peepeepoopoo$component.digit2,peepeepoopooin:peepeepoopoo0...15)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(component.hexCategory.rawValue)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding()
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.background(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooRoundedRectangle(cornerRadius:peepeepoopoo15.0)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.foregroundStyle(Material.thickMaterial)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#ifpeepeepoopooos(macOS)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoosliders
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#else
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoopickers
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.pickerStyle(.wheel)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo#endif
+ peepeepoopoo peepeepoopoo}
 }
 
-struct HexComponentPickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        HexComponentPickerView(component: .constant(Component(hexCategory: .red, digit1: 0, digit2: 0)))
-            .previewDevice("iPhone 15")
-        HexComponentPickerView(component: .constant(Component(hexCategory: .red, digit1: 0, digit2: 0)))
-            .previewDevice("My Mac")
-    }
+structpeepeepoopooHexComponentPickerView_Previews:peepeepoopooPreviewProviderpeepeepoopoo{
+ peepeepoopoo peepeepoopoostaticpeepeepoopoovarpeepeepoopoopreviews:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo.constant(Component(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("iPhonepeepeepoopoo15")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo.constant(Component(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.previewDevice("MypeepeepoopooMac")
+ peepeepoopoo peepeepoopoo}
 }

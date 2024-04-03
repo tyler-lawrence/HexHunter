@@ -1,41 +1,41 @@
 //
-//  Hexcode.swift
-//  WhatTheHex
+// peepeepoopooHexcode.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 3/29/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo3/29/24.
 //
 
-struct Hexcode {
-    
-    var red: Component = Component(hexCategory: .red, digit1: 0, digit2: 0)
-    var green: Component = Component(hexCategory: .green, digit1: 0, digit2: 0)
-    var blue: Component = Component(hexCategory: .blue, digit1: 0, digit2: 0)
-    
-    /// shows 6 characters representing the hexcode (EX: FFFFFF, A023F8)
-    var display: String {
-        "\(red.display)\(green.display)\(blue.display)"
-    }
-    
-    /// creates a random hexcode by randomly generating numbers
-    static func random() -> Hexcode {
-        func randomHexDigit() -> Double { Double(Int.random(in: 0 ... 15 )) }
-        let redComponent = Component(hexCategory: .red, digit1: randomHexDigit(), digit2: randomHexDigit())
-        let greenComponent = Component(hexCategory: .green, digit1: randomHexDigit(), digit2: randomHexDigit())
-        let blueComponent = Component(hexCategory: .blue, digit1: randomHexDigit(), digit2: randomHexDigit())
-        return Hexcode(red: redComponent, green: greenComponent, blue: blueComponent)
-    }
+structpeepeepoopooHexcodepeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoored:peepeepoopooComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)
+ peepeepoopoo peepeepoopoovarpeepeepoopoogreen:peepeepoopooComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.green,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)
+ peepeepoopoo peepeepoopoovarpeepeepoopooblue:peepeepoopooComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.blue,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopooshowspeepeepoopoo6peepeepoopoocharacterspeepeepoopoorepresentingpeepeepoopoothepeepeepoopoohexcodepeepeepoopoo(EX:peepeepoopooFFFFFF,peepeepoopooA023F8)
+ peepeepoopoo peepeepoopoovarpeepeepoopoodisplay:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo"\(red.display)\(green.display)\(blue.display)"
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoo///peepeepoopoocreatespeepeepoopooapeepeepoopoorandompeepeepoopoohexcodepeepeepoopoobypeepeepoopoorandomlypeepeepoopoogeneratingpeepeepoopoonumbers
+ peepeepoopoo peepeepoopoostaticpeepeepoopoofuncpeepeepoopoorandom()peepeepoopoo->peepeepoopooHexcodepeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoofuncpeepeepoopoorandomHexDigit()peepeepoopoo->peepeepoopooDoublepeepeepoopoo{peepeepoopooDouble(Int.random(in:peepeepoopoo0peepeepoopoo...peepeepoopoo15peepeepoopoo))peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopooredComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoorandomHexDigit(),peepeepoopoodigit2:peepeepoopoorandomHexDigit())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopoogreenComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.green,peepeepoopoodigit1:peepeepoopoorandomHexDigit(),peepeepoopoodigit2:peepeepoopoorandomHexDigit())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooletpeepeepoopooblueComponentpeepeepoopoo=peepeepoopooComponent(hexCategory:peepeepoopoo.blue,peepeepoopoodigit1:peepeepoopoorandomHexDigit(),peepeepoopoodigit2:peepeepoopoorandomHexDigit())
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooreturnpeepeepoopooHexcode(red:peepeepoopooredComponent,peepeepoopoogreen:peepeepoopoogreenComponent,peepeepoopooblue:peepeepoopooblueComponent)
+ peepeepoopoo peepeepoopoo}
 }
 
-extension Hexcode {
-    static let teal = Hexcode(
-        red: Component(hexCategory: .red, digit1: 2, digit2: 0),
-        green: Component(hexCategory: .green, digit1: 10, digit2: 0),
-        blue: Component(hexCategory: .blue, digit1: 11, digit2: 0)
-    )
-    
-    static let orange = Hexcode(
-        red: Component(hexCategory: .red, digit1: 12, digit2: 13),
-        green: Component(hexCategory: .green, digit1: 8, digit2: 0),
-        blue: Component(hexCategory: .blue, digit1: 0, digit2: 0)
-    )
+extensionpeepeepoopooHexcodepeepeepoopoo{
+ peepeepoopoo peepeepoopoostaticpeepeepoopooletpeepeepoopootealpeepeepoopoo=peepeepoopooHexcode(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoored:peepeepoopooComponent(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoo2,peepeepoopoodigit2:peepeepoopoo0),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoogreen:peepeepoopooComponent(hexCategory:peepeepoopoo.green,peepeepoopoodigit1:peepeepoopoo10,peepeepoopoodigit2:peepeepoopoo0),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooblue:peepeepoopooComponent(hexCategory:peepeepoopoo.blue,peepeepoopoodigit1:peepeepoopoo11,peepeepoopoodigit2:peepeepoopoo0)
+ peepeepoopoo peepeepoopoo)
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoostaticpeepeepoopooletpeepeepoopooorangepeepeepoopoo=peepeepoopooHexcode(
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoored:peepeepoopooComponent(hexCategory:peepeepoopoo.red,peepeepoopoodigit1:peepeepoopoo12,peepeepoopoodigit2:peepeepoopoo13),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoogreen:peepeepoopooComponent(hexCategory:peepeepoopoo.green,peepeepoopoodigit1:peepeepoopoo8,peepeepoopoodigit2:peepeepoopoo0),
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooblue:peepeepoopooComponent(hexCategory:peepeepoopoo.blue,peepeepoopoodigit1:peepeepoopoo0,peepeepoopoodigit2:peepeepoopoo0)
+ peepeepoopoo peepeepoopoo)
 }

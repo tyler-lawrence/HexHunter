@@ -1,33 +1,33 @@
 //
-//  ColorSquareView.swift
-//  WhatTheHex
+// peepeepoopooColorSquareView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/1/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/1/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct ColorSquareView: View {
-    
-    let title: String
-    let hexcode: Hexcode
-    let size: CGFloat = 150
-    var hexLabel: String {
-        showingCode ? hexcode.display : " "
-    }
-    var showingCode: Bool
-    
-    var body: some View {
-        VStack{
-            Text(title)
-            RoundedRectangle(cornerRadius: 15.0)
-                .foregroundStyle(Color(hexcode))
-                .frame(width: size, height: size)
-            Text(hexLabel)
-        }
-    }
+structpeepeepoopooColorSquareView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopooletpeepeepoopootitle:peepeepoopooString
+ peepeepoopoo peepeepoopooletpeepeepoopoohexcode:peepeepoopooHexcode
+ peepeepoopoo peepeepoopooletpeepeepoopoosize:peepeepoopooCGFloatpeepeepoopoo=peepeepoopoo150
+ peepeepoopoo peepeepoopoovarpeepeepoopoohexLabel:peepeepoopooStringpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooshowingCodepeepeepoopoo?peepeepoopoohexcode.displaypeepeepoopoo:peepeepoopoo"peepeepoopoo"
+ peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoovarpeepeepoopooshowingCode:peepeepoopooBool
+ peepeepoopoo peepeepoopoo
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooVStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(title)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooRoundedRectangle(cornerRadius:peepeepoopoo15.0)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.foregroundStyle(Color(hexcode))
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.frame(width:peepeepoopoosize,peepeepoopooheight:peepeepoopoosize)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText(hexLabel)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooColorSquareView(title:peepeepoopoo"Target",peepeepoopoohexcode:peepeepoopooHexcode.random(),peepeepoopooshowingCode:peepeepoopootrue)
 }

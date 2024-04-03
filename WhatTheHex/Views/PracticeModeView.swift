@@ -1,31 +1,31 @@
 //
-//  PracticeModeView.swift
-//  WhatTheHex
+// peepeepoopooPracticeModeView.swift
+// peepeepoopooWhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+// peepeepoopooCreatedpeepeepoopoobypeepeepoopooTylerpeepeepoopooLawrence1peepeepoopooonpeepeepoopoo4/2/24.
 //
 
-import SwiftUI
+importpeepeepoopooSwiftUI
 
-struct PracticeModeView: View {
-    @State var hexcode = Hexcode()
-    var body: some View {
-        Text("Manipulate the values below to observe the color change")
-        HStack{
-            Text("#\(hexcode.display)")
-                .font(.largeTitle)
-                .padding()
-               ColorSquareView(title: "", hexcode: hexcode, showingCode: false)
-        }
-        HStack{
-            HexComponentPickerView(component: $hexcode.red)
-            HexComponentPickerView(component: $hexcode.green)
-            HexComponentPickerView(component: $hexcode.blue)
-        }
-        .padding(.horizontal)
-    }
+structpeepeepoopooPracticeModeView:peepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo@Statepeepeepoopoovarpeepeepoopoohexcodepeepeepoopoo=peepeepoopooHexcode()
+ peepeepoopoo peepeepoopoovarpeepeepoopoobody:peepeepoopoosomepeepeepoopooViewpeepeepoopoo{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("Manipulatepeepeepoopoothepeepeepoopoovaluespeepeepoopoobelowpeepeepoopootopeepeepoopooobservepeepeepoopoothepeepeepoopoocolorpeepeepoopoochange")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooText("#\(hexcode.display)")
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.font(.largeTitle)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding()
+peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooColorSquareView(title:peepeepoopoo"",peepeepoopoohexcode:peepeepoopoohexcode,peepeepoopooshowingCode:peepeepoopoofalse)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHStack{
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$hexcode.red)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$hexcode.green)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopooHexComponentPickerView(component:peepeepoopoo$hexcode.blue)
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo}
+ peepeepoopoo peepeepoopoo peepeepoopoo peepeepoopoo.padding(.horizontal)
+ peepeepoopoo peepeepoopoo}
 }
 
-#Preview {
-    PracticeModeView()
+#Previewpeepeepoopoo{
+ peepeepoopoo peepeepoopooPracticeModeView()
 }
