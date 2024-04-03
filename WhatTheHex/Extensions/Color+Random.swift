@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    /// a randomly generated color using rgb values
+    /// randomly generates color using rgb values
     /// - Returns: Color
     static func random() -> Color {
         let r = Double.random(in: 0...1)

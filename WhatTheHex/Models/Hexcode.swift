@@ -6,14 +6,17 @@
 //
 
 struct Hexcode {
+    
     var red: Component = Component(hexCategory: .red, digit1: 0, digit2: 0)
     var green: Component = Component(hexCategory: .green, digit1: 0, digit2: 0)
     var blue: Component = Component(hexCategory: .blue, digit1: 0, digit2: 0)
     
+    /// shows 6 characters representing the hexcode (EX: FFFFFF, A023F8)
     var display: String {
         "\(red.display)\(green.display)\(blue.display)"
     }
     
+    /// creates a random hexcode by randomly generating numbers
     static func random() -> Hexcode {
         func randomHexDigit() -> Double { Double(Int.random(in: 0 ... 15 )) }
         let redComponent = Component(hexCategory: .red, digit1: randomHexDigit(), digit2: randomHexDigit())

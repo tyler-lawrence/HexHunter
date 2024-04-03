@@ -15,14 +15,17 @@ struct Component: Hashable {
     /// second digit in a hexcode
     var digit2: Double
     
+    /// formatted string representing component on 0 - 255 scale
     var colorScaleLabel: String {
         String(format: "%.0f", self.toColorScale())
     }
     
+    /// formatted string representing component on 0 - 1 scale
     var normalizedLabel: String {
         String(format: "%.2f", self.colorScaleNormalized())
     }
     
+    /// displays the component as hex label (ex: 2E, FF, 08)
     var display: String {
         guard let display1 = Hexcode.lookup(digit1) else { return "error1" }
         guard let display2 = Hexcode.lookup(digit2) else { return "error2" }
@@ -50,11 +53,16 @@ struct Component: Hashable {
 
 extension Hexcode {
     
+    /// searches the label map for a given value
+    /// - Parameter val: Double representing a hex digit
+    /// - Returns: string representation of the hex digit
     static func lookup(_ val: Double) -> String? {
         let rounded = round(val)
         return Hexcode.labelMap[rounded]
     }
     
+    /// maps the hex digits to their letter component
+    /// using a double because the slider on the macOS version was giving me problems with integers
     static let labelMap: [Double: String] = [
         0:"0",
         1:"1",
@@ -73,5 +81,7 @@ extension Hexcode {
         14:"E",
         15:"F"
     ]
+    
+    /// keys from dictionary sorted in ascending order
     static var sortedKeys: [Double] = Array(labelMap.keys).sorted(by: <)
 }

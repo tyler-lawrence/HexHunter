@@ -27,11 +27,13 @@ class GameViewModel {
         self.timerSubscription = timer.connect()
     }
     
+    /// triggers alert and cancels timer
     func gameOver() {
         showingAlert = true
         timerSubscription?.cancel()
     }
     
+    /// resets the game and starts timer
     func reset() {
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
