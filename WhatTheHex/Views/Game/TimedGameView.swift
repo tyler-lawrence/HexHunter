@@ -16,8 +16,8 @@ struct TimedGameView: View {
         VStack{
             TimerView(vm: vm)
             HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: 150, showingCode: vm.gameOver)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: 150, showingCode: true)
             }
             Spacer()
             Divider()

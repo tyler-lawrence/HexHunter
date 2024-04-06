@@ -9,10 +9,9 @@ import SwiftUI
 
 struct QuickGameView: View {
     @State var vm: QuickGameViewModel
-
     var body: some View {
         TimedGameView(vm: vm)
-            .alert("Good Guess", isPresented: $vm.gameOver){
+            .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Play Again"){ vm.reset() }
             }
     }

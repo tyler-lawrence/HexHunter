@@ -22,11 +22,14 @@ class RapidGameViewModel: TimedGameViewModel {
     let gameTimeMax: Int
     var timeRemaining: Int
     
+    var minimumSimilarityToScore: Double
+    
     var showingAlert = false
     
-    init(gameTimeMax: Int = 90) {
+    init(gameTimeMax: Int = 90, scoringSimilarity: Double = 80) {
         self.gameTimeMax = gameTimeMax
         self.timeRemaining = gameTimeMax
+        self.minimumSimilarityToScore = scoringSimilarity
         self.timerSubscription = timer.connect()
     }
     
@@ -47,7 +50,7 @@ class RapidGameViewModel: TimedGameViewModel {
     }
     
     func calculateScore() -> Double {
-        guesses.map{$0.playerGuess.calculateSimilarity(to: $0.target)}.reduce(0, +)
+        Double(guesses.filter{ $0.similarityScore > minimumSimilarityToScore }.count)
     }
     
 }

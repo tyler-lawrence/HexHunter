@@ -19,6 +19,14 @@ class QuickGameViewModel: TimedGameViewModel {
     let gameTimeMax: Int
     var timeRemaining: Int
     
+    var gameOverMessage: String {
+        """
+        Target: \(targetHexcode.display)
+        Your Guess: \(playerHexcode.display)
+        Accuracy: \(String(format: "%.2f", calculateScore()))
+        """
+    }
+    
     var gameOver: Bool = false
     
     init(gameTimeMax: Int = 30){

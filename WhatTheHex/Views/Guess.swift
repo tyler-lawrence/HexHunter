@@ -16,7 +16,11 @@ struct Guess: Hashable {
     let playerGuess: Hexcode
     let target: Hexcode
     
-    var similarity: String {
+    var similarityScore: Double {
+        playerGuess.calculateSimilarity(to: target)
+    }
+    
+    var similarityLabel: String {
         String(format: "%.2f", playerGuess.calculateSimilarity(to: target))
     }
 }

@@ -15,7 +15,7 @@ struct PracticeModeView: View {
             Text("#\(hexcode.display)")
                 .font(.largeTitle)
                 .padding()
-               ColorSquareView(title: "", hexcode: hexcode, showingCode: false)
+            ColorSquareView(title: "", hexcode: hexcode, size: 150, showingCode: false)
         }
         HStack{
             HexComponentPickerView(component: $hexcode.red)
