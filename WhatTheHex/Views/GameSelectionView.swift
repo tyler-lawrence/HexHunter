@@ -15,7 +15,11 @@ struct GameSelectionView: View {
                 VStack{
                     NavigationLink("Practice", destination: PracticeModeView())
                     NavigationLink("Quick", destination: TimedGameView(vm: QuickGameViewModel()))
-                    NavigationLink("Rapid", destination: TimedGameView(vm: RapidGameViewModel()))
+                    #if DEBUG
+                    NavigationLink("Rapid", destination: RapidGameView(vm: RapidGameViewModel(gameTimeMax: 10)))
+                    #else
+                    NavigationLink("Rapid", destination: RapidGameView(vm: RapidGameViewModel()))
+                    #endif
                     Divider()
                     NavigationLink("Scoring", destination: ScoreExplanationView())
                     NavigationLink("Hexcode explanation", destination: HexcodeExplanationView())

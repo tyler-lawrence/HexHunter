@@ -10,9 +10,7 @@ import SwiftUI
 struct TimedGameView: View {
     
     @State var vm: TimedGameViewModel
-    var alertMessage: String {
-        "Good Game!"
-    }
+
     var body: some View {
         
         VStack{
@@ -35,9 +33,6 @@ struct TimedGameView: View {
             .buttonStyle(.borderedProminent)
         }
         .padding()
-        .alert(alertMessage, isPresented: $vm.gameOver){
-            Button("Play Again"){ vm.reset() }
-        }
     }
 }
 

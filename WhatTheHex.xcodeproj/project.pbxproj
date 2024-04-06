@@ -43,6 +43,7 @@
 		5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameView.swift */; };
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
 		5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
+		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		5BB39A742BC1E90300A38EAD /* TimedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameView.swift; sourceTree = "<group>"; };
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				5BB39A742BC1E90300A38EAD /* TimedGameView.swift */,
+				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
 				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
 				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
@@ -375,6 +378,7 @@
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
+				5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */,
 				5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */,
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */,

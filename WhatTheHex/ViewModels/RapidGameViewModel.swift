@@ -38,6 +38,7 @@ class RapidGameViewModel: TimedGameViewModel {
     
     /// resets the game and starts timer
     func reset() {
+        guesses.removeAll()
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
         timeRemaining = gameTimeMax
