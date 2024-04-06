@@ -10,15 +10,20 @@ import SwiftUI
 struct GameSelectionView: View {
     var body: some View {
         NavigationStack{
-            VStack{
-                NavigationLink("practice", destination: PracticeModeView())
-                NavigationLink("timed", destination: GameView())
-                Divider()
-                NavigationLink("scoring", destination: ScoreExplanationView())
-                NavigationLink("hexcode explanation", destination: HexcodeExplanationView())
+            ZStack{
+                BackgroundView()
+                VStack{
+                    NavigationLink("Practice", destination: PracticeModeView())
+                    NavigationLink("Quick", destination: TimedGameView(vm: QuickGameViewModel()))
+                    NavigationLink("Rapid", destination: TimedGameView(vm: RapidGameViewModel()))
+                    Divider()
+                    NavigationLink("Scoring", destination: ScoreExplanationView())
+                    NavigationLink("Hexcode explanation", destination: HexcodeExplanationView())
+                }
+                .buttonStyle(.borderedProminent)
             }
-            .buttonStyle(.borderedProminent)
         }
+        
     }
 }
 

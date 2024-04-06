@@ -2,24 +2,23 @@
 //  GameView.swift
 //  WhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+//  Created by Tyler Lawrence1 on 4/6/24.
 //
 
 import SwiftUI
 
-struct GameView: View {
+struct TimedGameView: View {
     
-    @State var vm = GameViewModel(gameTimeMax: 30)
-    @State var showingScoreSheet = false
+    @State var vm: TimedGameViewModel
     var alertMessage: String {
-        let guessDifference = String(format: "%.1f", vm.calculateScore())
-        return "Score: \(guessDifference)"
+        "Good Game!"
     }
     var body: some View {
-        VStack {
+        
+        VStack{
             TimerView(vm: vm)
             HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.showingAlert)
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
                 ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
             }
             Spacer()
@@ -31,25 +30,17 @@ struct GameView: View {
             }
             Spacer()
             Button("Guess"){
-                vm.showingAlert.toggle()
+                vm.submitGuess()
             }
             .buttonStyle(.borderedProminent)
         }
         .padding()
-        .alert(alertMessage, isPresented: $vm.showingAlert){
+        .alert(alertMessage, isPresented: $vm.gameOver){
             Button("Play Again"){ vm.reset() }
-        }
-        .sheet(isPresented: $showingScoreSheet){
-            ScoreExplanationView()
         }
     }
 }
 
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-            .previewDevice("iPhone 15")
-        GameView()
-            .previewDevice("My Mac")
-    }
+#Preview {
+    TimedGameView(vm: QuickGameViewModel())
 }

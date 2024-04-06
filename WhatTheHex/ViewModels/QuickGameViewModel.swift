@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 @Observable
-class GameViewModel {
+class QuickGameViewModel: TimedGameViewModel {
     
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
@@ -19,7 +19,7 @@ class GameViewModel {
     let gameTimeMax: Int
     var timeRemaining: Int
     
-    var showingAlert: Bool = false
+    var gameOver: Bool = false
     
     init(gameTimeMax: Int = 30){
         self.gameTimeMax = gameTimeMax
@@ -27,10 +27,8 @@ class GameViewModel {
         self.timerSubscription = timer.connect()
     }
     
-    /// triggers alert and cancels timer
-    func gameOver() {
-        showingAlert = true
-        timerSubscription?.cancel()
+    func submitGuess() {
+        gameOver = true
     }
     
     /// resets the game and starts timer
@@ -47,10 +45,6 @@ class GameViewModel {
     /// - Parameter rhs: Hexcode to compare against
     /// - Returns: Double between 0 and 100
     func calculateScore() -> Double {
-        
-        let redDifference = 1 - abs(targetHexcode.red.toColorScale() - playerHexcode.red.toColorScale()) / 255
-        let greenDifference = 1 - abs(targetHexcode.green.toColorScale() - playerHexcode.green.toColorScale()) / 255
-        let blueDifference = 1 - abs(targetHexcode.blue.toColorScale() - playerHexcode.blue.toColorScale()) / 255
-        return (redDifference + greenDifference + blueDifference) / 3 * 100
+        playerHexcode.calculateSimilarity(to: targetHexcode)
     }
 }

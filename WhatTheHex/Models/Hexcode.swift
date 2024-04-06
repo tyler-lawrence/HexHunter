@@ -4,9 +4,10 @@
 //
 //  Created by Tyler Lawrence1 on 3/29/24.
 //
+import Foundation
 
-struct Hexcode {
-    
+struct Hexcode: Identifiable, Hashable {
+    let id = UUID()
     var red: Component = Component(hexCategory: .red, digit1: 0, digit2: 0)
     var green: Component = Component(hexCategory: .green, digit1: 0, digit2: 0)
     var blue: Component = Component(hexCategory: .blue, digit1: 0, digit2: 0)
@@ -23,6 +24,13 @@ struct Hexcode {
         let greenComponent = Component(hexCategory: .green, digit1: randomHexDigit(), digit2: randomHexDigit())
         let blueComponent = Component(hexCategory: .blue, digit1: randomHexDigit(), digit2: randomHexDigit())
         return Hexcode(red: redComponent, green: greenComponent, blue: blueComponent)
+    }
+    
+    func calculateSimilarity(to hex: Hexcode) -> Double {
+        let redDifference = 1 - abs(red.toColorScale() - hex.red.toColorScale()) / 255
+        let greenDifference = 1 - abs(green.toColorScale() - hex.green.toColorScale()) / 255
+        let blueDifference = 1 - abs(blue.toColorScale() - hex.blue.toColorScale()) / 255
+        return (redDifference + greenDifference + blueDifference) / 3 * 100
     }
 }
 

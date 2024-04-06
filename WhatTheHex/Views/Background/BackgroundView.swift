@@ -53,7 +53,7 @@ struct BackgroundView: View {
                 
             }
         }
-        
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
