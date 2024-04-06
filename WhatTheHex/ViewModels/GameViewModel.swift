@@ -43,13 +43,14 @@ class GameViewModel {
     }
     
     /// Calculates a score representing the difference between two hexes.
-    /// A higher score is a larger error
+    /// scores range from 0 - 100. higher scores are better
     /// - Parameter rhs: Hexcode to compare against
-    /// - Returns: Double between 0 and 3
+    /// - Returns: Double between 0 and 100
     func calculateScore() -> Double {
-        let redDifference = abs(targetHexcode.red.colorScaleNormalized() - playerHexcode.red.colorScaleNormalized())
-        let greenDifference = abs(targetHexcode.green.colorScaleNormalized() - playerHexcode.green.colorScaleNormalized())
-        let blueDifference = abs(targetHexcode.blue.colorScaleNormalized() - playerHexcode.blue.colorScaleNormalized())
-        return redDifference + greenDifference + blueDifference
+        
+        let redDifference = 1 - abs(targetHexcode.red.toColorScale() - playerHexcode.red.toColorScale()) / 255
+        let greenDifference = 1 - abs(targetHexcode.green.toColorScale() - playerHexcode.green.toColorScale()) / 255
+        let blueDifference = 1 - abs(targetHexcode.blue.toColorScale() - playerHexcode.blue.toColorScale()) / 255
+        return (redDifference + greenDifference + blueDifference) / 3 * 100
     }
 }
