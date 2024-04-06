@@ -10,7 +10,6 @@ import Foundation
 
 struct BackgroundView: View {
     @State var particleSystem = ParticleSystem(count: 15)
-    @State var degrees: Int = 0
     @State var colors: [Color] = [.red, .orange, .yellow, .green, .blue, .indigo]
     
     var body: some View {
@@ -20,14 +19,6 @@ struct BackgroundView: View {
             endPoint: .bottomTrailing
         )
         .opacity(0.2)
-                .onAppear {
-                    withAnimation(Animation.linear(duration: 20).repeatForever(autoreverses: false)) {
-                        if degrees % 90 == 0{
-                            colors.shuffle()
-                        }
-                        degrees = 360
-                    }
-                }
         .mask{
             TimelineView(.animation){ timeline in
                 Canvas{ ctx, size in
@@ -53,7 +44,7 @@ struct BackgroundView: View {
                 
             }
         }
-        
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

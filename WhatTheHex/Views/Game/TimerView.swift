@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State var vm: GameViewModel
+    @State var vm: TimedGameViewModel
     var body: some View {
         
         Text("\(vm.timeRemaining)")
@@ -24,12 +24,13 @@ struct TimerView: View {
             .onReceive(vm.timer){ _ in
                 vm.timeRemaining -= 1
                 if vm.timeRemaining == 0 {
-                    vm.gameOver()
+                    vm.gameOver = true
+                    vm.timerSubscription?.cancel()
                 }
             }
     }
 }
 
 #Preview {
-    TimerView(vm: GameViewModel(gameTimeMax: 3))
+    TimerView(vm: QuickGameViewModel(gameTimeMax: 3))
 }

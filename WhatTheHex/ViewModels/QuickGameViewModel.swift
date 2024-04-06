@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 @Observable
-class GameViewModel {
+class QuickGameViewModel: TimedGameViewModel {
     
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
@@ -19,7 +19,15 @@ class GameViewModel {
     let gameTimeMax: Int
     var timeRemaining: Int
     
-    var showingAlert: Bool = false
+    var gameOverMessage: String {
+        """
+        Target: \(targetHexcode.display)
+        Your Guess: \(playerHexcode.display)
+        Accuracy: \(String(format: "%.2f", calculateScore()))
+        """
+    }
+    
+    var gameOver: Bool = false
     
     init(gameTimeMax: Int = 30){
         self.gameTimeMax = gameTimeMax
@@ -27,14 +35,14 @@ class GameViewModel {
         self.timerSubscription = timer.connect()
     }
     
-    /// triggers alert and cancels timer
-    func gameOver() {
-        showingAlert = true
+    func submitGuess() {
         timerSubscription?.cancel()
+        gameOver = true
     }
     
     /// resets the game and starts timer
     func reset() {
+        gameOver = false
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
         timeRemaining = gameTimeMax
@@ -43,13 +51,10 @@ class GameViewModel {
     }
     
     /// Calculates a score representing the difference between two hexes.
-    /// A higher score is a larger error
+    /// scores range from 0 - 100. higher scores are better
     /// - Parameter rhs: Hexcode to compare against
-    /// - Returns: Double between 0 and 3
+    /// - Returns: Double between 0 and 100
     func calculateScore() -> Double {
-        let redDifference = abs(targetHexcode.red.colorScaleNormalized() - playerHexcode.red.colorScaleNormalized())
-        let greenDifference = abs(targetHexcode.green.colorScaleNormalized() - playerHexcode.green.colorScaleNormalized())
-        let blueDifference = abs(targetHexcode.blue.colorScaleNormalized() - playerHexcode.blue.colorScaleNormalized())
-        return redDifference + greenDifference + blueDifference
+        playerHexcode.calculateSimilarity(to: targetHexcode)
     }
 }

@@ -8,17 +8,60 @@
 import SwiftUI
 
 struct GameSelectionView: View {
+    @State var showingScoreSheet = false
+    @State var showingHexcodeSheet = false
     var body: some View {
         NavigationStack{
-            VStack{
-                NavigationLink("practice", destination: PracticeModeView())
-                NavigationLink("timed", destination: GameView())
-                Divider()
-                NavigationLink("scoring", destination: ScoreExplanationView())
-                NavigationLink("hexcode explanation", destination: HexcodeExplanationView())
+            ZStack{
+                BackgroundView()
+                VStack{
+                    
+                    NavigationLink{
+                        PracticeModeView()
+                    } label: {
+                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
+                    }
+                    
+                    NavigationLink{
+                        QuickGameView(vm: QuickGameViewModel())
+                    } label: {
+                        GameModeButtonView(title: "Quick Game", description: "See how accurately you can guess one color in 30 seconds")
+                    }
+                    
+                    NavigationLink{
+                        RapidGameView(vm: RapidGameViewModel())
+                    } label: {
+                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy")
+                    }
+                }
+                .padding(.horizontal)
+                .buttonStyle(.borderedProminent)
             }
-            .buttonStyle(.borderedProminent)
+            .toolbar{
+                ToolbarItem{
+                    Button{
+                        showingScoreSheet.toggle()
+                    } label: {
+                        Image(systemName: "gamecontroller")
+                    }
+                }
+                ToolbarItem{
+                    Button{
+                        showingHexcodeSheet.toggle()
+                    } label: {
+                        Image(systemName: "circle.hexagonpath")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingScoreSheet){
+                ScoreExplanationView()
+            }
+            .sheet(isPresented: $showingHexcodeSheet){
+                HexcodeExplanationView()
+            }
         }
+        
+        
     }
 }
 

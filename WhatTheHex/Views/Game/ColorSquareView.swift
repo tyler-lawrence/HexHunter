@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ColorSquareView: View {
     
-    let title: String
+    let title: String?
     let hexcode: Hexcode
-    let size: CGFloat = 150
+    let size: CGFloat
     var hexLabel: String {
         showingCode ? hexcode.display : " "
     }
@@ -19,7 +19,7 @@ struct ColorSquareView: View {
     
     var body: some View {
         VStack{
-            Text(title)
+            Text(title ?? "")
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Color(hexcode))
                 .frame(width: size, height: size)
@@ -29,5 +29,5 @@ struct ColorSquareView: View {
 }
 
 #Preview {
-    ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+    ColorSquareView(title: "Target", hexcode: Hexcode.random(), size: 150, showingCode: true)
 }
