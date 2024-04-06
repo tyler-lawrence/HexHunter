@@ -14,7 +14,7 @@ struct GameSelectionView: View {
                 BackgroundView()
                 VStack{
                     NavigationLink("Practice", destination: PracticeModeView())
-                    NavigationLink("Quick", destination: TimedGameView(vm: QuickGameViewModel()))
+                    NavigationLink("Quick", destination: QuickGameView(vm: QuickGameViewModel()))
                     #if DEBUG
                     NavigationLink("Rapid", destination: RapidGameView(vm: RapidGameViewModel(gameTimeMax: 10)))
                     #else

@@ -28,11 +28,13 @@ class QuickGameViewModel: TimedGameViewModel {
     }
     
     func submitGuess() {
+        timerSubscription?.cancel()
         gameOver = true
     }
     
     /// resets the game and starts timer
     func reset() {
+        gameOver = false
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
         timeRemaining = gameTimeMax

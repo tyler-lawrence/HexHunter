@@ -11,20 +11,20 @@ struct ScoreExplanationView: View {
     let hex1 = Hexcode.teal
     let hex2 = Hexcode.orange
     
-    var redDiff: Double {
-        abs(hex1.red.colorScaleNormalized() - hex2.red.colorScaleNormalized())
+    var redDiff: String {
+        String(format: "%.0f", abs(hex1.red.toColorScale() - hex2.red.toColorScale()))
     }
     
-    var greenDiff: Double {
-        abs(hex1.green.colorScaleNormalized() - hex2.green.colorScaleNormalized())
+    var greenDiff: String {
+        String(format: "%.0f", abs(hex1.green.toColorScale() - hex2.green.toColorScale()))
     }
     
-    var blueDiff: Double {
-        abs(hex1.blue.colorScaleNormalized() - hex2.blue.colorScaleNormalized())
+    var blueDiff: String {
+        String(format: "%.0f", abs(hex1.blue.toColorScale() - hex2.blue.toColorScale()))
     }
     
     var score: Double {
-        redDiff + greenDiff + blueDiff
+        hex1.calculateSimilarity(to: hex2)
     }
     
     var body: some View {
@@ -35,8 +35,9 @@ struct ScoreExplanationView: View {
                 ColorSquareView(title: "", hexcode: hex1, showingCode: true)
                 ColorSquareView(title: "", hexcode: hex2, showingCode: true)
             }
+            Divider()
             ScrollView{
-                Text("The score is calculated by measuring the difference between each component. Each component can be handled as a number between 0 and 255.")
+                Text("Scores are calculated by measuring the difference between each component. Each component can be handled as a number between 0 and 255.")
                 HStack{
                     VStack{
                         Text("Red: \(hex1.red.display) = \(hex1.red.colorScaleLabel)")
@@ -51,30 +52,15 @@ struct ScoreExplanationView: View {
                     }
                 }
                 Divider()
-                Text("Color component values are normalized the values to a scale of 0 to 1 by dividing the component score by 255")
-                
-                HStack{
-                    VStack{
-                        Text("Red: \(hex1.red.display) = \(hex1.red.normalizedLabel)")
-                        Text("Green: \(hex1.green.display) = \(hex1.green.normalizedLabel)")
-                        Text("Blue: \(hex1.blue.display) = \(hex1.blue.normalizedLabel)")
-                    }
-                    Divider()
-                    VStack{
-                        Text("Red: \(hex2.red.display) = \(hex2.red.normalizedLabel)")
-                        Text("Green: \(hex2.green.display) = \(hex2.green.normalizedLabel)")
-                        Text("Blue: \(hex2.blue.display) = \(hex2.blue.normalizedLabel)")
-                    }
-                }
-                Divider()
-                Text("then we sum the absolute difference across same colors.")
-                Text("Red = |\(hex1.red.normalizedLabel) - \(hex2.red.normalizedLabel)| = \(redDiff)")
-                Text("Green = |\(hex1.green.normalizedLabel) - \(hex2.green.normalizedLabel)| = \(greenDiff)")
-                Text("Blue = |\(hex1.blue.normalizedLabel) - \(hex2.blue.normalizedLabel)| = \(blueDiff)")
+                Text("then we sum the absolute difference across same colors and divide that by 3.")
+                Text("Red = |\(hex1.red.colorScaleLabel) - \(hex2.red.colorScaleLabel)| = \(redDiff)")
+                Text("Green = |\(hex1.green.colorScaleLabel) - \(hex2.green.colorScaleLabel)| = \(greenDiff)")
+                Text("Blue = |\(hex1.blue.colorScaleLabel) - \(hex2.blue.colorScaleLabel)| = \(blueDiff)")
                 Text("Score: \(String(format: "%.2f", score))")
                     .padding(.top)
                     .bold()
-                Text("Scores range from 0 to 3. Lower scores are better!")                
+                Divider()
+                Text("Scores range from 0 to 100. Higher scores are better. See if you can get a perfect 100!")
             }
         }
         .padding()

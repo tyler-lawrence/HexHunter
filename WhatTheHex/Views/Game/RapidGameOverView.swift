@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RapidGameOverView: View {
     let vm: RapidGameViewModel
-    
     var numberOfGuesses: String { "\(vm.guesses.count)" }
     var body: some View {
         VStack{
