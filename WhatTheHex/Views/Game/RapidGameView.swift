@@ -20,6 +20,8 @@ struct RapidGameView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     RapidGameView(vm: RapidGameViewModel.sample)
 }
+#endif
