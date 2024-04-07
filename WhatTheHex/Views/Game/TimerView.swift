@@ -9,20 +9,30 @@ import SwiftUI
 
 struct TimerView: View {
     @State var vm: TimedGameViewModel
+    @State var lowTimeCounter = 5
     var body: some View {
         
         Text("\(vm.timeRemaining)")
+            .foregroundStyle(.white)
             .font(.largeTitle)
             .padding()
             .background(
                 Circle()
-                    .foregroundStyle(.blue)
-                    .opacity(0.5)
+                    .foregroundStyle(vm.timeRemaining <= 5 ? .red : .blue)
+//                    .opacity(0.5)
                     .frame(width: 70, height: 70)
                     .shadow(radius: 10)
+                    .phaseAnimator([1, 1.5], trigger: lowTimeCounter){ content, phase in
+                        content
+                            .scaleEffect(phase)
+                    }
             )
+            .sensoryFeedback(.warning, trigger: lowTimeCounter)
             .onReceive(vm.timer){ _ in
                 vm.timeRemaining -= 1
+                if vm.timeRemaining <= lowTimeCounter {
+                    lowTimeCounter -= 1
+                }
                 if vm.timeRemaining == 0 {
                     vm.gameOver = true
                     vm.timerSubscription?.cancel()
@@ -32,5 +42,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView(vm: QuickGameViewModel(gameTimeMax: 3))
+    TimerView(vm: QuickGameViewModel(gameTimeMax: 10))
 }
