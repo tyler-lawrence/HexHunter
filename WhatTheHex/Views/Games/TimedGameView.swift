@@ -17,7 +17,6 @@ struct TimedGameView: View {
             HexComponentPickerView(component: $vm.playerHexcode.green)
             HexComponentPickerView(component: $vm.playerHexcode.blue)
         }
-        
     }
 
     var body: some View {
