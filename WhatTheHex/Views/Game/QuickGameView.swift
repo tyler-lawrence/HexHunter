@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct QuickGameView: View {
-    @State var vm: QuickGameViewModel
+    @State var vm: QuickGameViewModel = QuickGameViewModel()
     var body: some View {
         TimedGameView(vm: vm)
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Play Again"){ vm.reset() }
+            }
+            .onAppear{
+                vm.reset()
             }
     }
 }
