@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RapidGameView: View {
-    @State var vm: RapidGameViewModel
+    @State var vm: RapidGameViewModel = RapidGameViewModel()
     var body: some View {
         TimedGameView(vm: vm)
             .sheet(isPresented: $vm.gameOver) {
@@ -16,6 +16,9 @@ struct RapidGameView: View {
                     .onDisappear{
                         vm.reset()
                     }
+            }
+            .onAppear{
+                vm.reset()
             }
     }
 }

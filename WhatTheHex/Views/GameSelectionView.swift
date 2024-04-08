@@ -17,13 +17,13 @@ struct GameSelectionView: View {
                 VStack{
                     
                     NavigationLink{
-                        QuickGameView(vm: QuickGameViewModel())
+                        QuickGameView()
                     } label: {
                         GameModeButtonView(title: "Quick Game", description: "See how accurately you can guess one color in 30 seconds")
                     }
                     
                     NavigationLink{
-                        RapidGameView(vm: RapidGameViewModel())
+                        RapidGameView()
                     } label: {
                         GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy")
                     }
