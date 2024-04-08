@@ -6,5 +6,8 @@
 //
 
 enum HexCategory: String {
-    case red, green, blue, alpha
+    case red = "R"
+    case green = "G"
+    case blue = "B"
+    case alpha = "A"
 }
