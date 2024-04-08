@@ -22,7 +22,7 @@ func startBackgroundSound(sound: String, type: String) {
         let backgroundSound = NSURL(fileURLWithPath: bundle)
         do {
             backgroundAudioPlayer = try AVAudioPlayer(contentsOf:backgroundSound as URL)
-            try AVAudioSession.sharedInstance().setCategory(.playback)
+//            try AVAudioSession.sharedInstance().setCategory(.playback)
             guard let backgroundAudioPlayer = backgroundAudioPlayer else { return }
             backgroundAudioPlayer.numberOfLoops = -1
             backgroundAudioPlayer.prepareToPlay()
