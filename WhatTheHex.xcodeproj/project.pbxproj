@@ -15,6 +15,7 @@
 		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5B4F36A12BC1FD6900F1EB87 /* QuickGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
+		5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */; };
 		5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
 		5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */; };
 		5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA37A2BB7433900B558EE /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 		5B5BA3982BB8B03200B558EE /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
 		5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */; };
+		5B68EAD42BC42D1E00ABD6E0 /* GameplayLoop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B68EAD32BC42D1E00ABD6E0 /* GameplayLoop.mp3 */; };
 		5BA3D9CC2BBB64A0003DE2F8 /* QuickGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */; };
 		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 		5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */; };
@@ -66,6 +68,7 @@
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickGameView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
+		5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheHexApp.swift; sourceTree = "<group>"; };
 		5B5BA37A2BB7433900B558EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		5B5BA3972BB8B03200B558EE /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		5B5BA3992BB8B05D00B558EE /* HexCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexCategory.swift; sourceTree = "<group>"; };
 		5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexComponentPickerView.swift; sourceTree = "<group>"; };
+		5B68EAD32BC42D1E00ABD6E0 /* GameplayLoop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameplayLoop.mp3; sourceTree = "<group>"; };
 		5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickGameViewModel.swift; sourceTree = "<group>"; };
 		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 		5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 			path = WhatTheHexTests;
 			sourceTree = "<group>";
 		};
+		5B4F36A62BC4245400F1EB87 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5B68EAD32BC42D1E00ABD6E0 /* GameplayLoop.mp3 */,
+				5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
+				5B4F36A62BC4245400F1EB87 /* Audio */,
 				5BB39A732BC1E86C00A38EAD /* Protocols */,
 				5BA3D9D32BBC2C96003DE2F8 /* ViewModels */,
 				5B5BA39E2BB9A99200B558EE /* Views */,
@@ -340,6 +354,7 @@
 			files = (
 				5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */,
 				5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */,
+				5B68EAD42BC42D1E00ABD6E0 /* GameplayLoop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +397,7 @@
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
 				5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */,
 				5BA3D9D92BBC4BE4003DE2F8 /* OnboardingRowView.swift in Sources */,
+				5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,

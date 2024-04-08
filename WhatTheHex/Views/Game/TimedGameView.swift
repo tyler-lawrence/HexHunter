@@ -33,6 +33,12 @@ struct TimedGameView: View {
             .buttonStyle(.borderedProminent)
         }
         .padding()
+        .onAppear{
+            startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+        }
+        .onDisappear{
+            stopBackgroundSound()
+        }
     }
 }
 
