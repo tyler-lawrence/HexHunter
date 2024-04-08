@@ -26,34 +26,35 @@ struct HexComponentPickerView: View {
         return ""
     }
     
-    var pickers: some View {
-        VStack {
-            HStack{
-                Picker("", selection: $component.digit1){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.labelMap[k] {
-                            Text(val)
-                        }
-                    }
+    var iosSliders: some View {
+        HStack{
+            Text(component.hexCategory.rawValue)
+                .font(.title)
+                .bold()
+            VStack{
+                
+                HStack{
+                    Text(digit1)
+                    Slider(value: $component.digit1, in: 0...15)
                 }
-                Picker("", selection: $component.digit2){
-                    ForEach(Hexcode.sortedKeys, id: \.self){ k in
-                        if let val: String = Hexcode.labelMap[k] {
-                            Text(val)
-                        }
-                    }
+                HStack {
+                    Text(digit2)
+                    Slider(value: $component.digit2, in: 0...15)
                 }
             }
-            Text(component.hexCategory.rawValue)
+            Text(component.display)
+                .font(.largeTitle)
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Material.thickMaterial)
         )
+        
     }
     
-    var sliders: some View {
+    
+    var macSliders: some View {
         VStack{
             HStack{
                 Text(component.display)
@@ -77,12 +78,12 @@ struct HexComponentPickerView: View {
     }
     
     var body: some View {
-        #if os(macOS)
-        sliders
-        #else
-        pickers
-            .pickerStyle(.wheel)
-        #endif
+    #if os(macOS)
+        macSliders
+    #else
+        iosSliders
+
+    #endif
     }
 }
 
