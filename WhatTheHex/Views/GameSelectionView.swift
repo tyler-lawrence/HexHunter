@@ -17,12 +17,6 @@ struct GameSelectionView: View {
                 VStack{
                     
                     NavigationLink{
-                        PracticeModeView()
-                    } label: {
-                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
-                    }
-                    
-                    NavigationLink{
                         QuickGameView(vm: QuickGameViewModel())
                     } label: {
                         GameModeButtonView(title: "Quick Game", description: "See how accurately you can guess one color in 30 seconds")
@@ -32,6 +26,18 @@ struct GameSelectionView: View {
                         RapidGameView(vm: RapidGameViewModel())
                     } label: {
                         GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy")
+                    }
+                    
+                    NavigationLink{
+                        SurvivalGameView()
+                    } label: {
+                        GameModeButtonView(title: "Survival", description: "Correct guesses increase your time remaining. How long can you last?")
+                    }
+                    
+                    NavigationLink{
+                        PracticeModeView()
+                    } label: {
+                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
                     }
                 }
                 .padding(.horizontal)

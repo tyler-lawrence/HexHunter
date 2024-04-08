@@ -33,7 +33,7 @@ struct TimerView: View {
                 if vm.timeRemaining <= lowTimeCounter {
                     lowTimeCounter -= 1
                 }
-                if vm.timeRemaining == 0 {
+                if vm.timeRemaining <= 0 {
                     vm.gameOver = true
                     vm.timerSubscription?.cancel()
                 }
