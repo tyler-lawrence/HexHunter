@@ -19,6 +19,7 @@ struct GameModeButtonView: View {
             }
             Text(description)
                 .offset(x: 10)
+                .multilineTextAlignment(.leading)
         }
         .padding()
     }

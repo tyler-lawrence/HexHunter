@@ -11,7 +11,7 @@ struct SurvivalGameView: View {
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
 
     var body: some View {
-        TimedGameView(vm: vm)
+        TimedGameBaseView(vm: vm)
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
                 Button("Play again"){ vm.reset() }
             }

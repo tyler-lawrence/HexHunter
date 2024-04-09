@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimedGameView: View {
+struct TimedGameBaseView: View {
     
     @State var vm: TimedGameViewModel
     
@@ -51,5 +51,5 @@ struct TimedGameView: View {
 }
 
 #Preview {
-    TimedGameView(vm: SurvivalGameViewModel())
+    TimedGameBaseView(vm: SurvivalGameViewModel())
 }

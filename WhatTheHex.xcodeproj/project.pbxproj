@@ -49,7 +49,7 @@
 		5BB39A6E2BC1DEE500A38EAD /* RapidGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */; };
 		5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
 		5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
-		5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameView.swift */; };
+		5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */; };
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
 		5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
@@ -103,7 +103,7 @@
 		5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameViewModel.swift; sourceTree = "<group>"; };
 		5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		5BB39A712BC1E38700A38EAD /* TimedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGame.swift; sourceTree = "<group>"; };
-		5BB39A742BC1E90300A38EAD /* TimedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameView.swift; sourceTree = "<group>"; };
+		5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameBaseView.swift; sourceTree = "<group>"; };
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 			children = (
 				5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */,
 				5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */,
-				5BB39A742BC1E90300A38EAD /* TimedGameView.swift */,
+				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
 			);
@@ -400,7 +400,7 @@
 				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
 				5BA3D9DD2BBC508E003DE2F8 /* HexcodeExplanationView.swift in Sources */,
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
-				5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */,
+				5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */,
 				5BA3D9D92BBC4BE4003DE2F8 /* OnboardingRowView.swift in Sources */,
 				5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
