@@ -17,13 +17,6 @@ struct GameSelectionView: View {
             ZStack{
                 BackgroundView()
                 VStack{
-                    
-                    NavigationLink{
-                        PracticeModeView()
-                    } label: {
-                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
-                    }
-                    
                     NavigationLink{
                         AccuracyGameView()
                     } label: {
