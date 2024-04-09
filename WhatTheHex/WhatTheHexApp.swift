@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct WhatTheHexApp: App {
-    @AppStorage("hasOnboarded") private var hasOnboarded = false
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -19,6 +19,12 @@ struct GameSelectionView: View {
                 VStack{
                     
                     NavigationLink{
+                        PracticeModeView()
+                    } label: {
+                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
+                    }
+                    
+                    NavigationLink{
                         AccuracyGameView()
                     } label: {
                         GameModeButtonView(title: "Accuracy Game", description: "How accurately can you guess one color?")
@@ -36,11 +42,6 @@ struct GameSelectionView: View {
                         GameModeButtonView(title: "Survival", description: "Correct guesses increase your time remaining. How long can you last?")
                     }
                     
-                    NavigationLink{
-                        PracticeModeView()
-                    } label: {
-                        GameModeButtonView(title: "Practice", description: "Explore the color pickers")
-                    }
                 }
                 .padding(.horizontal)
                 .buttonStyle(.borderedProminent)
