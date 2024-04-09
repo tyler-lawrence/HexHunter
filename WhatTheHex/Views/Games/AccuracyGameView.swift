@@ -1,15 +1,14 @@
 //
-//  GameView.swift
+//  AccuracyGameView.swift
 //  WhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/6/24.
+//  Created by Tyler Lawrence1 on 4/9/24.
 //
 
 import SwiftUI
 
-struct TimedGameView: View {
-    
-    @State var vm: TimedGameViewModel
+struct AccuracyGameView: View {
+    @State var vm = AccuracyGameViewModel()
     
     var shared: some View {
         Group{
@@ -22,7 +21,6 @@ struct TimedGameView: View {
     var body: some View {
         
         VStack{
-            TimerView(vm: vm)
             HStack{
                 ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: 150, showingCode: vm.gameOver)
                 ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: 150, showingCode: true)
@@ -42,14 +40,18 @@ struct TimedGameView: View {
         }
         .padding()
         .onAppear{
+            #warning("change the song to something slower and dreamier")
             startBackgroundSound(sound: "GameplayLoop", type: "mp3")
         }
         .onDisappear{
             stopBackgroundSound()
         }
+        .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
+            Button("Play again"){vm.reset()}
+        }
     }
 }
 
 #Preview {
-    TimedGameView(vm: QuickGameViewModel())
+    AccuracyGameView()
 }

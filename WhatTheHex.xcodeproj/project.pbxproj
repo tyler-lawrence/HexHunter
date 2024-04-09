@@ -13,7 +13,6 @@
 		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
-		5B4F36A12BC1FD6900F1EB87 /* QuickGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
 		5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */; };
 		5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
@@ -30,7 +29,8 @@
 		5B68EAD62BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */; };
 		5B68EAD82BC4321500ABD6E0 /* SurvivalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */; };
 		5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */; };
-		5BA3D9CC2BBB64A0003DE2F8 /* QuickGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */; };
+		5B68EADD2BC570DE00ABD6E0 /* AccuracyGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */; };
+		5BA3D9CC2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift */; };
 		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 		5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */; };
 		5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D62BBC4B6B003DE2F8 /* OnboardingView.swift */; };
@@ -44,12 +44,12 @@
 		5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */; };
 		5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */; };
 		5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */; };
-		5BB39A692BBDA0C800A38EAD /* QuickGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */; };
+		5BB39A692BBDA0C800A38EAD /* AccuracyGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift */; };
 		5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */; };
 		5BB39A6E2BC1DEE500A38EAD /* RapidGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */; };
 		5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
 		5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
-		5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameView.swift */; };
+		5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */; };
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
 		5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
@@ -68,7 +68,6 @@
 /* Begin PBXFileReference section */
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
-		5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickGameView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
 		5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +85,8 @@
 		5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivalGameViewModel.swift; sourceTree = "<group>"; };
 		5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvivalGameView.swift; sourceTree = "<group>"; };
 		5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameplayLoop.mp3; sourceTree = "<group>"; };
-		5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickGameViewModel.swift; sourceTree = "<group>"; };
+		5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuracyGameView.swift; sourceTree = "<group>"; };
+		5BA3D9CB2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuracyGameViewModel.swift; sourceTree = "<group>"; };
 		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 		5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5BA3D9D62BBC4B6B003DE2F8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameViewModel.swift; sourceTree = "<group>"; };
 		5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		5BB39A712BC1E38700A38EAD /* TimedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGame.swift; sourceTree = "<group>"; };
-		5BB39A742BC1E90300A38EAD /* TimedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameView.swift; sourceTree = "<group>"; };
+		5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameBaseView.swift; sourceTree = "<group>"; };
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
@@ -210,7 +210,6 @@
 				5BB39A572BBC83CA00A38EAD /* BeginView.swift */,
 				5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */,
 				5BA3D9D82BBC4BE3003DE2F8 /* OnboardingRowView.swift */,
-				5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
 				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
 				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
@@ -233,7 +232,7 @@
 		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5BA3D9CB2BBB64A0003DE2F8 /* QuickGameViewModel.swift */,
+				5BA3D9CB2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift */,
 				5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */,
 				5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */,
 			);
@@ -244,7 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */,
-				5BB39A742BC1E90300A38EAD /* TimedGameView.swift */,
+				5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */,
+				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
 			);
@@ -372,7 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB39A6E2BC1DEE500A38EAD /* RapidGameViewModel.swift in Sources */,
-				5BB39A692BBDA0C800A38EAD /* QuickGameViewModel.swift in Sources */,
+				5BB39A692BBDA0C800A38EAD /* AccuracyGameViewModel.swift in Sources */,
 				5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */,
 				5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */,
 				5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */,
@@ -389,19 +389,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */,
-				5BA3D9CC2BBB64A0003DE2F8 /* QuickGameViewModel.swift in Sources */,
+				5BA3D9CC2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift in Sources */,
 				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
 				5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */,
 				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */,
-				5B4F36A12BC1FD6900F1EB87 /* QuickGameView.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
 				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
 				5BA3D9DD2BBC508E003DE2F8 /* HexcodeExplanationView.swift in Sources */,
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
-				5BB39A752BC1E90300A38EAD /* TimedGameView.swift in Sources */,
+				5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */,
 				5BA3D9D92BBC4BE4003DE2F8 /* OnboardingRowView.swift in Sources */,
 				5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
@@ -409,6 +408,7 @@
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,
 				5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
+				5B68EADD2BC570DE00ABD6E0 /* AccuracyGameView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
