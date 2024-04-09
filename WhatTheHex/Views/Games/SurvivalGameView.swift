@@ -22,5 +22,5 @@ struct SurvivalGameView: View {
 }
 
 #Preview {
-    SurvivalGameView(vm: SurvivalGameViewModel())
+    SurvivalGameView(vm: SurvivalGameViewModel(minimumSimilarityToScore: 0.0))
 }

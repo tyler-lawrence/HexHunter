@@ -21,6 +21,7 @@ class RapidGameViewModel: TimedGameViewModel {
     var gameOver: Bool = false
     let gameTimeMax: Int
     var timeRemaining: Int
+    var bonusTimeAnimationTrigger: Bool = false
     
     var minimumSimilarityToScore: Double
     

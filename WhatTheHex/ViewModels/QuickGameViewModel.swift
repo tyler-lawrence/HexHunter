@@ -18,6 +18,7 @@ class QuickGameViewModel: TimedGameViewModel {
     var timerSubscription: Cancellable?
     let gameTimeMax: Int
     var timeRemaining: Int
+    var bonusTimeAnimationTrigger: Bool = false
     
     var gameOverMessage: String {
         """

@@ -191,6 +191,7 @@
 		5B5BA39D2BB9A96400B558EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BB39A782BC1EDF800A38EAD /* Guess.swift */,
 				5B5BA3872BB745FA00B558EE /* Hexcode.swift */,
 				5B5BA3972BB8B03200B558EE /* Component.swift */,
 				5B5BA3992BB8B05D00B558EE /* HexCategory.swift */,
@@ -202,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5BB39A782BC1EDF800A38EAD /* Guess.swift */,
 				5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */,
 				5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */,
 				5BA3D9DE2BBC5424003DE2F8 /* ScoreExplanationView.swift */,
@@ -210,8 +210,13 @@
 				5BB39A572BBC83CA00A38EAD /* BeginView.swift */,
 				5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */,
 				5BA3D9D82BBC4BE3003DE2F8 /* OnboardingRowView.swift */,
+				5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */,
+				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
+				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
+				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
+				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 				5BB39A5B2BBC866100A38EAD /* Background */,
-				5BB39A562BBC755F00A38EAD /* Game */,
+				5BB39A562BBC755F00A38EAD /* Games */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,20 +240,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		5BB39A562BBC755F00A38EAD /* Game */ = {
+		5BB39A562BBC755F00A38EAD /* Games */ = {
 			isa = PBXGroup;
 			children = (
 				5BB39A5E2BBC940D00A38EAD /* PracticeModeView.swift */,
 				5BB39A742BC1E90300A38EAD /* TimedGameView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
-				5B4F36A02BC1FD6900F1EB87 /* QuickGameView.swift */,
-				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
-				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
-				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
-				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 			);
-			path = Game;
+			path = Games;
 			sourceTree = "<group>";
 		};
 		5BB39A5B2BBC866100A38EAD /* Background */ = {
