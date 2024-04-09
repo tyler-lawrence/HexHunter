@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct GameSelectionView: View {
+    
     @State var showingScoreSheet = false
     @State var showingHexcodeSheet = false
+    
     var body: some View {
         NavigationStack{
             ZStack{

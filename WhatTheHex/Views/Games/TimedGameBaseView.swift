@@ -10,14 +10,6 @@ import SwiftUI
 struct TimedGameBaseView: View {
     
     @State var vm: TimedGameViewModel
-    
-    var shared: some View {
-        Group{
-            HexComponentPickerView(component: $vm.playerHexcode.red)
-            HexComponentPickerView(component: $vm.playerHexcode.green)
-            HexComponentPickerView(component: $vm.playerHexcode.blue)
-        }
-    }
 
     var body: some View {
         
@@ -28,12 +20,7 @@ struct TimedGameBaseView: View {
                 ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: 150, showingCode: true)
             }
             Spacer()
-            Divider()
-            #if os(iOS)
-            VStack{shared}
-            #elseif os(macOS)
-            HStack{shared}
-            #endif
+            RGBSlidersView(hexcode: $vm.playerHexcode)
             Spacer()
             Button("Guess"){
                 vm.submitGuess()

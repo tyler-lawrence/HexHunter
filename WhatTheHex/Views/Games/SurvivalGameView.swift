@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SurvivalGameView: View {
+    
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
 
     var body: some View {
