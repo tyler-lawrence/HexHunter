@@ -129,6 +129,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0E32F82BC5C87900F934DE /* GameSelection */ = {
+			isa = PBXGroup;
+			children = (
+				5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */,
+				5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */,
+			);
+			path = GameSelection;
+			sourceTree = "<group>";
+		};
+		5B0E32F92BC5C88400F934DE /* ExplanationViews */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3D9DE2BBC5424003DE2F8 /* ScoreExplanationView.swift */,
+				5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */,
+			);
+			path = ExplanationViews;
+			sourceTree = "<group>";
+		};
+		5B0E32FA2BC5C89700F934DE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3D9D62BBC4B6B003DE2F8 /* OnboardingView.swift */,
+				5BB39A572BBC83CA00A38EAD /* BeginView.swift */,
+				5BA3D9D82BBC4BE3003DE2F8 /* OnboardingRowView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5B0E32FB2BC5C8A800F934DE /* GameComponentViews */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
+				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
+				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
+				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
+				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
+			);
+			path = GameComponentViews;
+			sourceTree = "<group>";
+		};
 		5B1208BA2BBB232B00F36388 /* WhatTheHexTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,18 +245,10 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5BB39A652BBC95D700A38EAD /* GameSelectionView.swift */,
-				5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */,
-				5BA3D9DE2BBC5424003DE2F8 /* ScoreExplanationView.swift */,
-				5BA3D9D62BBC4B6B003DE2F8 /* OnboardingView.swift */,
-				5BB39A572BBC83CA00A38EAD /* BeginView.swift */,
-				5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */,
-				5BA3D9D82BBC4BE3003DE2F8 /* OnboardingRowView.swift */,
-				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
-				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
-				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
-				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
-				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
+				5B0E32F82BC5C87900F934DE /* GameSelection */,
+				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
+				5B0E32FA2BC5C89700F934DE /* Onboarding */,
+				5B0E32FB2BC5C8A800F934DE /* GameComponentViews */,
 				5BB39A5B2BBC866100A38EAD /* Background */,
 				5BB39A562BBC755F00A38EAD /* Games */,
 			);
