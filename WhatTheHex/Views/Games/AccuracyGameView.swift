@@ -8,15 +8,8 @@
 import SwiftUI
 
 struct AccuracyGameView: View {
-    @State var vm = AccuracyGameViewModel()
     
-    var shared: some View {
-        Group{
-            HexComponentPickerView(component: $vm.playerHexcode.red)
-            HexComponentPickerView(component: $vm.playerHexcode.green)
-            HexComponentPickerView(component: $vm.playerHexcode.blue)
-        }
-    }
+    @State var vm = AccuracyGameViewModel()
 
     var body: some View {
         
@@ -27,11 +20,7 @@ struct AccuracyGameView: View {
             }
             Spacer()
             Divider()
-            #if os(iOS)
-            VStack{shared}
-            #elseif os(macOS)
-            HStack{shared}
-            #endif
+            RGBSlidersView(hexcode: $vm.playerHexcode)
             Spacer()
             Button("Guess"){
                 vm.submitGuess()
@@ -47,7 +36,7 @@ struct AccuracyGameView: View {
             stopBackgroundSound()
         }
         .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
-            Button("Play again"){vm.reset()}
+            Button("Play again"){ vm.reset() }
         }
     }
 }

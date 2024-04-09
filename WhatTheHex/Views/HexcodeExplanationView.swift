@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HexcodeExplanationView: View {
-    @State var hexcode = Hexcode()
+    
     var body: some View {
         VStack{
             Text("Hexcodes")

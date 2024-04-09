@@ -23,7 +23,6 @@ class AccuracyGameViewModel: GameViewModel {
     
     var gameOver: Bool = false
     
-    
     func submitGuess() {
         gameOver = true
     }
