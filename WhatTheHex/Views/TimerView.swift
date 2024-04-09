@@ -62,5 +62,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView(vm: QuickGameViewModel(gameTimeMax: 10))
+    TimerView(vm: SurvivalGameViewModel())
 }

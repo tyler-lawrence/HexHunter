@@ -9,16 +9,10 @@ import Foundation
 import Combine
 
 @Observable
-class QuickGameViewModel: TimedGameViewModel {
+class AccuracyGameViewModel: GameViewModel {
     
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
-    
-    var timer = Timer.publish(every: 1, on: .main, in: .common)
-    var timerSubscription: Cancellable?
-    let gameTimeMax: Int
-    var timeRemaining: Int
-    var bonusTimeAnimationTrigger: Bool = false
     
     var gameOverMessage: String {
         """
@@ -30,14 +24,8 @@ class QuickGameViewModel: TimedGameViewModel {
     
     var gameOver: Bool = false
     
-    init(gameTimeMax: Int = 30){
-        self.gameTimeMax = gameTimeMax
-        self.timeRemaining = gameTimeMax
-        self.timerSubscription = timer.connect()
-    }
     
     func submitGuess() {
-        timerSubscription?.cancel()
         gameOver = true
     }
     
@@ -46,9 +34,6 @@ class QuickGameViewModel: TimedGameViewModel {
         gameOver = false
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
-        timeRemaining = gameTimeMax
-        timer = Timer.publish(every: 1, on: .main, in: .common)
-        timerSubscription = timer.connect()
     }
     
     /// Calculates a score representing the difference between two hexes.
