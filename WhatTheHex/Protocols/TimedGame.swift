@@ -13,4 +13,5 @@ protocol TimedGame {
     var timerSubscription: Cancellable? { get set }
     var gameTimeMax: Int { get }
     var timeRemaining: Int { get set }
+    var bonusTimeAnimationTrigger: Bool { get set }
 }
