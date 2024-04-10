@@ -27,10 +27,11 @@ struct Hexcode: Identifiable, Hashable {
     }
     
     func calculateSimilarity(to hex: Hexcode) -> Double {
-        let redDifference = 1 - abs(red.toColorScale() - hex.red.toColorScale()) / 255
-        let greenDifference = 1 - abs(green.toColorScale() - hex.green.toColorScale()) / 255
-        let blueDifference = 1 - abs(blue.toColorScale() - hex.blue.toColorScale()) / 255
-        return Double((redDifference + greenDifference + blueDifference) / 3 * 100)
+        let redDifference: Double = Double(1 - Double(abs(red.toColorScale() - hex.red.toColorScale())) / 255)
+        let greenDifference: Double = Double(1 - Double(abs(green.toColorScale() - hex.green.toColorScale())) / 255)
+        let blueDifference: Double = Double(1 - Double(abs(blue.toColorScale() - hex.blue.toColorScale())) / 255)
+        let score: Double = Double((redDifference + greenDifference + blueDifference)) / 3.0 * 100
+        return Double(score)
     }
 }
 
@@ -45,5 +46,11 @@ extension Hexcode {
         red: Component(hexCategory: .red, digit1: 12, digit2: 13),
         green: Component(hexCategory: .green, digit1: 8, digit2: 0),
         blue: Component(hexCategory: .blue, digit1: 0, digit2: 0)
+    )
+    
+    static let white = Hexcode(
+        red: Component(hexCategory: .red, digit1: 15, digit2: 15),
+        green: Component(hexCategory: .green, digit1: 15, digit2: 15),
+        blue: Component(hexCategory: .blue, digit1: 15, digit2: 15)
     )
 }

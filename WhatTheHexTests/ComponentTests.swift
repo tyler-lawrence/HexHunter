@@ -49,5 +49,25 @@ final class ComponentTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+    func test_toColorScale_10Red_returns_160() {
+        let sut = Component(hexCategory: .red, digit1: 10, digit2: 0)
+        
+        let actual: Int = sut.toColorScale()
+        
+        let expected: Int = 160
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_colorScaleNormalized_10Red_returns_(){
+        let sut = Component(hexCategory: .red, digit1: 10, digit2: 0)
+        
+        let actual = sut.colorScaleNormalized()
+        
+        let expected = 0.6274509803921569
+        
+        XCTAssertEqual(expected, actual)
+    }
 
 }

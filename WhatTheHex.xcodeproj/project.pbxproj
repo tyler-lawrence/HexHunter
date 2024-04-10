@@ -10,6 +10,7 @@
 		5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */; };
 		5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33022BC6BC6600F934DE /* Binding+convert.swift */; };
+		5B0E33052BC6DF3E00F934DE /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
 		5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3872BB745FA00B558EE /* Hexcode.swift */; };
 		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
 		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
@@ -73,6 +74,7 @@
 		5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTip.swift; sourceTree = "<group>"; };
 		5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hexcode+Equatable.swift"; sourceTree = "<group>"; };
 		5B0E33022BC6BC6600F934DE /* Binding+convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+convert.swift"; sourceTree = "<group>"; };
+		5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexcodeTests.swift; sourceTree = "<group>"; };
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				5B1208C62BBB242C00F36388 /* ComponentTests.swift */,
 				5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */,
+				5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */,
 			);
 			path = WhatTheHexTests;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */,
 				5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */,
 				5B1208C82BBB245600F36388 /* Component.swift in Sources */,
+				5B0E33052BC6DF3E00F934DE /* HexcodeTests.swift in Sources */,
 				5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */,
 				5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */,
 				5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */,
