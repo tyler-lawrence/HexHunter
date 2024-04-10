@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @AppStorage("hasOnboarded") private var hasOnboarded: Bool = false
-    
+    @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     var body: some View {
         if hasOnboarded {
             GameSelectionView()
         } else {
-            OnboardingView(hasOnboarded: $hasOnboarded)
+            PracticeModeView(hasOnboarded: $hasOnboarded)
         }
     }
 }

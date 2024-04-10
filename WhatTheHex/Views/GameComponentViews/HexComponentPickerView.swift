@@ -11,16 +11,14 @@ struct HexComponentPickerView: View {
     @Binding var component: Component
     
     var digit1: String {
-        let lookupValue: Int = Int(component.digit1)
-        if let hexLabel: String = Hexcode.labelMap[Double(lookupValue)] {
+        if let hexLabel: String = Hexcode.labelMap[component.digit1] {
             return hexLabel
         }
         return ""
     }
     
     var digit2: String {
-        let lookupValue: Int = Int(component.digit2)
-        if let hexLabel: String = Hexcode.labelMap[Double(lookupValue)] {
+        if let hexLabel: String = Hexcode.labelMap[component.digit2] {
             return hexLabel
         }
         return ""
@@ -35,11 +33,11 @@ struct HexComponentPickerView: View {
                 
                 HStack{
                     Text(digit1)
-                    Slider(value: $component.digit1, in: 0...15)
+                    Slider(value: .convert(from: $component.digit1), in: 0...15)
                 }
                 HStack {
                     Text(digit2)
-                    Slider(value: $component.digit2, in: 0...15)
+                    Slider(value: .convert(from: $component.digit2), in: 0...15)
                 }
             }
             Text(component.display)
@@ -62,11 +60,11 @@ struct HexComponentPickerView: View {
             }
             HStack{
                 Text(digit1)
-                Slider(value: $component.digit1, in: 0...15)
+                Slider(value: .convert(from: $component.digit1), in: 0...15)
             }
             HStack {
                 Text(digit2)
-                Slider(value: $component.digit2, in: 0...15)
+                Slider(value: .convert(from: $component.digit2), in: 0...15)
             }
             Text(component.hexCategory.rawValue)
         }
