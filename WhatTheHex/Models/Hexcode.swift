@@ -26,6 +26,10 @@ struct Hexcode: Identifiable, Hashable {
         return Hexcode(red: redComponent, green: greenComponent, blue: blueComponent)
     }
     
+    
+    /// Calculates the similarity of two hexcodes by measuring the difference of each color component. Higher numbers are more accurate
+    /// - Parameter hex: hexcode to compare against
+    /// - Returns: double between 0 and 100 representing accuracy
     func calculateSimilarity(to hex: Hexcode) -> Double {
         let redDifference: Double = Double(1 - Double(abs(red.toColorScale() - hex.red.toColorScale())) / 255)
         let greenDifference: Double = Double(1 - Double(abs(green.toColorScale() - hex.green.toColorScale())) / 255)
