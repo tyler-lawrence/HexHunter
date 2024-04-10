@@ -14,7 +14,7 @@ final class ComponentTests: XCTestCase {
         
         let actual = sut.toColorScale()
         
-        let expected: Double = 255
+        let expected: Int = 255
         
         XCTAssertEqual(expected, actual)
     }
@@ -24,7 +24,7 @@ final class ComponentTests: XCTestCase {
         
         let actual = sut.toColorScale()
         
-        let expected: Double = 0
+        let expected: Int = 0
         
         XCTAssertEqual(expected, actual)
     }

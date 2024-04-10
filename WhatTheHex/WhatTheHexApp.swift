@@ -10,10 +10,10 @@ import TipKit
 
 @main
 struct WhatTheHexApp: App {
-    @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
+   
     var body: some Scene {
         WindowGroup {
-            GameSelectionView()
+            ContentView()
         }
     }
     init(){

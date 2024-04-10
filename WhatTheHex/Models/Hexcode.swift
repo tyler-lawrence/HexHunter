@@ -19,7 +19,7 @@ struct Hexcode: Identifiable, Hashable {
     
     /// creates a random hexcode by randomly generating numbers
     static func random() -> Hexcode {
-        func randomHexDigit() -> Double { Double(Int.random(in: 0 ... 15 )) }
+        func randomHexDigit() -> Int { Int.random(in: 0 ... 15 ) }
         let redComponent = Component(hexCategory: .red, digit1: randomHexDigit(), digit2: randomHexDigit())
         let greenComponent = Component(hexCategory: .green, digit1: randomHexDigit(), digit2: randomHexDigit())
         let blueComponent = Component(hexCategory: .blue, digit1: randomHexDigit(), digit2: randomHexDigit())
@@ -30,7 +30,7 @@ struct Hexcode: Identifiable, Hashable {
         let redDifference = 1 - abs(red.toColorScale() - hex.red.toColorScale()) / 255
         let greenDifference = 1 - abs(green.toColorScale() - hex.green.toColorScale()) / 255
         let blueDifference = 1 - abs(blue.toColorScale() - hex.blue.toColorScale()) / 255
-        return (redDifference + greenDifference + blueDifference) / 3 * 100
+        return Double((redDifference + greenDifference + blueDifference) / 3 * 100)
     }
 }
 

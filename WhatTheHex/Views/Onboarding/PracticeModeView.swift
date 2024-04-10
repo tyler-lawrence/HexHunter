@@ -14,7 +14,7 @@ struct PracticeModeView: View {
     let targetHexcode = Hexcode.orange
     let tip = OnboardingTip()
     var correctHexcode: Bool {
-        targetHexcode == hexcode
+        targetHexcode != hexcode
     }
     var body: some View {
         VStack{
@@ -31,12 +31,13 @@ struct PracticeModeView: View {
             }
             TipView(tip, arrowEdge: .bottom)
             RGBSlidersView(hexcode: $hexcode)
-            Text("\(hexcode.calculateSimilarity(to: targetHexcode))")
-            if correctHexcode {
-                Button("Begin"){
-                    hasOnboarded = true
-                }
+            Spacer()
+            Button("Begin"){
+                hasOnboarded = true
             }
+            .buttonStyle(.borderedProminent)
+            .disabled(correctHexcode)
+            
         }
         .padding(.horizontal)
         
