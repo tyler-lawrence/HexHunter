@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct WhatTheHexApp: App {
-    
+    @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameSelectionView()
         }
+    }
+    init(){
+        try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
     }
 }
