@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccuracyGameView: View {
     
-    @State var vm = AccuracyGameViewModel()
+    @State var vm: AccuracyGameViewModel
 
     var body: some View {
         
@@ -42,5 +42,5 @@ struct AccuracyGameView: View {
 }
 
 #Preview {
-    AccuracyGameView()
+    AccuracyGameView(vm: AccuracyGameViewModel())
 }

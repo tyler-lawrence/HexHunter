@@ -17,8 +17,15 @@ struct GameSelectionView: View {
             ZStack{
                 BackgroundView()
                 VStack{
+                    
                     NavigationLink{
-                        AccuracyGameView()
+                        AccuracyGameView(vm: ColorOfTheDayViewModel())
+                    } label: {
+                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.")
+                    }
+                    
+                    NavigationLink{
+                        AccuracyGameView(vm: AccuracyGameViewModel())
                     } label: {
                         GameModeButtonView(title: "Accuracy Game", description: "How accurately can you guess one color?")
                     }
@@ -26,7 +33,7 @@ struct GameSelectionView: View {
                     NavigationLink{
                         RapidGameView()
                     } label: {
-                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy")
+                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy.")
                     }
                     
                     NavigationLink{
