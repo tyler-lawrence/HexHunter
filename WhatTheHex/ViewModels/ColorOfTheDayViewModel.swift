@@ -9,9 +9,22 @@ import Foundation
 
 class ColorOfTheDayViewModel: AccuracyGameViewModel {
     
+    private let service: ColorOfDayService
+    
+    init(service: ColorOfDayService) {
+        self.service = service
+    }
+    
     func getHexcodeOfDay() async {
         
-        // get color from cloudkit
+        do {
+            // get hexcode string from cloudkit
+            let colorOfTheDay: String = try await service.fetchColorOfDay(for: Date.now)
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+        
+        targetHexcode = Hexcode()
         
         // assign hex to target
         // targetHexcode = 

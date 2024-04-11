@@ -57,12 +57,12 @@ extension Hexcode {
     /// - Parameter val: Double representing a hex digit
     /// - Returns: string representation of the hex digit
     static func lookup(_ val: Int) -> String? {
-        return Hexcode.labelMap[val]
+        return Hexcode.numberToHexLabel[val]
     }
     
     /// maps the hex digits to their letter component
     /// using a double because the slider on the macOS version was giving me problems with integers
-    static let labelMap: [Int: String] = [
+    static let numberToHexLabel: [Int: String] = [
         0:"0",
         1:"1",
         2:"2",
@@ -82,5 +82,5 @@ extension Hexcode {
     ]
     
     /// keys from dictionary sorted in ascending order
-    static var sortedKeys: [Int] = Array(labelMap.keys).sorted(by: <)
+    static var sortedKeys: [Int] = Array(numberToHexLabel.keys).sorted(by: <)
 }

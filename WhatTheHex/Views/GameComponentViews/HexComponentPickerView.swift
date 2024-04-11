@@ -11,14 +11,14 @@ struct HexComponentPickerView: View {
     @Binding var component: Component
     
     var digit1: String {
-        if let hexLabel: String = Hexcode.labelMap[component.digit1] {
+        if let hexLabel: String = Hexcode.numberToHexLabel[component.digit1] {
             return hexLabel
         }
         return ""
     }
     
     var digit2: String {
-        if let hexLabel: String = Hexcode.labelMap[component.digit2] {
+        if let hexLabel: String = Hexcode.numberToHexLabel[component.digit2] {
             return hexLabel
         }
         return ""
