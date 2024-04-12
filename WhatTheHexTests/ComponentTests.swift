@@ -70,14 +70,64 @@ final class ComponentTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-//    func test_initFromFF_returns_255(){
-//        
-//        let input = "FF"
-//        
-//        let expected = 255
-//        
-//        let component = Component(hexCategory: .red)
-//        
-//    }
+    func test_iit_from_string_FF_returns_255(){
+        
+        let input = "FF"
+                
+        let expected = Component(hexCategory: .red, digit1: 15, digit2: 15)
+        
+        let actual = Component(hexCategory: .red, from: input)
+        
+        XCTAssertEqual(expected, actual)
+    
+    }
+    
+    func test_init_from_string_00_returns_0(){
+        
+        let input = "00"
+        
+        let expected = Component(hexCategory: .red, digit1: 0, digit2: 0)
+        
+        let actual = Component(hexCategory: .red, from: input)
+        
+        XCTAssertEqual(expected, actual)
+    
+    }
+    
+    func test_init_from_string_A0_returns_160(){
+        
+        let input = "A0"
+        
+        let expected = Component(hexCategory: .red, digit1: 10, digit2: 0)
+        
+        let actual = Component(hexCategory: .red, from: input)
+        
+        XCTAssertEqual(expected, actual)
+    
+    }
+    
+    func test_init_from_string_z_returns_nil(){
+        
+        let input = "z"
+        
+        let expected: Component? = nil
+        
+        let actual = Component(hexCategory: .red, from: input)
+        
+        XCTAssertEqual(expected, actual)
+    
+    }
+    
+    func test_init_from_string_ZZ_returns_nil(){
+        
+        let input = "ZZ"
+        
+        let expected: Component? = nil
+        
+        let actual = Component(hexCategory: .red, from: input)
+        
+        XCTAssertEqual(expected, actual)
+    
+    }
 
 }

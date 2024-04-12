@@ -16,6 +16,7 @@
 		5B0E33182BC958AE00F934DE /* HexadecimalConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33172BC958AE00F934DE /* HexadecimalConversions.swift */; };
 		5B0E33192BC958FD00F934DE /* String+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */; };
 		5B0E331A2BC9590000F934DE /* Int+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */; };
+		5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
 		5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3872BB745FA00B558EE /* Hexcode.swift */; };
 		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
 		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
@@ -83,6 +84,7 @@
 		5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toHexadecimal.swift"; sourceTree = "<group>"; };
 		5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+toHexadecimal.swift"; sourceTree = "<group>"; };
 		5B0E33172BC958AE00F934DE /* HexadecimalConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexadecimalConversions.swift; sourceTree = "<group>"; };
+		5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Equatable.swift"; sourceTree = "<group>"; };
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */,
+				5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */,
 				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
 				5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */,
 				5B0E33022BC6BC6600F934DE /* Binding+convert.swift */,
@@ -488,6 +491,7 @@
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */,
+				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,
 				5BA3D9DF2BBC5424003DE2F8 /* ScoreExplanationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,21 @@ struct Component: Hashable {
     /// second digit in a hexcode
     var digit2: Int
     
+    init(hexCategory: HexCategory, digit1: Int, digit2: Int) {
+        self.hexCategory = hexCategory
+        self.digit1 = digit1
+        self.digit2 = digit2
+    }
+    
+    init?(hexCategory: HexCategory, from str: String) {
+        guard str.count == 2 else { return nil }
+        guard let digit1 = String(str[str.startIndex]).toHexadecimal() else { return nil }
+        guard let digit2 = String(str[str.index(str.startIndex, offsetBy: 1)]).toHexadecimal() else { return nil }
+        self.digit1 = digit1
+        self.digit2 = digit2
+        self.hexCategory = hexCategory
+    }
+    
     var digit1Display: String {
         digit1.toHexadecimalString() ?? ""
     }
@@ -54,4 +69,5 @@ struct Component: Hashable {
     func colorScaleNormalized() -> Double {
         Double(self.toColorScale()) / 255
     }
+    
 }
