@@ -8,13 +8,48 @@ import Foundation
 
 struct Hexcode: Identifiable, Hashable {
     let id = UUID()
-    var red: Component = Component(hexCategory: .red, digit1: 0, digit2: 0)
-    var green: Component = Component(hexCategory: .green, digit1: 0, digit2: 0)
-    var blue: Component = Component(hexCategory: .blue, digit1: 0, digit2: 0)
+    var red: Component
+    var green: Component
+    var blue: Component
     
     /// shows 6 characters representing the hexcode (EX: FFFFFF, A023F8)
     var display: String {
         "\(red.display)\(green.display)\(blue.display)"
+    }
+    
+    init(
+        red: Component = Component(hexCategory: .red, digit1: 0, digit2: 0),
+        green: Component = Component(hexCategory: .green, digit1: 0, digit2: 0),
+        blue: Component = Component(hexCategory: .blue, digit1: 0, digit2: 0)) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+    }
+    
+    init?(from str: String) {
+        guard str.isValidHexcode() else { return nil }
+        
+        let redStringComponent1 = String(str[str.index(str.startIndex, offsetBy: 1)])
+        let redStringComponent2 = String(str[str.index(str.startIndex, offsetBy: 2)])
+        let redComponent = redStringComponent1+redStringComponent2
+        let red = Component(hexCategory: .red, from: redComponent)
+        
+        let greenStringComponent1 = String(str[str.index(str.startIndex, offsetBy: 3)])
+        let greenStringComponent2 = String(str[str.index(str.startIndex, offsetBy: 4)])
+        let greenComponent = greenStringComponent1+greenStringComponent2
+        let green = Component(hexCategory: .green, from: greenComponent)
+        
+        let blueStringComponent1 = String(str[str.index(str.startIndex, offsetBy: 5)])
+        let blueStringComponent2 = String(str[str.index(str.startIndex, offsetBy: 6)])
+        let blueComponent = blueStringComponent1+blueStringComponent2
+        let blue = Component(hexCategory: .blue, from: blueComponent)
+        
+        guard let red, let blue, let green else { return nil }
+        
+        self.red = red
+        self.green = green
+        self.blue = blue
+        
     }
     
     /// creates a random hexcode by randomly generating numbers

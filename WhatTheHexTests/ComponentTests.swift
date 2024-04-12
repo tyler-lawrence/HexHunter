@@ -70,6 +70,22 @@ final class ComponentTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func test_equality_red_1_5_red_1_5_returns_true(){
+        let lhs = Component(hexCategory: .red, digit1: 1, digit2: 5)
+        let rhs = Component(hexCategory: .red, digit1: 1, digit2: 5)
+        let expected = true
+        let actual = lhs == rhs
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_equality_red_1_5_green_1_5_returns_false(){
+        let lhs = Component(hexCategory: .red, digit1: 1, digit2: 5)
+        let rhs = Component(hexCategory: .green, digit1: 1, digit2: 5)
+        let expected = false
+        let actual = lhs == rhs
+        XCTAssertEqual(expected, actual)
+    }
+    
     func test_iit_from_string_FF_returns_255(){
         
         let input = "FF"

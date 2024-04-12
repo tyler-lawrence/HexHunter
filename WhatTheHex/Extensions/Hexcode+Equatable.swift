@@ -9,8 +9,8 @@ import Foundation
 
 extension Hexcode: Equatable {
     static func == (lhs: Hexcode, rhs: Hexcode) -> Bool {
-        (lhs.red.toColorScale() == rhs.red.toColorScale()) &&
-        (lhs.green.toColorScale() == rhs.green.toColorScale()) &&
-        (lhs.blue.toColorScale() == rhs.blue.toColorScale())
+        (lhs.red == rhs.red) &&
+        (lhs.green == rhs.green) &&
+        (lhs.blue == rhs.blue)
     }
 }
