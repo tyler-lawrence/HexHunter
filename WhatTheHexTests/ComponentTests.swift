@@ -69,5 +69,15 @@ final class ComponentTests: XCTestCase {
         
         XCTAssertEqual(expected, actual)
     }
+    
+//    func test_initFromFF_returns_255(){
+//        
+//        let input = "FF"
+//        
+//        let expected = 255
+//        
+//        let component = Component(hexCategory: .red)
+//        
+//    }
 
 }

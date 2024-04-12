@@ -15,6 +15,18 @@ struct Component: Hashable {
     /// second digit in a hexcode
     var digit2: Int
     
+    var digit1Display: String {
+        digit1.toHexadecimalString() ?? ""
+    }
+    
+    var digit2Display: String {
+        digit2.toHexadecimalString() ?? ""
+    }
+    
+    var display: String {
+        "\(digit1Display)\(digit2Display)"
+    }
+    
     /// formatted string representing component on 0 - 255 scale
     var colorScaleLabel: String {
         String(self.toColorScale())
@@ -23,13 +35,6 @@ struct Component: Hashable {
     /// formatted string representing component on 0 - 1 scale
     var normalizedLabel: String {
         String(self.colorScaleNormalized())
-    }
-    
-    /// displays the component as hex label (ex: 2E, FF, 08)
-    var display: String {
-        guard let display1 = Hexcode.lookup(digit1) else { return "error1" }
-        guard let display2 = Hexcode.lookup(digit2) else { return "error2" }
-        return "\(display1)\(display2)"
     }
     
     /// converts a component its numeric representation
@@ -49,38 +54,4 @@ struct Component: Hashable {
     func colorScaleNormalized() -> Double {
         Double(self.toColorScale()) / 255
     }
-}
-
-extension Hexcode {
-    
-    /// searches the label map for a given value
-    /// - Parameter val: Double representing a hex digit
-    /// - Returns: string representation of the hex digit
-    static func lookup(_ val: Int) -> String? {
-        return Hexcode.labelMap[val]
-    }
-    
-    /// maps the hex digits to their letter component
-    /// using a double because the slider on the macOS version was giving me problems with integers
-    static let labelMap: [Int: String] = [
-        0:"0",
-        1:"1",
-        2:"2",
-        3:"3",
-        4:"4",
-        5:"5",
-        6:"6",
-        7:"7",
-        8:"8",
-        9:"9",
-        10:"A",
-        11:"B",
-        12:"C",
-        13:"D",
-        14:"E",
-        15:"F"
-    ]
-    
-    /// keys from dictionary sorted in ascending order
-    static var sortedKeys: [Int] = Array(labelMap.keys).sorted(by: <)
 }
