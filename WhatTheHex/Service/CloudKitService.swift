@@ -22,7 +22,7 @@ extension CloudKitService: ColorOfDayService {
     
     func fetchColorOfDay(for date: NSDate = NSDate()) async throws -> String {
         
-        let predicate = NSPredicate(format: "Date == %@", date)
+        let predicate = NSPredicate(format: "Date <= %@", date)
         let query = CKQuery(recordType: "HexOfTheDay", predicate: predicate)
         
         let fetchedRecords: (matchResults: [(CKRecord.ID, Result<CKRecord, any Error>)], queryCursor: CKQueryOperation.Cursor?) = try await database.records(matching: query)

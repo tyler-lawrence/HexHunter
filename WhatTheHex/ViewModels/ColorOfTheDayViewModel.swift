@@ -7,9 +7,11 @@
 
 import Foundation
 
+@Observable
 class ColorOfTheDayViewModel: AccuracyGameViewModel {
     
     private let service: ColorOfDayService
+    var completedColorOfTheDay = false
     
     init(service: ColorOfDayService) {
         self.service = service
@@ -28,7 +30,7 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     }
     
     override func submitGuess() {
-        // TODO: record completed daily challenge
+        completedColorOfTheDay = true
         gameOver = true
     }
 }

@@ -39,9 +39,6 @@ struct ColorOfTheDayGameView: View {
             // this should eventually be a sheet with navigation back to game selection
             Button("OK"){ }
         }
-        .task {
-            await vm.getHexcodeOfDay()
-        }
     }
 }
 

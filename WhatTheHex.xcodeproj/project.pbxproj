@@ -27,7 +27,6 @@
 		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */; };
 		5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF22BCD75E000054F2E /* CKError.swift */; };
-		5B43BCF52BCD986B00054F2E /* ColorOfTheDayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */; };
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
@@ -104,7 +103,6 @@
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		5B43BCF22BCD75E000054F2E /* CKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKError.swift; sourceTree = "<group>"; };
-		5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayGameView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
 		5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,7 +336,6 @@
 			children = (
 				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
 				5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */,
-				5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
 			);
@@ -515,7 +512,6 @@
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,
 				5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
-				5B43BCF52BCD986B00054F2E /* ColorOfTheDayGameView.swift in Sources */,
 				5B68EADD2BC570DE00ABD6E0 /* AccuracyGameView.swift in Sources */,
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
