@@ -49,5 +49,102 @@ final class HexcodeTests: XCTestCase {
        
         XCTAssertEqual(expected, actual)
     }
+    
+    func test_hexcode_equality_white_and_white_return_true(){
+        let lhs = Hexcode.white
+        let rhs = Hexcode.white
+        let expected = true
+        let actual = lhs == rhs
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_hexcode_equality_white_and_white_different_instance_return_true(){
+        let lhs = Hexcode(
+            red: Component(hexCategory: .red, digit1: 15, digit2: 15),
+            green: Component(hexCategory: .green, digit1: 15, digit2: 15),
+            blue: Component(hexCategory: .blue, digit1: 15, digit2: 15)
+        )
+        let rhs = Hexcode(
+            red: Component(hexCategory: .red, digit1: 15, digit2: 15),
+            green: Component(hexCategory: .green, digit1: 15, digit2: 15),
+            blue: Component(hexCategory: .blue, digit1: 15, digit2: 15)
+        )
+        
+        let expected = true
+        let actual = lhs == rhs
+        XCTAssertEqual(expected, actual, "\(lhs.calculateSimilarity(to: rhs))")
+    }
+    
+    func test_hexcode_equality_white_and_teal_return_false(){
+        let lhs = Hexcode.white
+        let rhs = Hexcode.teal
+        let expected = false
+        let actual = lhs == rhs
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_init_from_hex_ffffff_no_hashtag_returns_nil(){
+        let input = "ffffff"
+        
+        let expected: Hexcode? = nil
+        
+        let actual = Hexcode(from: input)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_init_from_hex_ffffff_with_hashtag_returns_white(){
+        let input = "#ffffff"
+        
+        let lhs: Hexcode = Hexcode(
+            red: Component(hexCategory: .red, digit1: 15, digit2: 15),
+            green: Component(hexCategory: .green, digit1: 15, digit2: 15),
+            blue: Component(hexCategory: .blue, digit1: 15, digit2: 15)
+        )
+        
+        guard let rhs: Hexcode = Hexcode(from: input) else { return }
+        
+        let expected = true
+        let actual = lhs == rhs
+        
+        XCTAssertEqual(expected, actual, "\(lhs.calculateSimilarity(to: rhs))")
+    }
+    
+    func test_init_from_hex_long_string_returns_nil(){
+        let input = "#this string is way too long"
+        
+        let expected: Hexcode? = nil
+        
+        let actual = Hexcode(from: input)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_init_from_hex_with_spaces_returns_nil(){
+        let input = "#ff ff ff"
+        
+        let expected: Hexcode? = nil
+        
+        let actual = Hexcode(from: input)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_init_from_hex_029AF1_with_hashtag_returns_valid(){
+        let input = "#029AF1"
+        
+        let lhs: Hexcode = Hexcode(
+            red: Component(hexCategory: .red, digit1: 0, digit2: 2),
+            green: Component(hexCategory: .green, digit1: 9, digit2: 10),
+            blue: Component(hexCategory: .blue, digit1: 15, digit2: 1)
+        )
+        
+        guard let rhs: Hexcode = Hexcode(from: input) else { return }
+        
+        let expected = true
+        let actual = lhs == rhs
+        
+        XCTAssertEqual(expected, actual, "\(lhs.calculateSimilarity(to: rhs))")
+    }
 
 }

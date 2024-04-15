@@ -10,20 +10,6 @@ import SwiftUI
 struct HexComponentPickerView: View {
     @Binding var component: Component
     
-    var digit1: String {
-        if let hexLabel: String = Hexcode.numberToHexLabel[component.digit1] {
-            return hexLabel
-        }
-        return ""
-    }
-    
-    var digit2: String {
-        if let hexLabel: String = Hexcode.numberToHexLabel[component.digit2] {
-            return hexLabel
-        }
-        return ""
-    }
-    
     var iosSliders: some View {
         HStack{
             Text(component.hexCategory.rawValue)
@@ -32,11 +18,11 @@ struct HexComponentPickerView: View {
             VStack{
                 
                 HStack{
-                    Text(digit1)
+                    Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15)
                 }
                 HStack {
-                    Text(digit2)
+                    Text(component.digit2Display)
                     Slider(value: .convert(from: $component.digit2), in: 0...15)
                 }
             }
@@ -59,11 +45,11 @@ struct HexComponentPickerView: View {
                     .font(.largeTitle)
             }
             HStack{
-                Text(digit1)
+                Text(component.digit1Display)
                 Slider(value: .convert(from: $component.digit1), in: 0...15)
             }
             HStack {
-                Text(digit2)
+                Text(component.digit2Display)
                 Slider(value: .convert(from: $component.digit2), in: 0...15)
             }
             Text(component.hexCategory.rawValue)

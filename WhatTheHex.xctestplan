@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "42F00014-86A1-4CE9-A472-B14EDF207DF3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "IDEPreferLogStreaming",
+        "value" : "YES"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WhatTheHex.xcodeproj",
+      "identifier" : "5B5BA3742BB7433900B558EE",
+      "name" : "WhatTheHex"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WhatTheHex.xcodeproj",
+        "identifier" : "5B1208B82BBB232B00F36388",
+        "name" : "WhatTheHexTests"
+      }
+    }
+  ],
+  "version" : 1
+}

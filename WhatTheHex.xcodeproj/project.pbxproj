@@ -10,9 +10,17 @@
 		5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */; };
 		5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33022BC6BC6600F934DE /* Binding+convert.swift */; };
-		5B0E33052BC6DF3E00F934DE /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
 		5B0E33072BC72F0F00F934DE /* ColorOfTheDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */; };
 		5B0E330B2BC85A5D00F934DE /* ColorOfDayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */; };
+		5B0E33142BC8853300F934DE /* String+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */; };
+		5B0E33162BC8877100F934DE /* Int+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */; };
+		5B0E33182BC958AE00F934DE /* HexadecimalConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33172BC958AE00F934DE /* HexadecimalConversions.swift */; };
+		5B0E33192BC958FD00F934DE /* String+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */; };
+		5B0E331A2BC9590000F934DE /* Int+toHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */; };
+		5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
+		5B0E331E2BC9645600F934DE /* String+ValidHexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331D2BC9645600F934DE /* String+ValidHexcode.swift */; };
+		5B0E33222BC969FD00F934DE /* String+isValidHexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33212BC969FD00F934DE /* String+isValidHexcodeTests.swift */; };
+		5B0E33232BC96A0300F934DE /* String+ValidHexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331D2BC9645600F934DE /* String+ValidHexcode.swift */; };
 		5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3872BB745FA00B558EE /* Hexcode.swift */; };
 		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
 		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
@@ -60,6 +68,9 @@
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
 		5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
+		5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
+		5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
+		5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +90,13 @@
 		5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexcodeTests.swift; sourceTree = "<group>"; };
 		5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayViewModel.swift; sourceTree = "<group>"; };
 		5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfDayService.swift; sourceTree = "<group>"; };
+		5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toHexadecimal.swift"; sourceTree = "<group>"; };
+		5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+toHexadecimal.swift"; sourceTree = "<group>"; };
+		5B0E33172BC958AE00F934DE /* HexadecimalConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexadecimalConversions.swift; sourceTree = "<group>"; };
+		5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Equatable.swift"; sourceTree = "<group>"; };
+		5B0E331D2BC9645600F934DE /* String+ValidHexcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidHexcode.swift"; sourceTree = "<group>"; };
+		5B0E33212BC969FD00F934DE /* String+isValidHexcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isValidHexcodeTests.swift"; sourceTree = "<group>"; };
+		5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatTheHex.xctestplan; sourceTree = "<group>"; };
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
@@ -195,8 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				5B1208C62BBB242C00F36388 /* ComponentTests.swift */,
+				5B0E33172BC958AE00F934DE /* HexadecimalConversions.swift */,
 				5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */,
 				5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */,
+				5B0E33212BC969FD00F934DE /* String+isValidHexcodeTests.swift */,
 			);
 			path = WhatTheHexTests;
 			sourceTree = "<group>";
@@ -213,6 +233,7 @@
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
+				5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */,
 				5B5BA3772BB7433900B558EE /* WhatTheHex */,
 				5B1208BA2BBB232B00F36388 /* WhatTheHexTests */,
 				5B5BA3762BB7433900B558EE /* Products */,
@@ -283,9 +304,13 @@
 			isa = PBXGroup;
 			children = (
 				5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */,
+				5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */,
 				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
 				5B5BA3952BB89BD100B558EE /* Color+InitFromHex.swift */,
 				5B0E33022BC6BC6600F934DE /* Binding+convert.swift */,
+				5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */,
+				5B0E331D2BC9645600F934DE /* String+ValidHexcode.swift */,
+				5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,17 +457,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0E33222BC969FD00F934DE /* String+isValidHexcodeTests.swift in Sources */,
+				5B0E331A2BC9590000F934DE /* Int+toHexadecimal.swift in Sources */,
 				5BB39A6E2BC1DEE500A38EAD /* RapidGameViewModel.swift in Sources */,
+				5B0E33192BC958FD00F934DE /* String+toHexadecimal.swift in Sources */,
+				5B0E33182BC958AE00F934DE /* HexadecimalConversions.swift in Sources */,
 				5BB39A692BBDA0C800A38EAD /* AccuracyGameViewModel.swift in Sources */,
+				5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */,
+				5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */,
 				5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */,
 				5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */,
 				5B1208C42BBB238C00F36388 /* Hexcode.swift in Sources */,
 				5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */,
 				5B1208C82BBB245600F36388 /* Component.swift in Sources */,
-				5B0E33052BC6DF3E00F934DE /* HexcodeTests.swift in Sources */,
 				5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */,
 				5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */,
 				5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */,
+				5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */,
+				5B0E33232BC96A0300F934DE /* String+ValidHexcode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */,
+				5B0E33142BC8853300F934DE /* String+toHexadecimal.swift in Sources */,
 				5BA3D9CC2BBB64A0003DE2F8 /* AccuracyGameViewModel.swift in Sources */,
 				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
 				5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */,
@@ -476,9 +509,11 @@
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
+				5B0E331E2BC9645600F934DE /* String+ValidHexcode.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
 				5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */,
 				5B68EAD62BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift in Sources */,
+				5B0E33162BC8877100F934DE /* Int+toHexadecimal.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
 				5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */,
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,
@@ -488,6 +523,7 @@
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* PracticeModeView.swift in Sources */,
+				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,
 				5BA3D9DF2BBC5424003DE2F8 /* ScoreExplanationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
