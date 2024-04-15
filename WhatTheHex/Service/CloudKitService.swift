@@ -10,7 +10,7 @@ import CloudKit
 
 class CloudKitService {
     
-    let container: CKContainer = CKContainer.default()
+    let container: CKContainer = CKContainer(identifier: "iCloud.hexhunter")
     let database: CKDatabase
     
     init() {
