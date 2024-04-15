@@ -19,7 +19,7 @@ struct GameSelectionView: View {
                 VStack{
                     
                     NavigationLink{
-                        AccuracyGameView(vm: ColorOfTheDayViewModel())
+                        ColorOfTheDayGameView(vm: ColorOfTheDayViewModel(service: CloudKitService()))
                     } label: {
                         GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.")
                     }

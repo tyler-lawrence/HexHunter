@@ -25,6 +25,9 @@
 		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
 		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
 		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
+		5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */; };
+		5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF22BCD75E000054F2E /* CKError.swift */; };
+		5B43BCF52BCD986B00054F2E /* ColorOfTheDayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */; };
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
@@ -99,6 +102,9 @@
 		5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatTheHex.xctestplan; sourceTree = "<group>"; };
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
+		5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		5B43BCF22BCD75E000054F2E /* CKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKError.swift; sourceTree = "<group>"; };
+		5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayGameView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
 		5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,7 +210,8 @@
 		5B0E330C2BC85B8800F934DE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */,
+				5B43BCF22BCD75E000054F2E /* CKError.swift */,
+				5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 			children = (
 				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
 				5B68EADC2BC570DE00ABD6E0 /* AccuracyGameView.swift */,
+				5B43BCF42BCD986B00054F2E /* ColorOfTheDayGameView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
 			);
@@ -350,6 +358,7 @@
 		5BB39A732BC1E86C00A38EAD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */,
 				5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */,
 				5BB39A712BC1E38700A38EAD /* TimedGame.swift */,
 			);
@@ -498,6 +507,7 @@
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
 				5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */,
 				5B0E330B2BC85A5D00F934DE /* ColorOfDayService.swift in Sources */,
+				5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */,
 				5BA3D9D92BBC4BE4003DE2F8 /* OnboardingRowView.swift in Sources */,
 				5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
@@ -505,6 +515,7 @@
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,
 				5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
+				5B43BCF52BCD986B00054F2E /* ColorOfTheDayGameView.swift in Sources */,
 				5B68EADD2BC570DE00ABD6E0 /* AccuracyGameView.swift in Sources */,
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
@@ -514,6 +525,7 @@
 				5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */,
 				5B68EAD62BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift in Sources */,
 				5B0E33162BC8877100F934DE /* Int+toHexadecimal.swift in Sources */,
+				5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
 				5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */,
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,

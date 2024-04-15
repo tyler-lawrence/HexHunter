@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ColorOfDayService {
-    func fetchColorOfDay(for date: Date) async throws ->  String
+    func fetchColorOfDay(for date: NSDate) async throws ->  String
 }

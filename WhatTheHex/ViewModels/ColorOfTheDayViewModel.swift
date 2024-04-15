@@ -18,16 +18,13 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     func getHexcodeOfDay() async {
         
         do {
-            // get hexcode string from cloudkit
-            let colorOfTheDay: String = try await service.fetchColorOfDay(for: Date.now)
+            let colorOfTheDay: String = try await service.fetchColorOfDay(for: NSDate())
+            guard let hexcode = Hexcode(from: colorOfTheDay) else { return }
+            targetHexcode = hexcode
         } catch {
             print("\(error.localizedDescription)")
         }
         
-        targetHexcode = Hexcode()
-        
-        // assign hex to target
-        // targetHexcode = 
     }
     
     override func submitGuess() {
