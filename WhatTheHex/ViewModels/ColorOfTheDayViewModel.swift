@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// When testing, make sure you are signed into iCloud on the simulator
+
 @Observable
 class ColorOfTheDayViewModel: AccuracyGameViewModel {
     
@@ -18,7 +20,6 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     }
     
     func getHexcodeOfDay() async {
-        
         do {
             let colorOfTheDay: String = try await service.fetchColorOfDay(for: NSDate())
             guard let hexcode = Hexcode(from: colorOfTheDay) else { return }

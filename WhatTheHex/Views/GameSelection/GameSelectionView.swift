@@ -11,7 +11,7 @@ struct GameSelectionView: View {
     
     @State var showingScoreSheet = false
     @State var showingHexcodeSheet = false
-    @State var colorOfTheDayVM: ColorOfTheDayViewModel = ColorOfTheDayViewModel(service: CloudKitService())
+    @State var colorOfTheDayVM: ColorOfTheDayViewModel
     
     var body: some View {
         NavigationStack{
@@ -20,6 +20,9 @@ struct GameSelectionView: View {
                 VStack{
                     NavigationLink{
                         AccuracyGameView(vm: colorOfTheDayVM)
+                            .task{
+                                await colorOfTheDayVM.getHexcodeOfDay()
+                            }
                     } label: {
                         GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.")
                     }
@@ -68,9 +71,6 @@ struct GameSelectionView: View {
             }
             .sheet(isPresented: $showingHexcodeSheet){
                 HexcodeExplanationView()
-            }
-            .task{
-                await colorOfTheDayVM.getHexcodeOfDay()
             }
         }
         

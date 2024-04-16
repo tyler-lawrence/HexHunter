@@ -20,13 +20,19 @@ class CloudKitService {
 
 extension CloudKitService: ColorOfDayService {
     
+    /// try to get the color of the day stored in CloudKit .
+    /// - Parameter date: default: current datetime in UTC
+    /// - Returns: string representation of hexcode (ex: #FF00FF)
     func fetchColorOfDay(for date: NSDate = NSDate()) async throws -> String {
         
-        let predicate = NSPredicate(format: "Date <= %@", date)
-        let query = CKQuery(recordType: "HexOfTheDay", predicate: predicate)
+        // get all days where Date < date (default is current datetime)
+        let dateInPast = NSPredicate(format: "Date <= %@", date)
+        let query = CKQuery(recordType: "HexOfTheDay", predicate: dateInPast)
+        // sorts so the most recent date should be first
+        query.sortDescriptors = [NSSortDescriptor(key: "Date", ascending: false)]
         
         let fetchedRecords: (matchResults: [(CKRecord.ID, Result<CKRecord, any Error>)], queryCursor: CKQueryOperation.Cursor?) = try await database.records(matching: query)
-     
+        
         guard let firstRecord = fetchedRecords.matchResults.first else { throw CKError.noRecords }
         
         let record: CKRecord = try firstRecord.1.get()
