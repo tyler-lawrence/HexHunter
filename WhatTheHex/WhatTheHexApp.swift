@@ -10,10 +10,11 @@ import TipKit
 
 @main
 struct WhatTheHexApp: App {
-   
+   @State var gameManager = GameManager()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(gameManager)
         }
     }
     init(){

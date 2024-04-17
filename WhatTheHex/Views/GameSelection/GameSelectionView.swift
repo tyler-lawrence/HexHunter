@@ -12,6 +12,7 @@ struct GameSelectionView: View {
     @State var showingScoreSheet = false
     @State var showingHexcodeSheet = false
     @State var colorOfTheDayVM: ColorOfTheDayViewModel
+    @Environment(GameManager.self) var gameManager: GameManager
     
     var body: some View {
         NavigationStack{
@@ -48,7 +49,7 @@ struct GameSelectionView: View {
                     
                 }
                 .padding(.horizontal)
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(GameSelectionButton())
             }
             .toolbar{
                 ToolbarItem{
@@ -80,4 +81,5 @@ struct GameSelectionView: View {
 
 #Preview {
     GameSelectionView(colorOfTheDayVM: ColorOfTheDayViewModel(service: CloudKitService()))
+        .environment(GameManager())
 }
