@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct GameModeButtonView: View {
-    @Environment(GameManager.self) var gameManager
+
     let title: String
     let description: String
-    var showStreak: Bool = false
+    var streak: Int? = nil
     
     var body: some View {
         VStack(alignment: .leading){
@@ -20,8 +20,8 @@ struct GameModeButtonView: View {
                     .font(.title)
                     .bold()
                 Spacer()
-                if showStreak {
-                    Text("\(gameManager.colorOfTheDayStreak)")
+                if let streak {
+                    Text("\(streak)")
                         .font(.title2)
                         .bold()
                         .foregroundStyle(.white)
@@ -46,15 +46,13 @@ struct GameModeButtonView: View {
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds")
-                .environment(GameManager.sample)
+            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds", streak: 5)
         }
         
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds", showStreak: true)
-                .environment(GameManager.sample)
+            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds")
         }
     }
     .buttonStyle(.borderedProminent)

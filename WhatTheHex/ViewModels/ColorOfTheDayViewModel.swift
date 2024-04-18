@@ -14,9 +14,32 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     
     private let service: ColorOfDayService
     var completedColorOfTheDay = false
+    var datesCompletedColorOfDay: [Date] = []
+    
+    var colorOfTheDayStreak: Int {
+        datesCompletedColorOfDay.streakCount()
+    }
+    var lastRefresh: Date = Date.now
+    
+    private var calendar = Calendar(identifier: .gregorian)
+    
+    private func toDate() -> DateComponents {
+        calendar.dateComponents([.year, .month, .day], from: lastRefresh)
+    }
+    
+    /// check to see if we need to refresh the colorOfTheDay
+    func refresh() {
+        let lastMidnight: Date = calendar.startOfDay(for: Date.now)
+        if lastRefresh < lastMidnight {
+            completedColorOfTheDay = false
+        }
+        lastRefresh = Date.now
+    }
     
     init(service: ColorOfDayService) {
         self.service = service
+        super.init()
+        refresh()
     }
     
     func getHexcodeOfDay() async -> Hexcode? {
@@ -36,5 +59,12 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     override func submitGuess() {
         completedColorOfTheDay = true
         gameOver = true
+        datesCompletedColorOfDay.append(Date.now)
     }
 }
+
+#if DEBUG
+extension ColorOfTheDayViewModel {
+    static var sample = ColorOfTheDayViewModel(service: CloudKitService())
+}
+#endif

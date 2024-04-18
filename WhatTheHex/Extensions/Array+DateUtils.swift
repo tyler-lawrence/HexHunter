@@ -14,6 +14,7 @@ extension Array where Element == Date {
         let reverseChronologicalSorted = self.sorted(by: >)
         
         guard !reverseChronologicalSorted.isEmpty else { return 0 }
+        guard reverseChronologicalSorted.count > 1 else { return 1 }
         var streak: Int = 1
         
         for i in 1 ... self.count - 1 {

@@ -15,13 +15,13 @@ extension Date {
     }
 }
 
-final class GameManagerTests: XCTestCase {
+final class ColorOfTheDayVMTests: XCTestCase {
         
     //MARK: colorOfTheDayStreak
 
     func test_colorOfTheDayStreak_empty_returns_0() {
         
-        let sut = GameManager()
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
         sut.datesCompletedColorOfDay = []
         
         let expected = 0
@@ -33,7 +33,7 @@ final class GameManagerTests: XCTestCase {
     
     func test_colorOfTheDayStreak_3_ascending_returns_3() {
         
-        let sut = GameManager()
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
 
         sut.datesCompletedColorOfDay = [
             Date.now.minus(1),
@@ -49,7 +49,7 @@ final class GameManagerTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_gap_in_3_day_span_returns_1() {
-        let sut = GameManager()
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
 
         sut.datesCompletedColorOfDay = [
             Date.now.minus(1),
@@ -64,7 +64,7 @@ final class GameManagerTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_3_consecutive_days_then_1_missed_returns_1() {
-        let sut = GameManager()
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
 
         sut.datesCompletedColorOfDay = [
             Date.now,
@@ -81,7 +81,7 @@ final class GameManagerTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_3_days_and_completed_today_returns_4() {
-        let sut = GameManager()
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
 
         sut.datesCompletedColorOfDay = [
             Date.now,
@@ -91,6 +91,20 @@ final class GameManagerTests: XCTestCase {
         ]
         
         let expected = 4
+        
+        let actual = sut.colorOfTheDayStreak
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_colorOfTheDayStreak_1_day_returns_1() {
+        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+
+        sut.datesCompletedColorOfDay = [
+            Date.now,
+        ]
+        
+        let expected = 1
         
         let actual = sut.colorOfTheDayStreak
         
