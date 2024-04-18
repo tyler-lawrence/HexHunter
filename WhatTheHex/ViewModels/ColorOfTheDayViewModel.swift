@@ -19,15 +19,18 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
         self.service = service
     }
     
-    func getHexcodeOfDay() async {
+    func getHexcodeOfDay() async -> Hexcode? {
+        
         do {
             let colorOfTheDay: String = try await service.fetchColorOfDay(for: NSDate())
-            guard let hexcode = Hexcode(from: colorOfTheDay) else { return }
+            guard let hexcode = Hexcode(from: colorOfTheDay) else { return nil}
             targetHexcode = hexcode
+            return hexcode
         } catch {
             print("\(error.localizedDescription)")
         }
         
+        return nil
     }
     
     override func submitGuess() {

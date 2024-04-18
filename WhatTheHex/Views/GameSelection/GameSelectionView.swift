@@ -20,10 +20,7 @@ struct GameSelectionView: View {
                 BackgroundView()
                 VStack{
                     NavigationLink{
-                        AccuracyGameView(vm: colorOfTheDayVM)
-                            .task{
-                                await colorOfTheDayVM.getHexcodeOfDay()
-                            }
+                        ColorOfTheDayView(vm: colorOfTheDayVM)
                     } label: {
                         GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", showStreak: true)
                     }

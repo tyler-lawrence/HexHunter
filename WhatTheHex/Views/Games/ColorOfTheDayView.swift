@@ -1,0 +1,55 @@
+//
+//  ColorOfTheDayView.swift
+//  WhatTheHex
+//
+//  Created by Tyler Lawrence1 on 4/18/24.
+//
+
+import SwiftUI
+
+struct ColorOfTheDayView: View {
+    
+    @State var vm: ColorOfTheDayViewModel
+    @State var colorOfTheDay: Hexcode?
+    let frameSize: CGFloat = 150
+    
+    var body: some View {
+        VStack{
+            HStack{
+                if let colorOfTheDay {
+                    ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: frameSize, showingCode: vm.gameOver)
+                } else {
+                    ProgressView()
+                        .frame(width: frameSize, height: frameSize)
+                        .task{
+                           await colorOfTheDay = vm.getHexcodeOfDay()
+                        }
+                }
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: frameSize, showingCode: true)
+            }
+            Spacer()
+            Divider()
+            RGBSlidersView(hexcode: $vm.playerHexcode)
+            Spacer()
+            Button("Guess"){
+                vm.submitGuess()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .onAppear{
+            #warning("change the song to something slower and dreamier")
+            startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+        }
+        .onDisappear{
+            stopBackgroundSound()
+        }
+        .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
+            Button("Play again"){ vm.reset() }
+        }
+    }
+}
+
+#Preview {
+    ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService()))
+}
