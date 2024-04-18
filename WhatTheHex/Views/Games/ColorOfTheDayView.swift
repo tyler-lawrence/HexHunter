@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorOfTheDayView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var vm: ColorOfTheDayViewModel
     @State var colorOfTheDay: Hexcode?
     let frameSize: CGFloat = 150
@@ -16,7 +17,7 @@ struct ColorOfTheDayView: View {
     var body: some View {
         VStack{
             HStack{
-                if let colorOfTheDay {
+                if colorOfTheDay != nil {
                     ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: frameSize, showingCode: vm.gameOver)
                 } else {
                     ProgressView()
@@ -45,7 +46,9 @@ struct ColorOfTheDayView: View {
             stopBackgroundSound()
         }
         .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
-            Button("Play again"){ vm.reset() }
+            Button("Ok"){
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

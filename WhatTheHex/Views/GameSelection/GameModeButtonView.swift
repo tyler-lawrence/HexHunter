@@ -18,13 +18,19 @@ struct GameModeButtonView: View {
             HStack{
                 Text(title)
                     .font(.title)
+                    .bold()
                 Spacer()
                 if showStreak {
-                    Text("\(gameManager.colorOfTheDayStreak())")
+                    Text("\(gameManager.colorOfTheDayStreak)")
+                        .font(.title2)
+                        .bold()
                         .foregroundStyle(.white)
                         .padding()
-                        .background(Circle().foregroundStyle(.red))
-                        .offset(x: 40, y: -40)
+                        .background(
+                            Image("streakIcon")
+                                .resizable()
+                                .scaledToFit()
+                        )
                 }
             }
             Text(description)
@@ -41,6 +47,13 @@ struct GameModeButtonView: View {
             Text("test")
         } label: {
             GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds")
+                .environment(GameManager.sample)
+        }
+        
+        NavigationLink{
+            Text("test")
+        } label: {
+            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds", showStreak: true)
                 .environment(GameManager.sample)
         }
     }

@@ -26,7 +26,7 @@ final class GameManagerTests: XCTestCase {
         
         let expected = 0
         
-        let actual = sut.colorOfTheDayStreak()
+        let actual = sut.colorOfTheDayStreak
         
         XCTAssertEqual(expected, actual)
     }
@@ -43,7 +43,7 @@ final class GameManagerTests: XCTestCase {
         
         let expected = 3
         
-        let actual = sut.colorOfTheDayStreak()
+        let actual = sut.colorOfTheDayStreak
         
         XCTAssertEqual(expected, actual)
     }
@@ -58,7 +58,7 @@ final class GameManagerTests: XCTestCase {
         
         let expected = 1
         
-        let actual = sut.colorOfTheDayStreak()
+        let actual = sut.colorOfTheDayStreak
         
         XCTAssertEqual(expected, actual)
     }
@@ -75,7 +75,7 @@ final class GameManagerTests: XCTestCase {
         
         let expected = 1
         
-        let actual = sut.colorOfTheDayStreak()
+        let actual = sut.colorOfTheDayStreak
         
         XCTAssertEqual(expected, actual)
     }
@@ -92,7 +92,7 @@ final class GameManagerTests: XCTestCase {
         
         let expected = 4
         
-        let actual = sut.colorOfTheDayStreak()
+        let actual = sut.colorOfTheDayStreak
         
         XCTAssertEqual(expected, actual)
     }

@@ -31,8 +31,8 @@ class GameManager {
         lastRefresh = Date.now
     }
     
-    func colorOfTheDayStreak() -> Int {
-        return datesCompletedColorOfDay.streakCount()
+    var colorOfTheDayStreak: Int {
+        datesCompletedColorOfDay.streakCount()
     }
     
 }
