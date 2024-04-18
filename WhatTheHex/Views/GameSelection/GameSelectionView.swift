@@ -25,7 +25,7 @@ struct GameSelectionView: View {
                                 await colorOfTheDayVM.getHexcodeOfDay()
                             }
                     } label: {
-                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.")
+                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", showStreak: true)
                     }
                     .disabled(colorOfTheDayVM.completedColorOfTheDay)
                     
@@ -80,6 +80,8 @@ struct GameSelectionView: View {
 }
 
 #Preview {
-    GameSelectionView(colorOfTheDayVM: ColorOfTheDayViewModel(service: CloudKitService()))
-        .environment(GameManager())
+    GameSelectionView(
+        colorOfTheDayVM: ColorOfTheDayViewModel(service: CloudKitService())
+    )
+    .environment(GameManager.sample)
 }

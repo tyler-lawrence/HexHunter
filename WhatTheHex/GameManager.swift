@@ -36,3 +36,16 @@ class GameManager {
     }
     
 }
+
+
+extension GameManager {
+    static var sample: GameManager {
+        let gm = GameManager()
+        gm.datesCompletedColorOfDay = [
+            Date.now,
+            Date.now.addingTimeInterval(-86_400),
+            Date.now.addingTimeInterval(-172_800)
+        ]
+        return gm
+    }
+}
