@@ -54,5 +54,5 @@ struct ColorOfTheDayView: View {
 }
 
 #Preview {
-    ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService()))
+    ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: DataController()))
 }

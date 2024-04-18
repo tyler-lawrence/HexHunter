@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
-    @State var colorOfTheDayVM = ColorOfTheDayViewModel(service: CloudKitService())
+    @Environment(DataController.self) var dataController
+//    @State var colorOfTheDayVM = ColorOfTheDayViewModel(service: CloudKitService())
     var body: some View {
         if hasOnboarded {
-            GameSelectionView(colorOfTheDayVM: colorOfTheDayVM)
+            GameSelectionView()
+                .environment(dataController)
         } else {
             PracticeModeView(hasOnboarded: $hasOnboarded)
         }

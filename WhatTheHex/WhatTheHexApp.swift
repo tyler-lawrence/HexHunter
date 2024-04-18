@@ -10,10 +10,15 @@ import TipKit
 
 @main
 struct WhatTheHexApp: App {
-
+    @Environment(\.scenePhase) var scenePhase
+    @State private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(dataController)
+                .onChange(of: scenePhase) {
+                    dataController.save()
+                }
         }
     }
     init(){

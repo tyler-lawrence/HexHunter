@@ -27,7 +27,7 @@
 		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
 		5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */; };
 		5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF22BCD75E000054F2E /* CKError.swift */; };
-		5B43BCF92BCEADE500054F2E /* ColorOfTheDayVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF82BCEADE500054F2E /* ColorOfTheDayVMTests.swift */; };
+		5B43BCF92BCEADE500054F2E /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF82BCEADE500054F2E /* DataControllerTests.swift */; };
 		5B43BCFC2BCF0D5800054F2E /* Date+StreakUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */; };
 		5B43BCFD2BCF0FA400054F2E /* Date+StreakUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */; };
 		5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */; };
@@ -66,6 +66,8 @@
 		5BAD10E42BD1A56100E97FB1 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */; };
 		5BAD10E52BD1B3EC00E97FB1 /* CKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF22BCD75E000054F2E /* CKError.swift */; };
 		5BAD10E62BD1B43100E97FB1 /* ColorOfDayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */; };
+		5BAD10EA2BD1B93E00E97FB1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD10E92BD1B93E00E97FB1 /* DataController.swift */; };
+		5BAD10EB2BD1BF3300E97FB1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD10E92BD1B93E00E97FB1 /* DataController.swift */; };
 		5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A572BBC83CA00A38EAD /* BeginView.swift */; };
 		5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A592BBC865C00A38EAD /* Particle.swift */; };
 		5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */; };
@@ -114,7 +116,7 @@
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		5B43BCF22BCD75E000054F2E /* CKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKError.swift; sourceTree = "<group>"; };
-		5B43BCF82BCEADE500054F2E /* ColorOfTheDayVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayVMTests.swift; sourceTree = "<group>"; };
+		5B43BCF82BCEADE500054F2E /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
 		5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StreakUtils.swift"; sourceTree = "<group>"; };
 		5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+DateUtils.swift"; sourceTree = "<group>"; };
 		5B43BD012BD0086000054F2E /* GameSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionButton.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		5BA3D9DA2BBC4D33003DE2F8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexcodeExplanationView.swift; sourceTree = "<group>"; };
 		5BA3D9DE2BBC5424003DE2F8 /* ScoreExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreExplanationView.swift; sourceTree = "<group>"; };
+		5BAD10E92BD1B93E00E97FB1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5BB39A572BBC83CA00A38EAD /* BeginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginView.swift; sourceTree = "<group>"; };
 		5BB39A592BBC865C00A38EAD /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		5BB39A5C2BBC86AF00A38EAD /* ParticleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystem.swift; sourceTree = "<group>"; };
@@ -239,7 +242,7 @@
 				5BB39A672BBDA08700A38EAD /* GameViewModelTests.swift */,
 				5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */,
 				5B0E33212BC969FD00F934DE /* String+isValidHexcodeTests.swift */,
-				5B43BCF82BCEADE500054F2E /* ColorOfTheDayVMTests.swift */,
+				5B43BCF82BCEADE500054F2E /* DataControllerTests.swift */,
 			);
 			path = WhatTheHexTests;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 		5B5BA3772BB7433900B558EE /* WhatTheHex */ = {
 			isa = PBXGroup;
 			children = (
+				5BAD10E92BD1B93E00E97FB1 /* DataController.swift */,
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
 				5B0E330C2BC85B8800F934DE /* Service */,
 				5B4F36A62BC4245400F1EB87 /* Audio */,
@@ -492,9 +496,10 @@
 				5B0E33192BC958FD00F934DE /* String+toHexadecimal.swift in Sources */,
 				5B0E33182BC958AE00F934DE /* HexadecimalConversions.swift in Sources */,
 				5BB39A692BBDA0C800A38EAD /* AccuracyGameViewModel.swift in Sources */,
-				5B43BCF92BCEADE500054F2E /* ColorOfTheDayVMTests.swift in Sources */,
+				5B43BCF92BCEADE500054F2E /* DataControllerTests.swift in Sources */,
 				5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */,
 				5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */,
+				5BAD10EB2BD1BF3300E97FB1 /* DataController.swift in Sources */,
 				5BAD10E32BD1A20400E97FB1 /* ColorOfTheDayViewModel.swift in Sources */,
 				5BAD10E62BD1B43100E97FB1 /* ColorOfDayService.swift in Sources */,
 				5BB39A682BBDA08700A38EAD /* GameViewModelTests.swift in Sources */,
@@ -551,6 +556,7 @@
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
 				5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */,
 				5B68EAD62BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift in Sources */,
+				5BAD10EA2BD1B93E00E97FB1 /* DataController.swift in Sources */,
 				5B0E33162BC8877100F934DE /* Int+toHexadecimal.swift in Sources */,
 				5B43BCFC2BCF0D5800054F2E /* Date+StreakUtils.swift in Sources */,
 				5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */,

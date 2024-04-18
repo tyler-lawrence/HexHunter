@@ -11,7 +11,7 @@ struct GameSelectionView: View {
     
     @State var showingScoreSheet = false
     @State var showingHexcodeSheet = false
-    @State var colorOfTheDayVM: ColorOfTheDayViewModel
+    @Environment(DataController.self) var dataController
     
     var body: some View {
         NavigationStack{
@@ -19,11 +19,11 @@ struct GameSelectionView: View {
                 BackgroundView()
                 VStack{
                     NavigationLink{
-                        ColorOfTheDayView(vm: colorOfTheDayVM)
+                        ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
                     } label: {
-                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", streak: colorOfTheDayVM.colorOfTheDayStreak)
+                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", streak: dataController.colorOfTheDayStreak)
                     }
-                    .disabled(colorOfTheDayVM.completedColorOfTheDay)
+                    .disabled(dataController.completedColorOfTheDay)
                     
                     NavigationLink{
                         AccuracyGameView(vm: AccuracyGameViewModel())
@@ -76,7 +76,5 @@ struct GameSelectionView: View {
 }
 
 #Preview {
-    GameSelectionView(
-        colorOfTheDayVM: ColorOfTheDayViewModel(service: CloudKitService())
-    )
+    GameSelectionView()
 }

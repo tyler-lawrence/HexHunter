@@ -15,14 +15,14 @@ extension Date {
     }
 }
 
-final class ColorOfTheDayVMTests: XCTestCase {
+final class DataControllerTests: XCTestCase {
         
     //MARK: colorOfTheDayStreak
 
     func test_colorOfTheDayStreak_empty_returns_0() {
         
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
-        sut.datesCompletedColorOfDay = []
+        let sut = DataController()
+        sut.datesCompletedColorOfTheDay = []
         
         let expected = 0
         
@@ -33,9 +33,9 @@ final class ColorOfTheDayVMTests: XCTestCase {
     
     func test_colorOfTheDayStreak_3_ascending_returns_3() {
         
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+        let sut = DataController()
 
-        sut.datesCompletedColorOfDay = [
+        sut.datesCompletedColorOfTheDay = [
             Date.now.minus(1),
             Date.now.minus(2),
             Date.now.minus(3),
@@ -49,9 +49,9 @@ final class ColorOfTheDayVMTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_gap_in_3_day_span_returns_1() {
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+        let sut = DataController()
 
-        sut.datesCompletedColorOfDay = [
+        sut.datesCompletedColorOfTheDay = [
             Date.now.minus(1),
             Date.now.minus(3),
         ]
@@ -64,9 +64,9 @@ final class ColorOfTheDayVMTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_3_consecutive_days_then_1_missed_returns_1() {
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+        let sut = DataController()
 
-        sut.datesCompletedColorOfDay = [
+        sut.datesCompletedColorOfTheDay = [
             Date.now,
             Date.now.minus(2),
             Date.now.minus(3),
@@ -81,9 +81,9 @@ final class ColorOfTheDayVMTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_3_days_and_completed_today_returns_4() {
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+        let sut = DataController()
 
-        sut.datesCompletedColorOfDay = [
+        sut.datesCompletedColorOfTheDay = [
             Date.now,
             Date.now.minus(1),
             Date.now.minus(2),
@@ -98,9 +98,9 @@ final class ColorOfTheDayVMTests: XCTestCase {
     }
     
     func test_colorOfTheDayStreak_1_day_returns_1() {
-        let sut = ColorOfTheDayViewModel(service: CloudKitService())
+        let sut = DataController()
 
-        sut.datesCompletedColorOfDay = [
+        sut.datesCompletedColorOfTheDay = [
             Date.now,
         ]
         
