@@ -75,7 +75,9 @@ struct GameSelectionView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     GameSelectionView()
         .environment(DataController.sample1DayStreak)
 }
+#endif
