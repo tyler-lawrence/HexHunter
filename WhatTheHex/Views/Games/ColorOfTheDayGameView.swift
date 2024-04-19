@@ -1,15 +1,15 @@
 //
-//  AccuracyGameView.swift
+//  ColorOfTheDayGameView.swift
 //  WhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/9/24.
+//  Created by Tyler Lawrence1 on 4/15/24.
 //
 
 import SwiftUI
 
-struct AccuracyGameView: View {
+struct ColorOfTheDayGameView: View {
     
-    @State var vm: AccuracyGameViewModel
+    @State var vm: ColorOfTheDayViewModel
 
     var body: some View {
         
@@ -36,11 +36,12 @@ struct AccuracyGameView: View {
             stopBackgroundSound()
         }
         .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
-            Button("Play again"){ vm.reset() }
+            // this should eventually be a sheet with navigation back to game selection
+            Button("OK"){ }
         }
     }
 }
 
 #Preview {
-    AccuracyGameView(vm: AccuracyGameViewModel())
+    ColorOfTheDayGameView(vm: ColorOfTheDayViewModel(service: CloudKitService()))
 }

@@ -69,5 +69,5 @@ struct Component: Hashable {
     func colorScaleNormalized() -> Double {
         Double(self.toColorScale()) / 255
     }
-    
+
 }

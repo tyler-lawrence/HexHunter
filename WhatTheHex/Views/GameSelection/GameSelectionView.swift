@@ -11,6 +11,7 @@ struct GameSelectionView: View {
     
     @State var showingScoreSheet = false
     @State var showingHexcodeSheet = false
+    @Environment(DataController.self) var dataController
     
     var body: some View {
         NavigationStack{
@@ -18,7 +19,14 @@ struct GameSelectionView: View {
                 BackgroundView()
                 VStack{
                     NavigationLink{
-                        AccuracyGameView()
+                        ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
+                    } label: {
+                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", streak: dataController.colorOfTheDayStreak)
+                    }
+                    .disabled(dataController.completedColorOfTheDay)
+                    
+                    NavigationLink{
+                        AccuracyGameView(vm: AccuracyGameViewModel())
                     } label: {
                         GameModeButtonView(title: "Accuracy Game", description: "How accurately can you guess one color?")
                     }
@@ -26,7 +34,7 @@ struct GameSelectionView: View {
                     NavigationLink{
                         RapidGameView()
                     } label: {
-                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy")
+                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy.")
                     }
                     
                     NavigationLink{
@@ -37,7 +45,7 @@ struct GameSelectionView: View {
                     
                 }
                 .padding(.horizontal)
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(GameSelectionButton())
             }
             .toolbar{
                 ToolbarItem{
@@ -69,4 +77,5 @@ struct GameSelectionView: View {
 
 #Preview {
     GameSelectionView()
+        .environment(DataController.sample1DayStreak)
 }
