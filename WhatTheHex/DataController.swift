@@ -12,6 +12,7 @@ final class DataController {
     
     var datesCompletedColorOfTheDay: [Date] = []
     
+    /// indicator for if user has already completed the color of the day challenge
     var completedColorOfTheDay: Bool {
         let lastMidnight: Date = calendar.startOfDay(for: Date.now)
         let mostRecentDate: Date? = datesCompletedColorOfTheDay.sorted(by: >).first
@@ -33,6 +34,8 @@ final class DataController {
         self.datesCompletedColorOfTheDay = load()
     }
     
+    /// loads dates representing the completedColorOfTheDay from file manager
+    /// - Returns: array of dates
     func load() -> [Date] {
         do {
             let directory = try FileManager.default.url(
@@ -50,6 +53,7 @@ final class DataController {
         }
     }
     
+    /// saves the current dates of completion for ColorOfTheDay to file manager
     func save() {
         do {
             let directory = try FileManager.default.url(

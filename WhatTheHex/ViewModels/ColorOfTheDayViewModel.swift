@@ -21,6 +21,8 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
         super.init()
     }
     
+    /// fetch the hexcode for today from a colorOfDayService
+    /// - Returns: Hexcode object for a fetched hexcode string if found
     func getHexcodeOfDay() async -> Hexcode? {
         
         do {
@@ -35,6 +37,7 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
         return nil
     }
     
+    /// adds current date to dataController and marks the game over
     override func submitGuess() {
         dataController.datesCompletedColorOfTheDay.append(Date.now)
         gameOver = true
