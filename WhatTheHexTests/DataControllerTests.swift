@@ -133,4 +133,19 @@ final class DataControllerTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
+    func test_colorOfTheDayStreak_3_consecutive_days_in_past_returns_0() {
+        let sut = DataController()
+
+        sut.datesCompletedColorOfTheDay = [
+            Date.now.minus(10),
+            Date.now.minus(11),
+            Date.now.minus(12)
+        ]
+        
+        let expected = 0
+        
+        let actual = sut.colorOfTheDayStreak
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
