@@ -17,4 +17,10 @@ extension Date {
         return dayStart-1 ... dayEnd+1
     }
     
+    func minus(_ days: Int) -> Date {
+        let secondsInDay = 86_400
+        let intervalToSubtract = TimeInterval(secondsInDay * days)
+        return Date.now - intervalToSubtract
+    }
+    
 }

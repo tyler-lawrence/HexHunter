@@ -331,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */,
+				5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */,
 				5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */,
 				5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */,
 				5B5BA38D2BB8894900B558EE /* Color+Random.swift */,
@@ -339,7 +340,6 @@
 				5B0E33132BC8853300F934DE /* String+toHexadecimal.swift */,
 				5B0E331D2BC9645600F934DE /* String+ValidHexcode.swift */,
 				5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */,
-				5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

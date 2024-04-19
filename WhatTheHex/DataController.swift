@@ -11,6 +11,7 @@ import Foundation
 final class DataController {
     
     var datesCompletedColorOfTheDay: [Date] = []
+    
     var completedColorOfTheDay: Bool {
         let lastMidnight: Date = calendar.startOfDay(for: Date.now)
         let mostRecentDate: Date? = datesCompletedColorOfTheDay.sorted(by: >).first
@@ -25,27 +26,12 @@ final class DataController {
     var colorOfTheDayStreak: Int {
         datesCompletedColorOfTheDay.streakCount()
     }
-    var lastRefresh: Date = Date.now
     
     private var calendar = Calendar(identifier: .gregorian)
     
     init() {
         self.datesCompletedColorOfTheDay = load()
     }
-    
-    
-    private func toDate() -> DateComponents {
-        calendar.dateComponents([.year, .month, .day], from: lastRefresh)
-    }
-    
-//    /// check to see if we need to refresh the colorOfTheDay
-//    func refresh() {
-//        let lastMidnight: Date = calendar.startOfDay(for: Date.now)
-//        if lastRefresh < lastMidnight {
-//            completedColorOfTheDay = false
-//        }
-//        lastRefresh = Date.now
-//    }
     
     func load() -> [Date] {
         do {
@@ -78,3 +64,15 @@ final class DataController {
         }
     }
 }
+
+#if DEBUG
+extension DataController {
+    static var sample1DayStreak: DataController {
+        let dc = DataController()
+        dc.datesCompletedColorOfTheDay = [
+            Date.now.minus(1)
+        ]
+        return dc
+    }
+}
+#endif

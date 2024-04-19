@@ -7,14 +7,6 @@
 
 import XCTest
 
-extension Date {
-    func minus(_ days: Int) -> Date {
-        let secondsInDay = 86_400
-        let intervalToSubtract = TimeInterval(secondsInDay * days)
-        return Date.now - intervalToSubtract
-    }
-}
-
 final class DataControllerTests: XCTestCase {
         
     //MARK: colorOfTheDayStreak
@@ -105,6 +97,36 @@ final class DataControllerTests: XCTestCase {
         ]
         
         let expected = 1
+        
+        let actual = sut.colorOfTheDayStreak
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_colorOfTheDayStreak_2_day_returns_2() {
+        let sut = DataController()
+
+        sut.datesCompletedColorOfTheDay = [
+            Date.now,
+            Date.now.minus(1)
+        ]
+        
+        let expected = 2
+        
+        let actual = sut.colorOfTheDayStreak
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func test_colorOfTheDayStreak_unorderedDates_valid_streak_2_returns_2() {
+        let sut = DataController()
+
+        sut.datesCompletedColorOfTheDay = [
+            Date.now.minus(1),
+            Date.now
+        ]
+        
+        let expected = 2
         
         let actual = sut.colorOfTheDayStreak
         

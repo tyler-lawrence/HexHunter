@@ -36,9 +36,8 @@ class ColorOfTheDayViewModel: AccuracyGameViewModel {
     }
     
     override func submitGuess() {
-//        dataController.completedColorOfTheDay = true
-        gameOver = true
         dataController.datesCompletedColorOfTheDay.append(Date.now)
+        gameOver = true
     }
 }
 

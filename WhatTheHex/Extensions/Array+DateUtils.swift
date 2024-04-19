@@ -17,16 +17,15 @@ extension Array where Element == Date {
         guard reverseChronologicalSorted.count > 1 else { return 1 }
         var streak: Int = 1
         
-        for i in 1 ... self.count - 1 {
+        for i in 1 ... reverseChronologicalSorted.count - 1 {
             
-            let validRange = self[i-1].dayRange()
+            let validRange = reverseChronologicalSorted[i-1].dayRange()
 
-            if validRange.contains(self[i]) {
+            if validRange.contains(reverseChronologicalSorted[i]) {
                 streak += 1
             } else {
                 break
             }
-            
         }
         
         return streak
