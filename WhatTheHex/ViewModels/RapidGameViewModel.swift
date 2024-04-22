@@ -60,7 +60,7 @@ class RapidGameViewModel: TimedGameViewModel {
 #if DEBUG
 extension RapidGameViewModel {
     static var sample: RapidGameViewModel {
-        let vm = RapidGameViewModel()
+        let vm = RapidGameViewModel(gameTimeMax: 5)
         vm.guesses = [Guess(playerGuess: Hexcode.random(), target: Hexcode()), Guess(playerGuess: Hexcode.teal, target: Hexcode.teal)]
         return vm
     }

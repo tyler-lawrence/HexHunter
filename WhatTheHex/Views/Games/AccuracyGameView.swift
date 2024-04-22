@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccuracyGameView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var vm: AccuracyGameViewModel
 
     var body: some View {
@@ -37,6 +38,7 @@ struct AccuracyGameView: View {
         }
         .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
             Button("Play again"){ vm.reset() }
+            Button("Exit"){ presentationMode.wrappedValue.dismiss() }
         }
     }
 }
