@@ -12,15 +12,15 @@ struct ScoreExplanationView: View {
     let hex2 = Hexcode.orange
     
     var redDiff: String {
-        String(format: "%.0f", abs(hex1.red.toColorScale() - hex2.red.toColorScale()))
+        String(format: "%.0f", Double(abs(hex1.red.toColorScale() - hex2.red.toColorScale())))
     }
     
     var greenDiff: String {
-        String(format: "%.0f", abs(hex1.green.toColorScale() - hex2.green.toColorScale()))
+        String(format: "%.0f", Double(abs(hex1.green.toColorScale() - hex2.green.toColorScale())))
     }
     
     var blueDiff: String {
-        String(format: "%.0f", abs(hex1.blue.toColorScale() - hex2.blue.toColorScale()))
+        String(format: "%.0f", Double(abs(hex1.blue.toColorScale() - hex2.blue.toColorScale())))
     }
     
     var score: Double {
