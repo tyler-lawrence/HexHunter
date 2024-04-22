@@ -11,7 +11,7 @@ struct SurvivalGameView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
-
+    let squareSize: CGFloat = 150
     var minSimilarityScore: String {
         String(format: "%.0f", vm.minimumSimilarityToScore)
     }
@@ -19,6 +19,7 @@ struct SurvivalGameView: View {
     var body: some View {
         VStack{
             HStack{
+                TimerView(vm: vm)
                 Spacer()
                 VStack(alignment: .trailing){
                     Text("Score: \(vm.correctGuesses)")
@@ -30,18 +31,28 @@ struct SurvivalGameView: View {
             }
             .bold()
             .font(.title3)
-            .padding(.vertical, 0)
-            TimedGameBaseView(vm: vm)
-                .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
-                    Button("Play again"){ vm.reset() }
-                    Button("Exit"){ presentationMode.wrappedValue.dismiss() }
-                }
-                .onAppear{
-                    vm.reset()
-                }
+            
+            HStack{
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: squareSize, showingCode: vm.gameOver)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: squareSize, showingCode: true)
+            }
+            RGBSlidersView(hexcode: $vm.playerHexcode)
+            Spacer()
+            Button("Guess"){
+                vm.submitGuess()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .onAppear{
+            startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+        }
+        .onDisappear{
+            stopBackgroundSound()
         }
     }
 }
+
 
 #Preview {
     SurvivalGameView(vm: SurvivalGameViewModel())
