@@ -20,7 +20,9 @@ class SurvivalGameViewModel: TimedGameViewModel {
     var timeRemaining: Int
     var correctGuesses = 0
     
-    var minimumSimilarityToScore: Double = 80.0
+    var minimumSimilarityToScore: Double{
+        Double(80 + 2 * (correctGuesses / 5))
+    }
     var timeReward: Int = 10
     var bonusTimeAnimationTrigger: Bool = false
     

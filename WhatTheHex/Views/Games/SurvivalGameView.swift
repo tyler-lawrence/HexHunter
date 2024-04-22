@@ -22,10 +22,15 @@ struct SurvivalGameView: View {
                 Spacer()
                 VStack(alignment: .trailing){
                     Text("Score: \(vm.correctGuesses)")
+                    
+                        .contentTransition(.numericText())
                     Text("Minimum accuracy: \(minSimilarityScore)")
+                        .contentTransition(.numericText())
                 }
                 .padding(.trailing)
             }
+            .bold()
+            .font(.title3)
             TimedGameBaseView(vm: vm)
                 .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
                     Button("Play again"){ vm.reset() }
