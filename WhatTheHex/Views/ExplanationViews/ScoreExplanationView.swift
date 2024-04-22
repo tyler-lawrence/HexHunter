@@ -11,16 +11,40 @@ struct ScoreExplanationView: View {
     let hex1 = Hexcode.teal
     let hex2 = Hexcode.orange
     
-    var redDiff: String {
-        String(format: "%.0f", abs(hex1.red.toColorScale() - hex2.red.toColorScale()))
+    var redDiff: Double {
+        Double(abs(hex1.red.toColorScale() - hex2.red.toColorScale()))
     }
     
-    var greenDiff: String {
-        String(format: "%.0f", abs(hex1.green.toColorScale() - hex2.green.toColorScale()))
+    var redDiffLabel: String {
+        String(format: "%.0f", redDiff)
     }
     
-    var blueDiff: String {
-        String(format: "%.0f", abs(hex1.blue.toColorScale() - hex2.blue.toColorScale()))
+    var redSimilarityMeasure: String {
+        String(format: "%.2f", redDiff / 255)
+    }
+    
+    var greenDiff: Double {
+        Double(abs(hex1.green.toColorScale() - hex2.green.toColorScale()))
+    }
+    
+    var greenDiffLabel: String {
+        String(format: "%.0f", greenDiff)
+    }
+    
+    var greenSimilarityMeasure: String {
+        String(format: "%.2f", greenDiff / 255)
+    }
+    
+    var blueDiff: Double {
+        Double(abs(hex1.blue.toColorScale() - hex2.blue.toColorScale()))
+    }
+    
+    var blueDiffLabel: String {
+        String(format: "%.0f", blueDiff)
+    }
+    
+    var blueSimilarityMeasure: String {
+        String(format: "%.2f", blueDiff / 255)
     }
     
     var score: Double {
@@ -37,7 +61,7 @@ struct ScoreExplanationView: View {
             }
             Divider()
             ScrollView{
-                Text("Scores are calculated by measuring the difference between each component. Each component can be handled as a number between 0 and 255.")
+                Text("Scores are calculated by measuring the difference between each component. Each component (red, green, and blue) can be handled as a number between 0 and 255.")
                 HStack{
                     VStack{
                         Text("Red: \(hex1.red.display) = \(hex1.red.colorScaleLabel)")
@@ -52,11 +76,19 @@ struct ScoreExplanationView: View {
                     }
                 }
                 Divider()
-                Text("then we sum the absolute difference across same colors and divide that by 3.")
-                Text("Red = |\(hex1.red.colorScaleLabel) - \(hex2.red.colorScaleLabel)| = \(redDiff)")
-                Text("Green = |\(hex1.green.colorScaleLabel) - \(hex2.green.colorScaleLabel)| = \(greenDiff)")
-                Text("Blue = |\(hex1.blue.colorScaleLabel) - \(hex2.blue.colorScaleLabel)| = \(blueDiff)")
-                Text("Score: \(String(format: "%.2f", score))")
+                Text("To calculate the score we take the absolute difference of each component.")
+                Text("Red = |\(hex1.red.colorScaleLabel) - \(hex2.red.colorScaleLabel)| = \(redDiffLabel)")
+                Text("Green = |\(hex1.green.colorScaleLabel) - \(hex2.green.colorScaleLabel)| = \(greenDiffLabel)")
+                Text("Blue = |\(hex1.blue.colorScaleLabel) - \(hex2.blue.colorScaleLabel)| = \(blueDiffLabel)")
+                Divider()
+                Text("Then we divide those differences by 255 to get a similarity measure.")
+                Text("Red = \(redDiffLabel) / 255 = \(redSimilarityMeasure)")
+                Text("Green = \(greenDiffLabel) / 255 = \(greenSimilarityMeasure)")
+                Text("Blue = \(blueDiffLabel) / 255 = \(blueSimilarityMeasure)")
+                Divider()
+                Text("Finally, we take the average of the three similarity measures and multiply that by 100 to calculate our final score")
+                Text("(\(redSimilarityMeasure) + \(greenSimilarityMeasure) + \(blueSimilarityMeasure)) / 3 * 100")
+                Text("Score: \(String(format: "%.0f", score))")
                     .padding(.top)
                     .bold()
                 Divider()
