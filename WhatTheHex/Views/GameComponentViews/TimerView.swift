@@ -32,7 +32,7 @@ struct TimerView: View {
             )
         
         // correct guess animation
-            .padding(20)
+            .padding(10)
             .overlay{
                     Circle()
                         .foregroundStyle(.green)
@@ -46,7 +46,6 @@ struct TimerView: View {
                                 .opacity(phase)
                         }
             }
-        
             .sensoryFeedback(.warning, trigger: lowTimeTrigger)
             .onReceive(vm.timer){ _ in
                 vm.timeRemaining -= 1
