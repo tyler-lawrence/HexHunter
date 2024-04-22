@@ -12,16 +12,18 @@ struct RapidGameView: View {
     @State var vm: RapidGameViewModel = RapidGameViewModel()
     
     var body: some View {
-        TimedGameBaseView(vm: vm)
-            .sheet(isPresented: $vm.gameOver) {
-                RapidGameOverView(vm: vm)
-                    .onDisappear{
-                        vm.reset()
-                    }
-            }
-            .onAppear{
-                vm.reset()
-            }
+        
+        if vm.gameOver{
+            RapidGameOverView(vm: vm)
+                .onDisappear{
+                    vm.reset()
+                }
+        } else {
+            TimedGameBaseView(vm: vm)
+                .onAppear{
+                    vm.reset()
+                }
+        }
     }
 }
 

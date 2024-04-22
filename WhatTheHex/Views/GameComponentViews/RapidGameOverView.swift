@@ -26,7 +26,6 @@ struct RapidGameOverView: View {
                             .padding(.horizontal)
                         ColorSquareView(title: "", hexcode: guess.target, size: 100, showingCode: true)
                     }
-                    .padding()
                 }
             }
         }

@@ -32,7 +32,8 @@ struct GameSelectionView: View {
                     }
                     
                     NavigationLink{
-                        RapidGameView()
+                        RapidGameView(vm: RapidGameViewModel(gameTimeMax: 5))
+//                        RapidGameView()
                     } label: {
                         GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy.")
                     }
