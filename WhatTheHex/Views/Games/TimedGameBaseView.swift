@@ -10,16 +10,15 @@ import SwiftUI
 struct TimedGameBaseView: View {
     
     @State var vm: TimedGameViewModel
-
+    let squareSize: CGFloat = 150
     var body: some View {
         
         VStack{
             TimerView(vm: vm)
             HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: 150, showingCode: vm.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: 150, showingCode: true)
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: squareSize, showingCode: vm.gameOver)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: squareSize, showingCode: true)
             }
-            Spacer()
             RGBSlidersView(hexcode: $vm.playerHexcode)
             Spacer()
             Button("Guess"){
