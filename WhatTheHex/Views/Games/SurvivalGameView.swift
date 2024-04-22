@@ -12,18 +12,32 @@ struct SurvivalGameView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
 
+    var minSimilarityScore: String {
+        String(format: "%.0f", vm.minimumSimilarityToScore)
+    }
+    
     var body: some View {
-        TimedGameBaseView(vm: vm)
-            .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
-                Button("Play again"){ vm.reset() }
-                Button("Exit"){ presentationMode.wrappedValue.dismiss() }
+        VStack{
+            HStack{
+                Spacer()
+                VStack(alignment: .trailing){
+                    Text("Score: \(vm.correctGuesses)")
+                    Text("Minimum accuracy: \(minSimilarityScore)")
+                }
+                .padding(.trailing)
             }
-            .onAppear{
-                vm.reset()
-            }
+            TimedGameBaseView(vm: vm)
+                .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
+                    Button("Play again"){ vm.reset() }
+                    Button("Exit"){ presentationMode.wrappedValue.dismiss() }
+                }
+                .onAppear{
+                    vm.reset()
+                }
+        }
     }
 }
 
 #Preview {
-    SurvivalGameView(vm: SurvivalGameViewModel(minimumSimilarityToScore: 0.0))
+    SurvivalGameView(vm: SurvivalGameViewModel())
 }
