@@ -43,12 +43,17 @@ struct SurvivalGameView: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        
         .padding()
         .onAppear{
             startBackgroundSound(sound: "GameplayLoop", type: "mp3")
         }
         .onDisappear{
             stopBackgroundSound()
+        }
+        .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
+            Button("Play again"){ vm.reset() }
+            Button("Exit"){ presentationMode.wrappedValue.dismiss() }
         }
     }
 }
