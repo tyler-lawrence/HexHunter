@@ -26,7 +26,9 @@ func startBackgroundSound(sound: String, type: String) {
             guard let backgroundAudioPlayer = backgroundAudioPlayer else { return }
             backgroundAudioPlayer.numberOfLoops = -1
             backgroundAudioPlayer.prepareToPlay()
+            #if !targetEnvironment(simulator)
             backgroundAudioPlayer.play()
+            #endif
         } catch {
             print(error)
         }
