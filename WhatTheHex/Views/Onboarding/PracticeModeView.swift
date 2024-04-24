@@ -16,18 +16,28 @@ struct PracticeModeView: View {
     var correctHexcode: Bool {
         targetHexcode != hexcode
     }
-    var body: some View {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    
+    var playerHexcodeSquare: some View {
+        Group{
+            Text("#\(hexcode.display)")
+                .font(.largeTitle)
+                .padding()
+            Spacer()
+            ColorSquareView(title: "", hexcode: hexcode, size: 130, showingCode: false)
+        }
+    }
+    
+    var shared: some View {
         VStack{
             Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
+                .font(.title3)
+            Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
                 .font(.title)
-            + Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
-                .font(.title)
-            HStack{
-                Text("#\(hexcode.display)")
-                    .font(.largeTitle)
-                    .padding()
-                Spacer()
-                ColorSquareView(title: "", hexcode: hexcode, size: 130, showingCode: false)
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack{ playerHexcodeSquare }
+            } else {
+                HStack{ playerHexcodeSquare }
             }
             TipView(tip, arrowEdge: .bottom)
             RGBSlidersView(hexcode: $hexcode)
@@ -40,8 +50,18 @@ struct PracticeModeView: View {
             
         }
         .padding(.horizontal)
-        
     }
+    
+    var body: some View {
+        if dynamicTypeSize.isAccessibilitySize {
+            ScrollView{
+                shared
+            }
+        } else {
+            shared
+        }
+    }
+    
 }
 
 #Preview {
