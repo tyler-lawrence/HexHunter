@@ -17,7 +17,7 @@ struct GameSelectionView: View {
         NavigationStack{
             ZStack{
                 BackgroundView()
-                VStack{
+                ScrollView{
                     NavigationLink{
                         ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
                     } label: {
