@@ -10,6 +10,7 @@ import SwiftUI
 struct RGBSlidersView: View {
     
     @Binding var hexcode: Hexcode
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
     var shared: some View {
         Group{
@@ -21,7 +22,15 @@ struct RGBSlidersView: View {
     
     var body: some View {
         #if os(iOS)
-        VStack{shared}
+        if dynamicTypeSize.isAccessibilitySize {
+            ScrollView{
+                shared
+            }
+        } else {
+            VStack{
+                shared
+            }
+        }
         #elseif os(macOS)
         HStack{shared}
         #endif
