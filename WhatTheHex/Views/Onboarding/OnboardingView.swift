@@ -13,39 +13,42 @@ struct OnboardingView: View {
     @Binding var hasOnboarded: Bool
     let gameMode: GameMode
     
+    @State var idx = 0
+    var instruction: String {
+        guard idx < gameMode.onboardingInstructions.count else { return "" }
+        return gameMode.onboardingInstructions[idx]
+    }
+    
     var body: some View {
-        TabView {
-            ForEach(gameMode.onboardingInstructions, id: \.self){ instruction in
-                ZStack{
-                    BackgroundView()
-                        .opacity(0.5)
-                    if dynamicTypeSize.isAccessibilitySize {
-                        ScrollView{
-                            Text(instruction)
-                                .font(.title2)
-                                .bold()
-                                .padding()
-                        }
-                    } else {
-                        Text(instruction)
+        
+        ZStack{
+            BackgroundView()
+            
+            if idx < gameMode.onboardingInstructions.count {
+                VStack{
+                    Spacer()
+                    Text(instruction)
+                        .font(.title2)
+                    Spacer()
+                    Button {
+                        idx += 1
+                    } label: {
+                        Image(systemName: "arrow.right")
                             .font(.title2)
-                            .bold()
-                            .padding()
                     }
-                    
+                    .buttonStyle(.borderedProminent)
+                    .padding()
                 }
-                .frame(width: 400, height: 300)
+            } else {
+                Button("Begin") {
+                    hasOnboarded = true
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+                
             }
-            BeginView(hasOnboarded: $hasOnboarded)
-                .tabItem{
-                    Label("Start", systemImage: "play")
-                }
-                .frame(width: 400, height: 300)
+            
         }
-        .frame(width: 400, height: 400)
-        #if os(iOS)
-        .tabViewStyle(.page(indexDisplayMode: .always))
-        #endif
     }
 }
 
