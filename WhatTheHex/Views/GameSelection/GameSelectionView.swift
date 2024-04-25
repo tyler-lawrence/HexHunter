@@ -63,7 +63,7 @@ struct GameSelectionView: View {
                     }
                 }
             }
-            .font(.largeTitle)
+            .font(.title)
             .sheet(isPresented: $showingScoreSheet){
                 ScoreExplanationView()
             }
