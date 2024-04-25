@@ -9,8 +9,17 @@ import SwiftUI
 
 struct GameModeButtonView: View {
 
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     let title: String
     var streak: Int? = nil
+    
+    var frameHeight: CGFloat {
+        if dynamicTypeSize.isAccessibilitySize {
+            return 150
+        } else {
+            return 50
+        }
+    }
     
     var body: some View {
         VStack{
@@ -33,6 +42,7 @@ struct GameModeButtonView: View {
                 }
             }
         }
+        .frame(height: frameHeight)
         .padding()
     }
 }
@@ -42,7 +52,7 @@ struct GameModeButtonView: View {
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", streak: 5)
+            GameModeButtonView(title: "Color of the Day", streak: 5)
         }
         
         NavigationLink{
