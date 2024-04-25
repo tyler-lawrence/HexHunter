@@ -26,7 +26,7 @@ struct GameSelectionView: View {
                     .disabled(dataController.completedColorOfTheDay)
                     
                     NavigationLink{
-                        AccuracyGameView(vm: AccuracyGameViewModel())
+                        PracticeModeView(vm: AccuracyGameViewModel())
                     } label: {
                         GameModeButtonView(title: "Accuracy Game", description: "How accurately can you guess one color?")
                     }

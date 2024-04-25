@@ -8,7 +8,7 @@
 import SwiftUI
 import TipKit
 
-struct PracticeModeView: View {
+struct TutorialView: View {
     @Binding var hasOnboarded: Bool
     @State var hexcode = Hexcode()
     let targetHexcode = Hexcode.orange
@@ -65,5 +65,5 @@ struct PracticeModeView: View {
 }
 
 #Preview {
-    PracticeModeView(hasOnboarded: .constant(false))
+    TutorialView(hasOnboarded: .constant(false))
 }

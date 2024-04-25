@@ -8,35 +8,47 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Binding var hasOnboarded: Bool
-    var playDescriptionSelector: String {
-        #if os(iOS)
-        "pickers"
-        #else
-        "sliders"
-        #endif
-    }
+    let gameMode: GameMode
+    
     var body: some View {
-        TabView{
-            OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "Use the \(playDescriptionSelector) to adjust the hexcode to match the target before time runs out!")
-                .tabItem{
-                    Label("How to Play", systemImage: "doc.questionmark")
+        TabView {
+            ForEach(gameMode.onboardingInstructions, id: \.self){ instruction in
+                ZStack{
+                    BackgroundView()
+                        .opacity(0.5)
+                    if dynamicTypeSize.isAccessibilitySize {
+                        ScrollView{
+                            Text(instruction)
+                                .font(.title2)
+                                .bold()
+                                .padding()
+                        }
+                    } else {
+                        Text(instruction)
+                            .font(.title2)
+                            .bold()
+                            .padding()
+                    }
+                    
                 }
-            HexcodeExplanationView()
-                .tabItem{
-                    Label("Hexcode Explanation", systemImage: "brain")
-                }
+                .frame(width: 400, height: 300)
+            }
             BeginView(hasOnboarded: $hasOnboarded)
                 .tabItem{
                     Label("Start", systemImage: "play")
                 }
+                .frame(width: 400, height: 300)
         }
+        .frame(width: 400, height: 400)
         #if os(iOS)
-        .tabViewStyle(.page)
+        .tabViewStyle(.page(indexDisplayMode: .always))
         #endif
     }
 }
 
 #Preview {
-    OnboardingView(hasOnboarded: .constant(false))
+    OnboardingView(hasOnboarded: .constant(false), gameMode: .survival)
 }

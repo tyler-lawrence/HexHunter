@@ -10,19 +10,23 @@ import SwiftUI
 struct RapidGameView: View {
     
     @State var vm: RapidGameViewModel = RapidGameViewModel()
-    
+    @AppStorage("hasOnboardedSurvival") var hasOnboarded: Bool = false
     var body: some View {
         
-        if vm.gameOver{
-            RapidGameOverView(vm: vm)
-                .onDisappear{
-                    vm.reset()
-                }
+        if hasOnboarded {
+            if vm.gameOver{
+                RapidGameOverView(vm: vm)
+                    .onDisappear{
+                        vm.reset()
+                    }
+            } else {
+                TimedGameBaseView(vm: vm)
+                    .onAppear{
+                        vm.reset()
+                    }
+            }
         } else {
-            TimedGameBaseView(vm: vm)
-                .onAppear{
-                    vm.reset()
-                }
+            OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .rapid)
         }
     }
 }

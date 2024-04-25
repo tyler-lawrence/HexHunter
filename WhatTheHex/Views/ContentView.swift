@@ -16,7 +16,7 @@ struct ContentView: View {
             GameSelectionView()
                 .environment(dataController)
         } else {
-            PracticeModeView(hasOnboarded: $hasOnboarded)
+            TutorialView(hasOnboarded: $hasOnboarded)
         }
     }
 }
