@@ -10,11 +10,10 @@ import SwiftUI
 struct GameModeButtonView: View {
 
     let title: String
-    let description: String
     var streak: Int? = nil
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack{
             HStack{
                 Text(title)
                     .font(.title)
@@ -33,9 +32,6 @@ struct GameModeButtonView: View {
                         )
                 }
             }
-            Text(description)
-                .offset(x: 10)
-                .multilineTextAlignment(.leading)
         }
         .padding()
     }
@@ -46,13 +42,13 @@ struct GameModeButtonView: View {
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds", streak: 5)
+            GameModeButtonView(title: "Rapid", streak: 5)
         }
         
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds")
+            GameModeButtonView(title: "Rapid")
         }
     }
     .buttonStyle(.borderedProminent)

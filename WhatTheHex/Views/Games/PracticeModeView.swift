@@ -10,7 +10,7 @@ import SwiftUI
 struct PracticeModeView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var vm: AccuracyGameViewModel
+    @State var vm: PracticeModeViewModel
     @AppStorage("hasOnboardedPracticeMode") var hasOnboarded: Bool = false
 
     var body: some View {
@@ -52,5 +52,5 @@ struct PracticeModeView: View {
 }
 
 #Preview {
-    PracticeModeView(vm: AccuracyGameViewModel())
+    PracticeModeView(vm: PracticeModeViewModel())
 }

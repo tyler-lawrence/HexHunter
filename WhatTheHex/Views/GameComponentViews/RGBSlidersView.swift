@@ -39,7 +39,7 @@ struct RGBSlidersView: View {
 
 #Preview {
     struct Preview: View {
-        @State var vm = AccuracyGameViewModel()
+        @State var vm = PracticeModeViewModel()
         var body: some View {
             RGBSlidersView(hexcode: $vm.playerHexcode)
         }

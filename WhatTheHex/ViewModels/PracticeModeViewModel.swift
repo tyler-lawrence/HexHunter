@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class AccuracyGameViewModel: GameViewModel {
+class PracticeModeViewModel: GameViewModel {
     
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
