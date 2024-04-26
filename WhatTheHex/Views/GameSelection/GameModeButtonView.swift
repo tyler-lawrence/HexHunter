@@ -9,12 +9,20 @@ import SwiftUI
 
 struct GameModeButtonView: View {
 
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     let title: String
-    let description: String
     var streak: Int? = nil
     
+    var frameHeight: CGFloat {
+        if dynamicTypeSize.isAccessibilitySize {
+            return 150
+        } else {
+            return 50
+        }
+    }
+    
     var body: some View {
-        VStack(alignment: .leading){
+        VStack{
             HStack{
                 Text(title)
                     .font(.title)
@@ -33,10 +41,8 @@ struct GameModeButtonView: View {
                         )
                 }
             }
-            Text(description)
-                .offset(x: 10)
-                .multilineTextAlignment(.leading)
         }
+        .frame(height: frameHeight)
         .padding()
     }
 }
@@ -46,13 +52,13 @@ struct GameModeButtonView: View {
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds", streak: 5)
+            GameModeButtonView(title: "Color of the Day", streak: 5)
         }
         
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid", description: "How many colors can you accurately guess in 90 seconds")
+            GameModeButtonView(title: "Rapid")
         }
     }
     .buttonStyle(.borderedProminent)

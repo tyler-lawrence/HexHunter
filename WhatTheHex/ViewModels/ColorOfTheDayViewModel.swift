@@ -10,7 +10,7 @@ import Foundation
 /// When testing, make sure you are signed into iCloud on the simulator
 
 @Observable
-class ColorOfTheDayViewModel: AccuracyGameViewModel {
+class ColorOfTheDayViewModel: PracticeModeViewModel {
     
     private let service: ColorOfDayService
     let dataController: DataController

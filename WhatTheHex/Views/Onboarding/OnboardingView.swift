@@ -8,35 +8,59 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Binding var hasOnboarded: Bool
-    var playDescriptionSelector: String {
-        #if os(iOS)
-        "pickers"
-        #else
-        "sliders"
-        #endif
+    let gameMode: GameMode
+    
+    @State var idx = 0
+    var instruction: String {
+        guard idx < gameMode.onboardingInstructions.count else { return "" }
+        return gameMode.onboardingInstructions[idx]
     }
+    
     var body: some View {
-        TabView{
-            OnboardingRowView(systemImage: "doc.questionmark", title: "How to play", description: "Use the \(playDescriptionSelector) to adjust the hexcode to match the target before time runs out!")
-                .tabItem{
-                    Label("How to Play", systemImage: "doc.questionmark")
+        
+        ZStack{
+            BackgroundView()
+            
+            if idx < gameMode.onboardingInstructions.count {
+                VStack{
+                    Spacer()
+                    if dynamicTypeSize.isAccessibilitySize{
+                        ScrollView{
+                            Text(instruction)
+                                .font(.title2)
+                                .padding()
+                        }
+                    } else {
+                        Text(instruction)
+                            .font(.title2)
+                            .padding()
+                    }
+                    Spacer()
+                    Button {
+                        idx += 1
+                    } label: {
+                        Image(systemName: "arrow.right")
+                            .font(.title2)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding()
                 }
-            HexcodeExplanationView()
-                .tabItem{
-                    Label("Hexcode Explanation", systemImage: "brain")
+            } else {
+                Button("Begin") {
+                    hasOnboarded = true
                 }
-            BeginView(hasOnboarded: $hasOnboarded)
-                .tabItem{
-                    Label("Start", systemImage: "play")
-                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+                
+            }
+            
         }
-        #if os(iOS)
-        .tabViewStyle(.page)
-        #endif
     }
 }
 
 #Preview {
-    OnboardingView(hasOnboarded: .constant(false))
+    OnboardingView(hasOnboarded: .constant(false), gameMode: .survival)
 }

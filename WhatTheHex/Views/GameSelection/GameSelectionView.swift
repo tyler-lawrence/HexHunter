@@ -21,30 +21,30 @@ struct GameSelectionView: View {
                     NavigationLink{
                         ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
                     } label: {
-                        GameModeButtonView(title: "Color of the Day", description: "See how close you can get to the color of the day.", streak: dataController.colorOfTheDayStreak)
+                        GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
                     }
                     .disabled(dataController.completedColorOfTheDay)
                     
                     NavigationLink{
-                        AccuracyGameView(vm: AccuracyGameViewModel())
+                        PracticeModeView(vm: PracticeModeViewModel())
                     } label: {
-                        GameModeButtonView(title: "Accuracy Game", description: "How accurately can you guess one color?")
+                        GameModeButtonView(title: "Practice")
                     }
                     
                     NavigationLink{
                         RapidGameView()
                     } label: {
-                        GameModeButtonView(title: "Rapid Game", description: "90 seconds: how many colors can you guess within 80% accuracy.")
+                        GameModeButtonView(title: "Rapid")
                     }
                     
                     NavigationLink{
                         SurvivalGameView()
                     } label: {
-                        GameModeButtonView(title: "Survival", description: "Correct guesses increase your time remaining. How long can you last?")
+                        GameModeButtonView(title: "Survival")
                     }
                     
                 }
-                .padding(.horizontal)
+                .padding()
                 .buttonStyle(GameSelectionButton())
             }
             .toolbar{
@@ -52,17 +52,18 @@ struct GameSelectionView: View {
                     Button{
                         showingScoreSheet.toggle()
                     } label: {
-                        Image(systemName: "gamecontroller")
+                        Image(systemName: "trophy")
                     }
                 }
                 ToolbarItem{
                     Button{
                         showingHexcodeSheet.toggle()
                     } label: {
-                        Image(systemName: "circle.hexagonpath")
+                        Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
             }
+            .font(.title)
             .sheet(isPresented: $showingScoreSheet){
                 ScoreExplanationView()
             }
