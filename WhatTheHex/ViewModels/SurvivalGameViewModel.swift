@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import GameKit
 
 @Observable
 class SurvivalGameViewModel: TimedGameViewModel {
@@ -47,6 +48,7 @@ class SurvivalGameViewModel: TimedGameViewModel {
     }
     
     func submitGuess() {
+        
         timeRemaining -= 1
         let score = playerHexcode.calculateSimilarity(to: targetHexcode)
         if score > minimumSimilarityToScore {
@@ -54,6 +56,20 @@ class SurvivalGameViewModel: TimedGameViewModel {
         }
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
+    }
+    
+    func uploadScore() async {
+        guard GameCenterManager.shared.isGameCenterEnabled else { return }
+        do {
+            try await GKLeaderboard.submitScore(
+                correctGuesses,
+                context: 0,
+                player: GameCenterManager.shared.localPlayer,
+                leaderboardIDs: ["survivalmode"]
+            )
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func reset() {
