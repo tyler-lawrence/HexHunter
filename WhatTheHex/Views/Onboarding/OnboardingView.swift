@@ -27,8 +27,17 @@ struct OnboardingView: View {
             if idx < gameMode.onboardingInstructions.count {
                 VStack{
                     Spacer()
-                    Text(instruction)
-                        .font(.title2)
+                    if dynamicTypeSize.isAccessibilitySize{
+                        ScrollView{
+                            Text(instruction)
+                                .font(.title2)
+                                .padding()
+                        }
+                    } else {
+                        Text(instruction)
+                            .font(.title2)
+                            .padding()
+                    }
                     Spacer()
                     Button {
                         idx += 1
