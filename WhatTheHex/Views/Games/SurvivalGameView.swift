@@ -62,6 +62,7 @@ struct SurvivalGameView: View {
                 }
                 Button("Exit"){
                     Task{ await vm.uploadScore() }
+                    vm.reset()
                     presentationMode.wrappedValue.dismiss()
                 }
             }
