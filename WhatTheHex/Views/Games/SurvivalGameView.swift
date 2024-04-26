@@ -56,15 +56,22 @@ struct SurvivalGameView: View {
                 stopBackgroundSound()
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
-                Button("Play again"){ vm.reset() }
-                Button("Exit"){ presentationMode.wrappedValue.dismiss() }
+                Button("Play again"){
+                    Task{ await vm.uploadScore() }
+                    vm.reset()
+                }
+                Button("Exit"){
+                    Task{ await vm.uploadScore() }
+                    vm.reset()
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
-
+            
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .survival)
         }
         
-            }
+    }
 }
 
 

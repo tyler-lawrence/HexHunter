@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct GameSelectionView: View {
     
@@ -43,6 +44,12 @@ struct GameSelectionView: View {
                         GameModeButtonView(title: "Survival")
                     }
                     
+                    NavigationLink{
+                        LeaderboardView()
+                    } label: {
+                        GameModeButtonView(title: "Leaderboards")
+                    }
+
                 }
                 .padding()
                 .buttonStyle(GameSelectionButton())
@@ -71,7 +78,9 @@ struct GameSelectionView: View {
                 HexcodeExplanationView()
             }
         }
-        
+        .onAppear{
+            GameCenterManager.shared.authenticateLocalPlayer()
+        }
         
     }
 }

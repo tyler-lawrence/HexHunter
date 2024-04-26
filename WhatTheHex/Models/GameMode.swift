@@ -14,6 +14,19 @@ enum GameMode: String {
     case survival = "Survival"
     case colorOfTheDay = "Color of the Day"
     
+    var gameCenterLeaderboardID: String? {
+        switch self {
+        case .practice:
+            nil
+        case .rapid:
+            nil
+        case .survival:
+            "survivalmode"
+        case .colorOfTheDay:
+            "colorOfTheDay"
+        }
+    }
+    
     var onboardingInstructions: [String] {
         switch self {
         case .practice:
