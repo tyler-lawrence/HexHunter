@@ -44,9 +44,9 @@ struct LeaderboardView: View {
             .overlay{
                 if entries.isEmpty {
                     ContentUnavailableView{
-                        Label("no scores", systemImage: "chart.bar.xaxis.ascending")
+                        Label("No Scores", systemImage: "chart.bar.xaxis.ascending")
                     } description: {
-                        Text("No scores to show")
+                        Text("Make sure you are signed into iCloud")
                     }
                 }
             }
@@ -57,7 +57,7 @@ struct LeaderboardView: View {
                 await loadLeaderboard()
             }
         }
-        .onChange(of: gameMode){ newValue in
+        .onChange(of: gameMode){ _ in
             Task{
                 await loadLeaderboard()
             }
