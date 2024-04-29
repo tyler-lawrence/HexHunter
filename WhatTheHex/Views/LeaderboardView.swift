@@ -10,18 +10,23 @@ import GameKit
 
 struct LeaderboardView: View {
     
-    let leaderboardID = "survivalmode"
+    @State private var gameMode: GameMode = .survival
     @State var entries: [GKLeaderboard.Entry] = []
     
     var body: some View {
         VStack{
-//            Text("Survival Mode High Scores")
+            Picker("Mode", selection: $gameMode){
+                ForEach(GameMode.leaderboardModes, id: \.self){ mode in
+                    Text(mode.rawValue)
+                }
+            }
+            .pickerStyle(.segmented)
+            
             List(entries, id: \.self){ entry in
                 
                 HStack{
                     Text(entry.player.alias)
                     Spacer()
-//                    Text("\(entry.score)")
                     Image(.blankHexToken)
                         .resizable()
                         .scaledToFit()
@@ -30,15 +35,29 @@ struct LeaderboardView: View {
                                 .bold()
                                 .foregroundStyle(.white)
                         }
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
                 }
             }
             .refreshable {
                 Task{ await loadLeaderboard() }
             }
+            .overlay{
+                if entries.isEmpty {
+                    ContentUnavailableView{
+                        Label("no scores", systemImage: "chart.bar.xaxis.ascending")
+                    } description: {
+                        Text("No scores to show")
+                    }
+                }
+            }
         }
-        .navigationTitle("Survival Mode High Scores")
+        .navigationTitle("Leaderboards")
         .onAppear(){
+            Task{
+                await loadLeaderboard()
+            }
+        }
+        .onChange(of: gameMode){ newValue in
             Task{
                 await loadLeaderboard()
             }
@@ -47,6 +66,8 @@ struct LeaderboardView: View {
     }
     
     func loadLeaderboard() async {
+        
+        guard let leaderboardID = gameMode.gameCenterLeaderboardID else { return }
         
         do {
             let leaderboards  = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardID])

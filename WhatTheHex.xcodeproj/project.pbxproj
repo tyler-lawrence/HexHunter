@@ -57,6 +57,7 @@
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
+		5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */; };
 		5BA3D9CC2BBB64A0003DE2F8 /* PracticeModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */; };
 		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 		5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */; };
@@ -146,6 +147,7 @@
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardGame.swift; sourceTree = "<group>"; };
 		5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeViewModel.swift; sourceTree = "<group>"; };
 		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 		5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */,
 				5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */,
 				5BB39A712BC1E38700A38EAD /* TimedGame.swift */,
+				5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */,
 				5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */,
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
+				5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* TutorialView.swift in Sources */,
 				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,

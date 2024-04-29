@@ -57,11 +57,21 @@ struct SurvivalGameView: View {
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
                 Button("Play again"){
-                    Task{ await vm.uploadScore() }
+                    Task{
+                        await GameCenterManager.shared.uploadScore(
+                            vm.GKFormattedScore,
+                            for: .survival
+                        )
+                    }
                     vm.reset()
                 }
                 Button("Exit"){
-                    Task{ await vm.uploadScore() }
+                    Task{
+                        await GameCenterManager.shared.uploadScore(
+                            vm.GKFormattedScore,
+                            for: .survival
+                        )
+                    }
                     vm.reset()
                     presentationMode.wrappedValue.dismiss()
                 }

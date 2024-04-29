@@ -42,7 +42,7 @@ struct ColorOfTheDayView: View {
             }
             .padding()
             .onAppear{
-#warning("change the song to something slower and dreamier")
+                #warning("change the song to something slower and dreamier")
                 startBackgroundSound(sound: "GameplayLoop", type: "mp3")
             }
             .onDisappear{
@@ -50,6 +50,12 @@ struct ColorOfTheDayView: View {
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Ok"){
+                    Task {
+                        await GameCenterManager.shared.uploadScore(
+                            vm.GKFormattedScore,
+                            for: .colorOfTheDay
+                        )
+                    }
                     presentationMode.wrappedValue.dismiss()
                 }
             }
