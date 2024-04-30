@@ -23,7 +23,7 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
     }
     
     var GKFormattedScore: Int {
-        Int(calculateScore() * 100)
+        Int(calculateScore() * 100 )
     }
     
     /// fetch the hexcode for today from a colorOfDayService

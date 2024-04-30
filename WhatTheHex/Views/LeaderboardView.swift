@@ -24,6 +24,21 @@ struct LeaderboardView: View {
             
             List(entries, id: \.self){ entry in
                 
+                /*
+                 make a leaderboard score struct that holds player alias and a formatted score instead of relying on the GKLeaderboard.Entry
+                 */
+                
+                var displayedScore: String {
+                    switch gameMode {
+                    case .survival:
+                        "\(entry.score)"
+                    case .colorOfTheDay:
+                        "\(Double(entry.score) / 100)"
+                    default:
+                        "\(entry.score)"
+                    }
+                }
+                
                 HStack{
                     Text(entry.player.alias)
                     Spacer()
@@ -31,7 +46,7 @@ struct LeaderboardView: View {
                         .resizable()
                         .scaledToFit()
                         .overlay{
-                            Text("\(entry.score)")
+                            Text(displayedScore)
                                 .bold()
                                 .foregroundStyle(.white)
                         }
@@ -58,6 +73,7 @@ struct LeaderboardView: View {
             }
         }
         .onChange(of: gameMode){ _ in
+            entries.removeAll()
             Task{
                 await loadLeaderboard()
             }
