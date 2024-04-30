@@ -21,37 +21,9 @@ struct LeaderboardView: View {
                 }
             }
             .pickerStyle(.segmented)
-            
+            .padding(.horizontal)
             List(entries, id: \.self){ entry in
-                
-                /*
-                 make a leaderboard score struct that holds player alias and a formatted score instead of relying on the GKLeaderboard.Entry
-                 */
-                
-                var displayedScore: String {
-                    switch gameMode {
-                    case .survival:
-                        "\(entry.score)"
-                    case .colorOfTheDay:
-                        "\(Double(entry.score) / 100)"
-                    default:
-                        "\(entry.score)"
-                    }
-                }
-                
-                HStack{
-                    Text(entry.player.alias)
-                    Spacer()
-                    Image(.blankHexToken)
-                        .resizable()
-                        .scaledToFit()
-                        .overlay{
-                            Text(displayedScore)
-                                .bold()
-                                .foregroundStyle(.white)
-                        }
-                        .frame(width: 60, height: 60)
-                }
+                LeaderboardRowView(entry: entry, gameMode: gameMode)
             }
             .refreshable {
                 Task{ await loadLeaderboard() }

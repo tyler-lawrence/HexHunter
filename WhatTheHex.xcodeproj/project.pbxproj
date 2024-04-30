@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */; };
 		5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */; };
 		5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33022BC6BC6600F934DE /* Binding+convert.swift */; };
@@ -103,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRowView.swift; sourceTree = "<group>"; };
 		5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTip.swift; sourceTree = "<group>"; };
 		5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hexcode+Equatable.swift"; sourceTree = "<group>"; };
 		5B0E33022BC6BC6600F934DE /* Binding+convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+convert.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
 				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
+				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
 				5B0E32FA2BC5C89700F934DE /* Onboarding */,
@@ -542,6 +545,7 @@
 				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */,
+				5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */,
 				5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
