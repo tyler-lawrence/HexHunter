@@ -13,6 +13,10 @@ struct LeaderboardView: View {
     @State private var gameMode: GameMode = .survival
     @State var entries: [GKLeaderboard.Entry] = []
     
+    var contentUnavailableMessage: String {
+        GameCenterManager.shared.isGameCenterEnabled ? "Be the first to record a score!" : "make sure you are signed into iCloud"
+    }
+    
     var body: some View {
         VStack{
             Picker("Mode", selection: $gameMode){
@@ -33,7 +37,7 @@ struct LeaderboardView: View {
                     ContentUnavailableView{
                         Label("No Scores", systemImage: "chart.bar.xaxis.ascending")
                     } description: {
-                        Text("Make sure you are signed into iCloud")
+                        Text(contentUnavailableMessage)
                     }
                 }
             }

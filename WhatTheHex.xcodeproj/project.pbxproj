@@ -192,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B09622D2BE267A700425CE8 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
+				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
 		5B0E32F82BC5C87900F934DE /* GameSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,8 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
-				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
+				5B09622D2BE267A700425CE8 /* Leaderboard */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
 				5B0E32FA2BC5C89700F934DE /* Onboarding */,
