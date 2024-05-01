@@ -10,7 +10,7 @@ import Combine
 import GameKit
 
 @Observable
-class SurvivalGameViewModel: TimedGameViewModel {
+class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
 
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
@@ -20,6 +20,10 @@ class SurvivalGameViewModel: TimedGameViewModel {
     var gameTimeMax: Int
     var timeRemaining: Int
     var correctGuesses = 0
+    
+    var GKFormattedScore: Int {
+        correctGuesses
+    }
     
     var minimumSimilarityToScore: Double{
         Double(80 + 2 * (correctGuesses / 5))
@@ -56,20 +60,6 @@ class SurvivalGameViewModel: TimedGameViewModel {
         }
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
-    }
-    
-    func uploadScore() async {
-        guard GameCenterManager.shared.isGameCenterEnabled else { return }
-        do {
-            try await GKLeaderboard.submitScore(
-                correctGuesses,
-                context: 0,
-                player: GameCenterManager.shared.localPlayer,
-                leaderboardIDs: ["survivalmode"]
-            )
-        } catch {
-            print(error.localizedDescription)
-        }
     }
     
     func reset() {

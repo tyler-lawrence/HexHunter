@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import GameKit
 
 /// When testing, make sure you are signed into iCloud on the simulator
 
 @Observable
-class ColorOfTheDayViewModel: PracticeModeViewModel {
+class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
     
     private let service: ColorOfDayService
     let dataController: DataController
@@ -19,6 +20,10 @@ class ColorOfTheDayViewModel: PracticeModeViewModel {
         self.dataController = dataController
         self.service = service
         super.init()
+    }
+    
+    var GKFormattedScore: Int {
+        Int(calculateScore() * 100 )
     }
     
     /// fetch the hexcode for today from a colorOfDayService
@@ -42,6 +47,7 @@ class ColorOfTheDayViewModel: PracticeModeViewModel {
         dataController.datesCompletedColorOfTheDay.append(Date.now)
         gameOver = true
     }
+    
 }
 
 #if DEBUG

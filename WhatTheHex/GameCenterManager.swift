@@ -27,4 +27,19 @@ class GameCenterManager {
         }
     }
     
+    func uploadScore(_ score: Int, for mode: GameMode) async {
+        guard GameCenterManager.shared.isGameCenterEnabled else { return }
+        guard let leaderboardID = mode.gameCenterLeaderboardID else { return }
+        do {
+            try await GKLeaderboard.submitScore(
+                score,
+                context: 0,
+                player: GameCenterManager.shared.localPlayer,
+                leaderboardIDs: [leaderboardID]
+            )
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
 }

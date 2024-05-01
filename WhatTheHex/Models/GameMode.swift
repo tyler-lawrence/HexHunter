@@ -14,6 +14,8 @@ enum GameMode: String {
     case survival = "Survival"
     case colorOfTheDay = "Color of the Day"
     
+    static var leaderboardModes: [GameMode] = [.colorOfTheDay, .survival]
+    
     var gameCenterLeaderboardID: String? {
         switch self {
         case .practice:
@@ -23,7 +25,7 @@ enum GameMode: String {
         case .survival:
             "survivalmode"
         case .colorOfTheDay:
-            "colorOfTheDay"
+            "ColorOfTheDay"
         }
     }
     

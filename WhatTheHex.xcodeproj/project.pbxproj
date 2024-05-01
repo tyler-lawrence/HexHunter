@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */; };
 		5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */; };
 		5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33022BC6BC6600F934DE /* Binding+convert.swift */; };
@@ -57,6 +58,7 @@
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
+		5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */; };
 		5BA3D9CC2BBB64A0003DE2F8 /* PracticeModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */; };
 		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 		5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */; };
@@ -102,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRowView.swift; sourceTree = "<group>"; };
 		5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTip.swift; sourceTree = "<group>"; };
 		5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hexcode+Equatable.swift"; sourceTree = "<group>"; };
 		5B0E33022BC6BC6600F934DE /* Binding+convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+convert.swift"; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardGame.swift; sourceTree = "<group>"; };
 		5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeViewModel.swift; sourceTree = "<group>"; };
 		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 		5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B09622D2BE267A700425CE8 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
+				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
 		5B0E32F82BC5C87900F934DE /* GameSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
+				5B09622D2BE267A700425CE8 /* Leaderboard */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
 				5B0E32FA2BC5C89700F934DE /* Onboarding */,
@@ -392,6 +405,7 @@
 				5B0E330A2BC85A5D00F934DE /* ColorOfDayService.swift */,
 				5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */,
 				5BB39A712BC1E38700A38EAD /* TimedGame.swift */,
+				5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -539,6 +553,7 @@
 				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */,
+				5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */,
 				5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
@@ -579,6 +594,7 @@
 				5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */,
 				5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */,
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
+				5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* TutorialView.swift in Sources */,
 				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,
@@ -762,7 +778,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -802,7 +818,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
