@@ -25,7 +25,7 @@ struct HexcodeExplanationView: View {
                     .padding(.vertical)
                     Text("The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail")
                         .padding(.bottom)
-                    Text("To convert the hex to a number you first convert the digit to its corresponding numeric value (if necessary) and apply the following formula:")
+                    Text("To convert the hexcode to a number you first convert the digit to its corresponding numeric value (if necessary) and apply the following formula:")
                     Text("(Character1 * 16) + Character2").bold()
                     Divider()
                     Text("Example")
