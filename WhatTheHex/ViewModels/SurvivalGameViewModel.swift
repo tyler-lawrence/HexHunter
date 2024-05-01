@@ -45,6 +45,17 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
         self.timerSubscription = timer.connect()
     }
     
+    func toggleTimer() {
+        if timerSubscription != nil {
+            timerSubscription?.cancel()
+            timerSubscription = nil
+        } else {
+            timeRemaining -= 1 // accounts for reconnecting
+            timer = Timer.publish(every: 1, on: .main, in: .common)
+            timerSubscription = timer.connect()
+        }
+    }
+    
     func correctGuess() {
         correctGuesses += 1
         timeRemaining += timeReward

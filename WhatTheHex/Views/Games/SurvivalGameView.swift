@@ -12,6 +12,8 @@ struct SurvivalGameView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
+    @State var showingExitConfirmation: Bool = false
+    
     let squareSize: CGFloat = 150
     var minSimilarityScore: String {
         String(format: "%.0f", vm.minimumSimilarityToScore)
@@ -47,12 +49,12 @@ struct SurvivalGameView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-            
             .padding()
             .onAppear{
                 startBackgroundSound(sound: "GameplayLoop", type: "mp3")
             }
             .onDisappear{
+                vm.reset()
                 stopBackgroundSound()
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
@@ -74,6 +76,26 @@ struct SurvivalGameView: View {
                     }
                     vm.reset()
                     presentationMode.wrappedValue.dismiss()
+                }
+            }
+            .alert("Are you sure you want to leave?", isPresented: $showingExitConfirmation){
+                Button("Yes", role: .destructive){presentationMode.wrappedValue.dismiss()}
+            }
+            .onChange(of: showingExitConfirmation){
+                vm.toggleTimer()
+            }
+            .navigationBarBackButtonHidden()
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading){
+                    Button{
+                        showingExitConfirmation.toggle()
+                    } label: {
+                        HStack{
+                            Image(systemName: "chevron.left")
+                            Text("Back")
+                        }
+                    }
+                    
                 }
             }
             
