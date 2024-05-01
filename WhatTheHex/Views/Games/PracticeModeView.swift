@@ -41,7 +41,9 @@ struct PracticeModeView: View {
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Play again"){ vm.reset() }
-                Button("Exit"){ presentationMode.wrappedValue.dismiss() }
+                Button("Exit"){
+                    vm.reset()
+                    presentationMode.wrappedValue.dismiss() }
             }
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .practice)
