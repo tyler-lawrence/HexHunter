@@ -20,10 +20,16 @@ struct HexComponentPickerView: View {
                 HStack{
                     Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15)
+                        .sensoryFeedback(.selection, trigger: component.digit1){ old, new in
+                            new != 0
+                        }
                 }
                 HStack {
                     Text(component.digit2Display)
                     Slider(value: .convert(from: $component.digit2), in: 0...15)
+                        .sensoryFeedback(.selection, trigger: component.digit2){ old, new in
+                            new != 0
+                        }
                 }
             }
             Text(component.display)
@@ -34,6 +40,7 @@ struct HexComponentPickerView: View {
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Material.thickMaterial)
         )
+        
         
     }
     
