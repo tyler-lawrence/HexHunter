@@ -33,8 +33,7 @@ struct PracticeModeView: View {
             }
             .padding()
             .onAppear{
-                #warning("change the song to something slower and dreamier")
-                startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+                startBackgroundSound(sound: "PracticeMode", type: "mp3")
             }
             .onDisappear{
                 stopBackgroundSound()
