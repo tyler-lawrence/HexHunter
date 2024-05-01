@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */; };
+		5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */; };
 		5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */; };
 		5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5B0E33032BC6BC6600F934DE /* Binding+convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33022BC6BC6600F934DE /* Binding+convert.swift */; };
@@ -105,6 +106,7 @@
 
 /* Begin PBXFileReference section */
 		5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRowView.swift; sourceTree = "<group>"; };
+		5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PracticeMode.mp3; path = ../../../../../Desktop/HexHunter/Audio/PracticeMode.mp3; sourceTree = "<group>"; };
 		5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTip.swift; sourceTree = "<group>"; };
 		5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hexcode+Equatable.swift"; sourceTree = "<group>"; };
 		5B0E33022BC6BC6600F934DE /* Binding+convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+convert.swift"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			children = (
 				5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */,
 				5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */,
+				5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 			files = (
 				5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */,
 				5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */,
+				5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */,
 				5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
