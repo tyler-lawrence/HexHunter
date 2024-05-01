@@ -64,8 +64,9 @@ struct SurvivalGameView: View {
                             vm.GKFormattedScore,
                             for: .survival
                         )
+                        vm.reset()
                     }
-                    vm.reset()
+                    
                 }
                 Button("Exit"){
                     Task{
@@ -73,13 +74,21 @@ struct SurvivalGameView: View {
                             vm.GKFormattedScore,
                             for: .survival
                         )
+                        vm.reset()
                     }
-                    vm.reset()
                     presentationMode.wrappedValue.dismiss()
                 }
             }
             .alert("Are you sure you want to leave?", isPresented: $showingExitConfirmation){
-                Button("Yes", role: .destructive){presentationMode.wrappedValue.dismiss()}
+                Button("Yes", role: .destructive){
+                    Task{
+                        await GameCenterManager.shared.uploadScore(
+                            vm.GKFormattedScore,
+                            for: .survival
+                        )
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .onChange(of: showingExitConfirmation){
                 vm.toggleTimer()
