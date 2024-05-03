@@ -14,6 +14,7 @@ struct HexComponentPickerView: View {
         HStack{
             Text(component.hexCategory.rawValue)
                 .font(.title)
+                .foregroundStyle(component.hexCategory.displayColor)
                 .bold()
             VStack{
                 
@@ -34,7 +35,9 @@ struct HexComponentPickerView: View {
             }
             Text(component.display)
                 .font(.largeTitle)
+                .foregroundStyle(component.hexCategory.displayColor)
         }
+        .tint(component.hexCategory.displayColor)
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 15.0)

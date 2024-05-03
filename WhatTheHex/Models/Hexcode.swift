@@ -76,9 +76,9 @@ struct Hexcode: Identifiable, Hashable {
 
 extension Hexcode {
     static let teal = Hexcode(
-        red: Component(hexCategory: .red, digit1: 2, digit2: 0),
-        green: Component(hexCategory: .green, digit1: 10, digit2: 0),
-        blue: Component(hexCategory: .blue, digit1: 11, digit2: 0)
+        red: Component(hexCategory: .red, digit1: 2, digit2: 11),
+        green: Component(hexCategory: .green, digit1: 10, digit2: 5),
+        blue: Component(hexCategory: .blue, digit1: 11, digit2: 3)
     )
     
     static let orange = Hexcode(
