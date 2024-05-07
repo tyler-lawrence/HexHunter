@@ -10,47 +10,42 @@ import SwiftUI
 struct GameplayTutorialView: View {
     
     @Binding var hasOnboarded: Bool
-    @State var hexcode = Hexcode()
+    @State var playerHexcode = Hexcode()
     let targetHexcode = Hexcode.teal
     let tip = OnboardingTip()
-    var correctHexcode: Bool {
-        targetHexcode != hexcode
-    }
+
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
     let squareFrameSize: CGFloat = 130
-    @State var scale = 1.0
+    @State var scale = 0.0
     
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-
+    
     @State var circleFrameSize: CGFloat = 0
     @State var correctGuessTimeCounter = 0
     @State var showingCircle = false
     
     var playerHexcodeSquare: some View {
         Group{
-            Text("#\(hexcode.display)")
+            Text("#\(playerHexcode.display)")
                 .font(.largeTitle)
                 .padding()
-            ColorSquareView(title: "", hexcode: hexcode, size: squareFrameSize, showingCode: false)
+            Spacer()
+            ColorSquareView(title: "", hexcode: playerHexcode, size: squareFrameSize, showingCode: false)
                 .padding(.horizontal)
                 .overlay{
-                    if hexcode == targetHexcode {
+                    if playerHexcode == targetHexcode {
                         Image(systemName: "checkmark")
                             .resizable()
                             .scaledToFit()
                             .scaleEffect(scale)
                             .foregroundStyle(.white)
-                            .onAppear{
-                                let baseAnimation = Animation.easeInOut(duration: 1)
-                                let repeated = baseAnimation.repeatForever(autoreverses: true)
-                                withAnimation(repeated){
-                                    scale = 0.5
-                                }
-                            }
-                            .onDisappear{
-                                correctGuessTimeCounter = 0
-                            }
+                            .animation(
+                                .easeInOut(duration: 1)
+                                    .repeatForever(autoreverses: true),
+                                value: scale
+                            )
+                            // shows circle indicating tutorial is over after 2 seconds
                             .onReceive(timer){ _ in
                                 correctGuessTimeCounter += 10
                                 if correctGuessTimeCounter >= 2000 {
@@ -59,29 +54,34 @@ struct GameplayTutorialView: View {
                             }
                     }
                 }
-                
         }
     }
     
     var shared: some View {
         
-            VStack{
-                Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
-                    .font(.title3)
-                    .padding(.bottom)
-                Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
-                    .bold()
-                    .font(.title)
-                if dynamicTypeSize.isAccessibilitySize {
-                    VStack{ playerHexcodeSquare }
-                } else {
-                    HStack{ playerHexcodeSquare }
-                }
-                RGBSlidersView(hexcode: $hexcode)
+        VStack{
+            Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
+                .font(.title3)
+                .padding(.bottom)
+            Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
+                .bold()
+                .font(.title)
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack{ playerHexcodeSquare }
+            } else {
+                HStack{ playerHexcodeSquare }
             }
-            
-            
-        
+            RGBSlidersView(hexcode: $playerHexcode)
+                .onChange(of: playerHexcode){
+                    if playerHexcode == targetHexcode {
+                        scale = 1
+                    } else {
+                        scale = 0
+                        correctGuessTimeCounter = 0
+                    }
+                }
+                .padding(.horizontal)
+        }
     }
     
     var correctGuessView: some View {
