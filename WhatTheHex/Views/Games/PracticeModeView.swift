@@ -44,9 +44,6 @@ struct PracticeModeView: View {
             }
             Button("Play again"){ vm.reset() }
         }
-        
-        
-        
     }
 }
 
