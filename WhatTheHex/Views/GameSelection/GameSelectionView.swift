@@ -10,8 +10,7 @@ import GameKit
 
 struct GameSelectionView: View {
     
-    @State var showingScoreSheet = false
-    @State var showingHexcodeSheet = false
+    @State var showingExplanationSheet = false
     @Environment(DataController.self) var dataController
     
     var body: some View {
@@ -43,12 +42,6 @@ struct GameSelectionView: View {
                     } label: {
                         GameModeButtonView(title: "Survival")
                     }
-                    
-                    NavigationLink{
-                        LeaderboardView()
-                    } label: {
-                        GameModeButtonView(title: "Leaderboards")
-                    }
 
                 }
                 .padding()
@@ -56,26 +49,23 @@ struct GameSelectionView: View {
             }
             .toolbar{
                 ToolbarItem{
-                    Button{
-                        showingScoreSheet.toggle()
+                    NavigationLink{
+                        LeaderboardView()
                     } label: {
                         Image(systemName: "trophy")
                     }
                 }
                 ToolbarItem{
                     Button{
-                        showingHexcodeSheet.toggle()
+                        showingExplanationSheet.toggle()
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
             }
             .font(.title)
-            .sheet(isPresented: $showingScoreSheet){
-                ScoreExplanationView()
-            }
-            .sheet(isPresented: $showingHexcodeSheet){
-                HexcodeExplanationView()
+            .sheet(isPresented: $showingExplanationSheet){
+                ExplanationView()
             }
         }
         .onAppear{

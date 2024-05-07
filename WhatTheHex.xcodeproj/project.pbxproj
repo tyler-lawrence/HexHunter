@@ -95,6 +95,7 @@
 		5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
 		5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
+		5BD058202BEACF6C007E0336 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
+		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			children = (
 				5BA3D9DE2BBC5424003DE2F8 /* ScoreExplanationView.swift */,
 				5BA3D9DC2BBC508E003DE2F8 /* HexcodeExplanationView.swift */,
+				5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */,
 			);
 			path = ExplanationViews;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
 				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
+				5BD058202BEACF6C007E0336 /* ExplanationView.swift in Sources */,
 				5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */,
 				5BA3D9DD2BBC508E003DE2F8 /* HexcodeExplanationView.swift in Sources */,
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
