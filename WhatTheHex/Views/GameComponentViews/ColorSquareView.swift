@@ -18,7 +18,7 @@ struct ColorSquareView: View {
     var showingCode: Bool
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             Text(title ?? "")
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Color(hexcode))
@@ -27,7 +27,7 @@ struct ColorSquareView: View {
             Text(hexLabel)
         }
         .lineLimit(1)
-        .minimumScaleFactor(0.6)
+        .minimumScaleFactor(0.5)
     }
 }
 

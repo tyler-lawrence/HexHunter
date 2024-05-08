@@ -10,6 +10,7 @@ import SwiftUI
 struct SurvivalGameView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
     @State var showingExitConfirmation: Bool = false
@@ -30,7 +31,6 @@ struct SurvivalGameView: View {
     var gameDetailsView: RotatingView<some View> {
         let g = Group{
             TimerView(vm: vm)
-            Spacer()
             VStack(alignment: .trailing){
                 Text("Score: \(vm.correctGuesses)")
                     .contentTransition(.numericText())
@@ -39,9 +39,10 @@ struct SurvivalGameView: View {
                     Text("\(minSimilarityScore)")
                 }
             }
+            .padding(.vertical, 10)
+            .font(.title2)
             .lineLimit(1)
             .minimumScaleFactor(0.6)
-            Spacer()
         }
         
         return RotatingView(content: g, originalOrientation: .vertical)
@@ -70,12 +71,20 @@ struct SurvivalGameView: View {
                 } else {
                     HStack{
                         squaresView.flipped
-                            .padding(.trailing)
                         RGBSlidersView(hexcode: $vm.playerHexcode)
-                            .padding(.horizontal)
-                        VStack{
-                            gameDetailsView.original
-                            guessButton
+                            .frame(minWidth: geo.size.width * 0.3)
+                        if dynamicTypeSize.isAccessibilitySize{
+                            ScrollView{
+                                VStack{
+                                    gameDetailsView.original
+                                    guessButton
+                                }
+                            }
+                        } else {
+                            VStack{
+                                gameDetailsView.original
+                                guessButton
+                            }
                         }
                     }
                 }

@@ -12,6 +12,7 @@ struct GameSelectionButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         
         configuration.label
+            .minimumScaleFactor(0.6)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
