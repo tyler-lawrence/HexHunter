@@ -53,13 +53,15 @@ struct ColorOfTheDayView: View {
                 if geo.size.height > geo.size.width {
                     VStack{
                         squaresView.original
-                        controlsView.original.padding()
+                        controlsView.original
                     }
+                    .padding()
                 } else {
                     HStack{
                         squaresView.flipped
                         controlsView.flipped
                     }
+                    .padding()
                 }
             }
             .onAppear{
