@@ -68,10 +68,10 @@ struct PracticeModeView: View {
         }
         .padding()
         .onAppear{
-            startBackgroundSound(sound: "PracticeMode", type: "mp3")
+            AudioPlayer.shared.startBackgroundLoop(sound: "PracticeMode", type: "mp3")
         }
         .onDisappear{
-            stopBackgroundSound()
+            AudioPlayer.shared.stopBackgroundSound()
         }
         .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
             Button("Exit"){

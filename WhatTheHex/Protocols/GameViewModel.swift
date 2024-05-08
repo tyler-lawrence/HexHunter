@@ -18,4 +18,6 @@ protocol GameViewModel {
     func submitGuess()
     func reset()
     func calculateScore() -> Double
+    
+    var audioFileName: String { get }
 }

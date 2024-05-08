@@ -22,6 +22,7 @@ class RapidGameViewModel: TimedGameViewModel {
     let gameTimeMax: Int
     var timeRemaining: Int
     var bonusTimeAnimationTrigger: Bool = false
+    var audioFileName: String = "GameplayLoop"
     
     var minimumSimilarityToScore: Double
     

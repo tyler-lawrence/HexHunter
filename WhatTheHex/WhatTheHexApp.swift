@@ -12,10 +12,12 @@ import TipKit
 struct WhatTheHexApp: App {
     @Environment(\.scenePhase) var scenePhase
     @State private var dataController = DataController()
+    @State private var audioPlayer = AudioPlayer()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(dataController)
+                .environment(audioPlayer)
                 .onChange(of: scenePhase) {
                     dataController.save()
                 }

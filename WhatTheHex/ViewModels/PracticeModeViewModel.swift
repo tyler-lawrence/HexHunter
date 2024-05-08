@@ -13,6 +13,8 @@ class PracticeModeViewModel: GameViewModel {
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
     
+    var audioFileName: String = "PracticeMode"
+    
     var gameOverMessage: String {
         """
         Target: \(targetHexcode.display)

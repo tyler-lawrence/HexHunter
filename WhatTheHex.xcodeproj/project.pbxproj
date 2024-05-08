@@ -43,7 +43,7 @@
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
-		5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */; };
+		5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
 		5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */; };
 		5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA37A2BB7433900B558EE /* ContentView.swift */; };
@@ -97,6 +97,7 @@
 		5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
 		5BD058202BEACF6C007E0336 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */; };
 		5BD058222BEAD8D7007E0336 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058212BEAD8D7007E0336 /* RotatingView.swift */; };
+		5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +138,7 @@
 		5B43BD012BD0086000054F2E /* GameSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionButton.swift; sourceTree = "<group>"; };
 		5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
-		5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheHexApp.swift; sourceTree = "<group>"; };
 		5B5BA37A2BB7433900B558EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -282,7 +283,7 @@
 		5B4F36A62BC4245400F1EB87 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				5B4F36A42BC4242400F1EB87 /* MusicPlayer.swift */,
+				5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */,
 				5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */,
 				5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */,
 			);
@@ -549,6 +550,7 @@
 				5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */,
 				5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */,
 				5B0962B22BE3C3FB00425CE8 /* LeaderboardGame.swift in Sources */,
+				5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */,
 				5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */,
 				5B0962B32BE3C42D00425CE8 /* SurvivalGameViewModel.swift in Sources */,
 				5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */,
@@ -582,7 +584,7 @@
 				5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */,
 				5B0E330B2BC85A5D00F934DE /* ColorOfDayService.swift in Sources */,
 				5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */,
-				5B4F36A52BC4242400F1EB87 /* MusicPlayer.swift in Sources */,
+				5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
 				5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,
@@ -798,7 +800,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -838,7 +840,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;

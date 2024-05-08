@@ -51,10 +51,10 @@ struct TimedGameBaseView: View {
         }
         .padding()
         .onAppear{
-            startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+            AudioPlayer.shared.startBackgroundLoop(sound: vm.audioFileName, type: "mp3")
         }
         .onDisappear{
-            stopBackgroundSound()
+            AudioPlayer.shared.stopBackgroundSound()
         }
     }
 }
