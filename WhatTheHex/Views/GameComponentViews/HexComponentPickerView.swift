@@ -38,7 +38,7 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(component.hexCategory.displayColor)
         }
         .tint(component.hexCategory.displayColor)
-        .padding()
+        .padding(5)
         .background(
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Material.thickMaterial)

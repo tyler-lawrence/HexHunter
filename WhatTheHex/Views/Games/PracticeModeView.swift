@@ -12,23 +12,41 @@ struct PracticeModeView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var vm: PracticeModeViewModel
     
-    var body: some View {
-        
-        VStack{
-            HStack{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: 150, showingCode: vm.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: 150, showingCode: true)
-            }
-            Text("Accuracy: \(vm.accuracy)")
-                .font(.title2)
-                .padding(.top)
-            Divider()
+    var squaresView: RotatingView<some View> {
+        let g = Group{
+            ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: false)
+            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        }
+        return RotatingView(content: g, originalOrientation: .horizontal)
+    }
+    
+    
+    var controlsView: RotatingView< some View > {
+        let g = Group {
             RGBSlidersView(hexcode: $vm.playerHexcode)
             Spacer()
             Button("Reveal"){
                 vm.submitGuess()
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(GameSelectionButton())
+        }
+        return RotatingView(content: g, originalOrientation: .vertical)
+    }
+    
+    var body: some View {
+        
+        GeometryReader{ geo in
+            if geo.size.height > geo.size.width {
+                VStack{
+                    squaresView.original
+                    controlsView.original.padding()
+                }
+            } else {
+                HStack{
+                    squaresView.flipped
+                    controlsView.flipped
+                }
+            }
         }
         .padding()
         .onAppear{

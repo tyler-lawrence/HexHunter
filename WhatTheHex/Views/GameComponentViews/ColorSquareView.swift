@@ -11,23 +11,29 @@ struct ColorSquareView: View {
     
     let title: String?
     let hexcode: Hexcode
-    let size: CGFloat
     var hexLabel: String {
         showingCode ? hexcode.display : " "
     }
+    var minimumFrameSize: CGFloat = 100
     var showingCode: Bool
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             Text(title ?? "")
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Color(hexcode))
-                .frame(width: size, height: size)
+                .frame(minWidth: minimumFrameSize, minHeight: minimumFrameSize * 0.5)
+                .aspectRatio(1, contentMode: .fit)
             Text(hexLabel)
         }
+        .lineLimit(1)
+        .minimumScaleFactor(0.5)
     }
 }
 
 #Preview {
-    ColorSquareView(title: "Target", hexcode: Hexcode.random(), size: 150, showingCode: true)
+    VStack{
+        ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+        ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+    }
 }

@@ -16,7 +16,6 @@ struct GameplayTutorialView: View {
 
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
-    let squareFrameSize: CGFloat = 130
     @State var scale = 0.0
     
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
@@ -31,7 +30,7 @@ struct GameplayTutorialView: View {
                 .font(.largeTitle)
                 .padding()
             Spacer()
-            ColorSquareView(title: "", hexcode: playerHexcode, size: squareFrameSize, showingCode: false)
+            ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
                 .padding(.horizontal)
                 .overlay{
                     if playerHexcode == targetHexcode {

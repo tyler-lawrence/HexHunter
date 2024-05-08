@@ -54,8 +54,8 @@ struct ScoreExplanationView: View {
     var body: some View {
         VStack{
             HStack{
-                ColorSquareView(title: "", hexcode: hex1, size: 150, showingCode: true)
-                ColorSquareView(title: "", hexcode: hex2, size: 150, showingCode: true)
+                ColorSquareView(title: "", hexcode: hex1, showingCode: true)
+                ColorSquareView(title: "", hexcode: hex2, showingCode: true)
             }
             Divider()
             ScrollView{

@@ -10,44 +10,84 @@ import SwiftUI
 struct SurvivalGameView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
     @State var showingExitConfirmation: Bool = false
     
-    let squareSize: CGFloat = 150
     var minSimilarityScore: String {
         String(format: "%.0f", vm.minimumSimilarityToScore)
     }
     
+    var squaresView: RotatingView<some View> {
+        let g = Group{
+            ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
+            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        }
+        
+        return RotatingView(content: g, originalOrientation: .horizontal)
+    }
+    
+    var gameDetailsView: RotatingView<some View> {
+        let g = Group{
+            TimerView(vm: vm)
+            VStack(alignment: .trailing){
+                Text("Score: \(vm.correctGuesses)")
+                    .contentTransition(.numericText())
+                HStack{
+                    Image(systemName: "scope")
+                    Text("\(minSimilarityScore)")
+                }
+            }
+            .padding(.vertical, 10)
+            .font(.title2)
+            .lineLimit(1)
+            .minimumScaleFactor(0.6)
+        }
+        
+        return RotatingView(content: g, originalOrientation: .vertical)
+    }
+    
+    var guessButton: some View {
+        Button("Guess"){
+            vm.submitGuess()
+        }
+        .buttonStyle(GameSelectionButton())
+    }
+    
+    
     var body: some View {
-        
-        
+    
         if hasOnboarded {
-            VStack{
-                HStack{
-                    TimerView(vm: vm)
-                    Spacer()
-                    VStack(alignment: .trailing){
-                        Text("Score: \(vm.correctGuesses)")
-                            .contentTransition(.numericText())
-                        Text("Minimum accuracy: \(minSimilarityScore)")
-                            .contentTransition(.numericText())
+            GeometryReader{ geo in
+                if geo.size.height > geo.size.width {
+                    VStack{
+                        gameDetailsView.flipped
+                        squaresView.original
+                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                        Spacer()
+                        guessButton
                     }
-                    .padding(.trailing)
+                } else {
+                    HStack{
+                        squaresView.flipped
+                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                            .frame(minWidth: geo.size.width * 0.3)
+                        if dynamicTypeSize.isAccessibilitySize{
+                            ScrollView{
+                                VStack{
+                                    gameDetailsView.original
+                                    guessButton
+                                }
+                            }
+                        } else {
+                            VStack{
+                                gameDetailsView.original
+                                guessButton
+                            }
+                        }
+                    }
                 }
-                .bold()
-                .font(.title3)
-                
-                HStack{
-                    ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: squareSize, showingCode: vm.gameOver)
-                    ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: squareSize, showingCode: true)
-                }
-                RGBSlidersView(hexcode: $vm.playerHexcode)
-                Spacer()
-                Button("Guess"){
-                    vm.submitGuess()
-                }
-                .buttonStyle(.borderedProminent)
             }
             .padding()
             .onAppear{

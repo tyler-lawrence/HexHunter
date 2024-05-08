@@ -19,13 +19,13 @@ struct RapidGameOverView: View {
             ScrollView{
                 ForEach(vm.guesses, id: \.self){ guess in
                     HStack{
-                        ColorSquareView(title: "", hexcode: guess.playerGuess, size: 100, showingCode: true)
+                        ColorSquareView(title: "", hexcode: guess.playerGuess, showingCode: true)
                         Text(guess.similarityLabel)
                             .bold()
                             .foregroundStyle(guess.similarityScore >= 80 ? .green : .red)
-                            .padding(.horizontal)
-                        ColorSquareView(title: "", hexcode: guess.target, size: 100, showingCode: true)
+                        ColorSquareView(title: "", hexcode: guess.target, showingCode: true)
                     }
+                    .padding(.horizontal)
                 }
             }
         }
