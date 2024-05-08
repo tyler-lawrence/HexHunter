@@ -40,7 +40,7 @@ struct ColorOfTheDayView: View {
             RGBSlidersView(hexcode: $vm.playerHexcode)
             Button("Guess"){
                 vm.submitGuess()
-            }.buttonStyle(.borderedProminent)
+            }.buttonStyle(GameSelectionButton())
         }
         return RotatingView(content: g, originalOrientation: .vertical)
     }

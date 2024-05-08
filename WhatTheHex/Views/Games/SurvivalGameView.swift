@@ -35,7 +35,7 @@ struct SurvivalGameView: View {
                 Text("Score: \(vm.correctGuesses)")
                     .contentTransition(.numericText())
                 HStack{
-                    Image(systemName: "target")
+                    Image(systemName: "scope")
                     Text("\(minSimilarityScore)")
                 }
             }
