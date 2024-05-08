@@ -25,12 +25,24 @@ struct PracticeModeView: View {
         let g = Group {
             RGBSlidersView(hexcode: $vm.playerHexcode)
             Spacer()
-            Button("Reveal"){
-                vm.submitGuess()
-            }
-            .buttonStyle(GameSelectionButton())
         }
         return RotatingView(content: g, originalOrientation: .vertical)
+    }
+    
+    var buttonView: some View {
+        Button("Reveal"){
+            vm.submitGuess()
+        }
+        .buttonStyle(GameSelectionButton())
+    }
+    
+    var accuracyLabel: some View {
+        HStack{
+            Image(systemName: "scope")
+            Text("Accuracy: \(vm.accuracy)")
+        }
+        .font(.title)
+        
     }
     
     var body: some View {
@@ -39,12 +51,18 @@ struct PracticeModeView: View {
             if geo.size.height > geo.size.width {
                 VStack{
                     squaresView.original
+                    accuracyLabel
                     controlsView.original.padding()
+                    buttonView
                 }
             } else {
                 HStack{
                     squaresView.flipped
                     controlsView.flipped
+                    VStack{
+                        accuracyLabel
+                        buttonView
+                    }
                 }
             }
         }
