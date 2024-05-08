@@ -49,20 +49,6 @@ struct TimedGameBaseView: View {
                 }
             }
         }
-        
-//        VStack{
-//            TimerView(vm: vm)
-//            HStack{
-//                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
-//                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
-//            }
-//            RGBSlidersView(hexcode: $vm.playerHexcode)
-//            Spacer()
-//            Button("Guess"){
-//                vm.submitGuess()
-//            }
-//            .buttonStyle(GameSelectionButton())
-//        }
         .padding()
         .onAppear{
             startBackgroundSound(sound: "GameplayLoop", type: "mp3")
