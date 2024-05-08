@@ -34,9 +34,13 @@ struct SurvivalGameView: View {
             VStack(alignment: .trailing){
                 Text("Score: \(vm.correctGuesses)")
                     .contentTransition(.numericText())
-                Text("Minimum accuracy: \(minSimilarityScore)")
-                    .contentTransition(.numericText())
+                HStack{
+                    Image(systemName: "target")
+                    Text("\(minSimilarityScore)")
+                }
             }
+            .lineLimit(1)
+            .minimumScaleFactor(0.6)
             Spacer()
         }
         

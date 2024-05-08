@@ -22,14 +22,18 @@ struct ColorSquareView: View {
             Text(title ?? "")
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Color(hexcode))
-                .frame(minWidth: minimumFrameSize)
+                .frame(minWidth: minimumFrameSize, minHeight: minimumFrameSize * 0.5)
                 .aspectRatio(1, contentMode: .fit)
             Text(hexLabel)
         }
-        
+        .lineLimit(1)
+        .minimumScaleFactor(0.6)
     }
 }
 
 #Preview {
-    ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+    VStack{
+        ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+        ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+    }
 }
