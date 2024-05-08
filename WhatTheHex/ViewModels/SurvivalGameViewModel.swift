@@ -15,6 +15,8 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
     
+    var audioFileName: String = "GameplayLoop"
+    
     var timer: Timer.TimerPublisher = Timer.publish(every: 1, on: .main, in: .common)
     var timerSubscription: Cancellable?
     var gameTimeMax: Int

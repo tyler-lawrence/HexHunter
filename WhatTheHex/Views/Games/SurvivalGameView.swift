@@ -91,11 +91,11 @@ struct SurvivalGameView: View {
             }
             .padding()
             .onAppear{
-                startBackgroundSound(sound: "GameplayLoop", type: "mp3")
+                AudioPlayer.shared.startBackgroundLoop(sound: "GameplayLoop", type: "mp3")
             }
             .onDisappear{
                 vm.reset()
-                stopBackgroundSound()
+                AudioPlayer.shared.stopBackgroundSound()
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
                 Button("Play again"){
