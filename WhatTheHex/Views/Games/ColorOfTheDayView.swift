@@ -13,36 +13,56 @@ struct ColorOfTheDayView: View {
     @State var vm: ColorOfTheDayViewModel
     @State var colorOfTheDay: Hexcode?
     @AppStorage("hasOnboardedColorOfTheDay") var hasOnboarded: Bool = false
-    let frameSize: CGFloat = 150
+    
+    var targetView: some View {
+        Group{
+            if colorOfTheDay != nil {
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
+            } else {
+                ProgressView()
+                    .task{
+                        await colorOfTheDay = vm.getHexcodeOfDay()
+                    }
+            }
+        }
+    }
+    
+    var squaresView: RotatingView<some View> {
+        let g = Group{
+            targetView
+            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        }
+        return RotatingView(content: g, originalOrientation: .horizontal)
+    }
+    
+    var controlsView: RotatingView< some View > {
+        let g = Group {
+            RGBSlidersView(hexcode: $vm.playerHexcode)
+            Button("Guess"){
+                vm.submitGuess()
+            }.buttonStyle(.borderedProminent)
+        }
+        return RotatingView(content: g, originalOrientation: .vertical)
+    }
     
     var body: some View {
         
         if hasOnboarded{
-            VStack{
-                HStack{
-                    if colorOfTheDay != nil {
-                        ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: frameSize, showingCode: vm.gameOver)
-                    } else {
-                        ProgressView()
-                            .frame(width: frameSize, height: frameSize)
-                            .task{
-                                await colorOfTheDay = vm.getHexcodeOfDay()
-                            }
+
+            GeometryReader{ geo in
+                if geo.size.height > geo.size.width {
+                    VStack{
+                        squaresView.original
+                        controlsView.original.padding()
                     }
-                    ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: frameSize, showingCode: true)
+                } else {
+                    HStack{
+                        squaresView.flipped
+                        controlsView.flipped
+                    }
                 }
-                Spacer()
-                Divider()
-                RGBSlidersView(hexcode: $vm.playerHexcode)
-                Spacer()
-                Button("Guess"){
-                    vm.submitGuess()
-                }
-                .buttonStyle(.borderedProminent)
             }
-            .padding()
             .onAppear{
-                #warning("change the song to something slower and dreamier")
                 startBackgroundSound(sound: "GameplayLoop", type: "mp3")
             }
             .onDisappear{

@@ -43,7 +43,7 @@ struct TutorialView: View {
                         Text(" in the displayed color.")
                     }
                     .font(.title2)
-                    ColorSquareView(title: "", hexcode: playerHexcode, size: 130, showingCode: false)
+                    ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
                     VStack{
                         Text("Hexcode: #\(playerHexcode.display)")
                         Text("Red: \(playerHexcode.red.toColorScale())")

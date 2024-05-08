@@ -14,40 +14,67 @@ struct SurvivalGameView: View {
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
     @State var showingExitConfirmation: Bool = false
     
-    let squareSize: CGFloat = 150
     var minSimilarityScore: String {
         String(format: "%.0f", vm.minimumSimilarityToScore)
     }
     
+    var squaresView: RotatingView<some View> {
+        let g = Group{
+            ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
+            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        }
+        
+        return RotatingView(content: g, originalOrientation: .horizontal)
+    }
+    
+    var gameDetailsView: RotatingView<some View> {
+        let g = Group{
+            TimerView(vm: vm)
+            Spacer()
+            VStack(alignment: .trailing){
+                Text("Score: \(vm.correctGuesses)")
+                    .contentTransition(.numericText())
+                Text("Minimum accuracy: \(minSimilarityScore)")
+                    .contentTransition(.numericText())
+            }
+            Spacer()
+        }
+        
+        return RotatingView(content: g, originalOrientation: .vertical)
+    }
+    
+    var guessButton: some View {
+        Button("Guess"){
+            vm.submitGuess()
+        }
+        .buttonStyle(GameSelectionButton())
+    }
+    
+    
     var body: some View {
-        
-        
+    
         if hasOnboarded {
-            VStack{
-                HStack{
-                    TimerView(vm: vm)
-                    Spacer()
-                    VStack(alignment: .trailing){
-                        Text("Score: \(vm.correctGuesses)")
-                            .contentTransition(.numericText())
-                        Text("Minimum accuracy: \(minSimilarityScore)")
-                            .contentTransition(.numericText())
+            GeometryReader{ geo in
+                if geo.size.height > geo.size.width {
+                    VStack{
+                        gameDetailsView.flipped
+                        squaresView.original
+                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                        Spacer()
+                        guessButton
                     }
-                    .padding(.trailing)
+                } else {
+                    HStack{
+                        squaresView.flipped
+                            .padding(.trailing)
+                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                            .padding(.horizontal)
+                        VStack{
+                            gameDetailsView.original
+                            guessButton
+                        }
+                    }
                 }
-                .bold()
-                .font(.title3)
-                
-                HStack{
-                    ColorSquareView(title: "Target", hexcode: vm.targetHexcode, size: squareSize, showingCode: vm.gameOver)
-                    ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, size: squareSize, showingCode: true)
-                }
-                RGBSlidersView(hexcode: $vm.playerHexcode)
-                Spacer()
-                Button("Guess"){
-                    vm.submitGuess()
-                }
-                .buttonStyle(.borderedProminent)
             }
             .padding()
             .onAppear{
