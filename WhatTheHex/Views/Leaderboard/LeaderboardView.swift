@@ -48,7 +48,7 @@ struct LeaderboardView: View {
                 await loadLeaderboard()
             }
         }
-        .onChange(of: gameMode){ _ in
+        .onChange(of: gameMode){
             entries.removeAll()
             Task{
                 await loadLeaderboard()

@@ -11,8 +11,6 @@ struct HexcodeExplanationView: View {
     let hexcode = Hexcode.teal
     var body: some View {
         VStack{
-            Text("Hexcodes")
-                .font(.largeTitle)
             ScrollView{
                 VStack(alignment: .leading){
                     Text("A hexcode is a hexadecimal representation of a color. You may have seen a color picking tool request a number from 0 to 255. Let's explore how we can convert something like #\(hexcode.display) to the 0-255 scale.")
@@ -30,7 +28,7 @@ struct HexcodeExplanationView: View {
                     Divider()
                     Text("Example")
                         .font(.headline)
-                    Text("Let's take a look at the color ") + Text("#\(hexcode.display). ").bold() +
+                    Text("Let's take a look at the color ") + Text("#\(hexcode.display). ").bold().foregroundStyle(Color(hexcode)) +
                     Text("Following the formula from above we get")
                     Text("Red = (2 * 16) + 0 = 32")
                     Text("Green = (10 * 16) + 0 = 160")

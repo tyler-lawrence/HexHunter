@@ -17,8 +17,11 @@ class PracticeModeViewModel: GameViewModel {
         """
         Target: \(targetHexcode.display)
         Your Guess: \(playerHexcode.display)
-        Accuracy: \(String(format: "%.2f", calculateScore()))
         """
+    }
+    
+    var accuracy: String {
+        String(format: "%.2f", calculateScore())
     }
     
     var gameOver: Bool = false

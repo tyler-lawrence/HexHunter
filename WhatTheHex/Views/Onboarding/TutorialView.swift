@@ -1,67 +1,67 @@
 //
-//  PracticeModeView.swift
+//  HexcodeComponentOnboardingView.swift
 //  WhatTheHex
 //
-//  Created by Tyler Lawrence1 on 4/2/24.
+//  Created by Tyler Lawrence1 on 5/2/24.
 //
 
 import SwiftUI
 import TipKit
 
 struct TutorialView: View {
+    
     @Binding var hasOnboarded: Bool
-    @State var hexcode = Hexcode()
-    let targetHexcode = Hexcode.orange
-    let tip = OnboardingTip()
-    var correctHexcode: Bool {
-        targetHexcode != hexcode
-    }
+    @State var playerHexcode = Hexcode(from: "#888888")!
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    let sliderComponentTip = SliderComponentTip()
+    @State var viewIdx = 0
     
-    var playerHexcodeSquare: some View {
-        Group{
-            Text("#\(hexcode.display)")
-                .font(.largeTitle)
-                .padding()
-            Spacer()
-            ColorSquareView(title: "", hexcode: hexcode, size: 130, showingCode: false)
+    var nextButton: some View {
+        Button("Next"){
+            viewIdx += 1
         }
-    }
-    
-    var shared: some View {
-        VStack{
-            Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
-                .font(.title3)
-            Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
-                .font(.title)
-            if dynamicTypeSize.isAccessibilitySize {
-                VStack{ playerHexcodeSquare }
-            } else {
-                HStack{ playerHexcodeSquare }
-            }
-            TipView(tip, arrowEdge: .bottom)
-            RGBSlidersView(hexcode: $hexcode)
-            Spacer()
-            Button("Begin"){
-                hasOnboarded = true
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(correctHexcode)
-            
-        }
-        .padding(.horizontal)
+        .font(.largeTitle)
+        .buttonStyle(GameSelectionButton())
     }
     
     var body: some View {
-        if dynamicTypeSize.isAccessibilitySize {
-            ScrollView{
-                shared
+        VStack{
+            if viewIdx == 0 {
+                Text("Welcome to HexHunter")
+                    .font(.largeTitle)
+                    .padding()
+                Text("Let's get started by learning the basics of hexcodes ")
+                        .font(.title)
+                        .padding()
+                nextButton
+            } else if viewIdx == 1{
+                VStack{
+                    Spacer()
+                    Group{
+                        Text("Use the sliders below to increase or decrease the amount of ") +
+                        Text("red").foregroundStyle(.red).bold() +
+                        Text(" in the displayed color.")
+                    }
+                    .font(.title2)
+                    ColorSquareView(title: "", hexcode: playerHexcode, size: 130, showingCode: false)
+                    VStack{
+                        Text("Hexcode: #\(playerHexcode.display)")
+                        Text("Red: \(playerHexcode.red.toColorScale())")
+                    }
+                    .font(.title)
+                    TipView(sliderComponentTip, arrowEdge: .bottom)
+                    HexComponentPickerView(component: $playerHexcode.red)
+                    Spacer()
+                    nextButton
+                }
+                .padding(.horizontal)
+
+            } else {
+                GameplayTutorialView(hasOnboarded: $hasOnboarded)
             }
-        } else {
-            shared
         }
+        
     }
-    
 }
 
 #Preview {
