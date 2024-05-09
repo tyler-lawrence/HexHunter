@@ -15,15 +15,15 @@ struct TimerView: View {
     let circleFrameSize: CGFloat = 80
     
     var circleColor: Color {
-        vm.timeRemaining < 5 ? .red : .teal
+        vm.timeRemaining <= 5 ? .red : .gray
     }
     
     var circleGradient: RadialGradient {
         RadialGradient(
-            colors: [.white, circleColor],
+            colors: [circleColor.opacity(0.2), circleColor],
             center: .center,
             startRadius: 0,
-            endRadius: 20
+            endRadius: 40
         )
     }
     
@@ -32,6 +32,8 @@ struct TimerView: View {
         Text("\(vm.timeRemaining)")
             .font(.largeTitle)
             .foregroundStyle(.white)
+            .shadow(radius: 1)
+            .bold()
             .padding()
             .background(
                 Circle()
@@ -43,9 +45,9 @@ struct TimerView: View {
                             .scaleEffect(phase)
                     }
             )
+            .padding(5)
         
         // correct guess animation
-            .padding(10)
             .overlay{
                     Circle()
                         .foregroundStyle(.green)
