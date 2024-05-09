@@ -32,6 +32,12 @@ struct GameSelectionView: View {
                     }
                     
                     NavigationLink{
+                        SandboxGameView()
+                    } label: {
+                        GameModeButtonView(title: "Sandbox")
+                    }
+                    
+                    NavigationLink{
                         RapidGameView()
                     } label: {
                         GameModeButtonView(title: "Rapid")
