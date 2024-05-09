@@ -14,6 +14,19 @@ struct TimerView: View {
     let lowTimeCounter = 5
     let circleFrameSize: CGFloat = 80
     
+    var circleColor: Color {
+        vm.timeRemaining < 5 ? .red : .teal
+    }
+    
+    var circleGradient: RadialGradient {
+        RadialGradient(
+            colors: [.white, circleColor],
+            center: .center,
+            startRadius: 0,
+            endRadius: 20
+        )
+    }
+    
     var body: some View {
         
         Text("\(vm.timeRemaining)")
@@ -23,7 +36,7 @@ struct TimerView: View {
             .background(
                 Circle()
                     .frame(width: circleFrameSize, height: circleFrameSize)
-                    .foregroundStyle(vm.timeRemaining <= 5 ? .red : .blue)
+                    .foregroundStyle(circleGradient)
                     .shadow(radius: 10)
                     .phaseAnimator([1, 1.5], trigger: lowTimeTrigger){ content, phase in
                         content
