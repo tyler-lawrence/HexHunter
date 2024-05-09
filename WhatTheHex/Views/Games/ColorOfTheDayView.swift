@@ -28,21 +28,23 @@ struct ColorOfTheDayView: View {
     }
     
     var squaresView: RotatingView<some View> {
-        let g = Group{
-            targetView
-            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        RotatingView(portraitOrientation: .horizontal){
+            Group{
+                targetView
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+            }
         }
-        return RotatingView(content: g, originalOrientation: .horizontal)
     }
     
     var controlsView: RotatingView< some View > {
-        let g = Group {
-            RGBSlidersView(hexcode: $vm.playerHexcode)
-            Button("Guess"){
-                vm.submitGuess()
-            }.buttonStyle(GameSelectionButton())
+        RotatingView(portraitOrientation: .vertical){
+            Group {
+                RGBSlidersView(hexcode: $vm.playerHexcode)
+                Button("Guess"){
+                    vm.submitGuess()
+                }.buttonStyle(GameSelectionButton())
+            }
         }
-        return RotatingView(content: g, originalOrientation: .vertical)
     }
     
     var body: some View {
@@ -58,8 +60,8 @@ struct ColorOfTheDayView: View {
                     .padding()
                 } else {
                     HStack{
-                        squaresView.flipped
-                        controlsView.flipped
+                        squaresView.rotated
+                        controlsView.rotated
                     }
                     .padding()
                 }

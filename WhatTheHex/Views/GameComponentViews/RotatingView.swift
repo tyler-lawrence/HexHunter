@@ -23,29 +23,34 @@ struct RotatingView<Content: View> {
         }
     }
     
-    var content: Content
-    var originalOrientation: Orientation
+    var portraitOrientation: Orientation
+    
+    var content: () -> Content
+    
+    init(portraitOrientation: Orientation, content: @escaping () -> Content){
+        self.portraitOrientation = portraitOrientation
+        self.content = content
+    }
     
     var original: some View {
         Group{
-            switch originalOrientation {
+            switch portraitOrientation {
             case .horizontal:
-                HStack{content}
+                HStack{content()}
             case .vertical:
-                VStack{content}
+                VStack{content()}
             }
         }
     }
     
-    var flipped: some View {
+    var rotated: some View {
         Group{
-            switch originalOrientation {
+            switch portraitOrientation {
             case .horizontal:
-                VStack{content}
+                VStack{content()}
             case .vertical:
-                HStack{content}
+                HStack{content()}
             }
         }
     }
-        
 }

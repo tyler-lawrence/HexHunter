@@ -14,25 +14,40 @@ struct TimerView: View {
     let lowTimeCounter = 5
     let circleFrameSize: CGFloat = 80
     
+    var circleColor: Color {
+        vm.timeRemaining <= 5 ? .red : .gray
+    }
+    
+    var circleGradient: RadialGradient {
+        RadialGradient(
+            colors: [circleColor.opacity(0.2), circleColor],
+            center: .center,
+            startRadius: 0,
+            endRadius: 40
+        )
+    }
+    
     var body: some View {
         
         Text("\(vm.timeRemaining)")
             .font(.largeTitle)
             .foregroundStyle(.white)
+            .shadow(radius: 1)
+            .bold()
             .padding()
             .background(
                 Circle()
                     .frame(width: circleFrameSize, height: circleFrameSize)
-                    .foregroundStyle(vm.timeRemaining <= 5 ? .red : .blue)
+                    .foregroundStyle(circleGradient)
                     .shadow(radius: 10)
                     .phaseAnimator([1, 1.5], trigger: lowTimeTrigger){ content, phase in
                         content
                             .scaleEffect(phase)
                     }
             )
+            .padding(5)
         
         // correct guess animation
-            .padding(10)
             .overlay{
                     Circle()
                         .foregroundStyle(.green)

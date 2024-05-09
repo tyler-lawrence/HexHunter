@@ -11,22 +11,23 @@ struct PracticeModeView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var vm: PracticeModeViewModel
-    
+        
     var squaresView: RotatingView<some View> {
-        let g = Group{
-            ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: false)
-            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        RotatingView(portraitOrientation: .horizontal){
+            Group{
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: false)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+            }
         }
-        return RotatingView(content: g, originalOrientation: .horizontal)
     }
     
-    
     var controlsView: RotatingView< some View > {
-        let g = Group {
-            RGBSlidersView(hexcode: $vm.playerHexcode)
-            Spacer()
+        RotatingView(portraitOrientation: .vertical){
+            Group{
+                RGBSlidersView(hexcode: $vm.playerHexcode)
+                Spacer()
+            }
         }
-        return RotatingView(content: g, originalOrientation: .vertical)
     }
     
     var buttonView: some View {
@@ -42,7 +43,6 @@ struct PracticeModeView: View {
             Text("Accuracy: \(vm.accuracy)")
         }
         .font(.title)
-        
     }
     
     var body: some View {
@@ -57,8 +57,8 @@ struct PracticeModeView: View {
                 }
             } else {
                 HStack{
-                    squaresView.flipped
-                    controlsView.flipped
+                    squaresView.rotated
+                    controlsView.rotated
                     VStack{
                         accuracyLabel
                         buttonView

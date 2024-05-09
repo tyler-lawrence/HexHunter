@@ -20,32 +20,36 @@ struct SurvivalGameView: View {
     }
     
     var squaresView: RotatingView<some View> {
-        let g = Group{
-            ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
-            ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        RotatingView(portraitOrientation: .horizontal){
+            Group{
+                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
+                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+            }
         }
-        
-        return RotatingView(content: g, originalOrientation: .horizontal)
     }
     
     var gameDetailsView: RotatingView<some View> {
-        let g = Group{
-            TimerView(vm: vm)
-            VStack(alignment: .trailing){
-                Text("Score: \(vm.correctGuesses)")
-                    .contentTransition(.numericText())
-                HStack{
-                    Image(systemName: "scope")
-                    Text("\(minSimilarityScore)")
-                }
-            }
-            .padding(.vertical, 10)
-            .font(.title2)
-            .lineLimit(1)
-            .minimumScaleFactor(0.6)
-        }
         
-        return RotatingView(content: g, originalOrientation: .vertical)
+        RotatingView(portraitOrientation: .vertical){
+            Group{
+                Spacer()
+                TimerView(vm: vm)
+                Spacer()
+                VStack(alignment: .trailing){
+                    Text("Score: \(vm.correctGuesses)")
+                        .contentTransition(.numericText())
+                    HStack{
+                        Image(systemName: "scope")
+                        Text("\(minSimilarityScore)")
+                    }
+                }
+                .padding(.vertical, 10)
+                .font(.title2)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+                Spacer()
+            }
+        }
     }
     
     var guessButton: some View {
@@ -62,7 +66,7 @@ struct SurvivalGameView: View {
             GeometryReader{ geo in
                 if geo.size.height > geo.size.width {
                     VStack{
-                        gameDetailsView.flipped
+                        gameDetailsView.rotated
                         squaresView.original
                         RGBSlidersView(hexcode: $vm.playerHexcode)
                         Spacer()
@@ -70,7 +74,7 @@ struct SurvivalGameView: View {
                     }
                 } else {
                     HStack{
-                        squaresView.flipped
+                        squaresView.rotated
                         RGBSlidersView(hexcode: $vm.playerHexcode)
                             .frame(minWidth: geo.size.width * 0.3)
                         if dynamicTypeSize.isAccessibilitySize{
