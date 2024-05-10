@@ -28,6 +28,14 @@ struct SurvivalGameView: View {
         }
     }
     
+    var backButtonPosition: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarLeading
+        #else
+        return ToolbarItemPlacement.navigation
+        #endif
+    }
+    
     var gameDetailsView: RotatingView<some View> {
         
         RotatingView(portraitOrientation: .vertical){
@@ -139,7 +147,7 @@ struct SurvivalGameView: View {
             }
             .navigationBarBackButtonHidden()
             .toolbar{
-                ToolbarItem(placement: .topBarLeading){
+                ToolbarItem(placement: backButtonPosition){
                     Button{
                         showingExitConfirmation.toggle()
                     } label: {
