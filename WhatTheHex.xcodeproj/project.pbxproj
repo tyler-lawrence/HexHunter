@@ -99,7 +99,6 @@
 		5BD058222BEAD8D7007E0336 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058212BEAD8D7007E0336 /* RotatingView.swift */; };
 		5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5BD058292BECF598007E0336 /* SandboxGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058282BECF58B007E0336 /* SandboxGameView.swift */; };
-		5BD0582B2BECF5B1007E0336 /* SandboxGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0582A2BECF5B1007E0336 /* SandboxGameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +185,6 @@
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
 		5BD058282BECF58B007E0336 /* SandboxGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxGameView.swift; sourceTree = "<group>"; };
-		5BD0582A2BECF5B1007E0336 /* SandboxGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxGameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,7 +390,6 @@
 				5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */,
 				5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */,
 				5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */,
-				5BD0582A2BECF5B1007E0336 /* SandboxGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -627,7 +624,6 @@
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* GameplayTutorialView.swift in Sources */,
 				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,
-				5BD0582B2BECF5B1007E0336 /* SandboxGameViewModel.swift in Sources */,
 				5BA3D9DF2BBC5424003DE2F8 /* ScoreExplanationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
