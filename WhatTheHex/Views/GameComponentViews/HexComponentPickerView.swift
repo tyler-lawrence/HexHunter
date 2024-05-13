@@ -17,7 +17,6 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(component.hexCategory.displayColor)
                 .bold()
             VStack{
-                
                 HStack{
                     Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15)
@@ -36,6 +35,8 @@ struct HexComponentPickerView: View {
             Text(component.display)
                 .font(.largeTitle)
                 .foregroundStyle(component.hexCategory.displayColor)
+                .frame(width: 80)
+                
         }
         .tint(component.hexCategory.displayColor)
         .padding(5)
@@ -81,11 +82,12 @@ struct HexComponentPickerView: View {
     }
 }
 
-struct HexComponentPickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        HexComponentPickerView(component: .constant(Component(hexCategory: .red, digit1: 0, digit2: 0)))
-            .previewDevice("iPhone 15")
-        HexComponentPickerView(component: .constant(Component(hexCategory: .red, digit1: 0, digit2: 0)))
-            .previewDevice("My Mac")
+#Preview {
+    struct Preview: View {
+        @State var component = Component(hexCategory: .red, digit1: 10, digit2: 4)
+        var body: some View {
+            HexComponentPickerView(component: $component)
+        }
     }
+    return Preview()
 }
