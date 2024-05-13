@@ -18,3 +18,6 @@ How do your hex hunting skills compare to your friends? Use Game Center to see h
 Modes supporting Game Center
 - Color of the Day
 - Survival
+
+### Contact
+For any questions, comments, or concerns please reach out to me at tyler.lawrence15@gmail.com
