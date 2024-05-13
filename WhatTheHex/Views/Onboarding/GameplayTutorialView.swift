@@ -32,6 +32,7 @@ struct GameplayTutorialView: View {
             Spacer()
             ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
                 .padding(.horizontal)
+                .frame(width: 180, height: 180)
                 .overlay{
                     if playerHexcode == targetHexcode {
                         Image(systemName: "checkmark")
