@@ -1,6 +1,8 @@
+![logo](https://github.com/tyler-lawrence/HexHunter/blob/main/assets/Icon512.png)
 # HexHunter 
 
 HexHunter is a hexcode color guessing game. If you've ever been looking at colors and see something like `#F98B0D` and wondered what that meant this is the game for you!
+
 
 ## Learn
 HexHunter helps players understand the basics behind hexcodes. 
@@ -21,3 +23,7 @@ Modes supporting Game Center
 
 ### Contact
 For any questions, comments, or concerns please reach out to me at tyler.lawrence15@gmail.com
+
+![screenshot of app in sandbox mode](https://github.com/tyler-lawrence/HexHunter/blob/main/assets/Learn%206.7.png)
+![screenshot of app in practice mode](https://github.com/tyler-lawrence/HexHunter/blob/main/assets/Play%206.7.png)
+![screenshot of app in survival mode](https://github.com/tyler-lawrence/HexHunter/blob/main/assets/Compete%206.7.png)
