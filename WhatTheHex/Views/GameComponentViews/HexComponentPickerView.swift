@@ -35,6 +35,7 @@ struct HexComponentPickerView: View {
             Text(component.display)
                 .font(.largeTitle)
                 .foregroundStyle(component.hexCategory.displayColor)
+                .frame(width: 80)
                 
         }
         .tint(component.hexCategory.displayColor)
