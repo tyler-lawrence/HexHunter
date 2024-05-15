@@ -30,7 +30,7 @@ struct GameplayTutorialView: View {
                 .font(.largeTitle)
                 .padding()
             Spacer()
-            ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
+            ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
                 .padding(.horizontal)
                 .frame(width: 180, height: 180)
                 .overlay{
@@ -63,7 +63,7 @@ struct GameplayTutorialView: View {
             Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
                 .font(.title3)
                 .padding(.bottom)
-            Text("\(targetHexcode.display)").foregroundStyle(Color(targetHexcode))
+            Text("Target: #\(targetHexcode.display)")
                 .bold()
                 .font(.title)
             if dynamicTypeSize.isAccessibilitySize {
@@ -80,7 +80,11 @@ struct GameplayTutorialView: View {
                         correctGuessTimeCounter = 0
                     }
                 }
-                .padding(.horizontal)
+                .padding()
+            Button("Skip"){
+                hasOnboarded = true
+            }
+            .buttonStyle(GameSelectionButton())
         }
     }
     
