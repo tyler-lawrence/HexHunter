@@ -31,6 +31,10 @@ struct ColorSquareView: View {
     }
 }
 
+extension ColorSquareView {
+    static let loading = ColorSquareView(title: "Loading...", hexcode: Hexcode(from: "#F4F4F4") ?? Hexcode(), showingCode: false)
+}
+
 #Preview {
     VStack{
         ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
