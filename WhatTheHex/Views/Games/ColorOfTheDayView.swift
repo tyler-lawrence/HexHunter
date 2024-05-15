@@ -19,7 +19,7 @@ struct ColorOfTheDayView: View {
             if colorOfTheDay != nil {
                 ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
             } else {
-                ProgressView()
+                HHProgressView()
                     .task{
                         await colorOfTheDay = vm.getHexcodeOfDay()
                     }
