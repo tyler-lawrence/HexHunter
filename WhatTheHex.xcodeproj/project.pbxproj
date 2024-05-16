@@ -60,6 +60,7 @@
 		5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */; };
 		5B68EADD2BC570DE00ABD6E0 /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */; };
 		5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */; };
+		5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */; };
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
@@ -157,6 +158,7 @@
 		5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameplayLoop.mp3; sourceTree = "<group>"; };
 		5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
 		5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSlidersView.swift; sourceTree = "<group>"; };
+		5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHProgressView.swift; sourceTree = "<group>"; };
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
+				5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */,
 			);
 			path = GameComponentViews;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */,
 				5B0E33072BC72F0F00F934DE /* ColorOfTheDayViewModel.swift in Sources */,
 				5B5BA39C2BB8B1BD00B558EE /* HexComponentPickerView.swift in Sources */,
+				5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */,
 				5B5BA39A2BB8B05D00B558EE /* HexCategory.swift in Sources */,
 				5BB39A5A2BBC865C00A38EAD /* Particle.swift in Sources */,
 				5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */,
@@ -804,7 +808,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -826,7 +830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -844,7 +848,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -866,7 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

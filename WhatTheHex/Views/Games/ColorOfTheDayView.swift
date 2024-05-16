@@ -14,14 +14,26 @@ struct ColorOfTheDayView: View {
     @State var colorOfTheDay: Hexcode?
     @AppStorage("hasOnboardedColorOfTheDay") var hasOnboarded: Bool = false
     
+    // loading time
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var loadingTime = 0
+    var loadingTimeMax = 30
+    @State var showingLoadingAlert = false
+    
     var targetView: some View {
         Group{
             if colorOfTheDay != nil {
                 ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
             } else {
-                ProgressView()
+                HHProgressView()
                     .task{
                         await colorOfTheDay = vm.getHexcodeOfDay()
+                    }
+                    .onReceive(timer){ _ in
+                        loadingTime += 1
+                        if loadingTime >= loadingTimeMax {
+                            showingLoadingAlert = true
+                        }
                     }
             }
         }
@@ -82,6 +94,9 @@ struct ColorOfTheDayView: View {
                     }
                     presentationMode.wrappedValue.dismiss()
                 }
+            }
+            .alert("Check your network connection", isPresented: $showingLoadingAlert){
+                    Button("Ok"){ loadingTime = 0 }
             }
             
         } else {

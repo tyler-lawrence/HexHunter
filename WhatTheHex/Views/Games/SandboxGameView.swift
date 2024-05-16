@@ -18,7 +18,6 @@ struct SandboxGameView: View {
                         Group{
                             Spacer()
                             ColorSquareView(title: "", hexcode: playerHexcode, showingCode: true)
-                               
                             Spacer()
                             VStack{
                                 Text("R: \(playerHexcode.red.toColorScale())")
