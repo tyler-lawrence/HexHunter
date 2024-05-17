@@ -554,7 +554,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يمارس"
+            "value" : "ممارسة"
           }
         }
       }
@@ -836,7 +836,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الحروفان الثانيان يمثلان"
+            "value" : "الحرفان في المجموعة الثانية يمثلان"
           }
         }
       }
