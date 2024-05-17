@@ -21,7 +21,7 @@ struct LeaderboardView: View {
         VStack{
             Picker("Mode", selection: $gameMode){
                 ForEach(GameMode.leaderboardModes, id: \.self){ mode in
-                    Text(mode.rawValue)
+                    Text(LocalizedStringKey(mode.rawValue))
                 }
             }
             .pickerStyle(.segmented)

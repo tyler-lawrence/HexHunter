@@ -1,0 +1,690 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    " in the displayed color." : {
+
+    },
+    "(%@ + %@ + %@) / 3 * 100" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "(%1$@ + %2$@ + %3$@) / 3 * 100"
+          }
+        }
+      }
+    },
+    "(Character1 * 16) + Character2" : {
+
+    },
+    "#%@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%@"
+          }
+        }
+      }
+    },
+    "#%@. " : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#%@."
+          }
+        }
+      }
+    },
+    "%@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "+10" : {
+
+    },
+    "A hexcode is a hexadecimal representation of a color. You may have seen a color picking tool request a number from 0 to 255. Let's explore how we can convert something like #%@ to the 0-255 scale." : {
+
+    },
+    "Accuracy: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دقة: %@"
+          }
+        }
+      }
+    },
+    "Adjust the sliders below so your hexcode matches the target hexcode: " : {
+
+    },
+    "Are you sure you want to leave?" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هل انت متاكد انك تريد ان تغادر"
+          }
+        }
+      }
+    },
+    "B" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ب"
+          }
+        }
+      }
+    },
+    "B: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ب: %lld"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خلف"
+          }
+        }
+      }
+    },
+    "Begin" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يبدأ"
+          }
+        }
+      }
+    },
+    "blue " : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أزرق"
+          }
+        }
+      }
+    },
+    "Blue = (11 * 16) + 0 = 176" : {
+
+    },
+    "Blue = %@ / 255 = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Blue = %1$@ / 255 = %2$@"
+          }
+        }
+      }
+    },
+    "Blue = |%@ - %@| = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Blue = |%1$@ - %2$@| = %3$@"
+          }
+        }
+      }
+    },
+    "Blue: %@ = %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أزرق: %1$@ = %2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Blue: %1$@ = %2$@"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فئة"
+          }
+        }
+      }
+    },
+    "Changing the color components" : {
+
+    },
+    "Check your network connection" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحقق من اتصال الشبكة الخاصة بك"
+          }
+        }
+      }
+    },
+    "Color of the Day" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون اليوم"
+          }
+        }
+      }
+    },
+    "ColorOfTheDay" : {
+      "comment" : "Color of the Day game mode button label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون اليوم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color of the Day"
+          }
+        }
+      }
+    },
+    "Example" : {
+
+    },
+    "Exit" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مخرج"
+          }
+        }
+      }
+    },
+    "Finally, we take the average of the three similarity measures and multiply that by 100 to calculate our final score" : {
+
+    },
+    "Following the formula from above we get" : {
+
+    },
+    "G" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ز"
+          }
+        }
+      }
+    },
+    "G: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ز: %lld"
+          }
+        }
+      }
+    },
+    "green " : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أخضر"
+          }
+        }
+      }
+    },
+    "Green = (10 * 16) + 0 = 160" : {
+
+    },
+    "Green = %@ / 255 = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Green = %1$@ / 255 = %2$@"
+          }
+        }
+      }
+    },
+    "Green = |%@ - %@| = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Green = |%1$@ - %2$@| = %3$@"
+          }
+        }
+      }
+    },
+    "Green: %@ = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Green: %1$@ = %2$@"
+          }
+        }
+      }
+    },
+    "Guess" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يخمن"
+          }
+        }
+      }
+    },
+    "Hexcode: #%@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرمز السداسي: #%@"
+          }
+        }
+      }
+    },
+    "Leaderboards" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المتصدرين"
+          }
+        }
+      }
+    },
+    "Let's get started by learning the basics of hexcodes " : {
+
+    },
+    "Let's take a look at the color " : {
+
+    },
+    "Loading..." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحميل..."
+          }
+        }
+      }
+    },
+    "Mode" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وضع"
+          }
+        }
+      }
+    },
+    "Move the slider to increase or decrease the amount of color present" : {
+
+    },
+    "Next" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التالي"
+          }
+        }
+      }
+    },
+    "No Scores" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا عشرات"
+          }
+        }
+      }
+    },
+    "Ok" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نعم"
+          }
+        }
+      }
+    },
+    "Play again" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "العب مرة أخرى"
+          }
+        }
+      }
+    },
+    "Practice" : {
+      "comment" : "Practice game mode button label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمارس"
+          }
+        }
+      }
+    },
+    "R" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ر"
+          }
+        }
+      }
+    },
+    "R adjusts the red component, G adjusts the green component, and B adjusts the blue component." : {
+
+    },
+    "R: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ر: %lld"
+          }
+        }
+      }
+    },
+    "red" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر"
+          }
+        }
+      }
+    },
+    "red " : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر"
+          }
+        }
+      }
+    },
+    "Red = (2 * 16) + 0 = 32" : {
+
+    },
+    "Red = %@ / 255 = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Red = %1$@ / 255 = %2$@"
+          }
+        }
+      }
+    },
+    "Red = |%@ - %@| = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Red = |%1$@ - %2$@| = %3$@"
+          }
+        }
+      }
+    },
+    "Red: %@ = %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Red: %1$@ = %2$@"
+          }
+        }
+      }
+    },
+    "Red: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر: %lld"
+          }
+        }
+      }
+    },
+    "Reveal" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يكشف"
+          }
+        }
+      }
+    },
+    "Sandbox" : {
+      "comment" : "Sandbox game mode button label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صندوق الرمل"
+          }
+        }
+      }
+    },
+    "Score: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نتيجة: %@"
+          }
+        }
+      }
+    },
+    "Score: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نتيجة: %lld"
+          }
+        }
+      }
+    },
+    "Scores are calculated by measuring the difference between each component. Each component (red, green, and blue) can be handled as a number between 0 and 255." : {
+
+    },
+    "Scores range from 0 to 100. Higher scores are better. See if you can get a perfect 100!" : {
+
+    },
+    "Skip" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتخطى"
+          }
+        }
+      }
+    },
+    "Sometimes you also see alpha attached to a hexcode. Alpha represents the opacity of a color." : {
+
+    },
+    "start guessing" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ابدأ بالتخمين"
+          }
+        }
+      }
+    },
+    "Survival" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نجاة"
+          }
+        }
+      }
+    },
+    "Target" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هدف"
+          }
+        }
+      }
+    },
+    "Target: #%@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هدف: # %@"
+          }
+        }
+      }
+    },
+    "test" : {
+
+    },
+    "The first two characters represent " : {
+
+    },
+    "The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail" : {
+
+    },
+    "The second two characters represent " : {
+
+    },
+    "The third two characters represent " : {
+
+    },
+    "The top slider controls large change. The bottom slider controls finer detail" : {
+
+    },
+    "Then we divide those differences by 255 to get a similarity measure." : {
+
+    },
+    "To calculate the score we take the absolute difference of each component." : {
+
+    },
+    "To convert the hexcode to a number you first convert the digit to its corresponding numeric value (if necessary) and apply the following formula:" : {
+
+    },
+    "Use the sliders below to increase or decrease the amount of " : {
+
+    },
+    "Welcome to HexHunter" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبا بك في HexHunter"
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نعم"
+          }
+        }
+      }
+    },
+    "Your Color" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لونك"
+          }
+        }
+      }
+    },
+    "Your guess" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخمينك"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -10,7 +10,7 @@ import SwiftUI
 struct GameModeButtonView: View {
 
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    let title: String
+    let title: LocalizedStringKey
     var streak: Int? = nil
     
     var frameHeight: CGFloat {
@@ -58,8 +58,16 @@ struct GameModeButtonView: View {
         NavigationLink{
             Text("test")
         } label: {
-            GameModeButtonView(title: "Rapid")
+            GameModeButtonView(title: "Practice")
         }
+        
+        NavigationLink{
+            Text("test")
+        } label: {
+            GameModeButtonView(title: "Practice")
+                .environment(\.locale, .init(identifier: "ar"))
+        }
+        
     }
-    .buttonStyle(.borderedProminent)
+    .buttonStyle(GameSelectionButton())
 }
