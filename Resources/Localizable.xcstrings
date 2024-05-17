@@ -5,10 +5,23 @@
 
     },
     " in the displayed color." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "في اللون المعروض."
+          }
+        }
+      }
     },
     "(%@ + %@ + %@) / 3 * 100" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%@ + %@ + %@) / 3 * 100"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -18,7 +31,14 @@
       }
     },
     "(Character1 * 16) + Character2" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(الحرف1 * 16) + الحرف2"
+          }
+        }
+      }
     },
     "#%@" : {
       "localizations" : {
@@ -61,10 +81,24 @@
       }
     },
     "+10" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 +"
+          }
+        }
+      }
     },
     "A hexcode is a hexadecimal representation of a color. You may have seen a color picking tool request a number from 0 to 255. Let's explore how we can convert something like #%@ to the 0-255 scale." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرمز الهيكساديمل هو تمثيل سداسي عشري للون. ربما رأيت أداة اختيار الألوان تطلب رقمًا من 0 إلى 255. دعونا نستكشف كيف يمكننا تحويل شيء مثل #%@ إلى المقياس من 0 إلى 255."
+          }
+        }
+      }
     },
     "Accuracy: %@" : {
       "localizations" : {
@@ -77,7 +111,14 @@
       }
     },
     "Adjust the sliders below so your hexcode matches the target hexcode: " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضبط أشرطة التمرير أدناه بحيث يتطابق رمز الهيكس الخاص بك مع رمز الهيكس الهدف:"
+          }
+        }
+      }
     },
     "Are you sure you want to leave?" : {
       "localizations" : {
@@ -141,10 +182,23 @@
       }
     },
     "Blue = (11 * 16) + 0 = 176" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " الأزرق = (11 * 16) + 0 = 176"
+          }
+        }
+      }
     },
     "Blue = %@ / 255 = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أزرق = %1$@ / 255 = %2$@ "
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -155,6 +209,12 @@
     },
     "Blue = |%@ - %@| = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أزرق = |%1$@ - %2$@| = %3$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -190,7 +250,14 @@
       }
     },
     "Changing the color components" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تغيير مكون اللون"
+          }
+        }
+      }
     },
     "Check your network connection" : {
       "localizations" : {
@@ -231,7 +298,14 @@
       }
     },
     "Example" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مثال"
+          }
+        }
+      }
     },
     "Exit" : {
       "localizations" : {
@@ -244,10 +318,24 @@
       }
     },
     "Finally, we take the average of the three similarity measures and multiply that by 100 to calculate our final score" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أخيرًا، نأخذ متوسط القياسات الثلاثة للتشابه ونضرب ذلك في 100 لحساب النقاط النهائية."
+          }
+        }
+      }
     },
     "Following the formula from above we get" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "باستخدام الصيغة من أعلاه، نحصل على"
+          }
+        }
+      }
     },
     "G" : {
       "extractionState" : "manual",
@@ -281,10 +369,23 @@
       }
     },
     "Green = (10 * 16) + 0 = 160" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأخضر = (10 * 16) + 0 = 160"
+          }
+        }
+      }
     },
     "Green = %@ / 255 = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأخضر = %1$@ + 255 = %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -295,6 +396,12 @@
     },
     "Green = |%@ - %@| = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأخضر = |%@ - %@| = %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -305,6 +412,12 @@
     },
     "Green: %@ = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأخضر: %@ = %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -343,11 +456,25 @@
         }
       }
     },
-    "Let's get started by learning the basics of hexcodes " : {
-
+    "Let's get started by learning the basics of hexcodes" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لنبدأ بتعلم أساسيات رموز الهيكس"
+          }
+        }
+      }
     },
     "Let's take a look at the color " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دعونا نلقي نظرة على اللون."
+          }
+        }
+      }
     },
     "Loading..." : {
       "localizations" : {
@@ -370,7 +497,14 @@
       }
     },
     "Move the slider to increase or decrease the amount of color present" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حرك الشريط لزيادة أو تقليل كمية اللون الموجود."
+          }
+        }
+      }
     },
     "Next" : {
       "extractionState" : "manual",
@@ -437,7 +571,14 @@
       }
     },
     "R adjusts the red component, G adjusts the green component, and B adjusts the blue component." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ر يُعدل المكون الأحمر, ز يُعدل المكون الأخضر, ب يعدل المكون الأزرق"
+          }
+        }
+      }
     },
     "R: %lld" : {
       "localizations" : {
@@ -470,10 +611,23 @@
       }
     },
     "Red = (2 * 16) + 0 = 32" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر = (2 * 16) + 0 = 32"
+          }
+        }
+      }
     },
     "Red = %@ / 255 = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر = %1$@ + 255 = %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -484,6 +638,12 @@
     },
     "Red = |%@ - %@| = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر = |%@ - %@| = %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -494,6 +654,12 @@
     },
     "Red: %@ = %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحمر: %@ = %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -555,10 +721,24 @@
       }
     },
     "Scores are calculated by measuring the difference between each component. Each component (red, green, and blue) can be handled as a number between 0 and 255." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم حساب النقاط عن طريق قياس الفرق بين كل مكون. يمكن التعامل مع كل مكون (الأحمر، الأخضر، والأزرق) كرقم بين 0 و 255."
+          }
+        }
+      }
     },
     "Scores range from 0 to 100. Higher scores are better. See if you can get a perfect 100!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النقاط تتراوح بين 0 و 100. النقاط الأعلى أفضل. جرب أن تحصل على 100 مثالية!"
+          }
+        }
+      }
     },
     "Skip" : {
       "localizations" : {
@@ -571,7 +751,14 @@
       }
     },
     "Sometimes you also see alpha attached to a hexcode. Alpha represents the opacity of a color." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أحيانًا ترى أيضًا ألفا مرفقًا برمز هيكس. الألفا يمثل الشفافية للون."
+          }
+        }
+      }
     },
     "start guessing" : {
       "localizations" : {
@@ -615,41 +802,111 @@
       }
     },
     "test" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امتحان"
+          }
+        }
+      }
     },
     "The first two characters represent " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحرفان الأولان يمثلان"
+          }
+        }
+      }
     },
     "The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المقياس يتراوح من 00 إلى FF. تُستخدم الحروف عندما نصل إلى أرقام مزدوجة. فمثلا، 10 تصبح A، 11 تصبح B، 12 تصبح C، وهكذا. الرقم الأول يعبر عن تغيير كبير في اللون والحرف الثاني يمثل التفاصيل الدقيقة."
+          }
+        }
+      }
     },
     "The second two characters represent " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحروفان الثانيان يمثلان"
+          }
+        }
+      }
     },
     "The third two characters represent " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المجموعة الثالثة من الأحرف"
+          }
+        }
+      }
     },
     "The top slider controls large change. The bottom slider controls finer detail" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الشريط العلوي يتحكم في التغيير الكبير. الشريط السفلي يتحكم في التفاصيل الدقيقة."
+          }
+        }
+      }
     },
     "Then we divide those differences by 255 to get a similarity measure." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ثم نقسم هذه الفروقات على 255 للحصول على قياس التشابه."
+          }
+        }
+      }
     },
     "To calculate the score we take the absolute difference of each component." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لحساب النقاط نأخذ الفرق المطلق لكل مكون."
+          }
+        }
+      }
     },
     "To convert the hexcode to a number you first convert the digit to its corresponding numeric value (if necessary) and apply the following formula:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لتحويل رمز الهيكس إلى رقم، تحتاج أولاً إلى تحويل الرقم إلى قيمته الرقمية المقابلة (إذا كان ذلك ضروريًا) وتطبيق الصيغة التالية:\n\n\n\n\n\n"
+          }
+        }
+      }
     },
     "Use the sliders below to increase or decrease the amount of " : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "استخدم أشرطة التمرير أدناه لزيادة أو تقليل كمية"
+          }
+        }
+      }
     },
     "Welcome to HexHunter" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مرحبا بك في HexHunter"
+            "value" : "مرحبا بك في هكس هنتر"
           }
         }
       }
