@@ -80,6 +80,9 @@
         }
       }
     },
+    "%lld." : {
+
+    },
     "+10" : {
       "localizations" : {
         "ar" : {
@@ -129,6 +132,9 @@
           }
         }
       }
+    },
+    "Are you sure?" : {
+
     },
     "B" : {
       "extractionState" : "manual",
@@ -516,6 +522,9 @@
           }
         }
       }
+    },
+    "No" : {
+
     },
     "No Scores" : {
       "localizations" : {
@@ -920,6 +929,9 @@
           }
         }
       }
+    },
+    "Yes!" : {
+
     },
     "Your Color" : {
       "localizations" : {

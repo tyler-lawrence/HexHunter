@@ -14,7 +14,7 @@ class RapidGameViewModel: TimedGameViewModel {
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
     
-    var guesses: [Guess] = []
+    var guesses: [Submission] = []
     
     var timer = Timer.publish(every: 1, on: .main, in: .common)
     var timerSubscription: Cancellable?
@@ -36,7 +36,7 @@ class RapidGameViewModel: TimedGameViewModel {
     }
     
     func submitGuess() {
-        guesses.append(Guess(playerGuess: playerHexcode, target: targetHexcode))
+        guesses.append(Submission(playerGuess: playerHexcode, target: targetHexcode))
         playerHexcode = Hexcode()
         targetHexcode = Hexcode.random()
     }
@@ -62,7 +62,7 @@ class RapidGameViewModel: TimedGameViewModel {
 extension RapidGameViewModel {
     static var sample: RapidGameViewModel {
         let vm = RapidGameViewModel(gameTimeMax: 5)
-        vm.guesses = [Guess(playerGuess: Hexcode.random(), target: Hexcode()), Guess(playerGuess: Hexcode.teal, target: Hexcode.teal)]
+        vm.guesses = [Submission(playerGuess: Hexcode.random(), target: Hexcode()), Submission(playerGuess: Hexcode.teal, target: Hexcode.teal)]
         return vm
     }
 }

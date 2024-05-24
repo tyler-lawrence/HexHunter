@@ -7,7 +7,7 @@
 import Foundation
 
 /// Stores the two digits of a hexcode
-struct Component: Hashable {
+struct Component: Hashable, Codable {
     let hexCategory: HexCategory
     
     /// first digit in a hexcode
