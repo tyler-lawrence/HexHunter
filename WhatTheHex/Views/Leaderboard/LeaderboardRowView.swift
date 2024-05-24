@@ -23,6 +23,7 @@ struct LeaderboardRowView: View {
     }
     var body: some View {
         HStack{
+            Text("\(entry.rank).")
             Text(entry.player.alias)
             Spacer()
             Image(.blankHexToken)
