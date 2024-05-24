@@ -9,10 +9,12 @@ import SwiftUI
 
 struct HexComponentPickerView: View {
     @Binding var component: Component
-    
+    var colorLabel: LocalizedStringKey {
+        LocalizedStringKey(component.hexCategory.rawValue)
+    }
     var iosSliders: some View {
         HStack{
-            Text(component.hexCategory.rawValue)
+            Text(colorLabel)
                 .font(.title)
                 .foregroundStyle(component.hexCategory.displayColor)
                 .bold()

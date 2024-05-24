@@ -11,9 +11,21 @@ struct SurvivalGameView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    @Environment(\.layoutDirection) var layoutDirection
     @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
     @State var showingExitConfirmation: Bool = false
+    
+    var backIcon: String {
+        switch layoutDirection {
+        case .leftToRight:
+            "chevron.left"
+        case .rightToLeft:
+            "chevron.right"
+        @unknown default:
+            "chevron.left"
+        }
+    }
     
     var minSimilarityScore: String {
         String(format: "%.0f", vm.minimumSimilarityToScore)
@@ -152,7 +164,7 @@ struct SurvivalGameView: View {
                         showingExitConfirmation.toggle()
                     } label: {
                         HStack{
-                            Image(systemName: "chevron.left")
+                            Image(systemName: backIcon)
                             Text("Back")
                         }
                     }

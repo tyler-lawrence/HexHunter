@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorSquareView: View {
     
-    let title: String?
+    let title: LocalizedStringKey?
     let hexcode: Hexcode
     var hexLabel: String {
         showingCode ? hexcode.display : " "
@@ -38,6 +38,7 @@ extension ColorSquareView {
 #Preview {
     VStack{
         ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
+        ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: false)
         ColorSquareView(title: "Target", hexcode: Hexcode.random(), showingCode: true)
     }
 }

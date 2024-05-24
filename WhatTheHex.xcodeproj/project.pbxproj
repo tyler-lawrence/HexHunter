@@ -61,6 +61,7 @@
 		5B68EADD2BC570DE00ABD6E0 /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */; };
 		5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */; };
 		5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */; };
+		5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */; };
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
@@ -159,6 +160,7 @@
 		5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
 		5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSlidersView.swift; sourceTree = "<group>"; };
 		5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHProgressView.swift; sourceTree = "<group>"; };
+		5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
+				5B8DBEF32BF688DE0079F13F /* Resources */,
 				5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */,
 				5B5BA3772BB7433900B558EE /* WhatTheHex */,
 				5B1208BA2BBB232B00F36388 /* WhatTheHexTests */,
@@ -384,6 +387,14 @@
 				5B0E33152BC8877100F934DE /* Int+toHexadecimal.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B8DBEF32BF688DE0079F13F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
@@ -495,6 +506,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 5B5BA36C2BB7433900B558EE;
 			productRefGroup = 5B5BA3762BB7433900B558EE /* Products */;
@@ -520,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */,
+				5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */,
 				5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */,
 				5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */,
 				5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */,
