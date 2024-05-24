@@ -14,6 +14,8 @@ struct ColorOfTheDayView: View {
     @State var colorOfTheDay: Hexcode?
     @AppStorage("hasOnboardedColorOfTheDay") var hasOnboarded: Bool = false
     
+    @State var showingConfirmGuessAlert = false
+    
     // loading time
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var loadingTime = 0
@@ -53,7 +55,7 @@ struct ColorOfTheDayView: View {
             Group {
                 RGBSlidersView(hexcode: $vm.playerHexcode)
                 Button("Guess"){
-                    vm.submitGuess()
+                    showingConfirmGuessAlert.toggle()
                 }.buttonStyle(GameSelectionButton())
             }
         }
@@ -83,6 +85,14 @@ struct ColorOfTheDayView: View {
             }
             .onDisappear{
                 AudioPlayer.shared.stopBackgroundSound()
+            }
+            .alert("Are you sure?", isPresented: $showingConfirmGuessAlert){
+                Button("Yes!") {
+                    vm.submitGuess()
+                }
+                Button("No"){
+                    showingConfirmGuessAlert.toggle()
+                }
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Ok"){
