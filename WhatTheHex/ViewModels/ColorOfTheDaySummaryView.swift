@@ -38,7 +38,7 @@ struct ColorOfTheDaySummaryView: View {
         VStack(alignment: .trailing){
             Text("Target: \(submission.target.display)")
             Text("Your guess: \(submission.playerGuess.display)")
-            Text("Accuracy: \(accuracyLabel)")
+            Text("Accuracy: \(accuracyLabel)%")
         }
         .font(.title)
     }

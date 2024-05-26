@@ -120,6 +120,16 @@
         }
       }
     },
+    "Accuracy: %@%%" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دقة: %@%"
+          }
+        }
+      }
+    },
     "Adjust the sliders below so your hexcode matches the target hexcode: " : {
       "localizations" : {
         "ar" : {
@@ -983,6 +993,16 @@
     },
     "Your guess" : {
       "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخمينك"
+          }
+        }
+      }
+    },
+    "Your Guess" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
