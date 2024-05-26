@@ -328,7 +328,14 @@
       }
     },
     "Current rank:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرتبة الحالية:"
+          }
+        }
+      }
     },
     "Example" : {
       "localizations" : {
