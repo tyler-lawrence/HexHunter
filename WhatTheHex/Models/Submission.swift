@@ -17,6 +17,10 @@ struct Submission: Hashable, Identifiable, Codable {
     let target: Hexcode
     var date: Date
     
+    var accuracy: Double {
+        playerGuess.calculateSimilarity(to: target)
+    }
+    
     var similarityScore: Double {
         playerGuess.calculateSimilarity(to: target)
     }

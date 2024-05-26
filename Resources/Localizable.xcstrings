@@ -810,6 +810,9 @@
         }
       }
     },
+    "Target: %@" : {
+
+    },
     "test" : {
       "localizations" : {
         "ar" : {
@@ -953,6 +956,9 @@
           }
         }
       }
+    },
+    "Your guess: %@" : {
+
     }
   },
   "version" : "1.0"

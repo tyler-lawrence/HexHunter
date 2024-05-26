@@ -62,6 +62,7 @@
 		5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */; };
 		5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */; };
 		5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */; };
+		5B8F25622C0114A90028B135 /* ColorOfTheDaySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */; };
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
@@ -161,6 +162,7 @@
 		5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSlidersView.swift; sourceTree = "<group>"; };
 		5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHProgressView.swift; sourceTree = "<group>"; };
 		5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
+		5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDaySummaryView.swift; sourceTree = "<group>"; };
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			children = (
 				5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */,
 				5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */,
+				5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */,
 				5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */,
 				5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */,
 			);
@@ -595,6 +598,7 @@
 				5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */,
 				5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */,
 				5BD058292BECF598007E0336 /* SandboxGameView.swift in Sources */,
+				5B8F25622C0114A90028B135 /* ColorOfTheDaySummaryView.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
 				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
