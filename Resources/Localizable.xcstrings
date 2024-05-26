@@ -81,7 +81,14 @@
       }
     },
     "%lld." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "+10" : {
       "localizations" : {
@@ -134,7 +141,14 @@
       }
     },
     "Are you sure?" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هل أنت متأكد؟"
+          }
+        }
+      }
     },
     "B" : {
       "extractionState" : "manual",
@@ -524,7 +538,14 @@
       }
     },
     "No" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا"
+          }
+        }
+      }
     },
     "No Scores" : {
       "localizations" : {
@@ -811,7 +832,14 @@
       }
     },
     "Target: %@" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هدف: %@"
+          }
+        }
+      }
     },
     "test" : {
       "localizations" : {
@@ -934,7 +962,14 @@
       }
     },
     "Yes!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نعم!"
+          }
+        }
+      }
     },
     "Your Color" : {
       "localizations" : {
@@ -958,7 +993,14 @@
       }
     },
     "Your guess: %@" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخمينك: %@"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
