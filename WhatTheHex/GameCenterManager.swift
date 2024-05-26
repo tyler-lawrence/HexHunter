@@ -42,4 +42,36 @@ class GameCenterManager {
         }
     }
     
+    func fetchLeaderboardEntries(for gameMode: GameMode) async -> [GKLeaderboard.Entry] {
+        var entries: [GKLeaderboard.Entry] = []
+        guard let leaderboardID = gameMode.gameCenterLeaderboardID else { return entries }
+        
+        do {
+            let leaderboards  = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardID])
+            if let modeLeaderboard = leaderboards.first(where: {$0.baseLeaderboardID == leaderboardID}) {
+                let leaderboardEntries = try await modeLeaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...100))
+                entries = leaderboardEntries.1
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return entries
+    }
+    
+    func fetchPlayerLeaderboardEntry(for gameMode: GameMode) async -> GKLeaderboard.Entry? {
+        var entry: GKLeaderboard.Entry? = nil
+        guard let leaderboardID = gameMode.gameCenterLeaderboardID else { return entry }
+        
+        do {
+            let leaderboards  = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardID])
+            if let modeLeaderboard = leaderboards.first(where: {$0.baseLeaderboardID == leaderboardID}) {
+                let fetchedEntry: (GKLeaderboard.Entry?, [GKLeaderboard.Entry]) = try await modeLeaderboard.loadEntries(for: [localPlayer], timeScope: .today)
+                entry = fetchedEntry.0
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return entry
+    }
 }

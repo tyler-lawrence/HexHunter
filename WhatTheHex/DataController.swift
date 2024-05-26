@@ -12,6 +12,14 @@ final class DataController {
     
     var colorOfTheDaySubmissions: [Submission] = []
     
+    var todaySubmission: Submission? {
+        if completedColorOfTheDay{
+            return colorOfTheDaySubmissions.sorted(by: {$0.date > $1.date} ).first
+        } else {
+            return nil
+        }
+    }
+    
     /// indicator for if user has already completed the color of the day challenge
     var completedColorOfTheDay: Bool {
         let lastMidnight: Date = calendar.startOfDay(for: Date.now)

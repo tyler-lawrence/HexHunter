@@ -13,17 +13,25 @@ struct GameSelectionView: View {
     @State var showingExplanationSheet = false
     @Environment(DataController.self) var dataController
     
+    
     var body: some View {
         NavigationStack{
             ZStack{
                 BackgroundView()
                 ScrollView{
-                    NavigationLink{
-                        ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
-                    } label: {
-                        GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
+                    if let submission =  dataController.todaySubmission {
+                        NavigationLink{
+                            ColorOfTheDaySummaryView(submission: submission)
+                        } label: {
+                            GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
+                        }
+                    } else {
+                        NavigationLink{
+                            ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
+                        } label: {
+                            GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
+                        }
                     }
-                    .disabled(dataController.completedColorOfTheDay)
                     
                     NavigationLink{
                         PracticeModeView(vm: PracticeModeViewModel())
@@ -37,18 +45,18 @@ struct GameSelectionView: View {
                         GameModeButtonView(title: "Sandbox")
                     }
                     
-//                    NavigationLink{
-//                        RapidGameView()
-//                    } label: {
-//                        GameModeButtonView(title: "Rapid")
-//                    }
+                    //                    NavigationLink{
+                    //                        RapidGameView()
+                    //                    } label: {
+                    //                        GameModeButtonView(title: "Rapid")
+                    //                    }
                     
                     NavigationLink{
                         SurvivalGameView()
                     } label: {
                         GameModeButtonView(title: "Survival")
                     }
-
+                    
                 }
                 .padding()
                 .buttonStyle(GameSelectionButton())
