@@ -44,8 +44,8 @@ final class DataController {
     
     static private let submissionPath: String = "colorOfTheDaySubmissions.json"
     
-    /// loads dates representing the completedColorOfTheDay from file manager
-    /// - Returns: array of dates
+    /// loads submissions to color of the day from file manager
+    /// - Returns: array of Submissions
     func load() -> [Submission] {
         do {
             let directory = try FileManager.default.url(
@@ -55,15 +55,15 @@ final class DataController {
                 create: false
             )
             let encodedSubmissions = try Data(contentsOf: directory.appendingPathComponent(DataController.submissionPath))
-            let decodedDates = try JSONDecoder().decode([Submission].self, from: encodedSubmissions)
-            return decodedDates
+            let decodedSubmissions = try JSONDecoder().decode([Submission].self, from: encodedSubmissions)
+            return decodedSubmissions
         } catch {
             debugPrint(error)
             return []
         }
     }
     
-    /// saves the current dates of completion for ColorOfTheDay to file manager
+    /// saves the current submissions to ColorOfTheDay to file manager
     func save() {
         do {
             let directory = try FileManager.default.url(
@@ -76,6 +76,11 @@ final class DataController {
         } catch {
             print("Unable to save data")
         }
+    }
+    
+    func refresh() {
+        save()
+        self.colorOfTheDaySubmissions = load()
     }
 }
 
