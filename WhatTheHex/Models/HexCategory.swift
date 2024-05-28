@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum HexCategory: String {
+enum HexCategory: String, Codable {
     case red = "R"
     case green = "G"
     case blue = "B"

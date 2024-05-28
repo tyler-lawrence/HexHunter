@@ -30,7 +30,9 @@ struct LeaderboardView: View {
                 LeaderboardRowView(entry: entry, gameMode: gameMode)
             }
             .refreshable {
-                Task{ await loadLeaderboard() }
+                Task{
+                    entries = await GameCenterManager.shared.fetchLeaderboardEntries(for: gameMode)
+                }
             }
             .overlay{
                 if entries.isEmpty {
@@ -45,31 +47,16 @@ struct LeaderboardView: View {
         .navigationTitle("Leaderboards")
         .onAppear(){
             Task{
-                await loadLeaderboard()
+                entries = await GameCenterManager.shared.fetchLeaderboardEntries(for: gameMode)
             }
         }
         .onChange(of: gameMode){
             entries.removeAll()
             Task{
-                await loadLeaderboard()
+                entries = await GameCenterManager.shared.fetchLeaderboardEntries(for: gameMode)
             }
         }
         
-    }
-    
-    func loadLeaderboard() async {
-        
-        guard let leaderboardID = gameMode.gameCenterLeaderboardID else { return }
-        
-        do {
-            let leaderboards  = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardID])
-            if let modeLeaderboard = leaderboards.first(where: {$0.baseLeaderboardID == leaderboardID}) {
-                let leaderboardEntries = try await modeLeaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...100))
-                entries = leaderboardEntries.1
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
     }
 }
 

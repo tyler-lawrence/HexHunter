@@ -10,11 +10,15 @@ import XCTest
 final class DataControllerTests: XCTestCase {
         
     //MARK: colorOfTheDayStreak
+    
+    func sampleSubmission(daysInPast: Int) -> Submission {
+        return Submission(playerGuess: Hexcode.random(), target: Hexcode.random(), date: Date.now.minus(daysInPast))
+    }
 
     func test_colorOfTheDayStreak_empty_returns_0() {
         
         let sut = DataController()
-        sut.datesCompletedColorOfTheDay = []
+        sut.colorOfTheDaySubmissions = []
         
         let expected = 0
         
@@ -27,10 +31,10 @@ final class DataControllerTests: XCTestCase {
         
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now.minus(1),
-            Date.now.minus(2),
-            Date.now.minus(3),
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 1),
+            sampleSubmission(daysInPast: 2),
+            sampleSubmission(daysInPast: 3)
         ]
         
         let expected = 3
@@ -43,9 +47,9 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_gap_in_3_day_span_returns_1() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now.minus(1),
-            Date.now.minus(3),
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 1),
+            sampleSubmission(daysInPast: 3),
         ]
         
         let expected = 1
@@ -58,11 +62,11 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_3_consecutive_days_then_1_missed_returns_1() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now,
-            Date.now.minus(2),
-            Date.now.minus(3),
-            Date.now.minus(4)
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 0),
+            sampleSubmission(daysInPast: 2),
+            sampleSubmission(daysInPast: 3),
+            sampleSubmission(daysInPast: 4)
         ]
         
         let expected = 1
@@ -75,11 +79,11 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_3_days_and_completed_today_returns_4() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now,
-            Date.now.minus(1),
-            Date.now.minus(2),
-            Date.now.minus(3)
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 0),
+            sampleSubmission(daysInPast: 1),
+            sampleSubmission(daysInPast: 2),
+            sampleSubmission(daysInPast: 3)
         ]
         
         let expected = 4
@@ -92,8 +96,8 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_1_day_returns_1() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now,
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 0),
         ]
         
         let expected = 1
@@ -106,9 +110,9 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_2_day_returns_2() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now,
-            Date.now.minus(1)
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 0),
+            sampleSubmission(daysInPast: 1)
         ]
         
         let expected = 2
@@ -121,9 +125,9 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_unorderedDates_valid_streak_2_returns_2() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now.minus(1),
-            Date.now
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 1),
+            sampleSubmission(daysInPast: 0)
         ]
         
         let expected = 2
@@ -136,10 +140,10 @@ final class DataControllerTests: XCTestCase {
     func test_colorOfTheDayStreak_3_consecutive_days_in_past_returns_0() {
         let sut = DataController()
 
-        sut.datesCompletedColorOfTheDay = [
-            Date.now.minus(10),
-            Date.now.minus(11),
-            Date.now.minus(12)
+        sut.colorOfTheDaySubmissions = [
+            sampleSubmission(daysInPast: 10),
+            sampleSubmission(daysInPast: 11),
+            sampleSubmission(daysInPast: 12)
         ]
         
         let expected = 0

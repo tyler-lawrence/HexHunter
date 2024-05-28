@@ -80,6 +80,16 @@
         }
       }
     },
+    "%lld." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
     "+10" : {
       "localizations" : {
         "ar" : {
@@ -110,6 +120,16 @@
         }
       }
     },
+    "Accuracy: %@%%" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دقة: %@%"
+          }
+        }
+      }
+    },
     "Adjust the sliders below so your hexcode matches the target hexcode: " : {
       "localizations" : {
         "ar" : {
@@ -126,6 +146,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "هل انت متاكد انك تريد ان تغادر"
+          }
+        }
+      }
+    },
+    "Are you sure?" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هل أنت متأكد؟"
           }
         }
       }
@@ -293,6 +323,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color of the Day"
+          }
+        }
+      }
+    },
+    "Current rank:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرتبة الحالية:"
           }
         }
       }
@@ -513,6 +553,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "التالي"
+          }
+        }
+      }
+    },
+    "No" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا"
           }
         }
       }
@@ -801,6 +851,16 @@
         }
       }
     },
+    "Target: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هدف: %@"
+          }
+        }
+      }
+    },
     "test" : {
       "localizations" : {
         "ar" : {
@@ -921,6 +981,16 @@
         }
       }
     },
+    "Yes!" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نعم!"
+          }
+        }
+      }
+    },
     "Your Color" : {
       "localizations" : {
         "ar" : {
@@ -938,6 +1008,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "تخمينك"
+          }
+        }
+      }
+    },
+    "Your Guess" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخمينك"
+          }
+        }
+      }
+    },
+    "Your guess: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخمينك: %@"
           }
         }
       }
