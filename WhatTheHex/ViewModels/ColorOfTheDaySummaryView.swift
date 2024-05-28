@@ -89,6 +89,7 @@ struct ColorOfTheDaySummaryView: View {
     
 }
 
+#if DEBUG
 #Preview {
     ColorOfTheDaySummaryView(submission: Submission.sampleToday)
 }
@@ -96,3 +97,4 @@ struct ColorOfTheDaySummaryView: View {
 #Preview {
     ColorOfTheDaySummaryView(submission: Submission.sampleToday, rank: 3)
 }
+#endif
