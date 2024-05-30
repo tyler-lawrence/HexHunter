@@ -34,6 +34,7 @@ struct LeaderboardRowView: View {
         HStack{
             Text("\(entry.rank).")
             Text(entry.alias)
+                .padding(.horizontal)
             Spacer()
             
             Text(scoreDisplay)
