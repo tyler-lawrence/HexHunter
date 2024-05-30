@@ -10,6 +10,8 @@ import GameKit
 
 struct LeaderboardRowView: View {
     
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    
     let entry: any HHLeaderboardEntry
     let gameMode: GameMode
     
@@ -24,20 +26,25 @@ struct LeaderboardRowView: View {
         }
     }
     
+    var hexFrameSize: CGFloat {
+        dynamicTypeSize.isAccessibilitySize ? 120.0 : 60.0
+    }
+    
     var body: some View {
         HStack{
             Text("\(entry.rank).")
             Text(entry.alias)
             Spacer()
-            Image(.blankHexToken)
-                .resizable()
-                .scaledToFit()
-                .overlay{
-                    Text(scoreDisplay)
-                        .bold()
-                        .foregroundStyle(.white)
-                }
-                .frame(width: 60, height: 60)
+            
+            Text(scoreDisplay)
+                .bold()
+                .foregroundStyle(.white)
+                .padding()
+                .background(
+                    Image(.blankHexToken)
+                        .resizable()
+                        .scaledToFit()
+                )
         }
     }
 }
