@@ -222,7 +222,7 @@
 			children = (
 				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
 				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
-				5B8F25AE2C08A3280028B135 /* GKLeaderboardMock */,
+				5B8F25AE2C08A3280028B135 /* GKLeaderboard Mock Helpers */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -406,14 +406,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5B8F25AE2C08A3280028B135 /* GKLeaderboardMock */ = {
+		5B8F25AE2C08A3280028B135 /* GKLeaderboard Mock Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */,
 				5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */,
 				5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */,
 			);
-			path = GKLeaderboardMock;
+			path = "GKLeaderboard Mock Helpers";
 			sourceTree = "<group>";
 		};
 		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
