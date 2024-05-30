@@ -9,8 +9,10 @@ import SwiftUI
 import GameKit
 
 struct LeaderboardRowView: View {
-    let entry: GKLeaderboard.Entry
+    
+    let entry: any HHLeaderboardEntry
     let gameMode: GameMode
+    
     var scoreDisplay: String {
         switch gameMode {
         case .survival:
@@ -21,10 +23,11 @@ struct LeaderboardRowView: View {
             "\(entry.score)"
         }
     }
+    
     var body: some View {
         HStack{
             Text("\(entry.rank).")
-            Text(entry.player.alias)
+            Text(entry.alias)
             Spacer()
             Image(.blankHexToken)
                 .resizable()
@@ -39,6 +42,6 @@ struct LeaderboardRowView: View {
     }
 }
 
-//#Preview {
-//    LeaderboardRowView(entry: GKLeaderboard.Entry, gameMode: <#GameMode#>)
-//}
+#Preview {
+    LeaderboardRowView(entry: MockGKLeaderboardEntry.sample, gameMode: .survival)
+}

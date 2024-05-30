@@ -63,6 +63,9 @@
 		5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */; };
 		5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */; };
 		5B8F25622C0114A90028B135 /* ColorOfTheDaySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */; };
+		5B8F25A92C08A2A40028B135 /* HHLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */; };
+		5B8F25AB2C08A2F20028B135 /* MockGKLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */; };
+		5B8F25AD2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */; };
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
@@ -163,6 +166,9 @@
 		5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHProgressView.swift; sourceTree = "<group>"; };
 		5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDaySummaryView.swift; sourceTree = "<group>"; };
+		5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLeaderboardEntry.swift; sourceTree = "<group>"; };
+		5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGKLeaderboardEntry.swift; sourceTree = "<group>"; };
+		5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GKLeaderboardEntry+HHLeaderboardEntry.swift"; sourceTree = "<group>"; };
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 			children = (
 				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
 				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
+				5B8F25AE2C08A3280028B135 /* GKLeaderboardMock */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -397,6 +404,16 @@
 				5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B8F25AE2C08A3280028B135 /* GKLeaderboardMock */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */,
+				5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */,
+				5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */,
+			);
+			path = GKLeaderboardMock;
 			sourceTree = "<group>";
 		};
 		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
@@ -613,10 +630,12 @@
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
 				5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,
+				5B8F25A92C08A2A40028B135 /* HHLeaderboardEntry.swift in Sources */,
 				5B0962B12BE3BF7E00425CE8 /* TutorialView.swift in Sources */,
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,
 				5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */,
 				5B43BD022BD0086000054F2E /* GameSelectionButton.swift in Sources */,
+				5B8F25AD2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */,
 				5B0962E12BE5582500425CE8 /* SliderComponentTip.swift in Sources */,
@@ -624,6 +643,7 @@
 				5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */,
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
+				5B8F25AB2C08A2F20028B135 /* MockGKLeaderboardEntry.swift in Sources */,
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B0E331E2BC9645600F934DE /* String+ValidHexcode.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
