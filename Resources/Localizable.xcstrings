@@ -80,12 +80,12 @@
         }
       }
     },
-    "%lld." : {
+    "%lld. " : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld"
+            "value" : ".%lld"
           }
         }
       }

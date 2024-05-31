@@ -15,49 +15,65 @@ struct LeaderboardRowView: View {
     let entry: any HHLeaderboardEntry
     let gameMode: GameMode
     
+    @ScaledMetric(relativeTo: .body) var bodyHeight = 90
+    @ScaledMetric(relativeTo: .body) var bodyWidth = 50
+    
     var scoreDisplay: String {
         switch gameMode {
         case .survival:
-            String(entry.score)
+            entry.score.formatted(.number)
         case .colorOfTheDay:
-            String(format: "%.2f", Double(entry.score) / 100)
+            (Double(entry.score) / 10000).formatted(.percent.precision(.fractionLength(2)))
         default:
             "\(entry.score)"
         }
     }
     
-    var hexFrameSize: CGFloat {
-        dynamicTypeSize.isAccessibilitySize ? 140.0 : 80.0
+    var rankAlias: some View {
+        Group{
+            Text("\(entry.rank). ")
+            Text(entry.alias)
+            Spacer()
+        }
+    }
+    
+    var scoreToken: some View {
+        Text(scoreDisplay)
+            .bold()
+            .foregroundStyle(.white)
+            .lineLimit(1)
+            .fixedSize()
+            .frame(width: bodyWidth, height: bodyHeight)
+            .background{
+                Image(.blankHexToken)
+                    .resizable()
+                    .scaledToFill()
+            }
     }
     
     var body: some View {
-        HStack{
-            Text("\(entry.rank).")
-            Text(entry.alias)
-                .padding(.horizontal)
-            Spacer()
-            Image(.blankHexToken)
-                .resizable()
-                .frame(width: hexFrameSize, height: hexFrameSize)
-                .scaledToFit()
-                .overlay{
-                    Text(scoreDisplay)
-                        .bold()
-                        .foregroundStyle(.white)
-                        .padding()
-                        .lineLimit(1)
-                        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
-                      
-                }
-           
+        if dynamicTypeSize.isAccessibilitySize {
+            VStack{
+                HStack{rankAlias}
+                scoreToken
+            }
+        } else {
+            HStack{
+                rankAlias
+                scoreToken
+            }
         }
     }
 }
 
 #Preview {
-    LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleSurvival, gameMode: .survival)
+    List{
+        LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleSurvival, gameMode: .survival)
+    }
 }
 
 #Preview {
-    LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleColorOfTheDay, gameMode: .colorOfTheDay)
+    List{
+        LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleColorOfTheDay, gameMode: .colorOfTheDay)
+    }
 }
