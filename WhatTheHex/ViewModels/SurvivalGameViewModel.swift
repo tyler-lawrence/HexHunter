@@ -28,7 +28,7 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
     }
     
     var minimumSimilarityToScore: Double{
-        Double(80 + 2 * (correctGuesses / 5))
+        min(Double(80 + 2 * (correctGuesses / 5)), 100)
     }
     var timeReward: Int = 10
     var bonusTimeAnimationTrigger: Bool = false
@@ -68,7 +68,7 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
         
         timeRemaining -= 1
         let score = playerHexcode.calculateSimilarity(to: targetHexcode)
-        if score > minimumSimilarityToScore {
+        if score >= minimumSimilarityToScore {
             correctGuess()
         }
         targetHexcode = Hexcode.random()
