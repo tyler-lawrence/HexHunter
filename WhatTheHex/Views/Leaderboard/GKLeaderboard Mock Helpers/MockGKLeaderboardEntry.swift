@@ -11,5 +11,6 @@ struct MockGKLeaderboardEntry: HHLeaderboardEntry {
     var rank: Int
     var score: Int
     var alias: String
-    static let sample = MockGKLeaderboardEntry(rank: 2, score: 20, alias: "LonesomeMouse 23487")
+    static let sampleSurvival = MockGKLeaderboardEntry(rank: 2, score: 20, alias: "LonesomeMouse 23487")
+    static let sampleColorOfTheDay = MockGKLeaderboardEntry(rank: 2, score: 9870, alias: "LonesomeMouse 23487")
 }
