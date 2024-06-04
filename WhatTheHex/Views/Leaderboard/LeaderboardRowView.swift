@@ -9,35 +9,71 @@ import SwiftUI
 import GameKit
 
 struct LeaderboardRowView: View {
-    let entry: GKLeaderboard.Entry
+    
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    
+    let entry: any HHLeaderboardEntry
     let gameMode: GameMode
+    
+    @ScaledMetric(relativeTo: .body) var bodyHeight = 90
+    @ScaledMetric(relativeTo: .body) var bodyWidth = 50
+    
     var scoreDisplay: String {
         switch gameMode {
         case .survival:
-            "\(entry.score)"
+            entry.score.formatted(.number)
         case .colorOfTheDay:
-            "\(Double(entry.score) / 100)"
+            (Double(entry.score) / 10000).formatted(.percent.precision(.fractionLength(2)))
         default:
             "\(entry.score)"
         }
     }
-    var body: some View {
-        HStack{
-            Text(entry.player.alias)
+    
+    var rankAlias: some View {
+        Group{
+            Text("\(entry.rank). ")
+            Text(entry.alias)
             Spacer()
-            Image(.blankHexToken)
-                .resizable()
-                .scaledToFit()
-                .overlay{
-                    Text(scoreDisplay)
-                        .bold()
-                        .foregroundStyle(.white)
-                }
-                .frame(width: 60, height: 60)
+        }
+    }
+    
+    var scoreToken: some View {
+        Text(scoreDisplay)
+            .bold()
+            .foregroundStyle(.white)
+            .lineLimit(1)
+            .fixedSize()
+            .frame(width: bodyWidth, height: bodyHeight)
+            .background{
+                Image(.blankHexToken)
+                    .resizable()
+                    .scaledToFill()
+            }
+    }
+    
+    var body: some View {
+        if dynamicTypeSize.isAccessibilitySize {
+            VStack{
+                HStack{rankAlias}
+                scoreToken
+            }
+        } else {
+            HStack{
+                rankAlias
+                scoreToken
+            }
         }
     }
 }
 
-//#Preview {
-//    LeaderboardRowView(entry: GKLeaderboard.Entry, gameMode: <#GameMode#>)
-//}
+#Preview {
+    List{
+        LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleSurvival, gameMode: .survival)
+    }
+}
+
+#Preview {
+    List{
+        LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleColorOfTheDay, gameMode: .colorOfTheDay)
+    }
+}

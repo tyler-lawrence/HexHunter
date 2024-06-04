@@ -52,7 +52,8 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
     
     /// adds current date to dataController and marks the game over
     override func submitGuess() {
-        dataController.datesCompletedColorOfTheDay.append(Date.now)
+        let submission = Submission(playerGuess: playerHexcode, target: targetHexcode)
+        dataController.colorOfTheDaySubmissions.append(submission)
         gameOver = true
     }
     

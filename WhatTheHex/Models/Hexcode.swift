@@ -6,8 +6,8 @@
 //
 import Foundation
 
-struct Hexcode: Identifiable, Hashable {
-    let id = UUID()
+struct Hexcode: Identifiable, Hashable, Codable {
+    var id = UUID()
     var red: Component
     var green: Component
     var blue: Component

@@ -24,13 +24,17 @@ struct TutorialView: View {
         .buttonStyle(GameSelectionButton())
     }
     
+    var getStartedMessage: LocalizedStringKey {
+        LocalizedStringKey("Let's get started by learning the basics of hexcodes")
+    }
+    
     var body: some View {
         VStack{
             if viewIdx == 0 {
                 Text("Welcome to HexHunter")
                     .font(.largeTitle)
                     .padding()
-                Text("Let's get started by learning the basics of hexcodes ")
+                Text(getStartedMessage)
                         .font(.title)
                         .padding()
                 nextButton

@@ -41,7 +41,7 @@
 		5B43BD022BD0086000054F2E /* GameSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BD012BD0086000054F2E /* GameSelectionButton.swift */; };
 		5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */; };
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
-		5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
+		5B4F369F2BC1F9D900F1EB87 /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Submission.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
 		5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
@@ -61,6 +61,11 @@
 		5B68EADD2BC570DE00ABD6E0 /* PracticeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */; };
 		5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */; };
 		5B8DBEE82BF3BF800079F13F /* HHProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */; };
+		5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */; };
+		5B8F25622C0114A90028B135 /* ColorOfTheDaySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */; };
+		5B8F25A92C08A2A40028B135 /* HHLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */; };
+		5B8F25AB2C08A2F20028B135 /* MockGKLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */; };
+		5B8F25AD2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */; };
 		5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001B92BDAE9D400174C70 /* GameMode.swift */; };
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
@@ -91,7 +96,7 @@
 		5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */; };
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
-		5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Guess.swift */; };
+		5BB39A792BC1EDF800A38EAD /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Submission.swift */; };
 		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
 		5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
@@ -159,6 +164,11 @@
 		5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeView.swift; sourceTree = "<group>"; };
 		5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSlidersView.swift; sourceTree = "<group>"; };
 		5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHProgressView.swift; sourceTree = "<group>"; };
+		5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
+		5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDaySummaryView.swift; sourceTree = "<group>"; };
+		5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLeaderboardEntry.swift; sourceTree = "<group>"; };
+		5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGKLeaderboardEntry.swift; sourceTree = "<group>"; };
+		5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GKLeaderboardEntry+HHLeaderboardEntry.swift"; sourceTree = "<group>"; };
 		5B9001B92BDAE9D400174C70 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
@@ -182,7 +192,7 @@
 		5BB39A712BC1E38700A38EAD /* TimedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGame.swift; sourceTree = "<group>"; };
 		5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedGameBaseView.swift; sourceTree = "<group>"; };
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
-		5BB39A782BC1EDF800A38EAD /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		5BB39A782BC1EDF800A38EAD /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
@@ -212,6 +222,7 @@
 			children = (
 				5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */,
 				5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */,
+				5B8F25AE2C08A3280028B135 /* GKLeaderboard Mock Helpers */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 		5B5BA36C2BB7433900B558EE = {
 			isa = PBXGroup;
 			children = (
+				5B8DBEF32BF688DE0079F13F /* Resources */,
 				5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */,
 				5B5BA3772BB7433900B558EE /* WhatTheHex */,
 				5B1208BA2BBB232B00F36388 /* WhatTheHexTests */,
@@ -346,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9001B92BDAE9D400174C70 /* GameMode.swift */,
-				5BB39A782BC1EDF800A38EAD /* Guess.swift */,
+				5BB39A782BC1EDF800A38EAD /* Submission.swift */,
 				5B5BA3872BB745FA00B558EE /* Hexcode.swift */,
 				5B5BA3972BB8B03200B558EE /* Component.swift */,
 				5B5BA3992BB8B05D00B558EE /* HexCategory.swift */,
@@ -386,11 +398,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5B8DBEF32BF688DE0079F13F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B8DBEF42BF6893F0079F13F /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B8F25AE2C08A3280028B135 /* GKLeaderboard Mock Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F25AC2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift */,
+				5B8F25AA2C08A2F20028B135 /* MockGKLeaderboardEntry.swift */,
+				5B8F25A82C08A2A40028B135 /* HHLeaderboardEntry.swift */,
+			);
+			path = "GKLeaderboard Mock Helpers";
+			sourceTree = "<group>";
+		};
 		5BA3D9D32BBC2C96003DE2F8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */,
 				5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */,
+				5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */,
 				5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */,
 				5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */,
 			);
@@ -477,7 +508,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					5B1208B82BBB232B00F36388 = {
 						CreatedOnToolsVersion = 15.3;
@@ -495,6 +526,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 5B5BA36C2BB7433900B558EE;
 			productRefGroup = 5B5BA3762BB7433900B558EE /* Products */;
@@ -520,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */,
+				5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */,
 				5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */,
 				5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */,
 				5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */,
@@ -557,7 +590,7 @@
 				5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */,
 				5B0962B22BE3C3FB00425CE8 /* LeaderboardGame.swift in Sources */,
 				5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */,
-				5B4F369F2BC1F9D900F1EB87 /* Guess.swift in Sources */,
+				5B4F369F2BC1F9D900F1EB87 /* Submission.swift in Sources */,
 				5B0962B32BE3C42D00425CE8 /* SurvivalGameViewModel.swift in Sources */,
 				5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */,
 				5B0E33232BC96A0300F934DE /* String+ValidHexcode.swift in Sources */,
@@ -582,6 +615,7 @@
 				5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */,
 				5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */,
 				5BD058292BECF598007E0336 /* SandboxGameView.swift in Sources */,
+				5B8F25622C0114A90028B135 /* ColorOfTheDaySummaryView.swift in Sources */,
 				5B5BA3982BB8B03200B558EE /* Component.swift in Sources */,
 				5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */,
 				5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */,
@@ -596,10 +630,12 @@
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
 				5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,
+				5B8F25A92C08A2A40028B135 /* HHLeaderboardEntry.swift in Sources */,
 				5B0962B12BE3BF7E00425CE8 /* TutorialView.swift in Sources */,
 				5BB39A722BC1E38700A38EAD /* TimedGame.swift in Sources */,
 				5BA3D9D72BBC4B6B003DE2F8 /* OnboardingView.swift in Sources */,
 				5B43BD022BD0086000054F2E /* GameSelectionButton.swift in Sources */,
+				5B8F25AD2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */,
 				5B0962E12BE5582500425CE8 /* SliderComponentTip.swift in Sources */,
@@ -607,6 +643,7 @@
 				5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */,
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
+				5B8F25AB2C08A2F20028B135 /* MockGKLeaderboardEntry.swift in Sources */,
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B0E331E2BC9645600F934DE /* String+ValidHexcode.swift in Sources */,
 				5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */,
@@ -622,7 +659,7 @@
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,
 				5B68EAD82BC4321500ABD6E0 /* SurvivalGameView.swift in Sources */,
 				5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */,
-				5BB39A792BC1EDF800A38EAD /* Guess.swift in Sources */,
+				5BB39A792BC1EDF800A38EAD /* Submission.swift in Sources */,
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
@@ -649,6 +686,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -671,6 +709,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -692,6 +731,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -721,6 +761,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -753,6 +794,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -782,6 +824,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -808,7 +851,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -830,7 +874,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -848,7 +892,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -870,7 +915,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academy.WhatTheHex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
