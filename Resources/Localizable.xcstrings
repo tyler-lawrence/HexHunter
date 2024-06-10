@@ -476,6 +476,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Hexcode: #%@" : {
       "localizations" : {
         "ar" : {

@@ -45,6 +45,10 @@
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
 		5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5B52A0BE2BC1F84C00BBE59B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A6F2BC1E00C00A38EAD /* GameViewModel.swift */; };
+		5B558DCE2C176C0F0093963C /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B558DCD2C176B750093963C /* StatsView.swift */; };
+		5B558DD02C176F570093963C /* DataController+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B558DCF2C176F570093963C /* DataController+Stats.swift */; };
+		5B558DD12C1771510093963C /* DataController+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B558DCF2C176F570093963C /* DataController+Stats.swift */; };
+		5B558DD32C1775210093963C /* SubmissionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B558DD22C1775210093963C /* SubmissionRowView.swift */; };
 		5B5BA3792BB7433900B558EE /* WhatTheHexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */; };
 		5B5BA37B2BB7433900B558EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA37A2BB7433900B558EE /* ContentView.swift */; };
 		5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5BA37C2BB7433B00B558EE /* Assets.xcassets */; };
@@ -146,6 +150,9 @@
 		5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
 		5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		5B558DCD2C176B750093963C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		5B558DCF2C176F570093963C /* DataController+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+Stats.swift"; sourceTree = "<group>"; };
+		5B558DD22C1775210093963C /* SubmissionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionRowView.swift; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheHexApp.swift; sourceTree = "<group>"; };
 		5B5BA37A2BB7433900B558EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +276,7 @@
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
+				5B558DD22C1775210093963C /* SubmissionRowView.swift */,
 				5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */,
 			);
 			path = GameComponentViews;
@@ -370,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
+				5B558DCD2C176B750093963C /* StatsView.swift */,
 				5B09622D2BE267A700425CE8 /* Leaderboard */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
@@ -384,6 +393,7 @@
 		5B5BA39F2BB9A99E00B558EE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5B558DCF2C176F570093963C /* DataController+Stats.swift */,
 				5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */,
 				5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */,
 				5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */,
@@ -569,6 +579,7 @@
 				5B43BCFD2BCF0FA400054F2E /* Date+StreakUtils.swift in Sources */,
 				5B0E33222BC969FD00F934DE /* String+isValidHexcodeTests.swift in Sources */,
 				5BAD10E42BD1A56100E97FB1 /* CloudKitService.swift in Sources */,
+				5B558DD12C1771510093963C /* DataController+Stats.swift in Sources */,
 				5B0E331A2BC9590000F934DE /* Int+toHexadecimal.swift in Sources */,
 				5BB39A6E2BC1DEE500A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B0E33192BC958FD00F934DE /* String+toHexadecimal.swift in Sources */,
@@ -605,6 +616,7 @@
 				5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */,
 				5B0E33142BC8853300F934DE /* String+toHexadecimal.swift in Sources */,
 				5BA3D9CC2BBB64A0003DE2F8 /* PracticeModeViewModel.swift in Sources */,
+				5B558DD02C176F570093963C /* DataController+Stats.swift in Sources */,
 				5B5BA3882BB745FA00B558EE /* Hexcode.swift in Sources */,
 				5BB39A702BC1E00C00A38EAD /* GameViewModel.swift in Sources */,
 				5B0E33072BC72F0F00F934DE /* ColorOfTheDayViewModel.swift in Sources */,
@@ -655,6 +667,7 @@
 				5B43BCFC2BCF0D5800054F2E /* Date+StreakUtils.swift in Sources */,
 				5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
+				5B558DD32C1775210093963C /* SubmissionRowView.swift in Sources */,
 				5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */,
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,
 				5B68EAD82BC4321500ABD6E0 /* SurvivalGameView.swift in Sources */,
@@ -663,6 +676,7 @@
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */,
 				5B0E32FF2BC5D81300F934DE /* Hexcode+Equatable.swift in Sources */,
+				5B558DCE2C176C0F0093963C /* StatsView.swift in Sources */,
 				5BB39A5F2BBC940D00A38EAD /* GameplayTutorialView.swift in Sources */,
 				5B0E331C2BC95F2200F934DE /* Component+Equatable.swift in Sources */,
 				5BA3D9DF2BBC5424003DE2F8 /* ScoreExplanationView.swift in Sources */,

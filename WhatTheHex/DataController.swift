@@ -32,10 +32,6 @@ final class DataController {
         }
     }
     
-    var colorOfTheDayStreak: Int {
-        colorOfTheDaySubmissions.map{$0.date}.streakCount()
-    }
-    
     private var calendar = Calendar(identifier: .gregorian)
     
     init() {
@@ -90,6 +86,20 @@ extension DataController {
         let dc = DataController()
         dc.colorOfTheDaySubmissions = [
             Submission.sampleYesterday
+        ]
+        return dc
+    }
+    
+    static var sample: DataController {
+        let dc = DataController()
+        dc.colorOfTheDaySubmissions = [
+            Submission.sampleYesterday,
+            Submission.sampleToday,
+            Submission.sampleToday,
+            Submission.sampleToday,
+            Submission.sampleToday,
+            Submission.sampleToday,
+            Submission.sampleToday
         ]
         return dc
     }
