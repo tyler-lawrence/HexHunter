@@ -160,6 +160,9 @@
         }
       }
     },
+    "Average score: %@" : {
+
+    },
     "B" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -308,6 +311,9 @@
           }
         }
       }
+    },
+    "COLOR OF THE DAY" : {
+
     },
     "ColorOfTheDay" : {
       "comment" : "Color of the Day game mode button label",
@@ -475,9 +481,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "Hexcode: #%@" : {
       "localizations" : {
@@ -813,6 +816,9 @@
         }
       }
     },
+    "Sort" : {
+
+    },
     "start guessing" : {
       "localizations" : {
         "ar" : {
@@ -953,6 +959,9 @@
           }
         }
       }
+    },
+    "Total games played: %lld" : {
+
     },
     "Use the sliders below to increase or decrease the amount of " : {
       "localizations" : {
