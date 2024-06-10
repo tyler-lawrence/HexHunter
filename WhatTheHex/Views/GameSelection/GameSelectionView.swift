@@ -70,6 +70,13 @@ struct GameSelectionView: View {
                     }
                 }
                 ToolbarItem{
+                    NavigationLink{
+                        StatsView(dataController: dataController)
+                    } label: {
+                        Image(systemName: "circle.dotted.circle")
+                    }
+                }
+                ToolbarItem{
                     Button{
                         showingExplanationSheet.toggle()
                     } label: {
