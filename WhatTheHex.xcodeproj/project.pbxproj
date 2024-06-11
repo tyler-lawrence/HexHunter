@@ -317,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				5B558DCD2C176B750093963C /* StatsView.swift */,
+				5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */,
 				5B558DD22C1775210093963C /* SubmissionRowView.swift */,
 			);
 			path = Stats;
@@ -439,7 +440,6 @@
 			children = (
 				5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */,
 				5B0E33062BC72F0F00F934DE /* ColorOfTheDayViewModel.swift */,
-				5B8F25612C0114A90028B135 /* ColorOfTheDaySummaryView.swift */,
 				5BB39A6C2BC1DEE200A38EAD /* RapidGameViewModel.swift */,
 				5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */,
 			);
