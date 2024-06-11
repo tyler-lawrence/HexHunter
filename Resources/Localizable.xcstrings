@@ -70,6 +70,9 @@
         }
       }
     },
+    "%@%%" : {
+
+    },
     "%lld" : {
       "localizations" : {
         "ar" : {
@@ -312,7 +315,7 @@
         }
       }
     },
-    "COLOR OF THE DAY" : {
+    "Color of the Day Stats" : {
 
     },
     "ColorOfTheDay" : {
