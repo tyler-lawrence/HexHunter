@@ -276,7 +276,6 @@
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
-				5B558DD22C1775210093963C /* SubmissionRowView.swift */,
 				5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */,
 			);
 			path = GameComponentViews;
@@ -312,6 +311,15 @@
 				5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		5B558DD62C18BD820093963C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				5B558DCD2C176B750093963C /* StatsView.swift */,
+				5B558DD22C1775210093963C /* SubmissionRowView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		5B5BA36C2BB7433900B558EE = {
@@ -378,7 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
-				5B558DCD2C176B750093963C /* StatsView.swift */,
+				5B558DD62C18BD820093963C /* Stats */,
 				5B09622D2BE267A700425CE8 /* Leaderboard */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,

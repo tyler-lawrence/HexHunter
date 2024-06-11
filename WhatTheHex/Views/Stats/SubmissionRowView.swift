@@ -33,7 +33,7 @@ struct SubmissionRowView: View {
         Text("\(submission.similarityLabel)%")
             .lineLimit(1)
             .font(.title)
-            .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+            .dynamicTypeSize(...DynamicTypeSize.accessibility2)
     }
     
     var body: some View {
