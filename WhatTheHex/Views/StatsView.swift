@@ -32,33 +32,19 @@ struct StatsView: View {
     
     var body: some View {
         VStack{
-            Text("COLOR OF THE DAY")
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [
-                            .red,
-                            .orange,
-                            .yellow,
-                            .green,
-                            .indigo,
-                            .purple
-                        ],
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .font(.largeTitle)
-                .bold()
-            VStack{
+            VStack(alignment: .trailing){
                 Text("Total games played: \(dataController.totalGamesPlayed)")
                 Text("Average score: \(averageScoreLabel)")
             }
             .font(.title2)
+            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 25.0)
                     .foregroundStyle(Material.bar)
+                    .shadow(radius: 10)
             )
+            .padding(.bottom)
             Picker("Sort", selection: $submissionSortMethod){
                 ForEach(SortMethod.allCases, id: \.self){ method in
                     Text(method.rawValue)
@@ -67,9 +53,12 @@ struct StatsView: View {
             .pickerStyle(.segmented)
             Divider()
             ScrollView{
-                ForEach(sortedSubmissions, content: SubmissionRowView.init)
+                ForEach(sortedSubmissions){ submission in
+                    SubmissionRowView(submission: submission)
+                }
             }
         }
+        .navigationTitle("Color of the Day Stats")
         .padding()
     }
 }

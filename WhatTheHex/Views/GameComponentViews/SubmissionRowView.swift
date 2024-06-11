@@ -8,25 +8,55 @@
 import SwiftUI
 
 struct SubmissionRowView: View {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    
     let submission: Submission
+    
+    var dateLabel: some View {
+        ViewThatFits{
+            Text(submission.date.formatted(date: .complete, time: .omitted))
+            Text(submission.date.formatted(date: .numeric, time: .omitted))
+        }
+    }
+
+    var squares: RotatingView<some View> {
+        RotatingView(portraitOrientation: .horizontal){
+            Group{
+                ColorSquareView(title: "Your guess", hexcode: submission.playerGuess, showingCode: true)
+                ColorSquareView(title: "Target", hexcode: submission.target, showingCode: true)
+            }
+            .padding()
+        }
+    }
+    
+    var scoreLabel: some View {
+        Text("\(submission.similarityLabel)%")
+            .lineLimit(1)
+            .font(.title)
+            .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+    }
+    
     var body: some View {
         VStack{
             HStack{
-                Text(submission.date.formatted(date: .complete, time: .omitted))
+                dateLabel
                     .padding(.leading)
                     .padding(.top)
                     .font(.callout)
                 Spacer()
             }
-            HStack{
-                Spacer()
-                ColorSquareView(title: nil, hexcode: submission.playerGuess, showingCode: true)
-                Text(submission.similarityLabel)
-                    .font(.title)
-                ColorSquareView(title: nil, hexcode: submission.target, showingCode: true)
-                Spacer()
+            if dynamicTypeSize.isAccessibilitySize {
+                HStack{
+                    squares.rotated
+                    scoreLabel
+                }.padding(.horizontal)
+            } else {
+                VStack{
+                    squares.original
+                    scoreLabel
+                }
             }
-            .padding(.horizontal)
+            
         }
         .background(
             RoundedRectangle(cornerRadius: 25.0)
@@ -36,5 +66,9 @@ struct SubmissionRowView: View {
 }
 
 #Preview {
-    SubmissionRowView(submission: Submission.sampleToday)
+    ScrollView{
+        ForEach(1..<10){ _ in
+            SubmissionRowView(submission: Submission.sampleToday)
+        }
+    }
 }
