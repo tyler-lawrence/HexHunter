@@ -26,8 +26,17 @@ struct StatsView: View {
     }
     
     enum SortMethod: String, CaseIterable {
-        case date = "Date"
-        case score = "Score"
+        case date
+        case score
+        
+        var localizedRawValue: LocalizedStringKey {
+            switch self {
+            case .date:
+                LocalizedStringKey("Date")
+            case .score:
+                LocalizedStringKey("Score")
+            }
+        }
     }
     
     var body: some View {
@@ -47,7 +56,7 @@ struct StatsView: View {
             .padding(.bottom)
             Picker("Sort", selection: $submissionSortMethod){
                 ForEach(SortMethod.allCases, id: \.self){ method in
-                    Text(method.rawValue)
+                    Text(method.localizedRawValue)
                 }
             }
             .pickerStyle(.segmented)
