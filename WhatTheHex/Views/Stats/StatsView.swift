@@ -72,6 +72,8 @@ struct StatsView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     StatsView(dataController: DataController.sample)
 }
+#endif

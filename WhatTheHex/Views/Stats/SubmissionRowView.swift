@@ -65,6 +65,7 @@ struct SubmissionRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ScrollView{
         ForEach(1..<10){ _ in
@@ -72,3 +73,4 @@ struct SubmissionRowView: View {
         }
     }
 }
+#endif
