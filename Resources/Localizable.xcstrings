@@ -951,6 +951,16 @@
         }
       }
     },
+    "Upload scores to the leaderboard" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحميل النتائج إلى المتصدرين"
+          }
+        }
+      }
+    },
     "Use the sliders below to increase or decrease the amount of " : {
       "localizations" : {
         "ar" : {
