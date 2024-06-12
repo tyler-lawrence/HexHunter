@@ -55,6 +55,7 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
         let submission = Submission(playerGuess: playerHexcode, target: targetHexcode)
         dataController.colorOfTheDaySubmissions.append(submission)
         gameOver = true
+        dataController.refresh()
     }
     
 }

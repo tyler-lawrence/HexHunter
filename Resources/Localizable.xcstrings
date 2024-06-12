@@ -70,6 +70,9 @@
         }
       }
     },
+    "%@%%" : {
+
+    },
     "%lld" : {
       "localizations" : {
         "ar" : {
@@ -156,6 +159,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "هل أنت متأكد؟"
+          }
+        }
+      }
+    },
+    "Average score: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متوسط النتيجة: %@"
           }
         }
       }
@@ -309,6 +322,16 @@
         }
       }
     },
+    "Color of the Day Stats" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون اليوم إحصائيات"
+          }
+        }
+      }
+    },
     "ColorOfTheDay" : {
       "comment" : "Color of the Day game mode button label",
       "extractionState" : "manual",
@@ -333,6 +356,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "الرتبة الحالية:"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ"
           }
         }
       }
@@ -750,6 +783,16 @@
         }
       }
     },
+    "Score" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النتيجة"
+          }
+        }
+      }
+    },
     "Score: %@" : {
       "localizations" : {
         "ar" : {
@@ -806,6 +849,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "بعض الأحيان سترى أيضاً حروف مُدرجة في رمز الهكس . الحروف تُمثل عتمة اللون ."
+          }
+        }
+      }
+    },
+    "Sort" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فرز"
           }
         }
       }
@@ -947,6 +1000,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "لتحويل رمز الهكس إلى رقم ، نقوم أول بتحويل الرقم إلى قيمته الرقمية المقابلة (إذا لزم الأمر) وتطبيق الصيغة التالية : "
+          }
+        }
+      }
+    },
+    "Total games played: %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إجمالي الألعاب التي تم لعبها:%lld "
           }
         }
       }
