@@ -77,8 +77,8 @@ struct SurvivalGameView: View {
             vm.submitGuess()
         }
         .buttonStyle(GameSelectionButton())
+        .disabled(!vm.playerCanGuess)
     }
-    
     
     var body: some View {
     
@@ -157,6 +157,12 @@ struct SurvivalGameView: View {
             .onChange(of: showingExitConfirmation){
                 vm.toggleTimer()
             }
+            .onChange(of: vm.playerHexcode){ oldValue, newValue in
+                /// onChange was noticing changes from the viewmodel initializing a new playerhexcode. this is checking to see if the newValue that onChange finds is not a new Hexcode then we can allow the player to guess
+                if newValue != Hexcode() {
+                    vm.playerCanGuess = true
+                }
+            }
             .navigationBarBackButtonHidden()
             .toolbar{
                 ToolbarItem(placement: backButtonPosition){
@@ -168,10 +174,8 @@ struct SurvivalGameView: View {
                             Text("Back")
                         }
                     }
-                    
                 }
             }
-            
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .survival)
         }

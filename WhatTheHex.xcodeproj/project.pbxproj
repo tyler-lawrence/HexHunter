@@ -31,6 +31,7 @@
 		5B1208C72BBB242C00F36388 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1208C62BBB242C00F36388 /* ComponentTests.swift */; };
 		5B1208C82BBB245600F36388 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3972BB8B03200B558EE /* Component.swift */; };
 		5B1208C92BBB24B700F36388 /* HexCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA3992BB8B05D00B558EE /* HexCategory.swift */; };
+		5B2EFB592C19EA7C00B3202B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EFB582C19EA7C00B3202B /* SettingsView.swift */; };
 		5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */; };
 		5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF22BCD75E000054F2E /* CKError.swift */; };
 		5B43BCF92BCEADE500054F2E /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCF82BCEADE500054F2E /* DataControllerTests.swift */; };
@@ -141,6 +142,7 @@
 		5B0E33242BC975F300F934DE /* WhatTheHex.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatTheHex.xctestplan; sourceTree = "<group>"; };
 		5B1208B92BBB232B00F36388 /* WhatTheHexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTheHexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1208C62BBB242C00F36388 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
+		5B2EFB582C19EA7C00B3202B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5B43BCF02BCD5AE100054F2E /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		5B43BCF22BCD75E000054F2E /* CKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKError.swift; sourceTree = "<group>"; };
 		5B43BCF82BCEADE500054F2E /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
@@ -388,6 +390,8 @@
 			children = (
 				5B5BA37A2BB7433900B558EE /* ContentView.swift */,
 				5B558DD62C18BD820093963C /* Stats */,
+				5B2EFB582C19EA7C00B3202B /* SettingsView.swift */,
+
 				5B09622D2BE267A700425CE8 /* Leaderboard */,
 				5B0E32F82BC5C87900F934DE /* GameSelection */,
 				5B0E32F92BC5C88400F934DE /* ExplanationViews */,
@@ -647,6 +651,7 @@
 				5B0E330B2BC85A5D00F934DE /* ColorOfDayService.swift in Sources */,
 				5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */,
 				5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */,
+				5B2EFB592C19EA7C00B3202B /* SettingsView.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
 				5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,

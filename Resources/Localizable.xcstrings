@@ -1009,7 +1009,17 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "إجمالي الألعاب التي تم لعبها:%lld"
+            "value" : "إجمالي الألعاب التي تم لعبها:%lld "
+          }
+        }
+      }
+    },
+    "Upload scores to the leaderboard" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحميل النتائج إلى المتصدرين"
           }
         }
       }
