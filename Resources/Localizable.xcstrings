@@ -360,6 +360,16 @@
         }
       }
     },
+    "Dark mode" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وضع الظلام"
+          }
+        }
+      }
+    },
     "Date" : {
       "localizations" : {
         "ar" : {
