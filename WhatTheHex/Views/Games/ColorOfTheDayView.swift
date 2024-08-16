@@ -13,6 +13,7 @@ struct ColorOfTheDayView: View {
     @State var vm: ColorOfTheDayViewModel
     @State var colorOfTheDay: Hexcode?
     @AppStorage("hasOnboardedColorOfTheDay") var hasOnboarded: Bool = false
+    @AppStorage("GameKitPreference") var gameKitPreference: Bool = true
     
     @State var showingConfirmGuessAlert = false
     
@@ -96,12 +97,16 @@ struct ColorOfTheDayView: View {
             }
             .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
                 Button("Ok"){
-                    Task {
-                        await GameCenterManager.shared.uploadScore(
-                            vm.GKFormattedScore,
-                            for: .colorOfTheDay
-                        )
+                    // upload to game center
+                    if gameKitPreference {
+                        Task {
+                            await GameCenterManager.shared.uploadScore(
+                                vm.GKFormattedScore,
+                                for: .colorOfTheDay
+                            )
+                        }
                     }
+                    
                     presentationMode.wrappedValue.dismiss()
                 }
             }

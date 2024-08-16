@@ -22,6 +22,8 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
     var gameTimeMax: Int
     var timeRemaining: Int
     var correctGuesses = 0
+
+    var playerCanGuess = false
     
     var GKFormattedScore: Int {
         correctGuesses
@@ -65,14 +67,14 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
     }
     
     func submitGuess() {
-        
         timeRemaining -= 1
         let score = playerHexcode.calculateSimilarity(to: targetHexcode)
         if score >= minimumSimilarityToScore {
             correctGuess()
         }
-        targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
+        targetHexcode = Hexcode.random()
+        playerCanGuess = false
     }
     
     func reset() {

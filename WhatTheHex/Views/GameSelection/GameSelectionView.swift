@@ -11,8 +11,8 @@ import GameKit
 struct GameSelectionView: View {
     
     @State var showingExplanationSheet = false
+    @State var showingSettingsSheet = false
     @Environment(DataController.self) var dataController
-    
     
     var body: some View {
         NavigationStack{
@@ -70,16 +70,33 @@ struct GameSelectionView: View {
                     }
                 }
                 ToolbarItem{
+                    NavigationLink{
+                        StatsView(dataController: dataController)
+                    } label: {
+                        Image(systemName: "circle.dotted.circle")
+                    }
+                }
+                ToolbarItem{
                     Button{
                         showingExplanationSheet.toggle()
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
+                ToolbarItem{
+                    Button{
+                        showingSettingsSheet.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
             }
             .font(.title)
             .sheet(isPresented: $showingExplanationSheet){
                 ExplanationView()
+            }
+            .sheet(isPresented: $showingSettingsSheet){
+                SettingsView()
             }
         }
         .onAppear{
