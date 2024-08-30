@@ -13,7 +13,7 @@ struct RapidGameView: View {
     var body: some View {
         if hasOnboarded {
             if viewModel.gameOver {
-                RapidGameOverView(vm: viewModel)
+                RapidGameOverView(viewModel: viewModel)
                     .onDisappear {
                         viewModel.reset()
                     }
