@@ -402,6 +402,7 @@
       }
     },
     "Finally, we take the average of the three similarity measures and multiply that by 100 to calculate our final score" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
