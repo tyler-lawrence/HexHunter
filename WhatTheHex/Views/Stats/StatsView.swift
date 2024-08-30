@@ -9,26 +9,21 @@ import SwiftUI
 
 struct StatsView: View {
     let dataController: DataController
-    
     var averageScoreLabel: String {
         dataController.averageScore.formatted(.number.precision(.significantDigits(4)))
     }
-    
     @State var submissionSortMethod: SortMethod = .date
-    
     var sortedSubmissions: [Submission] {
         switch submissionSortMethod {
         case .date:
-            dataController.colorOfTheDaySubmissions.sorted{$0.date > $1.date}
+            dataController.colorOfTheDaySubmissions.sorted {$0.date > $1.date}
         case .score:
-            dataController.colorOfTheDaySubmissions.sorted{ $0.accuracy > $1.accuracy }
+            dataController.colorOfTheDaySubmissions.sorted {$0.accuracy > $1.accuracy}
         }
     }
-    
     enum SortMethod: String, CaseIterable {
         case date
         case score
-        
         var localizedRawValue: LocalizedStringKey {
             switch self {
             case .date:
@@ -38,10 +33,9 @@ struct StatsView: View {
             }
         }
     }
-    
     var body: some View {
-        VStack{
-            VStack(alignment: .trailing){
+        VStack {
+            VStack(alignment: .trailing) {
                 Text("Total games played: \(dataController.totalGamesPlayed)")
                 Text("Average score: \(averageScoreLabel)")
             }
@@ -54,15 +48,15 @@ struct StatsView: View {
                     .shadow(radius: 10)
             )
             .padding(.bottom)
-            Picker("Sort", selection: $submissionSortMethod){
-                ForEach(SortMethod.allCases, id: \.self){ method in
+            Picker("Sort", selection: $submissionSortMethod) {
+                ForEach(SortMethod.allCases, id: \.self) { method in
                     Text(method.localizedRawValue)
                 }
             }
             .pickerStyle(.segmented)
             Divider()
-            ScrollView{
-                ForEach(sortedSubmissions){ submission in
+            ScrollView {
+                ForEach(sortedSubmissions) { submission in
                     SubmissionRowView(submission: submission)
                 }
             }
