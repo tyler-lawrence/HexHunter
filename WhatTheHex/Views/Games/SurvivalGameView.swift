@@ -46,7 +46,7 @@ struct SurvivalGameView: View {
         RotatingView(portraitOrientation: .vertical) {
             Group {
                 Spacer()
-                TimerView(vm: viewModel)
+                TimerView(viewModel: viewModel)
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Score: \(viewModel.correctGuesses)")
