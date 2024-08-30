@@ -9,17 +9,16 @@ import SwiftUI
 
 struct SandboxGameView: View {
     @State var playerHexcode = Hexcode()
-    
     var body: some View {
-        GeometryReader{ geo in
+        GeometryReader { geo in
             if geo.size.height > geo.size.width {
-                VStack{
-                    RotatingView(portraitOrientation: .horizontal){
-                        Group{
+                VStack {
+                    RotatingView(portraitOrientation: .horizontal) {
+                        Group {
                             Spacer()
                             ColorSquareView(title: "", hexcode: playerHexcode, showingCode: true)
                             Spacer()
-                            VStack{
+                            VStack {
                                 Text("R: \(playerHexcode.red.toColorScale())")
                                 Text("G: \(playerHexcode.green.toColorScale())")
                                 Text("B: \(playerHexcode.blue.toColorScale())")
@@ -32,14 +31,13 @@ struct SandboxGameView: View {
                     Divider()
                     RGBSlidersView(hexcode: $playerHexcode)
                 }
-                
                 .padding()
             } else {
-                HStack{
-                    RotatingView(portraitOrientation: .horizontal){
-                        Group{
+                HStack {
+                    RotatingView(portraitOrientation: .horizontal) {
+                        Group {
                             ColorSquareView(title: "", hexcode: playerHexcode, showingCode: true)
-                            VStack{
+                            VStack {
                                 Text("R: \(playerHexcode.red.toColorScale())")
                                 Text("G: \(playerHexcode.green.toColorScale())")
                                 Text("B: \(playerHexcode.blue.toColorScale())")
@@ -50,15 +48,14 @@ struct SandboxGameView: View {
                         .frame(width: geo.size.width * 0.2)
                     Divider()
                     RGBSlidersView(hexcode: $playerHexcode)
-                        
                 }
                 .padding()
             }
         }
-        .onAppear{
+        .onAppear {
             AudioPlayer.shared.startBackgroundLoop(sound: "PracticeMode", type: "mp3")
         }
-        .onDisappear{
+        .onDisappear {
             AudioPlayer.shared.stopBackgroundSound()
         }
     }
