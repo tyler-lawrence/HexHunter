@@ -20,7 +20,7 @@ struct RapidGameView: View {
                         vm.reset()
                     }
             } else {
-                TimedGameBaseView(vm: vm)
+                TimedGameBaseView(viewModel: vm)
                     .onAppear{
                         vm.reset()
                     }
