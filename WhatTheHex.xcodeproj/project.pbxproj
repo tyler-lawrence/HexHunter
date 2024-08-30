@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B09622C2BE1648700425CE8 /* LeaderboardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */; };
-		5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */; };
 		5B0962B12BE3BF7E00425CE8 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0962B02BE3BF7E00425CE8 /* TutorialView.swift */; };
 		5B0962B22BE3C3FB00425CE8 /* LeaderboardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */; };
 		5B0962B32BE3C42D00425CE8 /* SurvivalGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B68EAD52BC42F0E00ABD6E0 /* SurvivalGameViewModel.swift */; };
@@ -106,6 +105,7 @@
 		5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
 		5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
+		5BCDEB062C8236960053D4EB /* PracticeMode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDEB052C8236960053D4EB /* PracticeMode.mp3 */; };
 		5BD058202BEACF6C007E0336 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */; };
 		5BD058222BEAD8D7007E0336 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058212BEAD8D7007E0336 /* RotatingView.swift */; };
 		5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
@@ -124,7 +124,6 @@
 
 /* Begin PBXFileReference section */
 		5B09622B2BE1648700425CE8 /* LeaderboardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRowView.swift; sourceTree = "<group>"; };
-		5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PracticeMode.mp3; path = ../../../../../Desktop/HexHunter/Audio/PracticeMode.mp3; sourceTree = "<group>"; };
 		5B0962B02BE3BF7E00425CE8 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		5B0962E02BE5582500425CE8 /* SliderComponentTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderComponentTip.swift; sourceTree = "<group>"; };
 		5B0E32FC2BC5D4C900F934DE /* OnboardingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTip.swift; sourceTree = "<group>"; };
@@ -203,6 +202,7 @@
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
+		5BCDEB052C8236960053D4EB /* PracticeMode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PracticeMode.mp3; sourceTree = "<group>"; };
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
 		5BD058282BECF58B007E0336 /* SandboxGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxGameView.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			children = (
 				5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */,
 				5B68EAD92BC433FC00ABD6E0 /* GameplayLoop.mp3 */,
-				5B0962302BE29D5700425CE8 /* PracticeMode.mp3 */,
+				5BCDEB052C8236960053D4EB /* PracticeMode.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -515,6 +515,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5BCDEB082C8237050053D4EB /* PBXTargetDependency */,
 			);
 			name = WhatTheHex;
 			productName = WhatTheHex;
@@ -550,6 +551,9 @@
 				ar,
 			);
 			mainGroup = 5B5BA36C2BB7433900B558EE;
+			packageReferences = (
+				5BCDEB042C8236250053D4EB /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 5B5BA3762BB7433900B558EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -574,8 +578,8 @@
 			files = (
 				5B5BA3812BB7433B00B558EE /* Preview Assets.xcassets in Resources */,
 				5B8DBEF52BF6893F0079F13F /* Localizable.xcstrings in Resources */,
+				5BCDEB062C8236960053D4EB /* PracticeMode.mp3 in Resources */,
 				5B5BA37D2BB7433B00B558EE /* Assets.xcassets in Resources */,
-				5B0962312BE29D5700425CE8 /* PracticeMode.mp3 in Resources */,
 				5B68EADA2BC433FD00ABD6E0 /* GameplayLoop.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +706,10 @@
 			isa = PBXTargetDependency;
 			target = 5B5BA3742BB7433900B558EE /* WhatTheHex */;
 			targetProxy = 5B1208BD2BBB232B00F36388 /* PBXContainerItemProxy */;
+		};
+		5BCDEB082C8237050053D4EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 5BCDEB072C8237050053D4EB /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -983,6 +991,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BCDEB042C8236250053D4EB /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BCDEB072C8237050053D4EB /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BCDEB042C8236250053D4EB /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B5BA36D2BB7433900B558EE /* Project object */;
 }
