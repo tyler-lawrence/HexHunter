@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct ColorOfTheDaySummaryView: View {
-    
     let submission: Submission
-    
     var accuracyLabel: String {
         String(format: "%.2f", submission.accuracy)
     }
-    
     @State var rank: Int?
-    
     var squaresView: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal){
-            Group{
+        RotatingView(portraitOrientation: .horizontal) {
+            Group {
                 ColorSquareView(
                     title: "Target",
                     hexcode: submission.target,
@@ -33,25 +29,22 @@ struct ColorOfTheDaySummaryView: View {
             }
         }
     }
-    
     var detailsView: some View {
-        VStack(alignment: .trailing){
+        VStack(alignment: .trailing) {
             Text("Target: \(submission.target.display)")
             Text("Your guess: \(submission.playerGuess.display)")
             Text("Accuracy: \(accuracyLabel)%")
         }
         .font(.title)
     }
-    
     var body: some View {
-        
-        GeometryReader{ geo in
+        GeometryReader { geo in
             if geo.size.height > geo.size.width {
-                VStack{
+                VStack {
                     squaresView.original
                     detailsView
                     if let rank {
-                        HStack{
+                        HStack {
                             Text("Current rank:")
                                 .font(.title)
                             Text("\(rank)")
@@ -68,25 +61,23 @@ struct ColorOfTheDaySummaryView: View {
                 }
                 .padding()
             } else {
-                HStack{
+                HStack {
                     squaresView.rotated
                     detailsView
                 }
                 .padding()
             }
         }
-        .onAppear{
-            Task{
+        .onAppear {
+            Task {
                 await getRank()
             }
         }
     }
-    
     func getRank() async {
         let entry = await GameCenterManager.shared.fetchPlayerLeaderboardEntry(for: .colorOfTheDay)
         rank = entry?.rank
     }
-    
 }
 
 #if DEBUG
