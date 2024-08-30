@@ -8,40 +8,37 @@
 import SwiftUI
 
 struct RGBSlidersView: View {
-    
     @Binding var hexcode: Hexcode
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    
     var shared: some View {
-        Group{
+        Group {
             HexComponentPickerView(component: $hexcode.red)
             HexComponentPickerView(component: $hexcode.green)
             HexComponentPickerView(component: $hexcode.blue)
         }
     }
-    
     var body: some View {
         #if os(iOS)
         if dynamicTypeSize.isAccessibilitySize {
-            ScrollView{
+            ScrollView {
                 shared
             }
         } else {
-            VStack{
+            VStack {
                 shared
             }
         }
         #elseif os(macOS)
-        HStack{shared}
+        HStack {shared}
         #endif
     }
 }
 
 #Preview {
     struct Preview: View {
-        @State var vm = PracticeModeViewModel()
+        @State var viewModel = PracticeModeViewModel()
         var body: some View {
-            RGBSlidersView(hexcode: $vm.playerHexcode)
+            RGBSlidersView(hexcode: $viewModel.playerHexcode)
         }
     }
     return Preview()
