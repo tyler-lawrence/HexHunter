@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorOfTheDayView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var vm: ColorOfTheDayViewModel
+    @State var viewModel: ColorOfTheDayViewModel
     @State var colorOfTheDay: Hexcode?
     @AppStorage("hasOnboardedColorOfTheDay") var hasOnboarded: Bool = false
     @AppStorage("GameKitPreference") var gameKitPreference: Bool = true
@@ -22,11 +22,15 @@ struct ColorOfTheDayView: View {
     var targetView: some View {
         Group {
             if colorOfTheDay != nil {
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
+                ColorSquareView(
+                    title: "Target",
+                    hexcode: viewModel.targetHexcode,
+                    showingCode: viewModel.gameOver
+                )
             } else {
                 HHProgressView()
                     .task {
-                        await colorOfTheDay = vm.getHexcodeOfDay()
+                        await colorOfTheDay = viewModel.getHexcodeOfDay()
                     }
                     .onReceive(timer) { _ in
                         loadingTime += 1
@@ -41,14 +45,14 @@ struct ColorOfTheDayView: View {
         RotatingView(portraitOrientation: .horizontal) {
             Group {
                 targetView
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+                ColorSquareView(title: "Your guess", hexcode: viewModel.playerHexcode, showingCode: true)
             }
         }
     }
     var controlsView: RotatingView< some View > {
         RotatingView(portraitOrientation: .vertical) {
             Group {
-                RGBSlidersView(hexcode: $vm.playerHexcode)
+                RGBSlidersView(hexcode: $viewModel.playerHexcode)
                 Button("Guess") {
                     showingConfirmGuessAlert.toggle()
                 }.buttonStyle(GameSelectionButton())
@@ -80,19 +84,19 @@ struct ColorOfTheDayView: View {
             }
             .alert("Are you sure?", isPresented: $showingConfirmGuessAlert) {
                 Button("Yes!") {
-                    vm.submitGuess()
+                    viewModel.submitGuess()
                 }
                 Button("No") {
                     showingConfirmGuessAlert.toggle()
                 }
             }
-            .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
+            .alert(viewModel.gameOverMessage, isPresented: $viewModel.gameOver) {
                 Button("Ok") {
                     // upload to game center
                     if gameKitPreference {
                         Task {
                             await GameCenterManager.shared.uploadScore(
-                                vm.GKFormattedScore,
+                                viewModel.GKFormattedScore,
                                 for: .colorOfTheDay
                             )
                         }
@@ -110,5 +114,5 @@ struct ColorOfTheDayView: View {
 }
 
 #Preview {
-    ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: DataController()))
+    ColorOfTheDayView(viewModel: ColorOfTheDayViewModel(service: CloudKitService(), dataController: DataController()))
 }

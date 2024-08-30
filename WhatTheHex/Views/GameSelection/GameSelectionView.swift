@@ -26,7 +26,10 @@ struct GameSelectionView: View {
                     } else {
                         NavigationLink {
                             ColorOfTheDayView(
-                                vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController)
+                                viewModel: ColorOfTheDayViewModel(
+                                    service: CloudKitService(),
+                                    dataController: dataController
+                                )
                             )
                         } label: {
                             GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
