@@ -13,23 +13,23 @@ struct HexComponentPickerView: View {
         LocalizedStringKey(component.hexCategory.rawValue)
     }
     var iosSliders: some View {
-        HStack{
+        HStack {
             Text(colorLabel)
                 .font(.title)
                 .foregroundStyle(component.hexCategory.displayColor)
                 .bold()
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15)
-                        .sensoryFeedback(.selection, trigger: component.digit1){ old, new in
+                        .sensoryFeedback(.selection, trigger: component.digit1) { _, new in
                             new != 0
                         }
                 }
                 HStack {
                     Text(component.digit2Display)
                     Slider(value: .convert(from: $component.digit2), in: 0...15)
-                        .sensoryFeedback(.selection, trigger: component.digit2){ old, new in
+                        .sensoryFeedback(.selection, trigger: component.digit2) { _, new in
                             new != 0
                         }
                 }
@@ -38,7 +38,6 @@ struct HexComponentPickerView: View {
                 .font(.largeTitle)
                 .foregroundStyle(component.hexCategory.displayColor)
                 .frame(width: 80)
-                
         }
         .tint(component.hexCategory.displayColor)
         .padding(5)
@@ -46,18 +45,16 @@ struct HexComponentPickerView: View {
             RoundedRectangle(cornerRadius: 15.0)
                 .foregroundStyle(Material.thickMaterial)
         )
-        
-        
     }
     
     
     var macSliders: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Text(component.display)
                     .font(.largeTitle)
             }
-            HStack{
+            HStack {
                 Text(component.digit1Display)
                 Slider(value: .convert(from: $component.digit1), in: 0...15)
             }
@@ -73,7 +70,6 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(Material.thickMaterial)
         )
     }
-    
     var body: some View {
     #if os(macOS)
         macSliders
