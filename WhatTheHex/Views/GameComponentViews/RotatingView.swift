@@ -8,48 +8,41 @@
 import SwiftUI
 
 struct RotatingView<Content: View> {
-    
     enum Orientation {
         case horizontal
         case vertical
-        
-        var flipped : Orientation {
+        var flipped: Orientation {
             switch self {
             case .horizontal:
-                    .vertical
+                .vertical
             case .vertical:
-                    .horizontal
+                .horizontal
             }
         }
     }
-    
     var portraitOrientation: Orientation
-    
     var content: () -> Content
-    
-    init(portraitOrientation: Orientation, content: @escaping () -> Content){
+    init(portraitOrientation: Orientation, content: @escaping () -> Content) {
         self.portraitOrientation = portraitOrientation
         self.content = content
     }
-    
     var original: some View {
-        Group{
+        Group {
             switch portraitOrientation {
             case .horizontal:
-                HStack{content()}
+                HStack {content()}
             case .vertical:
-                VStack{content()}
+                VStack {content()}
             }
         }
     }
-    
     var rotated: some View {
-        Group{
+        Group {
             switch portraitOrientation {
             case .horizontal:
-                VStack{content()}
+                VStack {content()}
             case .vertical:
-                HStack{content()}
+                HStack {content()}
             }
         }
     }
