@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ExplanationView: View {
-    enum Explanation: String, CaseIterable  {
+    enum Explanation: String, CaseIterable {
         case score = "Score"
         case hexcode = "Hexcodes"
     }
     @State var selectedExplanation: Explanation = .hexcode
     var body: some View {
-        VStack{
-            Picker("Category", selection: $selectedExplanation){
-                ForEach(Explanation.allCases, id: \.self){ explanation in
+        VStack {
+            Picker("Category", selection: $selectedExplanation) {
+                ForEach(Explanation.allCases, id: \.self) { explanation in
                     Text(explanation.rawValue)
                 }
             }
             .pickerStyle(.segmented)
-            
             switch selectedExplanation {
             case .score:
                 ScoreExplanationView()
