@@ -36,7 +36,7 @@ struct GameSelectionView: View {
                         }
                     }
                     NavigationLink {
-                        PracticeModeView(vm: PracticeModeViewModel())
+                        PracticeModeView(viewModel: PracticeModeViewModel())
                     } label: {
                         GameModeButtonView(title: "Practice")
                     }
