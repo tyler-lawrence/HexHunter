@@ -46,8 +46,6 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(Material.thickMaterial)
         )
     }
-    
-    
     var macSliders: some View {
         VStack {
             HStack {
