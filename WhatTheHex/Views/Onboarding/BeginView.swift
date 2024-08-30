@@ -10,10 +10,10 @@ import SwiftUI
 struct BeginView: View {
     @Binding var hasOnboarded: Bool
     var body: some View {
-        ZStack{
+        ZStack {
             BackgroundView()
                 .ignoresSafeArea()
-            Button("start guessing"){
+            Button("start guessing") {
                 hasOnboarded = true
             }
             .buttonStyle(.borderedProminent)
