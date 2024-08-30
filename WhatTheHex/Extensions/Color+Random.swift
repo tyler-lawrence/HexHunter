@@ -11,9 +11,9 @@ extension Color {
     /// randomly generates color using rgb values
     /// - Returns: Color
     static func random() -> Color {
-        let r = Double.random(in: 0...1)
-        let b = Double.random(in: 0...1)
-        let g = Double.random(in: 0...1)
-        return Color(red: r, green: g, blue: b)
+        let red = Double.random(in: 0...1)
+        let blue = Double.random(in: 0...1)
+        let green = Double.random(in: 0...1)
+        return Color(red: red, green: green, blue: blue)
     }
 }
