@@ -8,6 +8,8 @@
 import SwiftUI
 import Foundation
 
+/// modified code originally written by Paul Hudson
+
 struct BackgroundView: View {
     @State var particleSystem = ParticleSystem(count: 15)
     @State var colors: [Color] = [
