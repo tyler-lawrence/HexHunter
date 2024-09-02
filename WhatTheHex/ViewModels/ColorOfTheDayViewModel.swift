@@ -20,11 +20,11 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
         super.init()
     }
     override var gameOverMessage: String {
-                """
-                Target: \(targetHexcode.display)
-                Your Guess: \(playerHexcode.display)
-                Accuracy: \(accuracy)
-                """
+        """
+        Target: \(targetHexcode.display)
+        Your Guess: \(playerHexcode.display)
+        Accuracy: \(accuracy)
+        """
     }
     var GKFormattedScore: Int {
         Int(calculateScore() * 100 )
