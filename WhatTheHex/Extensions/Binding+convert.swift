@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// https://stackoverflow.com/a/74356845, Mark A. Donohoe
+
 public extension Binding {
 
     static func convert<TInt, TFloat>(from intBinding: Binding<TInt>) -> Binding<TFloat>
