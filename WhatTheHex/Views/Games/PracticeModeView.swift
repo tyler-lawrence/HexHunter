@@ -8,58 +8,59 @@
 import SwiftUI
 
 struct PracticeModeView: View {
-    
     @Environment(\.presentationMode) var presentationMode
-    @State var vm: PracticeModeViewModel
-        
+    @State var viewModel: PracticeModeViewModel
     var squaresView: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal){
-            Group{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: false)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        RotatingView(portraitOrientation: .horizontal) {
+            Group {
+                ColorSquareView(
+                    title: "Target",
+                    hexcode: viewModel.targetHexcode,
+                    showingCode: false
+                )
+                ColorSquareView(
+                    title: "Your guess",
+                    hexcode: viewModel.playerHexcode,
+                    showingCode: true
+                )
             }
         }
     }
-    
     var controlsView: RotatingView< some View > {
-        RotatingView(portraitOrientation: .vertical){
-            Group{
-                RGBSlidersView(hexcode: $vm.playerHexcode)
+        RotatingView(portraitOrientation: .vertical) {
+            Group {
+                RGBSlidersView(hexcode: $viewModel.playerHexcode)
                 Spacer()
             }
         }
     }
-    
     var buttonView: some View {
-        Button("Reveal"){
-            vm.submitGuess()
+        Button("Reveal") {
+            viewModel.submitGuess()
         }
         .buttonStyle(GameSelectionButton())
     }
-    
     var accuracyLabel: some View {
-        HStack{
+        HStack {
             Image(systemName: "scope")
-            Text("Accuracy: \(vm.accuracy)")
+            Text("Accuracy: \(viewModel.accuracy)")
         }
         .font(.title)
     }
-    
     var body: some View {
-        
-        GeometryReader{ geo in
+        GeometryReader { geo in
             if geo.size.height > geo.size.width {
-                VStack{
+                VStack {
                     squaresView.original
                     accuracyLabel
                     controlsView.original.padding()
                     buttonView
                 }
             } else {
-                HStack{
+                HStack {
                     squaresView.rotated
                     controlsView.rotated
-                    VStack{
+                    VStack {
                         accuracyLabel
                         buttonView
                     }
@@ -67,22 +68,22 @@ struct PracticeModeView: View {
             }
         }
         .padding()
-        .onAppear{
+        .onAppear {
             AudioPlayer.shared.startBackgroundLoop(sound: "PracticeMode", type: "mp3")
         }
-        .onDisappear{
+        .onDisappear {
             AudioPlayer.shared.stopBackgroundSound()
         }
-        .alert(vm.gameOverMessage, isPresented: $vm.gameOver){
-            Button("Exit"){
-                vm.reset()
+        .alert(viewModel.gameOverMessage, isPresented: $viewModel.gameOver) {
+            Button("Exit") {
+                viewModel.reset()
                 presentationMode.wrappedValue.dismiss()
             }
-            Button("Play again"){ vm.reset() }
+            Button("Play again") {viewModel.reset()}
         }
     }
 }
 
 #Preview {
-    PracticeModeView(vm: PracticeModeViewModel())
+    PracticeModeView(viewModel: PracticeModeViewModel())
 }

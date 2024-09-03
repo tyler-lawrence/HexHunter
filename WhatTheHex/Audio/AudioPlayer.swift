@@ -8,14 +8,10 @@
 import Foundation
 import AVFAudio
 
-
 @Observable
 final class AudioPlayer {
     var audioPlayer: AVAudioPlayer?
-    
     static let shared = AudioPlayer()
-    
-    
     /// plays a file looping indefinitely
     ///
     /// - Parameters:
@@ -42,7 +38,7 @@ final class AudioPlayer {
         }
     }
     #else
-    func startBackgroundLoop(sound: String, type: String){
+    func startBackgroundLoop(sound: String, type: String) {
         if let bundle = Bundle.main.path(forResource: sound, ofType: type) {
             let soundURL = NSURL(fileURLWithPath: bundle)
             do {
@@ -51,16 +47,12 @@ final class AudioPlayer {
                 backgroundAudioPlayer.numberOfLoops = -1
                 backgroundAudioPlayer.prepareToPlay()
                 backgroundAudioPlayer.play()
-                
             } catch {
                 print(error)
             }
         }
     }
     #endif
-    
-    
-    
     /// stops the file associated with this audio player
     func stopBackgroundSound() {
         guard let audioPlayer = audioPlayer else { return }

@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Binding var hasOnboarded: Bool
     let gameMode: GameMode
-    
     @State var idx = 0
     var instruction: String {
         guard idx < gameMode.onboardingInstructions.count else { return "" }
         return gameMode.onboardingInstructions[idx]
     }
-    
     var body: some View {
-        
-        ZStack{
+        ZStack {
             BackgroundView()
-            
             if idx < gameMode.onboardingInstructions.count {
-                VStack{
+                VStack {
                     Spacer()
-                    if dynamicTypeSize.isAccessibilitySize{
-                        ScrollView{
+                    if dynamicTypeSize.isAccessibilitySize {
+                        ScrollView {
                             Text(instruction)
                                 .font(.title2)
                                 .padding()
@@ -54,9 +49,7 @@ struct OnboardingView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
-                
             }
-            
         }
     }
 }

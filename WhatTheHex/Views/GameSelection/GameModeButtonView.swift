@@ -11,8 +11,7 @@ struct GameModeButtonView: View {
 
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     let title: LocalizedStringKey
-    var streak: Int? = nil
-    
+    var streak: Int?
     var frameHeight: CGFloat {
         if dynamicTypeSize.isAccessibilitySize {
             return 150
@@ -20,10 +19,9 @@ struct GameModeButtonView: View {
             return 50
         }
     }
-    
     var body: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Text(title)
                     .font(.title)
                     .bold()
@@ -48,26 +46,23 @@ struct GameModeButtonView: View {
 }
 
 #Preview {
-    NavigationStack{
-        NavigationLink{
+    NavigationStack {
+        NavigationLink {
             Text("test")
         } label: {
             GameModeButtonView(title: "Color of the Day", streak: 5)
         }
-        
-        NavigationLink{
+        NavigationLink {
             Text("test")
         } label: {
             GameModeButtonView(title: "Practice")
         }
-        
-        NavigationLink{
+        NavigationLink {
             Text("test")
         } label: {
             GameModeButtonView(title: "Practice")
                 .environment(\.locale, .init(identifier: "ar"))
         }
-        
     }
     .buttonStyle(GameSelectionButton())
 }

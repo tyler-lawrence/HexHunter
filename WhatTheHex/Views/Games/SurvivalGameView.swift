@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct SurvivalGameView: View {
-    
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
     @Environment(\.layoutDirection) var layoutDirection
-    @State var vm: SurvivalGameViewModel = SurvivalGameViewModel()
+    @State var viewModel: SurvivalGameViewModel = SurvivalGameViewModel()
     @AppStorage("hasOnboarededSurvival") var hasOnboarded: Bool = false
     @State var showingExitConfirmation: Bool = false
-    
     var backIcon: String {
         switch layoutDirection {
         case .leftToRight:
@@ -26,20 +24,17 @@ struct SurvivalGameView: View {
             "chevron.left"
         }
     }
-    
     var minSimilarityScore: String {
-        String(format: "%.0f", vm.minimumSimilarityToScore)
+        String(format: "%.0f", viewModel.minimumSimilarityToScore)
     }
-    
     var squaresView: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal){
-            Group{
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+        RotatingView(portraitOrientation: .horizontal) {
+            Group {
+                ColorSquareView(title: "Target", hexcode: viewModel.targetHexcode, showingCode: viewModel.gameOver)
+                ColorSquareView(title: "Your guess", hexcode: viewModel.playerHexcode, showingCode: true)
             }
         }
     }
-    
     var backButtonPosition: ToolbarItemPlacement {
         #if os(iOS)
         return .topBarLeading
@@ -47,18 +42,16 @@ struct SurvivalGameView: View {
         return ToolbarItemPlacement.navigation
         #endif
     }
-    
     var gameDetailsView: RotatingView<some View> {
-        
-        RotatingView(portraitOrientation: .vertical){
-            Group{
+        RotatingView(portraitOrientation: .vertical) {
+            Group {
                 Spacer()
-                TimerView(vm: vm)
+                TimerView(viewModel: viewModel)
                 Spacer()
-                VStack(alignment: .trailing){
-                    Text("Score: \(vm.correctGuesses)")
+                VStack(alignment: .trailing) {
+                    Text("Score: \(viewModel.correctGuesses)")
                         .contentTransition(.numericText())
-                    HStack{
+                    HStack {
                         Image(systemName: "scope")
                         Text("\(minSimilarityScore)")
                     }
@@ -71,41 +64,38 @@ struct SurvivalGameView: View {
             }
         }
     }
-    
     var guessButton: some View {
-        Button("Guess"){
-            vm.submitGuess()
+        Button("Guess") {
+            viewModel.submitGuess()
         }
         .buttonStyle(GameSelectionButton())
-        .disabled(!vm.playerCanGuess)
+        .disabled(!viewModel.playerCanGuess)
     }
-    
     var body: some View {
-    
         if hasOnboarded {
-            GeometryReader{ geo in
+            GeometryReader { geo in
                 if geo.size.height > geo.size.width {
-                    VStack{
+                    VStack {
                         gameDetailsView.rotated
                         squaresView.original
-                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                         Spacer()
                         guessButton
                     }
                 } else {
-                    HStack{
+                    HStack {
                         squaresView.rotated
-                        RGBSlidersView(hexcode: $vm.playerHexcode)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                             .frame(minWidth: geo.size.width * 0.3)
-                        if dynamicTypeSize.isAccessibilitySize{
-                            ScrollView{
-                                VStack{
+                        if dynamicTypeSize.isAccessibilitySize {
+                            ScrollView {
+                                VStack {
                                     gameDetailsView.original
                                     guessButton
                                 }
                             }
                         } else {
-                            VStack{
+                            VStack {
                                 gameDetailsView.original
                                 guessButton
                             }
@@ -114,62 +104,63 @@ struct SurvivalGameView: View {
                 }
             }
             .padding()
-            .onAppear{
+            .onAppear {
                 AudioPlayer.shared.startBackgroundLoop(sound: "GameplayLoop", type: "mp3")
             }
-            .onDisappear{
-                vm.reset()
+            .onDisappear {
+                viewModel.reset()
                 AudioPlayer.shared.stopBackgroundSound()
             }
-            .alert(vm.gameOverMessage, isPresented: $vm.gameOver) {
-                Button("Play again"){
-                    Task{
+            .alert(viewModel.gameOverMessage, isPresented: $viewModel.gameOver) {
+                Button("Play again") {
+                    Task {
                         await GameCenterManager.shared.uploadScore(
-                            vm.GKFormattedScore,
+                            viewModel.GKFormattedScore,
                             for: .survival
                         )
-                        vm.reset()
+                        viewModel.reset()
                     }
-                    
                 }
-                Button("Exit"){
-                    Task{
+                Button("Exit") {
+                    Task {
                         await GameCenterManager.shared.uploadScore(
-                            vm.GKFormattedScore,
+                            viewModel.GKFormattedScore,
                             for: .survival
                         )
-                        vm.reset()
-                    }
-                    presentationMode.wrappedValue.dismiss()
-                }
-            }
-            .alert("Are you sure you want to leave?", isPresented: $showingExitConfirmation){
-                Button("Yes", role: .destructive){
-                    Task{
-                        await GameCenterManager.shared.uploadScore(
-                            vm.GKFormattedScore,
-                            for: .survival
-                        )
+                        viewModel.reset()
                     }
                     presentationMode.wrappedValue.dismiss()
                 }
             }
-            .onChange(of: showingExitConfirmation){
-                vm.toggleTimer()
+            .alert("Are you sure you want to leave?", isPresented: $showingExitConfirmation) {
+                Button("Yes", role: .destructive) {
+                    Task {
+                        await GameCenterManager.shared.uploadScore(
+                            viewModel.GKFormattedScore,
+                            for: .survival
+                        )
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
-            .onChange(of: vm.playerHexcode){ oldValue, newValue in
-                /// onChange was noticing changes from the viewmodel initializing a new playerhexcode. this is checking to see if the newValue that onChange finds is not a new Hexcode then we can allow the player to guess
+            .onChange(of: showingExitConfirmation) {
+                viewModel.toggleTimer()
+            }
+            .onChange(of: viewModel.playerHexcode) {_, newValue in
+                /// onChange was noticing changes from the viewmodel initializing a new playerhexcode.
+                /// this is checking to see if the newValue that onChange finds is not a new Hexcode
+                /// then we can allow the player to guess
                 if newValue != Hexcode() {
-                    vm.playerCanGuess = true
+                    viewModel.playerCanGuess = true
                 }
             }
             .navigationBarBackButtonHidden()
-            .toolbar{
-                ToolbarItem(placement: backButtonPosition){
-                    Button{
+            .toolbar {
+                ToolbarItem(placement: backButtonPosition) {
+                    Button {
                         showingExitConfirmation.toggle()
                     } label: {
-                        HStack{
+                        HStack {
                             Image(systemName: backIcon)
                             Text("Back")
                         }
@@ -179,11 +170,9 @@ struct SurvivalGameView: View {
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .survival)
         }
-        
     }
 }
 
-
 #Preview {
-    SurvivalGameView(vm: SurvivalGameViewModel())
+    SurvivalGameView(viewModel: SurvivalGameViewModel())
 }

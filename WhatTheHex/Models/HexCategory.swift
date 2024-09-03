@@ -12,7 +12,6 @@ enum HexCategory: String, Codable {
     case green = "G"
     case blue = "B"
     case alpha = "A"
-    
     var displayColor: Color {
         switch self {
         case .red:

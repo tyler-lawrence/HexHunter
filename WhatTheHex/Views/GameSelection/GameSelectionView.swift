@@ -9,82 +9,80 @@ import SwiftUI
 import GameKit
 
 struct GameSelectionView: View {
-    
     @State var showingExplanationSheet = false
     @State var showingSettingsSheet = false
     @Environment(DataController.self) var dataController
-    
     var body: some View {
-        NavigationStack{
-            ZStack{
+        NavigationStack {
+            ZStack {
                 BackgroundView()
-                ScrollView{
+                ScrollView {
                     if let submission =  dataController.todaySubmission {
-                        NavigationLink{
+                        NavigationLink {
                             ColorOfTheDaySummaryView(submission: submission)
                         } label: {
                             GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
                         }
                     } else {
-                        NavigationLink{
-                            ColorOfTheDayView(vm: ColorOfTheDayViewModel(service: CloudKitService(), dataController: dataController))
+                        NavigationLink {
+                            ColorOfTheDayView(
+                                viewModel: ColorOfTheDayViewModel(
+                                    service: CloudKitService(),
+                                    dataController: dataController
+                                )
+                            )
                         } label: {
                             GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
                         }
                     }
-                    
-                    NavigationLink{
-                        PracticeModeView(vm: PracticeModeViewModel())
+                    NavigationLink {
+                        PracticeModeView(viewModel: PracticeModeViewModel())
                     } label: {
                         GameModeButtonView(title: "Practice")
                     }
-                    
-                    NavigationLink{
+                    NavigationLink {
                         SandboxGameView()
                     } label: {
                         GameModeButtonView(title: "Sandbox")
                     }
-                    
                     //                    NavigationLink{
                     //                        RapidGameView()
                     //                    } label: {
                     //                        GameModeButtonView(title: "Rapid")
                     //                    }
-                    
-                    NavigationLink{
+                    NavigationLink {
                         SurvivalGameView()
                     } label: {
                         GameModeButtonView(title: "Survival")
                     }
-                    
                 }
                 .padding()
                 .buttonStyle(GameSelectionButton())
             }
-            .toolbar{
-                ToolbarItem{
-                    NavigationLink{
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink {
                         LeaderboardView()
                     } label: {
                         Image(systemName: "trophy")
                     }
                 }
-                ToolbarItem{
-                    NavigationLink{
+                ToolbarItem {
+                    NavigationLink {
                         StatsView(dataController: dataController)
                     } label: {
                         Image(systemName: "circle.dotted.circle")
                     }
                 }
-                ToolbarItem{
-                    Button{
+                ToolbarItem {
+                    Button {
                         showingExplanationSheet.toggle()
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
-                ToolbarItem{
-                    Button{
+                ToolbarItem {
+                    Button {
                         showingSettingsSheet.toggle()
                     } label: {
                         Image(systemName: "gear")
@@ -92,17 +90,16 @@ struct GameSelectionView: View {
                 }
             }
             .font(.title)
-            .sheet(isPresented: $showingExplanationSheet){
+            .sheet(isPresented: $showingExplanationSheet) {
                 ExplanationView()
             }
-            .sheet(isPresented: $showingSettingsSheet){
+            .sheet(isPresented: $showingSettingsSheet) {
                 SettingsView()
             }
         }
-        .onAppear{
+        .onAppear {
             GameCenterManager.shared.authenticateLocalPlayer()
         }
-        
     }
 }
 

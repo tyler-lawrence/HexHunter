@@ -10,16 +10,13 @@ import TipKit
 
 @main
 struct WhatTheHexApp: App {
-    
     @Environment(\.scenePhase) var scenePhase
     @State private var dataController = DataController()
     @State private var audioPlayer = AudioPlayer()
     @AppStorage("darkModePreferred") var darkModePreferred: Bool = false
-    
     var preferredScheme: ColorScheme {
         darkModePreferred ? .dark : .light
     }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -31,8 +28,7 @@ struct WhatTheHexApp: App {
                 }
         }
     }
-    
-    init(){
+    init() {
         try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
     }
 }
