@@ -30,12 +30,11 @@ struct WhatTheHexApp: App {
                     dataController.refresh()
                 }
                 .onAppear {
-                    Task {
-                        if needsNotificationAuthorization {
-                            requestNotificationAuthorization()
-                        }
-                        notifictionManager.setColorOfTheDayReminder(using: dataController)
+                    GameCenterManager.shared.authenticateLocalPlayer()
+                    if needsNotificationAuthorization {
+                        requestNotificationAuthorization()
                     }
+                    notifictionManager.setColorOfTheDayReminder(using: dataController)
                 }
         }
     }
