@@ -14,7 +14,6 @@ struct WhatTheHexApp: App {
     @Environment(\.scenePhase) var scenePhase
     @State private var dataController = DataController()
     @State private var audioPlayer = AudioPlayer()
-    let notifictionManager = NotificationManager()
     @AppStorage("darkModePreferred") var darkModePreferred: Bool = false
     @AppStorage("needsNotificationAuthorization") var needsNotificationAuthorization = true
     var preferredScheme: ColorScheme {

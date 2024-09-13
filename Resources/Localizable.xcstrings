@@ -103,6 +103,9 @@
         }
       }
     },
+    "A" : {
+
+    },
     "A hexcode is a hexadecimal representation of a color. You may have seen a color picking tool request a number from 0 to 255. Let's explore how we can convert something like #%@ to the 0-255 scale." : {
       "extractionState" : "stale",
       "localizations" : {
