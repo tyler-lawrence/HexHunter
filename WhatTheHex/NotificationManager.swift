@@ -19,8 +19,8 @@ class NotificationManager {
         var dateComponents = DateComponents()
         // TODO: replace hour with 20 when done testing
         dateComponents.calendar = .current
-        dateComponents.hour = 13
-        dateComponents.minute = 58
+        dateComponents.hour = 9
+        dateComponents.minute = 8
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(
             identifier: UUID().uuidString,

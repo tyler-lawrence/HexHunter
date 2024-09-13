@@ -34,7 +34,6 @@ struct WhatTheHexApp: App {
                     if needsNotificationAuthorization {
                         requestNotificationAuthorization()
                     }
-                    notifictionManager.setColorOfTheDayReminder(using: dataController)
                 }
         }
     }
