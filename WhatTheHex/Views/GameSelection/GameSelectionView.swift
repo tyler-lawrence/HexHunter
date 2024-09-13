@@ -97,9 +97,6 @@ struct GameSelectionView: View {
                 SettingsView()
             }
         }
-        .onAppear {
-            GameCenterManager.shared.authenticateLocalPlayer()
-        }
     }
 }
 
