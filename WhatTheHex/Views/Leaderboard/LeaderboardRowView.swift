@@ -43,6 +43,7 @@ struct LeaderboardRowView: View {
                     .resizable()
                     .scaledToFill()
             }
+            .padding(.horizontal)
     }
     var body: some View {
         if dynamicTypeSize.isAccessibilitySize {
