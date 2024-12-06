@@ -33,9 +33,9 @@ final class NotificationManager {
         center.add(request)
     }
     /// removes scheduled notifications for color of the day
-    func cancelNotifications() {
+    func cancelNotifications(for identifier: String) {
         center.removePendingNotificationRequests(
-            withIdentifiers: [NotificationIdentifier.colorOfTheDay]
+            withIdentifiers: [identifier]
         )
     }
     /// Creates the notification content for color of the day

@@ -47,7 +47,7 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
         let submission = Submission(playerGuess: playerHexcode, target: targetHexcode)
         dataController.colorOfTheDaySubmissions.append(submission)
         gameOver = true
-        NotificationManager.shared.cancelNotifications()
+        NotificationManager.shared.cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
         dataController.refresh()
     }
 }
