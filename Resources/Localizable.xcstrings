@@ -931,6 +931,7 @@
       }
     },
     "test" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1104,6 +1105,7 @@
       }
     },
     "Your Guess" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

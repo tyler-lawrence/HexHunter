@@ -10,9 +10,6 @@ import NotificationCenter
 
 /// Singleton for managing notifications.
 final class NotificationManager {
-    private enum NotificationIdentifier {
-        static let colorOfTheDay = "colorOfTheDay"
-    }
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
     private var playerAlias: String {
@@ -36,7 +33,7 @@ final class NotificationManager {
         center.add(request)
     }
     /// removes scheduled notifications for color of the day
-    func cancelColorOfTheDayReminders() {
+    func cancelNotifications() {
         center.removePendingNotificationRequests(
             withIdentifiers: [NotificationIdentifier.colorOfTheDay]
         )
