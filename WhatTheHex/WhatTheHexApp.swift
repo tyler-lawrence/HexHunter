@@ -15,7 +15,6 @@ struct WhatTheHexApp: App {
     @State private var dataController = DataController()
     @State private var audioPlayer = AudioPlayer()
     @AppStorage("darkModePreferred") var darkModePreferred: Bool = false
-    @AppStorage("needsNotificationAuthorization") var needsNotificationAuthorization = true
     var preferredScheme: ColorScheme {
         darkModePreferred ? .dark : .light
     }
@@ -30,24 +29,11 @@ struct WhatTheHexApp: App {
                 }
                 .onAppear {
                     GameCenterManager.shared.authenticateLocalPlayer()
-                    if needsNotificationAuthorization {
-                        requestNotificationAuthorization()
-                    }
+                    NotificationManager.requestNotificationAuthorization()
                 }
         }
     }
     init() {
         try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
-    }
-    func requestNotificationAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                needsNotificationAuthorization = false
-                // schedule notification
-                print("success")
-            } else if let error {
-                print(error.localizedDescription)
-            }
-        }
     }
 }

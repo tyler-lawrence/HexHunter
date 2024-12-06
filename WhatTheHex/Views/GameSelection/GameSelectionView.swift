@@ -96,6 +96,11 @@ struct GameSelectionView: View {
             .sheet(isPresented: $showingSettingsSheet) {
                 SettingsView()
             }
+            .onAppear {
+                NotificationManager.shared.setColorOfTheDayReminder(
+                    using: dataController
+                )
+            }
         }
     }
 }

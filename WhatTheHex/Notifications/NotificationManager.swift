@@ -16,15 +16,28 @@ final class NotificationManager {
         // will return "Unknown" if not authenticated
         GameCenterManager.shared.localPlayer.alias
     }
+    private var components = DateComponents(calendar: .current, hour: 20)
+    /// calculates the date to schedule notifications based on components
+    func nextNotificationDate() -> Date? {
+        Calendar.current.nextDate(
+            after: Date.now,
+            matching: components,
+            matchingPolicy: .nextTime
+        )
+    }
+    /// updates the hour component to current hour
+    func updateComponents() {
+        components.hour = Calendar.current.component(.hour, from: Date.now)
+    }
     /// adds a notification request if the player has not completed the color of the day
     /// - Parameter dataController: dataController used to check the color of the day completion
     func setColorOfTheDayReminder(using dataController: DataController) {
         guard dataController.completedColorOfTheDay == false else { return }
         let content = colorOfTheDayReminder()
-        var dateComponents = DateComponents()
-        dateComponents.calendar = .current
-        dateComponents.hour = 20
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: components,
+            repeats: true
+        )
         let request = UNNotificationRequest(
             identifier: NotificationIdentifier.colorOfTheDay,
             content: content,
@@ -44,7 +57,21 @@ final class NotificationManager {
         let content = UNMutableNotificationContent()
         content.title = "👋 Hey \(playerAlias)!"
         content.subtitle = "Can you solve the color of the day?"
+        content.badge = 1
         return content
+    }
+
+    static func requestNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("success")
+            } else if let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    func setBadgeCount(to newValue: Int = 0) {
+        center.setBadgeCount(newValue)
     }
 }
 
