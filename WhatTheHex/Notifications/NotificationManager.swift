@@ -60,7 +60,6 @@ final class NotificationManager {
         content.badge = 1
         return content
     }
-
     static func requestNotificationAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
