@@ -10,7 +10,6 @@ import GameKit
 struct ContentView: View {
     @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     @Environment(DataController.self) var dataController
-
     var body: some View {
         if hasOnboarded {
             GameSelectionView()
