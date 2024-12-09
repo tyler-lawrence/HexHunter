@@ -21,10 +21,9 @@ final class NotificationManager {
     func updateComponents() {
         components.hour = Calendar.current.component(.hour, from: Date.now)
     }
-    /// adds a notification request if the player has not completed the color of the day
+    /// Schedules a recurring notification
     /// - Parameter dataController: dataController used to check the color of the day completion
     func setColorOfTheDayReminder(using dataController: DataController) {
-        guard dataController.completedColorOfTheDay == false else { return }
         let content = colorOfTheDayReminder()
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: components,
