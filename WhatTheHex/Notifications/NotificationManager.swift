@@ -17,14 +17,6 @@ final class NotificationManager {
         GameCenterManager.shared.localPlayer.alias
     }
     private var components = DateComponents(calendar: .current, hour: 20)
-    /// calculates the date to schedule notifications based on components
-    func nextNotificationDate() -> Date? {
-        Calendar.current.nextDate(
-            after: Date.now,
-            matching: components,
-            matchingPolicy: .nextTime
-        )
-    }
     /// updates the hour component to current hour
     func updateComponents() {
         components.hour = Calendar.current.component(.hour, from: Date.now)
