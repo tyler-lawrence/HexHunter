@@ -12,9 +12,9 @@ import NotificationCenter
 final class NotificationManager {
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
-    private var playerAlias: String {
+    private var playerName: String {
         // will return "Unknown" if not authenticated
-        GameCenterManager.shared.localPlayer.alias
+        GameCenterManager.shared.localPlayer.displayName
     }
     private var components = DateComponents(calendar: .current, hour: 20)
     /// updates the hour component to current hour
@@ -46,7 +46,7 @@ final class NotificationManager {
     /// - Returns: notification content with player's GameKit alias
     private func colorOfTheDayReminder() -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = "👋 Hey \(playerAlias)!"
+        content.title = "👋 Hey \(playerName)!"
         content.subtitle = "Can you solve the color of the day?"
         content.badge = 1
         return content
