@@ -22,8 +22,7 @@ final class NotificationManager {
         components.hour = Calendar.current.component(.hour, from: Date.now)
     }
     /// Schedules a recurring notification
-    /// - Parameter dataController: dataController used to check the color of the day completion
-    func setColorOfTheDayReminder(using dataController: DataController) {
+    func setColorOfTheDayReminder() {
         let content = colorOfTheDayReminder()
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: components,
@@ -62,6 +61,12 @@ final class NotificationManager {
     }
     func setBadgeCount(to newValue: Int = 0) {
         center.setBadgeCount(newValue)
+    }
+    func update(using dataController: DataController) {
+        Self.shared.setBadgeCount(to: 0)
+        Self.shared.cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
+        Self.shared.updateComponents()
+        Self.shared.setColorOfTheDayReminder()
     }
 }
 

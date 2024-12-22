@@ -47,14 +47,8 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
         let submission = Submission(playerGuess: playerHexcode, target: targetHexcode)
         dataController.colorOfTheDaySubmissions.append(submission)
         gameOver = true
-        updateNotificationManager()
+        NotificationManager.shared.update(using: dataController)
         dataController.refresh()
-    }
-    func updateNotificationManager() {
-        NotificationManager.shared.setBadgeCount(to: 0)
-        NotificationManager.shared.cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
-        NotificationManager.shared.updateComponents()
-        NotificationManager.shared.setColorOfTheDayReminder(using: dataController)
     }
 }
 
