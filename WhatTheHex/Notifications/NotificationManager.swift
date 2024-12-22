@@ -24,6 +24,7 @@ final class NotificationManager {
     /// updates the hour component to current hour
     func updateComponents() {
         components.hour = Calendar.current.component(.hour, from: Date.now)
+        storeNotificationHour()
     }
     /// Schedules a recurring notification
     func setColorOfTheDayReminder() {
