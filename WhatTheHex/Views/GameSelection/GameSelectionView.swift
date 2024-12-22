@@ -97,9 +97,7 @@ struct GameSelectionView: View {
                 SettingsView()
             }
             .onAppear {
-                NotificationManager.shared.setColorOfTheDayReminder(
-                    using: dataController
-                )
+                NotificationManager.shared.setColorOfTheDayReminder()
             }
         }
     }
