@@ -10,7 +10,7 @@ import NotificationCenter
 
 /// Singleton for managing notifications.
 final class NotificationManager {
-    static let notificationHourKey: String = "colorOfTheDayNotificationHour"
+    static let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
     private var playerName: String {
@@ -18,7 +18,7 @@ final class NotificationManager {
         GameCenterManager.shared.localPlayer.displayName
     }
     private var components = DateComponents(calendar: .current, hour: 20)
-    init() {
+    private init() {
         components.hour = notificationHour()
     }
     /// updates the hour component to current hour
@@ -74,7 +74,10 @@ final class NotificationManager {
         Self.shared.setColorOfTheDayReminder()
     }
     func storeNotificationHour() {
-        UserDefaults.setValue(Calendar.current.component(.hour, from: Date.now), forKey: Self.notificationHourKey)
+        UserDefaults.standard.set(
+            Calendar.current.component(.hour, from: Date.now),
+            forKey: Self.notificationHourKey
+        )
     }
     func notificationHour() -> Int {
         let defaultHour: Int = 20
