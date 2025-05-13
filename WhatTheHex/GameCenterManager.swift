@@ -19,6 +19,7 @@ class GameCenterManager {
                 print(error!.localizedDescription)
             } else if self.localPlayer.isAuthenticated {
                 self.isGameCenterEnabled = true
+                UserDefaults.standard.set(self.localPlayer.displayName, forKey: DefaultsKey.gameCenterDisplayName)
             } else {
                 print("could not authenticate")
             }

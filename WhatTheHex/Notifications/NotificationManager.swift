@@ -14,8 +14,7 @@ final class NotificationManager {
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
     private var playerName: String {
-        // will return "Unknown" if not authenticated
-        GameCenterManager.shared.localPlayer.displayName
+        UserDefaults.standard.string(forKey: DefaultsKey.gameCenterDisplayName) ?? "HexHunter"
     }
     private var components = DateComponents(calendar: .current, hour: 20)
     private init() {
