@@ -29,7 +29,7 @@ struct WhatTheHexApp: App {
                 }
                 .onAppear {
                     GameCenterManager.shared.authenticateLocalPlayer()
-                    NotificationManager.requestNotificationAuthorization()
+                    NotificationManager.shared.requestNotificationAuthorization()
                 }
         }
     }

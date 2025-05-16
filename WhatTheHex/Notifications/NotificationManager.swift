@@ -10,7 +10,7 @@ import NotificationCenter
 
 /// Singleton for managing notifications.
 final class NotificationManager {
-    static let notificationHourKey: String = "ColorOfTheDayNotificationHour"
+    let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
     private var playerName: String {
@@ -54,7 +54,7 @@ final class NotificationManager {
         content.badge = 1
         return content
     }
-    static func requestNotificationAuthorization() {
+    func requestNotificationAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("success")
@@ -67,22 +67,22 @@ final class NotificationManager {
         center.setBadgeCount(newValue)
     }
     func update(using dataController: DataController) {
-        Self.shared.setBadgeCount(to: 0)
-        Self.shared.cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
-        Self.shared.updateComponents()
-        Self.shared.setColorOfTheDayReminder()
+        setBadgeCount(to: 0)
+        cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
+        updateComponents()
+        setColorOfTheDayReminder()
     }
     func storeNotificationHour() {
         UserDefaults.standard.set(
             Calendar.current.component(.hour, from: Date.now),
-            forKey: Self.notificationHourKey
+            forKey: notificationHourKey
         )
     }
     func notificationHour() -> Int {
         let defaultHour: Int = 20
         var notificationHour = defaultHour
         // first checks to see if a value exists. user defaults will provide 0 if no other value found
-        if let fetchedObject: Any = UserDefaults.standard.object(forKey: Self.notificationHourKey) {
+        if let fetchedObject: Any = UserDefaults.standard.object(forKey: notificationHourKey) {
             notificationHour = fetchedObject as? Int ?? defaultHour
         }
         return notificationHour
