@@ -113,6 +113,7 @@
 		5BD058222BEAD8D7007E0336 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058212BEAD8D7007E0336 /* RotatingView.swift */; };
 		5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5BD058292BECF598007E0336 /* SandboxGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058282BECF58B007E0336 /* SandboxGameView.swift */; };
+		5BE676F92DE8D9E3006A26CE /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676F82DE8D9E2006A26CE /* AppRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
 		5BD058282BECF58B007E0336 /* SandboxGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxGameView.swift; sourceTree = "<group>"; };
+		5BE676F82DE8D9E2006A26CE /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAD10E92BD1B93E00E97FB1 /* DataController.swift */,
+				5BE676F82DE8D9E2006A26CE /* AppRoute.swift */,
 				5B9001C02BDC149A00174C70 /* GameCenterManager.swift */,
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
 				5B627A4D2DD372B40029072A /* DefaultsKey.swift */,
@@ -685,6 +688,7 @@
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */,
 				5B0962E12BE5582500425CE8 /* SliderComponentTip.swift in Sources */,
+				5BE676F92DE8D9E3006A26CE /* AppRoute.swift in Sources */,
 				5B68EADD2BC570DE00ABD6E0 /* PracticeModeView.swift in Sources */,
 				5B627A4E2DD372B40029072A /* DefaultsKey.swift in Sources */,
 				5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */,

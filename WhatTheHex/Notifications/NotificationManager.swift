@@ -5,10 +5,11 @@
 //  Created by Tyler Lawrence1 on 9/11/24.
 //
 
-import Foundation
+import SwiftUI
 import NotificationCenter
 
 /// Singleton for managing notifications.
+@Observable
 final class NotificationManager {
     let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
