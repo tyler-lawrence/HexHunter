@@ -4,6 +4,7 @@
 //
 //  Created by Tyler Lawrence1 on 9/11/24.
 //
+//  Source: https://github.com/StewartLynch/LocalNotifications-Lesson-4-Complete/tree/main
 
 import SwiftUI
 import NotificationCenter
