@@ -114,5 +114,7 @@ struct ColorOfTheDayGameplayView: View {
 }
 
 #Preview {
-    ColorOfTheDayGameplayView(viewModel: ColorOfTheDayViewModel(service: CloudKitService(), dataController: DataController()))
+    ColorOfTheDayGameplayView(
+        viewModel: ColorOfTheDayViewModel(service: CloudKitService(), dataController: DataController())
+    )
 }
