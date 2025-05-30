@@ -9,6 +9,8 @@ import SwiftUI
 import GameKit
 
 struct GameSelectionView: View {
+    @State var showingExplanationSheet = false
+    @State var showingSettingsSheet = false
     @Environment(DataController.self) var dataController
     @State private var path = NavigationPath()
     var body: some View {
@@ -47,6 +49,12 @@ struct GameSelectionView: View {
                 .padding()
                 .buttonStyle(GameSelectionButton())
             }
+            .sheet(isPresented: $showingSettingsSheet) {
+                SettingsView()
+            }
+            .sheet(isPresented: $showingExplanationSheet){
+                ExplanationView()
+            }
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -64,14 +72,14 @@ struct GameSelectionView: View {
                 }
                 ToolbarItem {
                     Button {
-                        path.append(AppRoute.explanation)
+                        showingSettingsSheet.toggle()
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
                 ToolbarItem {
                     Button {
-                        path.append(AppRoute.settings)
+                        showingExplanationSheet.toggle()
                     } label: {
                         Image(systemName: "gear")
                     }
