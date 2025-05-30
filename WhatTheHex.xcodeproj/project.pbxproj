@@ -113,6 +113,9 @@
 		5BD058222BEAD8D7007E0336 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058212BEAD8D7007E0336 /* RotatingView.swift */; };
 		5BD058272BEC1CFF007E0336 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */; };
 		5BD058292BECF598007E0336 /* SandboxGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD058282BECF58B007E0336 /* SandboxGameView.swift */; };
+		5BE676F92DE8D9E3006A26CE /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676F82DE8D9E2006A26CE /* AppRoute.swift */; };
+		5BE676FB2DE9E85E006A26CE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676FA2DE9E85E006A26CE /* AppState.swift */; };
+		5BE677792DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +215,9 @@
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
 		5BD058282BECF58B007E0336 /* SandboxGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxGameView.swift; sourceTree = "<group>"; };
+		5BE676F82DE8D9E2006A26CE /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		5BE676FA2DE9E85E006A26CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayGameplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,7 +360,9 @@
 		5B5BA3772BB7433900B558EE /* WhatTheHex */ = {
 			isa = PBXGroup;
 			children = (
+				5BE676FA2DE9E85E006A26CE /* AppState.swift */,
 				5BAD10E92BD1B93E00E97FB1 /* DataController.swift */,
+				5BE676F82DE8D9E2006A26CE /* AppRoute.swift */,
 				5B9001C02BDC149A00174C70 /* GameCenterManager.swift */,
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
 				5B627A4D2DD372B40029072A /* DefaultsKey.swift */,
@@ -471,6 +479,7 @@
 			children = (
 				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
 				5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */,
+				5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */,
 				5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
@@ -685,11 +694,13 @@
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */,
 				5B0962E12BE5582500425CE8 /* SliderComponentTip.swift in Sources */,
+				5BE676F92DE8D9E3006A26CE /* AppRoute.swift in Sources */,
 				5B68EADD2BC570DE00ABD6E0 /* PracticeModeView.swift in Sources */,
 				5B627A4E2DD372B40029072A /* DefaultsKey.swift in Sources */,
 				5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */,
 				5B68EADF2BC58D8500ABD6E0 /* RGBSlidersView.swift in Sources */,
 				5BB39A5D2BBC86AF00A38EAD /* ParticleSystem.swift in Sources */,
+				5BE677792DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift in Sources */,
 				5B8F25AB2C08A2F20028B135 /* MockGKLeaderboardEntry.swift in Sources */,
 				5BB39A6D2BC1DEE200A38EAD /* RapidGameViewModel.swift in Sources */,
 				5B1E8D202C91F07200BD4510 /* NotificationManager.swift in Sources */,
@@ -704,6 +715,7 @@
 				5B43BCF12BCD5AE100054F2E /* CloudKitService.swift in Sources */,
 				5BB39A582BBC83CA00A38EAD /* BeginView.swift in Sources */,
 				5B558DD32C1775210093963C /* SubmissionRowView.swift in Sources */,
+				5BE676FB2DE9E85E006A26CE /* AppState.swift in Sources */,
 				5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */,
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,
 				5B68EAD82BC4321500ABD6E0 /* SurvivalGameView.swift in Sources */,

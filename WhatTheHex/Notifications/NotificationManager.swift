@@ -4,21 +4,29 @@
 //
 //  Created by Tyler Lawrence1 on 9/11/24.
 //
+//  Source: https://github.com/StewartLynch/LocalNotifications-Lesson-4-Complete/tree/main
 
-import Foundation
+import SwiftUI
 import NotificationCenter
 
 /// Singleton for managing notifications.
-final class NotificationManager {
-    static let notificationHourKey: String = "ColorOfTheDayNotificationHour"
+@Observable
+class NotificationManager: NSObject {
+    let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
+    private var appState: AppState?
     private var playerName: String {
         UserDefaults.standard.string(forKey: DefaultsKey.gameCenterDisplayName) ?? "HexHunter"
     }
     private var components = DateComponents(calendar: .current, hour: 20)
-    private init() {
+    private override init() {
+        super.init()
+        center.delegate = self
         components.hour = notificationHour()
+    }
+    func configure(with appState: AppState) {
+        self.appState = appState
     }
     /// updates the hour component to current hour
     func updateComponents() {
@@ -54,7 +62,7 @@ final class NotificationManager {
         content.badge = 1
         return content
     }
-    static func requestNotificationAuthorization() {
+    func requestNotificationAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("success")
@@ -67,26 +75,42 @@ final class NotificationManager {
         center.setBadgeCount(newValue)
     }
     func update(using dataController: DataController) {
-        Self.shared.setBadgeCount(to: 0)
-        Self.shared.cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
-        Self.shared.updateComponents()
-        Self.shared.setColorOfTheDayReminder()
+        setBadgeCount(to: 0)
+        cancelNotifications(for: NotificationIdentifier.colorOfTheDay)
+        updateComponents()
+        setColorOfTheDayReminder()
     }
     func storeNotificationHour() {
         UserDefaults.standard.set(
             Calendar.current.component(.hour, from: Date.now),
-            forKey: Self.notificationHourKey
+            forKey: notificationHourKey
         )
     }
     func notificationHour() -> Int {
         let defaultHour: Int = 20
         var notificationHour = defaultHour
         // first checks to see if a value exists. user defaults will provide 0 if no other value found
-        if let fetchedObject: Any = UserDefaults.standard.object(forKey: Self.notificationHourKey) {
+        if let fetchedObject: Any = UserDefaults.standard.object(forKey: notificationHourKey) {
             notificationHour = fetchedObject as? Int ?? defaultHour
         }
         return notificationHour
     }
+}
+
+extension NotificationManager: UNUserNotificationCenterDelegate {
+    @MainActor
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse) async {
+        if response.notification.request.identifier == NotificationIdentifier.colorOfTheDay {
+            NotificationCenter.default.post(name: .notificationTapped, object: nil)
+            appState?.handleNotificationTap()
+        }
+    }
+}
+
+extension Notification.Name {
+    static let notificationTapped = Notification.Name("notificationTapped")
 }
 
 #if DEBUG
@@ -101,6 +125,16 @@ extension NotificationManager {
         components.minute = Calendar.current.component(.minute, from: nextMinute)
         print("notification scheduled time: \(components.description)")
         return components
+    }
+    func scheduleTestNotification() {
+        let content = colorOfTheDayReminder()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: NotificationIdentifier.colorOfTheDay,
+            content: content,
+            trigger: trigger
+        )
+        center.add(request)
     }
 }
 #endif
