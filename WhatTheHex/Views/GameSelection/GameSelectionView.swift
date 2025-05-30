@@ -13,14 +13,9 @@ struct GameSelectionView: View {
     @Environment(AppState.self) var appState
     @State var showingExplanationSheet = false
     @State var showingSettingsSheet = false
-    private var pathBinding: Binding<[AppRoute]> {
-        Binding(
-            get: {appState.path},
-            set: {appState.path = $0}
-        )
-    }
     var body: some View {
-        NavigationStack(path: pathBinding) {
+        @Bindable var appState = appState
+        NavigationStack(path: $appState.path) {
             ZStack {
                 BackgroundView()
                 ScrollView {
