@@ -9,4 +9,5 @@ import Foundation
 
 enum DefaultsKey {
     static var gameCenterDisplayName = "GameCenterDisplayName"
+    static var shouldLaunchToColorOfTheDay = "ShouldLaunchToColorOfTheDay"
 }

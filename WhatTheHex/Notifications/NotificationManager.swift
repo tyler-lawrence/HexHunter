@@ -10,7 +10,7 @@ import NotificationCenter
 
 /// Singleton for managing notifications.
 @Observable
-final class NotificationManager {
+class NotificationManager: NSObject {
     let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
@@ -18,7 +18,9 @@ final class NotificationManager {
         UserDefaults.standard.string(forKey: DefaultsKey.gameCenterDisplayName) ?? "HexHunter"
     }
     private var components = DateComponents(calendar: .current, hour: 20)
-    private init() {
+    private override init() {
+        super.init()
+        center.delegate = self
         components.hour = notificationHour()
     }
     /// updates the hour component to current hour
@@ -87,6 +89,18 @@ final class NotificationManager {
             notificationHour = fetchedObject as? Int ?? defaultHour
         }
         return notificationHour
+    }
+}
+
+extension NotificationManager: UNUserNotificationCenterDelegate {
+    @MainActor
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse) async {
+        if response.notification.request.identifier == NotificationIdentifier.colorOfTheDay {
+            UserDefaults.standard.set(true, forKey: DefaultsKey.shouldLaunchToColorOfTheDay)
+        }
+
     }
 }
 

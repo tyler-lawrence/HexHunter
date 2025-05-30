@@ -11,6 +11,7 @@ import GameKit
 struct GameSelectionView: View {
     @State var showingExplanationSheet = false
     @State var showingSettingsSheet = false
+    @AppStorage(DefaultsKey.shouldLaunchToColorOfTheDay) var shouldLaunchToColorOfTheDay: Bool = false
     @Environment(DataController.self) var dataController
     @State private var path = NavigationPath()
     var body: some View {
@@ -52,7 +53,7 @@ struct GameSelectionView: View {
             .sheet(isPresented: $showingSettingsSheet) {
                 SettingsView()
             }
-            .sheet(isPresented: $showingExplanationSheet){
+            .sheet(isPresented: $showingExplanationSheet) {
                 ExplanationView()
             }
             .toolbar {
@@ -115,6 +116,10 @@ struct GameSelectionView: View {
             }
             .onAppear {
                 NotificationManager.shared.setColorOfTheDayReminder()
+                if shouldLaunchToColorOfTheDay {
+                    path.append(AppRoute.colorOfTheDay)
+                    shouldLaunchToColorOfTheDay = false
+                }
             }
         }
     }
