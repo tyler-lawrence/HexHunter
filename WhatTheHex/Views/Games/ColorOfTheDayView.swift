@@ -25,7 +25,9 @@ struct ColorOfTheDayView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ColorOfTheDayView()
         .environment(DataController.sample)
 }
+#endif
