@@ -10,10 +10,10 @@ import GameKit
 struct ContentView: View {
     @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     @Environment(DataController.self) var dataController
+    @Environment(AppState.self) var appState
     var body: some View {
         if hasOnboarded {
             GameSelectionView()
-                .environment(dataController)
         } else {
             TutorialView(hasOnboarded: $hasOnboarded)
         }

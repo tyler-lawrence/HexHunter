@@ -14,6 +14,7 @@ class NotificationManager: NSObject {
     let notificationHourKey: String = "ColorOfTheDayNotificationHour"
     static let shared: NotificationManager = NotificationManager()
     private let center = UNUserNotificationCenter.current()
+    private var appState: AppState?
     private var playerName: String {
         UserDefaults.standard.string(forKey: DefaultsKey.gameCenterDisplayName) ?? "HexHunter"
     }
@@ -22,6 +23,9 @@ class NotificationManager: NSObject {
         super.init()
         center.delegate = self
         components.hour = notificationHour()
+    }
+    func configure(with appState: AppState) {
+        self.appState = appState
     }
     /// updates the hour component to current hour
     func updateComponents() {
@@ -98,10 +102,14 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse) async {
         if response.notification.request.identifier == NotificationIdentifier.colorOfTheDay {
-            UserDefaults.standard.set(true, forKey: DefaultsKey.shouldLaunchToColorOfTheDay)
+            NotificationCenter.default.post(name: .notificationTapped, object: nil)
+            appState?.handleNotificationTap()
         }
-
     }
+}
+
+extension Notification.Name {
+    static let notificationTapped = Notification.Name("notificationTapped")
 }
 
 #if DEBUG

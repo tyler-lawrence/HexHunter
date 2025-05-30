@@ -9,7 +9,6 @@ import Foundation
 
 enum AppRoute: Hashable {
     case colorOfTheDay
-    case colorOfTheDaySummary(Submission)
     case practice
     case sandbox
     case survival

@@ -9,22 +9,23 @@ import SwiftUI
 import GameKit
 
 struct GameSelectionView: View {
+    @Environment(DataController.self) var dataController
+    @Environment(AppState.self) var appState
     @State var showingExplanationSheet = false
     @State var showingSettingsSheet = false
-    @AppStorage(DefaultsKey.shouldLaunchToColorOfTheDay) var shouldLaunchToColorOfTheDay: Bool = false
-    @Environment(DataController.self) var dataController
-    @State private var path = NavigationPath()
+    private var pathBinding: Binding<[AppRoute]> {
+        Binding(
+            get: {appState.path},
+            set: {appState.path = $0}
+        )
+    }
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: pathBinding) {
             ZStack {
                 BackgroundView()
                 ScrollView {
                     Button {
-                        if let submission =  dataController.todaySubmission {
-                            path.append(AppRoute.colorOfTheDaySummary(submission))
-                        } else {
-                            path.append(AppRoute.colorOfTheDay)
-                        }
+                        appState.path.append(AppRoute.colorOfTheDay)
                     } label: {
                         GameModeButtonView(
                             title: "Color of the Day",
@@ -32,17 +33,17 @@ struct GameSelectionView: View {
                         )
                     }
                     Button {
-                        path.append(AppRoute.practice)
+                        appState.path.append(AppRoute.practice)
                     } label: {
                         GameModeButtonView(title: "Practice")
                     }
                     Button {
-                        path.append(AppRoute.sandbox)
+                        appState.path.append(AppRoute.sandbox)
                     } label: {
                         GameModeButtonView(title: "Sandbox")
                     }
                     Button {
-                        path.append(AppRoute.survival)
+                        appState.path.append(AppRoute.survival)
                     } label: {
                         GameModeButtonView(title: "Survival")
                     }
@@ -59,14 +60,14 @@ struct GameSelectionView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        path.append(AppRoute.leaderboard)
+                        appState.path.append(AppRoute.leaderboard)
                     } label: {
                         Image(systemName: "trophy")
                     }
                 }
                 ToolbarItem {
                     Button {
-                        path.append(AppRoute.stats)
+                        appState.path.append(AppRoute.stats)
                     } label: {
                         Image(systemName: "circle.dotted.circle")
                     }
@@ -90,14 +91,7 @@ struct GameSelectionView: View {
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
                 case .colorOfTheDay:
-                    ColorOfTheDayView(
-                        viewModel: ColorOfTheDayViewModel(
-                            service: CloudKitService(),
-                            dataController: dataController
-                        )
-                    )
-                case .colorOfTheDaySummary(let sumbission):
-                    ColorOfTheDaySummaryView(submission: sumbission)
+                    ColorOfTheDayView()
                 case .practice:
                     PracticeModeView()
                 case .sandbox:
@@ -116,10 +110,6 @@ struct GameSelectionView: View {
             }
             .onAppear {
                 NotificationManager.shared.setColorOfTheDayReminder()
-                if shouldLaunchToColorOfTheDay {
-                    path.append(AppRoute.colorOfTheDay)
-                    shouldLaunchToColorOfTheDay = false
-                }
             }
         }
     }
@@ -129,5 +119,6 @@ struct GameSelectionView: View {
 #Preview {
     GameSelectionView()
         .environment(DataController.sample1DayStreak)
+        .environment(AppState())
 }
 #endif
