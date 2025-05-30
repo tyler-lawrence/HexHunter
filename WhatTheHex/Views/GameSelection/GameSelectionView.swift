@@ -9,8 +9,6 @@ import SwiftUI
 import GameKit
 
 struct GameSelectionView: View {
-    @State var showingExplanationSheet = false
-    @State var showingSettingsSheet = false
     @Environment(DataController.self) var dataController
     @State private var path = NavigationPath()
     var body: some View {
