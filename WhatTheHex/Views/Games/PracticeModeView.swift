@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PracticeModeView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var viewModel: PracticeModeViewModel
+    @State var viewModel: PracticeModeViewModel = .init()
     var squaresView: RotatingView<some View> {
         RotatingView(portraitOrientation: .horizontal) {
             Group {

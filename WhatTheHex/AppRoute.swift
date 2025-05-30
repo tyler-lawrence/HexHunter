@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum AppRoute {
+enum AppRoute: Hashable {
     case colorOfTheDay
     case colorOfTheDaySummary(Submission)
     case practice
-    case rapid
+    case sandbox
     case survival
     case leaderboard
     case stats

@@ -12,46 +12,36 @@ struct GameSelectionView: View {
     @State var showingExplanationSheet = false
     @State var showingSettingsSheet = false
     @Environment(DataController.self) var dataController
+    @State private var path = NavigationPath()
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 BackgroundView()
                 ScrollView {
-                    if let submission =  dataController.todaySubmission {
-                        NavigationLink {
-                            ColorOfTheDaySummaryView(submission: submission)
-                        } label: {
-                            GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
+                    Button {
+                        if let submission =  dataController.todaySubmission {
+                            path.append(AppRoute.colorOfTheDaySummary(submission))
+                        } else {
+                            path.append(AppRoute.colorOfTheDay)
                         }
-                    } else {
-                        NavigationLink {
-                            ColorOfTheDayView(
-                                viewModel: ColorOfTheDayViewModel(
-                                    service: CloudKitService(),
-                                    dataController: dataController
-                                )
-                            )
-                        } label: {
-                            GameModeButtonView(title: "Color of the Day", streak: dataController.colorOfTheDayStreak)
-                        }
+                    } label: {
+                        GameModeButtonView(
+                            title: "Color of the Day",
+                            streak: dataController.colorOfTheDayStreak
+                        )
                     }
-                    NavigationLink {
-                        PracticeModeView(viewModel: PracticeModeViewModel())
+                    Button {
+                        path.append(AppRoute.practice)
                     } label: {
                         GameModeButtonView(title: "Practice")
                     }
-                    NavigationLink {
-                        SandboxGameView()
+                    Button {
+                        path.append(AppRoute.sandbox)
                     } label: {
                         GameModeButtonView(title: "Sandbox")
                     }
-                    //                    NavigationLink{
-                    //                        RapidGameView()
-                    //                    } label: {
-                    //                        GameModeButtonView(title: "Rapid")
-                    //                    }
-                    NavigationLink {
-                        SurvivalGameView()
+                    Button {
+                        path.append(AppRoute.survival)
                     } label: {
                         GameModeButtonView(title: "Survival")
                     }
@@ -61,40 +51,61 @@ struct GameSelectionView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    NavigationLink {
-                        LeaderboardView()
+                    Button {
+                        path.append(AppRoute.leaderboard)
                     } label: {
                         Image(systemName: "trophy")
                     }
                 }
                 ToolbarItem {
-                    NavigationLink {
-                        StatsView(dataController: dataController)
+                    Button {
+                        path.append(AppRoute.stats)
                     } label: {
                         Image(systemName: "circle.dotted.circle")
                     }
                 }
                 ToolbarItem {
                     Button {
-                        showingExplanationSheet.toggle()
+                        path.append(AppRoute.explanation)
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
                 ToolbarItem {
                     Button {
-                        showingSettingsSheet.toggle()
+                        path.append(AppRoute.settings)
                     } label: {
                         Image(systemName: "gear")
                     }
                 }
             }
             .font(.title)
-            .sheet(isPresented: $showingExplanationSheet) {
-                ExplanationView()
-            }
-            .sheet(isPresented: $showingSettingsSheet) {
-                SettingsView()
+            .navigationDestination(for: AppRoute.self) { route in
+                switch route {
+                case .colorOfTheDay:
+                    ColorOfTheDayView(
+                        viewModel: ColorOfTheDayViewModel(
+                            service: CloudKitService(),
+                            dataController: dataController
+                        )
+                    )
+                case .colorOfTheDaySummary(let sumbission):
+                    ColorOfTheDaySummaryView(submission: sumbission)
+                case .practice:
+                    PracticeModeView()
+                case .sandbox:
+                    SandboxGameView()
+                case .survival:
+                    SurvivalGameView()
+                case .leaderboard:
+                    LeaderboardView()
+                case .stats:
+                    StatsView(dataController: dataController)
+                case .explanation:
+                    ExplanationView()
+                case .settings:
+                    SettingsView()
+                }
             }
             .onAppear {
                 NotificationManager.shared.setColorOfTheDayReminder()
