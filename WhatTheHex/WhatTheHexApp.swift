@@ -13,11 +13,15 @@ import UserNotifications
 struct WhatTheHexApp: App {
     @Environment(\.scenePhase) var scenePhase
     @State private var dataController = DataController()
+    @State private var appState = AppState()
     @State private var audioPlayer = AudioPlayer()
     @AppStorage("darkModePreferred") var darkModePreferred: Bool = false
-    @AppStorage("needsNotificationAuthorization") var needsNotificationAuthorization = true
     var preferredScheme: ColorScheme {
         darkModePreferred ? .dark : .light
+    }
+    init() {
+        NotificationManager.shared.configure(with: appState)
+        try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
     }
     var body: some Scene {
         WindowGroup {
@@ -25,29 +29,17 @@ struct WhatTheHexApp: App {
                 .preferredColorScheme(preferredScheme)
                 .environment(dataController)
                 .environment(audioPlayer)
+                .environment(appState)
                 .onChange(of: scenePhase) {
                     dataController.refresh()
                 }
                 .onAppear {
                     GameCenterManager.shared.authenticateLocalPlayer()
-                    if needsNotificationAuthorization {
-                        requestNotificationAuthorization()
-                    }
+                    NotificationManager.shared.requestNotificationAuthorization()
                 }
-        }
-    }
-    init() {
-        try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
-    }
-    func requestNotificationAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                needsNotificationAuthorization = false
-                // schedule notification
-                print("success")
-            } else if let error {
-                print(error.localizedDescription)
-            }
+                .onReceive(NotificationCenter.default.publisher(for: .notificationTapped)) { _ in
+                    appState.handleNotificationTap()
+                }
         }
     }
 }

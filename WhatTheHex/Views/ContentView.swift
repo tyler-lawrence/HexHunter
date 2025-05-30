@@ -10,24 +10,13 @@ import GameKit
 struct ContentView: View {
     @AppStorage("hasOnboarded") var hasOnboarded: Bool = false
     @Environment(DataController.self) var dataController
-    @ViewBuilder func bodyContent() -> some View {
+    @Environment(AppState.self) var appState
+    var body: some View {
         if hasOnboarded {
             GameSelectionView()
-                .environment(dataController)
         } else {
             TutorialView(hasOnboarded: $hasOnboarded)
         }
-    }
-    var body: some View {
-        bodyContent()
-            .onReceive(NotificationCenter.default.publisher(
-                    for: .GKPlayerAuthenticationDidChangeNotificationName
-                )
-            ) { _ in
-                NotificationManager.shared.setColorOfTheDayReminder(
-                    using: dataController
-                )
-            }
     }
 }
 
