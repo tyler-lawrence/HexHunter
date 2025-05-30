@@ -117,5 +117,15 @@ extension NotificationManager {
         print("notification scheduled time: \(components.description)")
         return components
     }
+    func scheduleTestNotification() {
+        let content = colorOfTheDayReminder()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: NotificationIdentifier.colorOfTheDay,
+            content: content,
+            trigger: trigger
+        )
+        center.add(request)
+    }
 }
 #endif
