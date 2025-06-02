@@ -69,14 +69,14 @@ struct GameSelectionView: View {
                 }
                 ToolbarItem {
                     Button {
-                        showingSettingsSheet.toggle()
+                        showingExplanationSheet.toggle()
                     } label: {
                         Image(systemName: "doc.text.magnifyingglass")
                     }
                 }
                 ToolbarItem {
                     Button {
-                        showingExplanationSheet.toggle()
+                        showingSettingsSheet.toggle()
                     } label: {
                         Image(systemName: "gear")
                     }
