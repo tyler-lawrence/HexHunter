@@ -11,15 +11,30 @@ import GameKit
 /// When testing, make sure you are signed into iCloud on the simulator
 
 @Observable
-class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
+class ColorOfTheDayViewModel: GameViewModel & LeaderboardGame {
+    var targetHexcode: Hexcode
+    var playerHexcode: Hexcode
+    var gameOver: Bool
+    var audioFileName: String
     private let service: ColorOfDayService
     let dataController: DataController
-    init(service: ColorOfDayService, dataController: DataController) {
+    init(
+        service: ColorOfDayService = CloudKitService(),
+        dataController: DataController,
+        audioFileName: String = "GameplayLoop",
+        gameOver: Bool = false
+    ) {
         self.dataController = dataController
         self.service = service
-        super.init()
+        self.audioFileName = audioFileName
+        self.gameOver = gameOver
+        self.playerHexcode = Hexcode()
+        self.targetHexcode = Hexcode()
     }
-    override var gameOverMessage: String {
+    var accuracy: String {
+        String(format: "%.2f", calculateScore())
+    }
+    var gameOverMessage: String {
         """
         Target: \(targetHexcode.display)
         Your Guess: \(playerHexcode.display)
@@ -42,13 +57,20 @@ class ColorOfTheDayViewModel: PracticeModeViewModel & LeaderboardGame {
         }
         return nil
     }
-    /// adds current date to dataController and marks the game over
-    override func submitGuess() {
+    func submitGuess() {
         let submission = Submission(playerGuess: playerHexcode, target: targetHexcode)
         dataController.colorOfTheDaySubmissions.append(submission)
         gameOver = true
         NotificationManager.shared.update(using: dataController)
         dataController.refresh()
+    }
+    func reset() {
+        gameOver = false
+        targetHexcode = Hexcode.random()
+        playerHexcode = Hexcode()
+    }
+    func calculateScore() -> Double {
+        playerHexcode.calculateSimilarity(to: targetHexcode)
     }
 }
 

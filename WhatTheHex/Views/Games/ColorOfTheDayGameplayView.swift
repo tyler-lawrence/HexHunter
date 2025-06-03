@@ -77,10 +77,18 @@ struct ColorOfTheDayGameplayView: View {
                 }
             }
             .onAppear {
-                AudioPlayer.shared.startBackgroundLoop(sound: "GameplayLoop", type: "mp3")
+                AudioPlayer.shared.startBackgroundLoop(sound: viewModel.audioFileName, type: "mp3")
             }
             .onDisappear {
                 AudioPlayer.shared.stopBackgroundSound()
+                if gameKitPreference {
+                    Task {
+                        await GameCenterManager.shared.uploadScore(
+                            viewModel.GKFormattedScore,
+                            for: .colorOfTheDay
+                        )
+                    }
+                }
             }
             .alert("Are you sure?", isPresented: $showingConfirmGuessAlert) {
                 Button("Yes!") {
@@ -92,15 +100,6 @@ struct ColorOfTheDayGameplayView: View {
             }
             .alert(viewModel.gameOverMessage, isPresented: $viewModel.gameOver) {
                 Button("Ok") {
-                    // upload to game center
-                    if gameKitPreference {
-                        Task {
-                            await GameCenterManager.shared.uploadScore(
-                                viewModel.GKFormattedScore,
-                                for: .colorOfTheDay
-                            )
-                        }
-                    }
                     presentationMode.wrappedValue.dismiss()
                 }
             }

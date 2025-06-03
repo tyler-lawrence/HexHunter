@@ -40,7 +40,6 @@
 		5B43BCFF2BCF156C00054F2E /* Array+DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */; };
 		5B43BD002BCF19B300054F2E /* Array+DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */; };
 		5B43BD022BD0086000054F2E /* GameSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BD012BD0086000054F2E /* GameSelectionButton.swift */; };
-		5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */; };
 		5B4F369E2BC1F9D200F1EB87 /* TimedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A712BC1E38700A38EAD /* TimedGame.swift */; };
 		5B4F369F2BC1F9D900F1EB87 /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Submission.swift */; };
 		5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */; };
@@ -116,6 +115,7 @@
 		5BE676F92DE8D9E3006A26CE /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676F82DE8D9E2006A26CE /* AppRoute.swift */; };
 		5BE676FB2DE9E85E006A26CE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676FA2DE9E85E006A26CE /* AppState.swift */; };
 		5BE677792DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */; };
+		5BE6777B2DEDD635006A26CE /* ColorOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6777A2DEDD635006A26CE /* ColorOfTheDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,7 +155,6 @@
 		5B43BCFB2BCF0D5800054F2E /* Date+StreakUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StreakUtils.swift"; sourceTree = "<group>"; };
 		5B43BCFE2BCF156C00054F2E /* Array+DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+DateUtils.swift"; sourceTree = "<group>"; };
 		5B43BD012BD0086000054F2E /* GameSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionButton.swift; sourceTree = "<group>"; };
-		5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayView.swift; sourceTree = "<group>"; };
 		5B4F36A22BC203A100F1EB87 /* GameModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeButtonView.swift; sourceTree = "<group>"; };
 		5B4F36A42BC4242400F1EB87 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		5B558DCD2C176B750093963C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -218,6 +217,7 @@
 		5BE676F82DE8D9E2006A26CE /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		5BE676FA2DE9E85E006A26CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayGameplayView.swift; sourceTree = "<group>"; };
+		5BE6777A2DEDD635006A26CE /* ColorOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,8 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				5BB39A742BC1E90300A38EAD /* TimedGameBaseView.swift */,
-				5B43BD032BD1511F00054F2E /* ColorOfTheDayView.swift */,
 				5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */,
+				5BE6777A2DEDD635006A26CE /* ColorOfTheDayView.swift */,
 				5B68EADC2BC570DE00ABD6E0 /* PracticeModeView.swift */,
 				5B68EAD72BC4321500ABD6E0 /* SurvivalGameView.swift */,
 				5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */,
@@ -682,7 +682,7 @@
 				5B4F36A52BC4242400F1EB87 /* AudioPlayer.swift in Sources */,
 				5B2EFB592C19EA7C00B3202B /* SettingsView.swift in Sources */,
 				5BA3D9DB2BBC4D33003DE2F8 /* BackgroundView.swift in Sources */,
-				5B43BD042BD1511F00054F2E /* ColorOfTheDayView.swift in Sources */,
+				5BE6777B2DEDD635006A26CE /* ColorOfTheDayView.swift in Sources */,
 				5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */,
 				5B8F25A92C08A2A40028B135 /* HHLeaderboardEntry.swift in Sources */,
 				5B0962B12BE3BF7E00425CE8 /* TutorialView.swift in Sources */,
@@ -917,7 +917,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 30;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
@@ -958,7 +958,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 30;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
