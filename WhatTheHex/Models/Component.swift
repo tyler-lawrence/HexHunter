@@ -8,6 +8,17 @@ import Foundation
 
 /// Stores the two digits of a hexcode
 struct Component: Hashable, Codable {
+    enum Digit {
+        case one, two
+        var keyPath: WritableKeyPath<Component, Int> {
+            switch self {
+            case .one:
+                return \.digit1
+            case .two:
+                return \.digit2
+            }
+        }
+    }
     let hexCategory: HexCategory
     /// first digit in a hexcode
     var digit1: Int
