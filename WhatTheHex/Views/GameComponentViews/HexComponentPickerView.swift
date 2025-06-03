@@ -53,20 +53,11 @@ struct HexComponentPickerView: View {
         }
         .overlay {
             if let selectedDigit {
-                switch selectedDigit {
-                case .one:
-                    DetailedSliderView(
-                        component: $component,
-                        digitKeyPath: selectedDigit.keyPath
-                    )
-                    .offset(y: -detailOffset)
-                case .two:
-                    DetailedSliderView(
-                        component: $component,
-                        digitKeyPath: selectedDigit.keyPath
-                    )
-                    .offset(y: -detailOffset)
-                }
+                DetailedSliderView(
+                    component: $component,
+                    digitKeyPath: selectedDigit.keyPath
+                )
+                .offset(y: -detailOffset)
             }
         }
         .tint(component.hexCategory.displayColor)

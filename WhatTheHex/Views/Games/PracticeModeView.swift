@@ -55,7 +55,7 @@ struct PracticeModeView: View {
                 VStack {
                     squaresView.original
                     accuracyLabel
-                    controlsView.original.padding()
+                    controlsView.original
                     buttonView
                 }
             } else {
