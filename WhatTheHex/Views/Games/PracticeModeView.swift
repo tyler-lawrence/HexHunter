@@ -41,9 +41,11 @@ struct PracticeModeView: View {
         .buttonStyle(GameSelectionButton())
     }
     var accuracyLabel: some View {
-        HStack {
+        HStack(spacing: 0) {
             Image(systemName: "scope")
-            Text("Accuracy: \(viewModel.accuracy)")
+            Text("Accuracy: ")
+            Text(viewModel.accuracy)
+                .monospaced()
         }
         .font(.title)
     }
