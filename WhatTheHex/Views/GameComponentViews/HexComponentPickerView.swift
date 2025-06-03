@@ -90,14 +90,13 @@ struct HexComponentPickerView: View {
         )
     }
     var body: some View {
-    #if os(macOS)
-            macSliders
-    #else
-            iosSliders
-    #endif
-        }
+        #if os(macOS)
+        macSliders
+        #else
+        iosSliders
+        #endif
     }
-
+}
 #Preview {
     struct Preview: View {
         @State var component = Component(hexCategory: .red, digit1: 10, digit2: 4)
