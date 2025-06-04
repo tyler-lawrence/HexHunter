@@ -54,8 +54,9 @@ struct DetailedSliderView: View {
                 }
                 .tint(component.hexCategory.displayColor)
         }
-        .padding(.vertical)
+        .padding()
         .background(Material.bar)
+        .clipShape(RoundedRectangle(cornerRadius: 50))
         .shadow(radius: 12.0)
     }
 }

@@ -29,7 +29,7 @@ struct SandboxGameView: View {
                         }
                     }.original
                     Divider()
-                    RGBSlidersView(hexcode: $playerHexcode)
+                    RGBSlidersView(hexcode: $playerHexcode, detailEnabled: true)
                 }
                 .padding()
             } else {
@@ -47,7 +47,7 @@ struct SandboxGameView: View {
                     }.rotated
                         .frame(width: geo.size.width * 0.2)
                     Divider()
-                    RGBSlidersView(hexcode: $playerHexcode)
+                    RGBSlidersView(hexcode: $playerHexcode, detailEnabled: true)
                 }
                 .padding()
             }

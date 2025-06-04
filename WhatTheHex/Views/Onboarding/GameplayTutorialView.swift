@@ -63,7 +63,7 @@ struct GameplayTutorialView: View {
             } else {
                 HStack { playerHexcodeSquare }
             }
-            RGBSlidersView(hexcode: $playerHexcode)
+            RGBSlidersView(hexcode: $playerHexcode, detailEnabled: true)
                 .onChange(of: playerHexcode) {
                     if playerHexcode == targetHexcode {
                         scale = 1

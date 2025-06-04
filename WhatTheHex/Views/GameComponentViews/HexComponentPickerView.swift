@@ -14,6 +14,7 @@ struct HexComponentPickerView: View {
         LocalizedStringKey(component.hexCategory.rawValue)
     }
     let detailOffset: CGFloat = 120
+    let detailEnabled: Bool
     var iosSliders: some View {
         HStack {
             Text(colorLabel)
@@ -23,26 +24,20 @@ struct HexComponentPickerView: View {
             VStack {
                 HStack {
                     Text(component.digit1Display)
-                    Slider(value: .convert(from: $component.digit1), in: 0...15) { _ in
-                        selectedDigit = nil
+                    Slider(value: .convert(from: $component.digit1), in: 0...15) { editing in
+                        selectedDigit = editing ? .one : nil
                     }
                     .sensoryFeedback(.selection, trigger: component.digit1) { _, new in
                         new != 0
                     }
-                    .onChange(of: component.digit1) {
-                        selectedDigit = .one
-                    }
                 }
                 HStack {
                     Text(component.digit2Display)
-                    Slider(value: .convert(from: $component.digit2), in: 0...15) { _ in
-                        selectedDigit = nil
+                    Slider(value: .convert(from: $component.digit2), in: 0...15) { editing in
+                        selectedDigit = editing ? .two : nil
                     }
                     .sensoryFeedback(.selection, trigger: component.digit2) { _, new in
                         new != 0
-                    }
-                    .onChange(of: component.digit2) {
-                        selectedDigit = .two
                     }
                 }
             }
@@ -52,14 +47,18 @@ struct HexComponentPickerView: View {
                 .frame(width: 80)
         }
         .overlay {
-            if let selectedDigit {
-                DetailedSliderView(
-                    component: $component,
-                    digitKeyPath: selectedDigit.keyPath
-                )
-                .offset(y: -detailOffset)
+            if detailEnabled {
+                if let selectedDigit {
+                    DetailedSliderView(
+                        component: $component,
+                        digitKeyPath: selectedDigit.keyPath
+                    )
+                    .transition(.opacity.combined(with: .offset(y: 10)))
+                    .offset(y: -detailOffset)
+                }
             }
         }
+        .animation(.easeInOut(duration: 0.2), value: selectedDigit)
         .tint(component.hexCategory.displayColor)
         .padding(5)
         .background(
@@ -101,7 +100,7 @@ struct HexComponentPickerView: View {
     struct Preview: View {
         @State var component = Component(hexCategory: .red, digit1: 10, digit2: 4)
         var body: some View {
-            HexComponentPickerView(component: $component)
+            HexComponentPickerView(component: $component, detailEnabled: true)
         }
     }
     return Preview()

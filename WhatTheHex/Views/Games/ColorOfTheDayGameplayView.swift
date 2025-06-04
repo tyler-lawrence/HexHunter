@@ -52,7 +52,7 @@ struct ColorOfTheDayGameplayView: View {
     var controlsView: RotatingView< some View > {
         RotatingView(portraitOrientation: .vertical) {
             Group {
-                RGBSlidersView(hexcode: $viewModel.playerHexcode)
+                RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: true)
                 Button("Guess") {
                     showingConfirmGuessAlert.toggle()
                 }.buttonStyle(GameSelectionButton())

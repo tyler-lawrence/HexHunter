@@ -10,6 +10,7 @@ import SwiftUI
 struct PracticeModeView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var viewModel: PracticeModeViewModel = .init()
+    @State private var showingAccuracy: Bool = true
     var squaresView: RotatingView<some View> {
         RotatingView(portraitOrientation: .horizontal) {
             Group {
@@ -29,7 +30,7 @@ struct PracticeModeView: View {
     var controlsView: RotatingView< some View > {
         RotatingView(portraitOrientation: .vertical) {
             Group {
-                RGBSlidersView(hexcode: $viewModel.playerHexcode)
+                RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: true)
                 Spacer()
             }
         }
@@ -44,8 +45,14 @@ struct PracticeModeView: View {
         HStack(spacing: 0) {
             Image(systemName: "scope")
             Text("Accuracy: ")
-            Text(viewModel.accuracy)
-                .monospaced()
+            Button {
+                showingAccuracy.toggle()
+            } label: {
+                Text(viewModel.accuracy)
+                    .monospaced()
+                    .opacity(showingAccuracy ? 1 : 0)
+            }
+            .foregroundStyle(.primary)
         }
         .font(.title)
     }
@@ -53,8 +60,8 @@ struct PracticeModeView: View {
         GeometryReader { geo in
             if geo.size.height > geo.size.width {
                 VStack {
-                    squaresView.original
                     accuracyLabel
+                    squaresView.original
                     controlsView.original
                     buttonView
                 }
