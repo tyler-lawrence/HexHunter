@@ -10,7 +10,7 @@ import GameKit
 
 struct LeaderboardView: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    @State private var gameMode: GameMode = .survival
+    @State private var gameMode: GameMode = .colorOfTheDay
     @State var entries: [GKLeaderboard.Entry] = []
     var contentUnavailableMessage: String {
         GameCenterManager.shared.isGameCenterEnabled ?
