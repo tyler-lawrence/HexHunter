@@ -116,6 +116,7 @@
 		5BE676FB2DE9E85E006A26CE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE676FA2DE9E85E006A26CE /* AppState.swift */; };
 		5BE677792DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */; };
 		5BE6777B2DEDD635006A26CE /* ColorOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6777A2DEDD635006A26CE /* ColorOfTheDayView.swift */; };
+		5BE678B12DEF5273006A26CE /* DetailedSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE678B02DEF5273006A26CE /* DetailedSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,7 @@
 		5BE676FA2DE9E85E006A26CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5BE677782DEA25FC006A26CE /* ColorOfTheDayGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayGameplayView.swift; sourceTree = "<group>"; };
 		5BE6777A2DEDD635006A26CE /* ColorOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfTheDayView.swift; sourceTree = "<group>"; };
+		5BE678B02DEF5273006A26CE /* DetailedSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
 				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
+				5BE678B02DEF5273006A26CE /* DetailedSliderView.swift */,
 				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
 				5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */,
 				5B8DBEE72BF3BF800079F13F /* HHProgressView.swift */,
@@ -676,6 +679,7 @@
 				5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */,
 				5BA3D9DD2BBC508E003DE2F8 /* HexcodeExplanationView.swift in Sources */,
 				5B5BA3962BB89BD100B558EE /* Color+InitFromHex.swift in Sources */,
+				5BE678B12DEF5273006A26CE /* DetailedSliderView.swift in Sources */,
 				5BB39A752BC1E90300A38EAD /* TimedGameBaseView.swift in Sources */,
 				5B0E330B2BC85A5D00F934DE /* ColorOfDayService.swift in Sources */,
 				5B43BCF32BCD75E000054F2E /* CKError.swift in Sources */,
@@ -917,7 +921,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;
@@ -958,7 +962,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhatTheHex/WhatTheHex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatTheHex/Preview Content\"";
 				DEVELOPMENT_TEAM = 2PF4YUG536;

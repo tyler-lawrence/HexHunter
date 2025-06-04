@@ -10,11 +10,12 @@ import SwiftUI
 struct RGBSlidersView: View {
     @Binding var hexcode: Hexcode
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    let detailEnabled: Bool
     var shared: some View {
         Group {
-            HexComponentPickerView(component: $hexcode.red)
-            HexComponentPickerView(component: $hexcode.green)
-            HexComponentPickerView(component: $hexcode.blue)
+            HexComponentPickerView(component: $hexcode.red, detailEnabled: detailEnabled)
+            HexComponentPickerView(component: $hexcode.green, detailEnabled: detailEnabled)
+            HexComponentPickerView(component: $hexcode.blue, detailEnabled: detailEnabled)
         }
     }
     var body: some View {
@@ -38,7 +39,7 @@ struct RGBSlidersView: View {
     struct Preview: View {
         @State var viewModel = PracticeModeViewModel()
         var body: some View {
-            RGBSlidersView(hexcode: $viewModel.playerHexcode)
+            RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: true)
         }
     }
     return Preview()

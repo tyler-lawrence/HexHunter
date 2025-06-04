@@ -38,13 +38,13 @@ struct TimedGameBaseView: View {
                 VStack {
                     TimerView(viewModel: viewModel)
                     squaresView.original
-                    RGBSlidersView(hexcode: $viewModel.playerHexcode)
+                    RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
                     guessButton
                 }
             } else {
                 HStack {
                     squaresView.rotated
-                    RGBSlidersView(hexcode: $viewModel.playerHexcode)
+                    RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
                         .frame(width: geo.size.width * 0.6)
                         .fixedSize(horizontal: true, vertical: false)
                         .padding()
