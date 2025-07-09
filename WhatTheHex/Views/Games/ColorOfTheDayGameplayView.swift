@@ -81,26 +81,18 @@ struct ColorOfTheDayGameplayView: View {
             }
             .onDisappear {
                 AudioPlayer.shared.stopBackgroundSound()
-                if gameKitPreference {
-                    Task {
-                        await GameCenterManager.shared.uploadScore(
-                            viewModel.GKFormattedScore,
-                            for: .colorOfTheDay
-                        )
-                    }
-                }
             }
             .alert("Are you sure?", isPresented: $showingConfirmGuessAlert) {
                 Button("Yes!") {
                     viewModel.submitGuess()
+                    if gameKitPreference {
+                        Task {
+                            await uploadScoreToGameCenter()
+                        }
+                    }
                 }
                 Button("No") {
                     showingConfirmGuessAlert.toggle()
-                }
-            }
-            .alert(viewModel.gameOverMessage, isPresented: $viewModel.gameOver) {
-                Button("Ok") {
-                    presentationMode.wrappedValue.dismiss()
                 }
             }
             .alert("Check your network connection", isPresented: $showingLoadingAlert) {
@@ -108,6 +100,16 @@ struct ColorOfTheDayGameplayView: View {
             }
         } else {
             OnboardingView(hasOnboarded: $hasOnboarded, gameMode: .colorOfTheDay)
+        }
+    }
+    private func uploadScoreToGameCenter() async {
+        if gameKitPreference {
+            Task {
+                await GameCenterManager.shared.uploadScore(
+                    viewModel.GKFormattedScore,
+                    for: .colorOfTheDay
+                )
+            }
         }
     }
 }
