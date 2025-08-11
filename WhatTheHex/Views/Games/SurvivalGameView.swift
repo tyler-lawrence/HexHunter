@@ -78,14 +78,14 @@ struct SurvivalGameView: View {
                     VStack {
                         gameDetailsView.rotated
                         squaresView.original
-                        RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                         Spacer()
                         guessButton
                     }
                 } else {
                     HStack {
                         squaresView.rotated
-                        RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                             .frame(minWidth: geo.size.width * 0.3)
                         if dynamicTypeSize.isAccessibilitySize {
                             ScrollView {

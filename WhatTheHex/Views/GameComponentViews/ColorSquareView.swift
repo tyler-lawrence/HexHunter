@@ -33,14 +33,11 @@ struct ColorSquareView: View {
         VStack(spacing: 0) {
             Text(title ?? "")
                 .font(font)
-            RoundedRectangle(cornerRadius: 15.0)
+            Rectangle()
                 .foregroundStyle(Color(hexcode))
-                .frame(minWidth: minimumFrameSize, minHeight: minimumFrameSize * 0.5)
-                .aspectRatio(1, contentMode: .fit)
             Text(hexLabel)
         }
         .lineLimit(1)
-        .minimumScaleFactor(0.5)
     }
 }
 

@@ -50,7 +50,7 @@ struct TutorialView: View {
                     }
                     .font(.title)
                     TipView(sliderComponentTip, arrowEdge: .bottom)
-                    HexComponentPickerView(component: $playerHexcode.red, detailEnabled: true)
+                    HexComponentPickerView(component: $playerHexcode.red, selectedDigit: .constant(nil))
                     Spacer()
                     nextButton
                 }
