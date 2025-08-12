@@ -14,30 +14,45 @@ struct ColorSquareView: View {
     var hexLabel: String {
         showingCode ? hexcode.display : " "
     }
-    var minimumFrameSize: CGFloat = 100
     var showingCode: Bool
     init(
         font: Font = .title2,
         title: LocalizedStringKey?,
         hexcode: Hexcode,
-        minimumFrameSize: CGFloat = 100,
         showingCode: Bool
     ) {
         self.font = font
         self.title = title
         self.hexcode = hexcode
-        self.minimumFrameSize = minimumFrameSize
         self.showingCode = showingCode
     }
     var body: some View {
-        VStack(spacing: 0) {
-            Text(title ?? "")
-                .font(font)
-            Rectangle()
-                .foregroundStyle(Color(hexcode))
-            Text(hexLabel)
-        }
-        .lineLimit(1)
+        Rectangle()
+            .foregroundStyle(Color(hexcode))
+            .overlay {
+                VStack {
+                    if let title {
+                        Text(title)
+                            .font(.title2)
+                            .padding(8)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12.0)
+                                    .fill(Material.thin)
+                            )
+                    }
+                    Spacer()
+                    if hexLabel != " " {
+                        Text(hexLabel)
+                            .font(.title2)
+                            .padding(8)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12.0)
+                                    .fill(Material.thin)
+                            )
+                    }
+                }
+                .padding()
+            }
     }
 }
 

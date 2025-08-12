@@ -16,9 +16,10 @@ struct SandboxGameView: View {
                     RotatingView(portraitOrientation: .horizontal) {
                         Group {
                             Spacer()
-                            ColorSquareView(title: "", hexcode: playerHexcode, showingCode: true)
+                            ColorSquareView(title: nil, hexcode: playerHexcode, showingCode: true)
+                                .roundedCorner()
                             Spacer()
-                            VStack {
+                            VStack(alignment: .leading) {
                                 Text("R: \(playerHexcode.red.toColorScale())")
                                 Text("G: \(playerHexcode.green.toColorScale())")
                                 Text("B: \(playerHexcode.blue.toColorScale())")
@@ -36,7 +37,8 @@ struct SandboxGameView: View {
                 HStack {
                     RotatingView(portraitOrientation: .horizontal) {
                         Group {
-                            ColorSquareView(title: "", hexcode: playerHexcode, showingCode: true)
+                            ColorSquareView(title: nil, hexcode: playerHexcode, showingCode: true)
+                                .roundedCorner()
                             VStack {
                                 Text("R: \(playerHexcode.red.toColorScale())")
                                 Text("G: \(playerHexcode.green.toColorScale())")

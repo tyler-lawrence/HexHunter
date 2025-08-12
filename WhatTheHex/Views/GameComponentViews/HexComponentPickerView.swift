@@ -24,8 +24,14 @@ struct HexComponentPickerView: View {
                 HStack {
                     Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15) { editing in
-                        selectedDigit = editing ? .one : nil
-                        editing ? (onEdit ?? {})() : nil
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .one
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
+                        }
                     }
                     .sensoryFeedback(.selection, trigger: component.digit1) { _, new in
                         new != 0
@@ -34,8 +40,14 @@ struct HexComponentPickerView: View {
                 HStack {
                     Text(component.digit2Display)
                     Slider(value: .convert(from: $component.digit2), in: 0...15) { editing in
-                        selectedDigit = editing ? .two : nil
-                        editing ? (onEdit ?? {})() : nil
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .two
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
+                        }
                     }
                     .sensoryFeedback(.selection, trigger: component.digit2) { _, new in
                         new != 0
@@ -50,7 +62,7 @@ struct HexComponentPickerView: View {
         .tint(component.hexCategory.displayColor)
         .padding(5)
         .background(
-            RoundedRectangle(cornerRadius: 15.0)
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .foregroundStyle(Material.thickMaterial)
         )
     }

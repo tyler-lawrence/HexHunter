@@ -56,7 +56,7 @@ struct DetailedSliderView: View {
         }
         .padding()
         .background(Material.bar)
-        .clipShape(RoundedRectangle(cornerRadius: 50))
+        .roundedCorner()
         .shadow(radius: 12.0)
     }
 }

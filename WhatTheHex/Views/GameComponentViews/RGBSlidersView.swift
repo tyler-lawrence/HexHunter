@@ -27,6 +27,7 @@ struct RGBSlidersView: View {
                     component: bindingToDigit,
                     digitKeyPath: selectedDigit.keyPath
                 )
+                .transition(.scale.combined(with: .opacity))
             }
             HexComponentPickerView(
                 component: $hexcode.red,
@@ -44,6 +45,7 @@ struct RGBSlidersView: View {
                 onEdit: { selectedComponentKeyPath = \.blue }
             )
         }
+        .padding(.horizontal)
     }
     var body: some View {
         #if os(iOS)

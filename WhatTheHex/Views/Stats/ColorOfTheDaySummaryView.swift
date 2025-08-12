@@ -38,35 +38,33 @@ struct ColorOfTheDaySummaryView: View {
         .font(.title)
     }
     var body: some View {
-        GeometryReader { geo in
-            if geo.size.height > geo.size.width {
-                VStack {
-                    squaresView.original
-                    detailsView
-                    if let rank {
-                        HStack {
-                            Text("Current rank:")
-                                .font(.title)
-                            Text("\(rank)")
-                                .font(.largeTitle)
-                                .padding()
-                                .foregroundStyle(.white)
-                                .background(
-                                    Image(.blankHexToken)
-                                        .resizable()
-                                        .scaledToFit()
-                                )
-                        }
+        ZStack {
+            squaresView.original
+                .roundedCorner()
+            VStack {
+                detailsView
+                if let rank {
+                    HStack {
+                        Text("Current rank:")
+                            .font(.title)
+                        Text("\(rank)")
+                            .font(.largeTitle)
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(
+                                Image(.blankHexToken)
+                                    .resizable()
+                                    .scaledToFit()
+                            )
                     }
                 }
-                .padding()
-            } else {
-                HStack {
-                    squaresView.rotated
-                    detailsView
-                }
-                .padding()
             }
+            .padding()
+            .background(
+                Rectangle()
+                    .foregroundStyle(Material.thin)
+                    .roundedCorner()
+            )
         }
         .onAppear {
             Task {

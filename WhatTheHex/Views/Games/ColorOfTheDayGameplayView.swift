@@ -53,6 +53,7 @@ struct ColorOfTheDayGameplayView: View {
         RotatingView(portraitOrientation: .vertical) {
             Group {
                 RGBSlidersView(hexcode: $viewModel.playerHexcode)
+                    .padding(.bottom)
                 Button("Guess") {
                     showingConfirmGuessAlert.toggle()
                 }.buttonStyle(GameSelectionButton())
@@ -65,15 +66,17 @@ struct ColorOfTheDayGameplayView: View {
                 if geo.size.height > geo.size.width {
                     VStack {
                         squaresView.original
+                            .roundedCorner()
+                            .padding(.horizontal)
                         controlsView.original
                     }
-                    .padding()
                 } else {
                     HStack {
                         squaresView.rotated
+                            .roundedCorner()
+                            .padding(.horizontal)
                         controlsView.rotated
                     }
-                    .padding()
                 }
             }
             .onAppear {
