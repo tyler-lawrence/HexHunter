@@ -16,14 +16,14 @@ struct SubmissionRowView: View {
             Text(submission.date.formatted(date: .numeric, time: .omitted))
         }
     }
-    var squares: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal) {
-            Group {
-                ColorSquareView(title: "Your guess", hexcode: submission.playerGuess, showingCode: true)
-                ColorSquareView(title: "Target", hexcode: submission.target, showingCode: true)
-            }
-            .padding()
+    var squares: some View {
+        HStack(spacing: 0) {
+            ColorSquareView(title: "Target", hexcode: submission.target, showingCode: true)
+            ColorSquareView(title: "Your guess", hexcode: submission.playerGuess, showingCode: true)
         }
+        .frame(height: 150)
+        .roundedCorner()
+        .padding(.horizontal)
     }
     var scoreLabel: some View {
         Text("\(submission.similarityLabel)%")
@@ -42,18 +42,19 @@ struct SubmissionRowView: View {
             }
             if dynamicTypeSize.isAccessibilitySize {
                 HStack {
-                    squares.rotated
+                    squares
                     scoreLabel
                 }.padding(.horizontal)
             } else {
                 VStack {
-                    squares.original
+                    squares
                     scoreLabel
                 }
             }
         }
         .background(
-            RoundedRectangle(cornerRadius: 25.0)
+            Rectangle()
+                .roundedCorner()
                 .foregroundStyle(Material.bar)
         )
     }
