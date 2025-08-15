@@ -15,18 +15,27 @@ struct SandboxGameView: View {
                 VStack {
                     RotatingView(portraitOrientation: .horizontal) {
                         Group {
-                            Spacer()
                             ColorSquareView(title: nil, hexcode: playerHexcode, showingCode: true)
                                 .roundedCorner()
-                            Spacer()
+                                .padding(.trailing)
+
+                            let channels: [(label: String, value: Int)] = [
+                                ("R:", playerHexcode.red.toColorScale()),
+                                ("G:", playerHexcode.green.toColorScale()),
+                                ("B:", playerHexcode.blue.toColorScale())
+                            ]
                             VStack(alignment: .leading) {
-                                Text("R: \(playerHexcode.red.toColorScale())")
-                                Text("G: \(playerHexcode.green.toColorScale())")
-                                Text("B: \(playerHexcode.blue.toColorScale())")
+                                ForEach(channels, id: \.label) { channel in
+                                    HStack {
+                                        Text(channel.label)
+                                        Text("\(channel.value)")
+                                            .frame(width: 60, alignment: .trailing) // enough for 3 digits
+                                    }
+                                    .monospaced()
+                                }
                             }
-                            .frame(width: geo.size.width * 0.3)
                             .font(.title)
-                            Spacer()
+                            .padding(.horizontal)
                         }
                     }.original
                     Divider()
