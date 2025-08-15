@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailedSliderView: View {
-    @Binding var component: Component
+    @State var component: Component
     var digitKeyPath: WritableKeyPath<Component, Int>
     var digit1Scale: CGFloat {
         digitKeyPath == \.digit1 ? 1.3 : 1
@@ -26,9 +26,9 @@ struct DetailedSliderView: View {
                     .bold(digitKeyPath == \.digit2)
                     .scaleEffect(digit2Scale)
             }
-                .monospaced()
-                .font(.title)
-                .foregroundStyle(component.hexCategory.displayColor)
+            .monospaced()
+            .font(.title)
+            .foregroundStyle(component.hexCategory.displayColor)
             HStack {
                 Spacer()
                 ForEach(0..<16) { val in
@@ -42,17 +42,6 @@ struct DetailedSliderView: View {
                     Spacer()
                 }
             }
-            Slider(
-                value: .convert(from: Binding(
-                    get: { component[keyPath: digitKeyPath] },
-                    set: { component[keyPath: digitKeyPath] = $0 }
-                )),
-                in: 0...15
-            )
-                .sensoryFeedback(.selection, trigger: component[keyPath: digitKeyPath]) { _, new in
-                    new != 0
-                }
-                .tint(component.hexCategory.displayColor)
         }
         .padding()
         .background(Material.bar)
@@ -64,6 +53,6 @@ struct DetailedSliderView: View {
 
 #Preview {
     @Previewable @State var component = Component(hexCategory: .red, digit1: 0, digit2: 0)
-    DetailedSliderView(component: $component, digitKeyPath: \.digit1)
-    DetailedSliderView(component: $component, digitKeyPath: \.digit2)
+    DetailedSliderView(component: component, digitKeyPath: \.digit1)
+    DetailedSliderView(component: component, digitKeyPath: \.digit2)
 }

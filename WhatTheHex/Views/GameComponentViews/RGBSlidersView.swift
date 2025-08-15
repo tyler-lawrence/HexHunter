@@ -17,16 +17,12 @@ struct RGBSlidersView: View {
             Spacer()
             if let selectedComponentKeyPath,
                let selectedDigit {
-                let bindingToDigit = Binding<Component>(
-                    get: { hexcode[keyPath: selectedComponentKeyPath] },
-                    set: { newValue in
-                        hexcode[keyPath: selectedComponentKeyPath] = newValue
-                    }
-                )
+                @State var component = hexcode[keyPath: selectedComponentKeyPath]
                 DetailedSliderView(
-                    component: bindingToDigit,
+                    component: component,
                     digitKeyPath: selectedDigit.keyPath
                 )
+                .id(component)
                 .transition(.scale.combined(with: .opacity))
             }
             HexComponentPickerView(
