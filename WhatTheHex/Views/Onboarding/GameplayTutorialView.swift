@@ -25,6 +25,7 @@ struct GameplayTutorialView: View {
                 .padding()
             Spacer()
             ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
+                .roundedCorner()
                 .padding(.horizontal)
                 .frame(width: 180, height: 180)
                 .overlay {

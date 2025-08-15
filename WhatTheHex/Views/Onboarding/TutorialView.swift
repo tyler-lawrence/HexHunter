@@ -43,7 +43,8 @@ struct TutorialView: View {
                         Text(" in the displayed color.")
                     }
                     .font(.title2)
-                    ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
+                    ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
+                        .roundedCorner()
                     VStack {
                         Text("Hexcode: #\(playerHexcode.display)")
                         Text("Red: \(playerHexcode.red.toColorScale())")
