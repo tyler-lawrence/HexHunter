@@ -26,7 +26,7 @@ struct SandboxGameView: View {
                             ]
                             VStack(alignment: .leading) {
                                 ForEach(channels, id: \.label) { channel in
-                                    HStack {
+                                    HStack(spacing: 0) {
                                         Text(channel.label)
                                         Text("\(channel.value)")
                                             .frame(width: 60, alignment: .trailing) // enough for 3 digits
