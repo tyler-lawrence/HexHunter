@@ -1109,7 +1109,6 @@
       }
     },
     "Your Guess" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

@@ -43,14 +43,15 @@ struct TutorialView: View {
                         Text(" in the displayed color.")
                     }
                     .font(.title2)
-                    ColorSquareView(title: "", hexcode: playerHexcode, showingCode: false)
+                    ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
+                        .roundedCorner()
                     VStack {
                         Text("Hexcode: #\(playerHexcode.display)")
                         Text("Red: \(playerHexcode.red.toColorScale())")
                     }
                     .font(.title)
                     TipView(sliderComponentTip, arrowEdge: .bottom)
-                    HexComponentPickerView(component: $playerHexcode.red, detailEnabled: true)
+                    HexComponentPickerView(component: $playerHexcode.red, selectedDigit: .constant(nil))
                     Spacer()
                     nextButton
                 }

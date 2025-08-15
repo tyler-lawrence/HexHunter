@@ -31,7 +31,7 @@ struct SurvivalGameView: View {
         RotatingView(portraitOrientation: .horizontal) {
             Group {
                 ColorSquareView(title: "Target", hexcode: viewModel.targetHexcode, showingCode: viewModel.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: viewModel.playerHexcode, showingCode: true)
+                ColorSquareView(title: "Your Guess", hexcode: viewModel.playerHexcode, showingCode: true)
             }
         }
     }
@@ -78,14 +78,18 @@ struct SurvivalGameView: View {
                     VStack {
                         gameDetailsView.rotated
                         squaresView.original
-                        RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
+                            .roundedCorner()
+                            .padding(.horizontal)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                         Spacer()
                         guessButton
                     }
                 } else {
                     HStack {
                         squaresView.rotated
-                        RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: false)
+                            .roundedCorner()
+                            .padding(.horizontal)
+                        RGBSlidersView(hexcode: $viewModel.playerHexcode)
                             .frame(minWidth: geo.size.width * 0.3)
                         if dynamicTypeSize.isAccessibilitySize {
                             ScrollView {
@@ -103,7 +107,6 @@ struct SurvivalGameView: View {
                     }
                 }
             }
-            .padding()
             .onAppear {
                 AudioPlayer.shared.startBackgroundLoop(sound: "GameplayLoop", type: "mp3")
             }

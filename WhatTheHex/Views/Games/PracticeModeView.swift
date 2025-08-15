@@ -20,7 +20,7 @@ struct PracticeModeView: View {
                     showingCode: false
                 )
                 ColorSquareView(
-                    title: "Your guess",
+                    title: "Your Guess",
                     hexcode: viewModel.playerHexcode,
                     showingCode: true
                 )
@@ -30,7 +30,7 @@ struct PracticeModeView: View {
     var controlsView: RotatingView< some View > {
         RotatingView(portraitOrientation: .vertical) {
             Group {
-                RGBSlidersView(hexcode: $viewModel.playerHexcode, detailEnabled: true)
+                RGBSlidersView(hexcode: $viewModel.playerHexcode)
                 Spacer()
             }
         }
@@ -40,6 +40,7 @@ struct PracticeModeView: View {
             viewModel.submitGuess()
         }
         .buttonStyle(GameSelectionButton())
+        .padding(.top)
     }
     var accuracyLabel: some View {
         HStack(spacing: 0) {
@@ -62,12 +63,16 @@ struct PracticeModeView: View {
                 VStack {
                     accuracyLabel
                     squaresView.original
+                        .roundedCorner()
+                        .padding(.horizontal)
                     controlsView.original
                     buttonView
                 }
             } else {
                 HStack {
                     squaresView.rotated
+                        .roundedCorner()
+                        .padding(.horizontal)
                     controlsView.rotated
                     VStack {
                         accuracyLabel
@@ -76,7 +81,6 @@ struct PracticeModeView: View {
                 }
             }
         }
-        .padding()
         .onAppear {
             AudioPlayer.shared.startBackgroundLoop(sound: "PracticeMode", type: "mp3")
         }

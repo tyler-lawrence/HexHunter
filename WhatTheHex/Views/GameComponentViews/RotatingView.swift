@@ -30,9 +30,9 @@ struct RotatingView<Content: View> {
         Group {
             switch portraitOrientation {
             case .horizontal:
-                HStack {content()}
+                HStack(spacing: 0) {content()}
             case .vertical:
-                VStack {content()}
+                VStack(spacing: 0) {content()}
             }
         }
     }
@@ -40,9 +40,9 @@ struct RotatingView<Content: View> {
         Group {
             switch portraitOrientation {
             case .horizontal:
-                VStack {content()}
+                VStack(spacing: 0) {content()}
             case .vertical:
-                HStack {content()}
+                HStack(spacing: 0) {content()}
             }
         }
     }

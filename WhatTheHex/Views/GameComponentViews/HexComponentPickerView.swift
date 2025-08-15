@@ -9,12 +9,11 @@ import SwiftUI
 
 struct HexComponentPickerView: View {
     @Binding var component: Component
-    @State private var selectedDigit: Component.Digit?
+    @Binding var selectedDigit: Component.Digit?
+    var onEdit: (() -> Void)?
     var colorLabel: LocalizedStringKey {
         LocalizedStringKey(component.hexCategory.rawValue)
     }
-    let detailOffset: CGFloat = 120
-    let detailEnabled: Bool
     var iosSliders: some View {
         HStack {
             Text(colorLabel)
@@ -25,7 +24,14 @@ struct HexComponentPickerView: View {
                 HStack {
                     Text(component.digit1Display)
                     Slider(value: .convert(from: $component.digit1), in: 0...15) { editing in
-                        selectedDigit = editing ? .one : nil
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .one
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
+                        }
                     }
                     .sensoryFeedback(.selection, trigger: component.digit1) { _, new in
                         new != 0
@@ -34,7 +40,14 @@ struct HexComponentPickerView: View {
                 HStack {
                     Text(component.digit2Display)
                     Slider(value: .convert(from: $component.digit2), in: 0...15) { editing in
-                        selectedDigit = editing ? .two : nil
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .two
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
+                        }
                     }
                     .sensoryFeedback(.selection, trigger: component.digit2) { _, new in
                         new != 0
@@ -46,23 +59,10 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(component.hexCategory.displayColor)
                 .frame(width: 80)
         }
-        .overlay {
-            if detailEnabled {
-                if let selectedDigit {
-                    DetailedSliderView(
-                        component: $component,
-                        digitKeyPath: selectedDigit.keyPath
-                    )
-                    .transition(.opacity.combined(with: .offset(y: 10)))
-                    .offset(y: -detailOffset)
-                }
-            }
-        }
-        .animation(.easeInOut(duration: 0.2), value: selectedDigit)
         .tint(component.hexCategory.displayColor)
         .padding(5)
         .background(
-            RoundedRectangle(cornerRadius: 15.0)
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .foregroundStyle(Material.thickMaterial)
         )
     }
@@ -100,7 +100,7 @@ struct HexComponentPickerView: View {
     struct Preview: View {
         @State var component = Component(hexCategory: .red, digit1: 10, digit2: 4)
         var body: some View {
-            HexComponentPickerView(component: $component, detailEnabled: true)
+            HexComponentPickerView(component: $component, selectedDigit: .constant(nil), onEdit: {})
         }
     }
     return Preview()

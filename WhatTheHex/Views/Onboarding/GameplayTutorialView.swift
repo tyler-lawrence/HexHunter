@@ -25,6 +25,7 @@ struct GameplayTutorialView: View {
                 .padding()
             Spacer()
             ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
+                .roundedCorner()
                 .padding(.horizontal)
                 .frame(width: 180, height: 180)
                 .overlay {
@@ -63,7 +64,7 @@ struct GameplayTutorialView: View {
             } else {
                 HStack { playerHexcodeSquare }
             }
-            RGBSlidersView(hexcode: $playerHexcode, detailEnabled: true)
+            RGBSlidersView(hexcode: $playerHexcode)
                 .onChange(of: playerHexcode) {
                     if playerHexcode == targetHexcode {
                         scale = 1
