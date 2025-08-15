@@ -78,7 +78,6 @@
 		5B9001BF2BDC0A7500174C70 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */; };
 		5B9001C12BDC149A00174C70 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C02BDC149A00174C70 /* GameCenterManager.swift */; };
 		5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */; };
-		5B919F8F2E46340A0032F6A2 /* SliderHeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B919F8E2E46340A0032F6A2 /* SliderHeldView.swift */; };
 		5BA3D9CC2BBB64A0003DE2F8 /* PracticeModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */; };
 		5BA3D9D02BBB6E23003DE2F8 /* ColorSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */; };
 		5BA3D9D52BBC342F003DE2F8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */; };
@@ -195,7 +194,6 @@
 		5B9001BE2BDC0A7500174C70 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		5B9001C02BDC149A00174C70 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		5B9001C62BDFCD6000174C70 /* LeaderboardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardGame.swift; sourceTree = "<group>"; };
-		5B919F8E2E46340A0032F6A2 /* SliderHeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeldView.swift; sourceTree = "<group>"; };
 		5BA3D9CB2BBB64A0003DE2F8 /* PracticeModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModeViewModel.swift; sourceTree = "<group>"; };
 		5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSquareView.swift; sourceTree = "<group>"; };
 		5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 				5BD058212BEAD8D7007E0336 /* RotatingView.swift */,
 				5BA3D9D42BBC342F003DE2F8 /* TimerView.swift */,
 				5BA3D9CF2BBB6E23003DE2F8 /* ColorSquareView.swift */,
-				5B919F8E2E46340A0032F6A2 /* SliderHeldView.swift */,
 				5B5BA39B2BB8B1BD00B558EE /* HexComponentPickerView.swift */,
 				5BE678B02DEF5273006A26CE /* DetailedSliderView.swift */,
 				5B68EADE2BC58D8500ABD6E0 /* RGBSlidersView.swift */,
@@ -705,7 +702,6 @@
 				5B43BD022BD0086000054F2E /* GameSelectionButton.swift in Sources */,
 				5B8B6A492D033EB2003500FF /* NotificationIdentifier.swift in Sources */,
 				5B8F25AD2C08A3170028B135 /* GKLeaderboardEntry+HHLeaderboardEntry.swift in Sources */,
-				5B919F8F2E46340A0032F6A2 /* SliderHeldView.swift in Sources */,
 				5B5BA38E2BB8894900B558EE /* Color+Random.swift in Sources */,
 				5B9001BA2BDAE9D400174C70 /* GameMode.swift in Sources */,
 				5B0962E12BE5582500425CE8 /* SliderComponentTip.swift in Sources */,
