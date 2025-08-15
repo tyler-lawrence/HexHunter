@@ -151,6 +151,9 @@
         }
       }
     },
+    "App Theme" : {
+
+    },
     "Are you sure you want to leave?" : {
       "localizations" : {
         "ar" : {
@@ -369,6 +372,7 @@
       }
     },
     "Dark mode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -654,6 +658,9 @@
           }
         }
       }
+    },
+    "Player" : {
+
     },
     "Practice" : {
       "comment" : "Practice game mode button label",

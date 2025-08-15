@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("GameKitPreference") var gameKitPreference = true
-    @AppStorage("darkModePreferred") var darkModePreferred = false
+    @AppStorage(DefaultsKey.gameCenterPreference) var gameKitPreference = true
+    @AppStorage(DefaultsKey.preferredAppTheme) private var preferredAppTheme: AppTheme = .system
+
     var body: some View {
         Form {
             Toggle("Upload scores to the leaderboard", isOn: $gameKitPreference)
             Section("Theme") {
-                Toggle("Dark mode", isOn: $darkModePreferred)
+                Picker("App Theme", selection: $preferredAppTheme) {
+                    ForEach(AppTheme.allCases) { theme in
+                        Text(theme.displayName).tag(theme)
+                    }
+                }
             }
             Section("Notifications") {
                 Button("Open iOS Settings") {

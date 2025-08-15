@@ -15,10 +15,7 @@ struct WhatTheHexApp: App {
     @State private var dataController = DataController()
     @State private var appState = AppState()
     @State private var audioPlayer = AudioPlayer()
-    @AppStorage("darkModePreferred") var darkModePreferred: Bool = false
-    var preferredScheme: ColorScheme {
-        darkModePreferred ? .dark : .light
-    }
+    @AppStorage(DefaultsKey.preferredAppTheme) private var appTheme: AppTheme = .system
     init() {
         NotificationManager.shared.configure(with: appState)
         try? Tips.configure([.displayFrequency(.immediate), .datastoreLocation(.applicationDefault)])
@@ -26,7 +23,7 @@ struct WhatTheHexApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .preferredColorScheme(preferredScheme)
+                .preferredColorScheme(appTheme.colorScheme)
                 .environment(dataController)
                 .environment(audioPlayer)
                 .environment(appState)
