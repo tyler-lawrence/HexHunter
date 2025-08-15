@@ -58,6 +58,7 @@ struct DetailedSliderView: View {
         .background(Material.bar)
         .roundedCorner()
         .shadow(radius: 12.0)
+        .allowsHitTesting(false)
     }
 }
 
