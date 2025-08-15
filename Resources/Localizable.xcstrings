@@ -151,6 +151,9 @@
         }
       }
     },
+    "App Theme" : {
+
+    },
     "Are you sure you want to leave?" : {
       "localizations" : {
         "ar" : {
@@ -369,6 +372,7 @@
       }
     },
     "Dark mode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -629,6 +633,9 @@
         }
       }
     },
+    "Notifications" : {
+
+    },
     "Ok" : {
       "localizations" : {
         "ar" : {
@@ -639,6 +646,9 @@
         }
       }
     },
+    "Open iOS Settings" : {
+
+    },
     "Play again" : {
       "localizations" : {
         "ar" : {
@@ -648,6 +658,9 @@
           }
         }
       }
+    },
+    "Player" : {
+
     },
     "Practice" : {
       "comment" : "Practice game mode button label",
@@ -995,6 +1008,9 @@
           }
         }
       }
+    },
+    "Theme" : {
+
     },
     "Then we divide those differences by 255 to get a similarity measure." : {
       "localizations" : {

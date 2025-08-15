@@ -106,6 +106,7 @@
 		5BB39A772BC1ED3A00A38EAD /* RapidGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */; };
 		5BB39A792BC1EDF800A38EAD /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A782BC1EDF800A38EAD /* Submission.swift */; };
 		5BB39A7F2BC1F44500A38EAD /* RapidGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */; };
+		5BB8441A2E4F71FC00947BD4 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB844192E4F71FC00947BD4 /* AppTheme.swift */; };
 		5BC224BE2BCD535A0048E76D /* Hexcode+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E32FE2BC5D81300F934DE /* Hexcode+Equatable.swift */; };
 		5BC224C02BCD53C30048E76D /* HexcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E33042BC6DF3E00F934DE /* HexcodeTests.swift */; };
 		5BC224C12BCD543F0048E76D /* Component+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E331B2BC95F2200F934DE /* Component+Equatable.swift */; };
@@ -215,6 +216,7 @@
 		5BB39A762BC1ED3A00A38EAD /* RapidGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameOverView.swift; sourceTree = "<group>"; };
 		5BB39A782BC1EDF800A38EAD /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		5BB39A7E2BC1F44500A38EAD /* RapidGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidGameView.swift; sourceTree = "<group>"; };
+		5BB844192E4F71FC00947BD4 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		5BCDEB052C8236960053D4EB /* PracticeMode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PracticeMode.mp3; sourceTree = "<group>"; };
 		5BD0581F2BEACF6C007E0336 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		5BD058212BEAD8D7007E0336 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				5B9001C02BDC149A00174C70 /* GameCenterManager.swift */,
 				5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */,
 				5B627A4D2DD372B40029072A /* DefaultsKey.swift */,
+				5BB844192E4F71FC00947BD4 /* AppTheme.swift */,
 				5B8B6A472D033E9B003500FF /* Notifications */,
 				5B0E330C2BC85B8800F934DE /* Service */,
 				5B4F36A62BC4245400F1EB87 /* Audio */,
@@ -732,6 +735,7 @@
 				5B0E32FD2BC5D4C900F934DE /* OnboardingTip.swift in Sources */,
 				5B68EAD82BC4321500ABD6E0 /* SurvivalGameView.swift in Sources */,
 				5B4F36A32BC203A100F1EB87 /* GameModeButtonView.swift in Sources */,
+				5BB8441A2E4F71FC00947BD4 /* AppTheme.swift in Sources */,
 				5BB39A792BC1EDF800A38EAD /* Submission.swift in Sources */,
 				5BB39A662BBC95D700A38EAD /* GameSelectionView.swift in Sources */,
 				5B9001C72BDFCD6000174C70 /* LeaderboardGame.swift in Sources */,
