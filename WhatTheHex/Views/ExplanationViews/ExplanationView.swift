@@ -28,6 +28,7 @@ struct ExplanationView: View {
                 HexcodeExplanationView()
             }
         }
+        .font(.body)
         .padding()
     }
 }

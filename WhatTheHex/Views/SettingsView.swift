@@ -13,8 +13,20 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Toggle("Upload scores to the leaderboard", isOn: $gameKitPreference)
-            Toggle("Dark mode", isOn: $darkModePreferred)
+            Section("Theme") {
+                Toggle("Dark mode", isOn: $darkModePreferred)
+            }
+            Section("Notifications") {
+                Button("Open iOS Settings") {
+                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        if UIApplication.shared.canOpenURL(settingsURL) {
+                            UIApplication.shared.open(settingsURL)
+                        }
+                    }
+                }
+            }
         }
+        .font(.body)
     }
 }
 

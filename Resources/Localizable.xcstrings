@@ -629,6 +629,9 @@
         }
       }
     },
+    "Notifications" : {
+
+    },
     "Ok" : {
       "localizations" : {
         "ar" : {
@@ -638,6 +641,9 @@
           }
         }
       }
+    },
+    "Open iOS Settings" : {
+
     },
     "Play again" : {
       "localizations" : {
@@ -995,6 +1001,9 @@
           }
         }
       }
+    },
+    "Theme" : {
+
     },
     "Then we divide those differences by 255 to get a similarity measure." : {
       "localizations" : {

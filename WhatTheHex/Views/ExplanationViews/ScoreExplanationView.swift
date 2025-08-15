@@ -52,10 +52,11 @@ struct ScoreExplanationView: View {
     """
     var body: some View {
         VStack {
-            HStack {
-                ColorSquareView(title: "", hexcode: hex1, showingCode: true)
-                ColorSquareView(title: "", hexcode: hex2, showingCode: true)
+            HStack(spacing: 0) {
+                ColorSquareView(title: "Target", hexcode: hex1, showingCode: true)
+                ColorSquareView(title: "Player", hexcode: hex2, showingCode: true)
             }
+            .roundedCorner()
             Divider()
             ScrollView {
                 Text(introMessage)
@@ -93,6 +94,7 @@ struct ScoreExplanationView: View {
             }
         }
         .padding()
+        .font(.body)
     }
 }
 
