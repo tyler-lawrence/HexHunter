@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct ColorOfTheDaySummaryView: View {
-    
     let submission: Submission
-    
     var accuracyLabel: String {
         String(format: "%.2f", submission.accuracy)
     }
-    
     @State var rank: Int?
-    
     var squaresView: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal){
-            Group{
+        RotatingView(portraitOrientation: .horizontal) {
+            Group {
                 ColorSquareView(
                     title: "Target",
                     hexcode: submission.target,
@@ -33,60 +29,53 @@ struct ColorOfTheDaySummaryView: View {
             }
         }
     }
-    
     var detailsView: some View {
-        VStack(alignment: .trailing){
+        VStack(alignment: .trailing) {
             Text("Target: \(submission.target.display)")
             Text("Your guess: \(submission.playerGuess.display)")
             Text("Accuracy: \(accuracyLabel)%")
         }
         .font(.title)
     }
-    
     var body: some View {
-        
-        GeometryReader{ geo in
-            if geo.size.height > geo.size.width {
-                VStack{
-                    squaresView.original
-                    detailsView
-                    if let rank {
-                        HStack{
-                            Text("Current rank:")
-                                .font(.title)
-                            Text("\(rank)")
-                                .font(.largeTitle)
-                                .padding()
-                                .foregroundStyle(.white)
-                                .background(
-                                    Image(.blankHexToken)
-                                        .resizable()
-                                        .scaledToFit()
-                                )
-                        }
+        ZStack {
+            squaresView.original
+                .roundedCorner()
+            VStack {
+                detailsView
+                if let rank {
+                    HStack {
+                        Text("Current rank:")
+                            .font(.title)
+                        Text("\(rank)")
+                            .font(.largeTitle)
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(
+                                Image(.blankHexToken)
+                                    .resizable()
+                                    .scaledToFit()
+                            )
                     }
                 }
-                .padding()
-            } else {
-                HStack{
-                    squaresView.rotated
-                    detailsView
-                }
-                .padding()
             }
+            .padding()
+            .background(
+                Rectangle()
+                    .foregroundStyle(Material.thin)
+                    .roundedCorner()
+            )
         }
-        .onAppear{
-            Task{
+        .onAppear {
+            Task {
                 await getRank()
             }
         }
     }
-    
     func getRank() async {
         let entry = await GameCenterManager.shared.fetchPlayerLeaderboardEntry(for: .colorOfTheDay)
         rank = entry?.rank
     }
-    
 }
 
 #if DEBUG

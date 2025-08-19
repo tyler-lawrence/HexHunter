@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct TimerView: View {
-    
-    @State var vm: TimedGameViewModel
+    @State var viewModel: TimedGameViewModel
     @State var lowTimeTrigger: Bool = false
     let lowTimeCounter = 5
     let circleFrameSize: CGFloat = 80
-    
     var circleColor: Color {
-        vm.timeRemaining <= 5 ? .red : .gray
+        viewModel.timeRemaining <= 5 ? .red : .gray
     }
-    
     var circleGradient: RadialGradient {
         RadialGradient(
             colors: [circleColor.opacity(0.2), circleColor],
@@ -26,10 +23,8 @@ struct TimerView: View {
             endRadius: 40
         )
     }
-    
     var body: some View {
-        
-        Text("\(vm.timeRemaining)")
+        Text("\(viewModel.timeRemaining)")
             .font(.largeTitle)
             .foregroundStyle(.white)
             .shadow(radius: 1)
@@ -40,41 +35,40 @@ struct TimerView: View {
                     .frame(width: circleFrameSize, height: circleFrameSize)
                     .foregroundStyle(circleGradient)
                     .shadow(radius: 10)
-                    .phaseAnimator([1, 1.5], trigger: lowTimeTrigger){ content, phase in
+                    .phaseAnimator([1, 1.5], trigger: lowTimeTrigger) { content, phase in
                         content
                             .scaleEffect(phase)
                     }
             )
             .padding(5)
-        
-        // correct guess animation
-            .overlay{
+            // correct guess animation
+            .overlay {
                     Circle()
                         .foregroundStyle(.green)
-                        .overlay{
+                        .overlay {
                             Text("+10")
                                 .font(.largeTitle)
                                 .foregroundStyle(.white)
                         }
-                        .phaseAnimator([0, 1], trigger: vm.bonusTimeAnimationTrigger){ content, phase in
+                        .phaseAnimator([0, 1], trigger: viewModel.bonusTimeAnimationTrigger) { content, phase in
                             content
                                 .opacity(phase)
                         }
             }
             .sensoryFeedback(.warning, trigger: lowTimeTrigger)
-            .onReceive(vm.timer){ _ in
-                vm.timeRemaining -= 1
-                if vm.timeRemaining <= lowTimeCounter {
+            .onReceive(viewModel.timer) { _ in
+                viewModel.timeRemaining -= 1
+                if viewModel.timeRemaining <= lowTimeCounter {
                     lowTimeTrigger.toggle()
                 }
-                if vm.timeRemaining <= 0 {
-                    vm.gameOver = true
-                    vm.timerSubscription?.cancel()
+                if viewModel.timeRemaining <= 0 {
+                    viewModel.gameOver = true
+                    viewModel.timerSubscription?.cancel()
                 }
             }
     }
 }
 
 #Preview {
-    TimerView(vm: SurvivalGameViewModel())
+    TimerView(viewModel: SurvivalGameViewModel())
 }

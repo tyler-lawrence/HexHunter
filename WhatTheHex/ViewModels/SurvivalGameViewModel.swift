@@ -11,44 +11,34 @@ import GameKit
 
 @Observable
 class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
-
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
-    
     var audioFileName: String = "GameplayLoop"
-    
     var timer: Timer.TimerPublisher = Timer.publish(every: 1, on: .main, in: .common)
     var timerSubscription: Cancellable?
     var gameTimeMax: Int
     var timeRemaining: Int
     var correctGuesses = 0
-
     var playerCanGuess = false
-    
     var GKFormattedScore: Int {
         correctGuesses
     }
-    
-    var minimumSimilarityToScore: Double{
+    var minimumSimilarityToScore: Double {
         min(Double(80 + 2 * (correctGuesses / 5)), 100)
     }
     var timeReward: Int = 10
     var bonusTimeAnimationTrigger: Bool = false
-    
     var gameOver: Bool = false
-    
     var gameOverMessage: String {
         """
         Score: \(String(format: "%.0f", calculateScore()))
         """
     }
-    
-    init(gameTimeMax: Int = 30){
+    init(gameTimeMax: Int = 30) {
         self.gameTimeMax = gameTimeMax
         self.timeRemaining = gameTimeMax
         self.timerSubscription = timer.connect()
     }
-    
     func toggleTimer() {
         if timerSubscription != nil {
             timerSubscription?.cancel()
@@ -59,13 +49,11 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
             timerSubscription = timer.connect()
         }
     }
-    
     func correctGuess() {
         correctGuesses += 1
         timeRemaining += timeReward
         bonusTimeAnimationTrigger.toggle()
     }
-    
     func submitGuess() {
         timeRemaining -= 1
         let score = playerHexcode.calculateSimilarity(to: targetHexcode)
@@ -76,7 +64,6 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
         targetHexcode = Hexcode.random()
         playerCanGuess = false
     }
-    
     func reset() {
         gameOver = false
         correctGuesses = 0
@@ -86,10 +73,7 @@ class SurvivalGameViewModel: TimedGameViewModel & LeaderboardGame {
         timer = Timer.publish(every: 1, on: .main, in: .common)
         timerSubscription = timer.connect()
     }
-    
     func calculateScore() -> Double {
         return Double(correctGuesses)
     }
-    
-    
 }

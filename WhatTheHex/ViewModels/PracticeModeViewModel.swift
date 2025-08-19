@@ -9,36 +9,28 @@ import Foundation
 
 @Observable
 class PracticeModeViewModel: GameViewModel {
-    
     var targetHexcode: Hexcode = Hexcode.random()
     var playerHexcode: Hexcode = Hexcode()
-    
     var audioFileName: String = "PracticeMode"
-    
     var gameOverMessage: String {
         """
         Target: \(targetHexcode.display)
         Your Guess: \(playerHexcode.display)
         """
     }
-    
     var accuracy: String {
         String(format: "%.2f", calculateScore())
     }
-    
     var gameOver: Bool = false
-    
     func submitGuess() {
         gameOver = true
     }
-    
     /// resets the game and starts timer
     func reset() {
         gameOver = false
         targetHexcode = Hexcode.random()
         playerHexcode = Hexcode()
     }
-    
     /// Calculates a score representing the difference between two hexes.
     /// scores range from 0 - 100. higher scores are better
     /// - Parameter rhs: Hexcode to compare against

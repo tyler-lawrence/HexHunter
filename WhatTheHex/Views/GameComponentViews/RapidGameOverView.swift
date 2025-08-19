@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct RapidGameOverView: View {
-    let vm: RapidGameViewModel
+    let viewModel: RapidGameViewModel
     var score: String {
-        String(format: "%.0f", vm.calculateScore())
+        String(format: "%.0f", viewModel.calculateScore())
     }
     var body: some View {
-        VStack{
+        VStack {
             Text("Score: \(score)")
                 .font(.largeTitle)
-            ScrollView{
-                ForEach(vm.guesses, id: \.self){ guess in
-                    HStack{
+            ScrollView {
+                ForEach(viewModel.guesses, id: \.self) { guess in
+                    HStack {
                         ColorSquareView(title: "", hexcode: guess.playerGuess, showingCode: true)
                         Text(guess.similarityLabel)
                             .bold()
@@ -34,6 +34,6 @@ struct RapidGameOverView: View {
 
 #if DEBUG
 #Preview {
-    RapidGameOverView(vm: RapidGameViewModel.sample)
+    RapidGameOverView(viewModel: RapidGameViewModel.sample)
 }
 #endif

@@ -8,12 +8,11 @@
 import Foundation
 import RegexBuilder
 
-
 extension String {
     func isValidHexcode() -> Bool {
         let hexcodePattern = Regex {
             "#"
-            Repeat(count: 6){
+            Repeat(count: 6) {
                 CharacterClass(
                     ("0" ... "9"),
                     ("A" ... "F"),

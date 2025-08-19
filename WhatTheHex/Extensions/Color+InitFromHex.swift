@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    init(_ hex: Hexcode){
+    init(_ hex: Hexcode) {
         self.init(
             red: hex.red.colorScaleNormalized(),
             green: hex.green.colorScaleNormalized(),

@@ -9,55 +9,70 @@ import SwiftUI
 
 struct HexComponentPickerView: View {
     @Binding var component: Component
+    @Binding var selectedDigit: Component.Digit?
+    var onEdit: (() -> Void)?
     var colorLabel: LocalizedStringKey {
         LocalizedStringKey(component.hexCategory.rawValue)
     }
     var iosSliders: some View {
-        HStack{
+        HStack {
             Text(colorLabel)
                 .font(.title)
                 .foregroundStyle(component.hexCategory.displayColor)
                 .bold()
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Text(component.digit1Display)
-                    Slider(value: .convert(from: $component.digit1), in: 0...15)
-                        .sensoryFeedback(.selection, trigger: component.digit1){ old, new in
-                            new != 0
+                    Slider(value: .convert(from: $component.digit1), in: 0...15) { editing in
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .one
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
                         }
+                    }
+                    .sensoryFeedback(.selection, trigger: component.digit1) { _, new in
+                        new != 0
+                    }
                 }
                 HStack {
                     Text(component.digit2Display)
-                    Slider(value: .convert(from: $component.digit2), in: 0...15)
-                        .sensoryFeedback(.selection, trigger: component.digit2){ old, new in
-                            new != 0
+                    Slider(value: .convert(from: $component.digit2), in: 0...15) { editing in
+                        withAnimation {
+                            if editing {
+                                selectedDigit = .two
+                                onEdit?()
+                            } else {
+                                selectedDigit = nil
+                            }
                         }
+                    }
+                    .sensoryFeedback(.selection, trigger: component.digit2) { _, new in
+                        new != 0
+                    }
                 }
             }
             Text(component.display)
                 .font(.largeTitle)
                 .foregroundStyle(component.hexCategory.displayColor)
                 .frame(width: 80)
-                
         }
         .tint(component.hexCategory.displayColor)
         .padding(5)
         .background(
-            RoundedRectangle(cornerRadius: 15.0)
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .foregroundStyle(Material.thickMaterial)
         )
-        
-        
     }
-    
-    
     var macSliders: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Text(component.display)
                     .font(.largeTitle)
             }
-            HStack{
+            HStack {
                 Text(component.digit1Display)
                 Slider(value: .convert(from: $component.digit1), in: 0...15)
             }
@@ -73,22 +88,19 @@ struct HexComponentPickerView: View {
                 .foregroundStyle(Material.thickMaterial)
         )
     }
-    
     var body: some View {
-    #if os(macOS)
+        #if os(macOS)
         macSliders
-    #else
+        #else
         iosSliders
-
-    #endif
+        #endif
     }
 }
-
 #Preview {
     struct Preview: View {
         @State var component = Component(hexCategory: .red, digit1: 10, digit2: 4)
         var body: some View {
-            HexComponentPickerView(component: $component)
+            HexComponentPickerView(component: $component, selectedDigit: .constant(nil), onEdit: {})
         }
     }
     return Preview()

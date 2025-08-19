@@ -10,7 +10,5 @@ import TipKit
 
 struct SliderComponentTip: Tip {
     var title: Text = Text("Changing the color components")
-    
     var message: Text? = Text("The top slider controls large change. The bottom slider controls finer detail")
-    
 }

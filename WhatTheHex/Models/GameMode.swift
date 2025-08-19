@@ -8,14 +8,11 @@
 import Foundation
 
 enum GameMode: String {
-    
     case practice = "Practice"
     case rapid = "Rapid"
     case survival = "Survival"
     case colorOfTheDay = "Color of the Day"
-    
     static var leaderboardModes: [GameMode] = [.colorOfTheDay, .survival]
-    
     var gameCenterLeaderboardID: String? {
         switch self {
         case .practice:
@@ -28,7 +25,6 @@ enum GameMode: String {
             "ColorOfTheDay"
         }
     }
-    
     var onboardingInstructions: [String] {
         switch self {
         case .practice:

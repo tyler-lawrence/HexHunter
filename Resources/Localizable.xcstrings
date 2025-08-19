@@ -103,7 +103,11 @@
         }
       }
     },
+    "A" : {
+
+    },
     "A hexcode is a hexadecimal representation of a color. You may have seen a color picking tool request a number from 0 to 255. Let's explore how we can convert something like #%@ to the 0-255 scale." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -113,7 +117,11 @@
         }
       }
     },
+    "Accuracy: " : {
+
+    },
     "Accuracy: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -142,6 +150,9 @@
           }
         }
       }
+    },
+    "App Theme" : {
+
     },
     "Are you sure you want to leave?" : {
       "localizations" : {
@@ -361,6 +372,7 @@
       }
     },
     "Dark mode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -401,6 +413,7 @@
       }
     },
     "Finally, we take the average of the three similarity measures and multiply that by 100 to calculate our final score" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -620,6 +633,9 @@
         }
       }
     },
+    "Notifications" : {
+
+    },
     "Ok" : {
       "localizations" : {
         "ar" : {
@@ -630,6 +646,9 @@
         }
       }
     },
+    "Open iOS Settings" : {
+
+    },
     "Play again" : {
       "localizations" : {
         "ar" : {
@@ -639,6 +658,9 @@
           }
         }
       }
+    },
+    "Player" : {
+
     },
     "Practice" : {
       "comment" : "Practice game mode button label",
@@ -854,6 +876,7 @@
       }
     },
     "Sometimes you also see alpha attached to a hexcode. Alpha represents the opacity of a color." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -925,6 +948,7 @@
       }
     },
     "test" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -945,6 +969,7 @@
       }
     },
     "The scale goes from 00 to FF. The letters are introduced when we would get to double digit numbers. 10 becomes A, 11 becomes B, 12 becomes C, etc. The first number is a large scale change and the second character is finer detail" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -984,6 +1009,9 @@
         }
       }
     },
+    "Theme" : {
+
+    },
     "Then we divide those differences by 255 to get a similarity measure." : {
       "localizations" : {
         "ar" : {
@@ -1005,6 +1033,7 @@
       }
     },
     "To convert the hexcode to a number you first convert the digit to its corresponding numeric value (if necessary) and apply the following formula:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

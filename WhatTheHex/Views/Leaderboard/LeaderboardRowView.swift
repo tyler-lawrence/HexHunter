@@ -9,15 +9,11 @@ import SwiftUI
 import GameKit
 
 struct LeaderboardRowView: View {
-    
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    
     let entry: any HHLeaderboardEntry
     let gameMode: GameMode
-    
     @ScaledMetric(relativeTo: .body) var bodyHeight = 90
     @ScaledMetric(relativeTo: .body) var bodyWidth = 50
-    
     var scoreDisplay: String {
         switch gameMode {
         case .survival:
@@ -28,15 +24,13 @@ struct LeaderboardRowView: View {
             "\(entry.score)"
         }
     }
-    
     var rankAlias: some View {
-        Group{
+        Group {
             Text("\(entry.rank). ")
             Text(entry.alias)
             Spacer()
         }
     }
-    
     var scoreToken: some View {
         Text(scoreDisplay)
             .bold()
@@ -44,21 +38,21 @@ struct LeaderboardRowView: View {
             .lineLimit(1)
             .fixedSize()
             .frame(width: bodyWidth, height: bodyHeight)
-            .background{
+            .background {
                 Image(.blankHexToken)
                     .resizable()
                     .scaledToFill()
             }
+            .padding(.horizontal)
     }
-    
     var body: some View {
         if dynamicTypeSize.isAccessibilitySize {
-            VStack{
-                HStack{rankAlias}
+            VStack {
+                HStack {rankAlias}
                 scoreToken
             }
         } else {
-            HStack{
+            HStack {
                 rankAlias
                 scoreToken
             }
@@ -67,13 +61,13 @@ struct LeaderboardRowView: View {
 }
 
 #Preview {
-    List{
+    List {
         LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleSurvival, gameMode: .survival)
     }
 }
 
 #Preview {
-    List{
+    List {
         LeaderboardRowView(entry: MockGKLeaderboardEntry.sampleColorOfTheDay, gameMode: .colorOfTheDay)
     }
 }

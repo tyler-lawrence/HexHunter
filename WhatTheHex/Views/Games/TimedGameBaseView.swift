@@ -8,44 +8,49 @@
 import SwiftUI
 
 struct TimedGameBaseView: View {
-    
-    @State var vm: TimedGameViewModel
-    
+    @State var viewModel: TimedGameViewModel
     var squaresView: RotatingView<some View> {
-        RotatingView(portraitOrientation: .horizontal){
+        RotatingView(portraitOrientation: .horizontal) {
             Group {
-                ColorSquareView(title: "Target", hexcode: vm.targetHexcode, showingCode: vm.gameOver)
-                ColorSquareView(title: "Your guess", hexcode: vm.playerHexcode, showingCode: true)
+                ColorSquareView(
+                    title: "Target",
+                    hexcode: viewModel.targetHexcode,
+                    showingCode: viewModel.gameOver
+                )
+                ColorSquareView(
+                    title: "Your guess",
+                    hexcode: viewModel.playerHexcode,
+                    showingCode: true
+                )
             }
         }
     }
 
     var guessButton: some View {
-        Button("Guess"){
-            vm.submitGuess()
+        Button("Guess") {
+            viewModel.submitGuess()
         }
         .buttonStyle(GameSelectionButton())
     }
     var body: some View {
-        
-        GeometryReader{ geo in
+        GeometryReader { geo in
             if geo.size.height > geo.size.width {
-                VStack{
-                    TimerView(vm: vm)
+                VStack {
+                    TimerView(viewModel: viewModel)
                     squaresView.original
-                    RGBSlidersView(hexcode: $vm.playerHexcode)
+                    RGBSlidersView(hexcode: $viewModel.playerHexcode)
                     guessButton
                 }
             } else {
-                HStack{
+                HStack {
                     squaresView.rotated
-                    RGBSlidersView(hexcode: $vm.playerHexcode)
+                    RGBSlidersView(hexcode: $viewModel.playerHexcode)
                         .frame(width: geo.size.width * 0.6)
                         .fixedSize(horizontal: true, vertical: false)
                         .padding()
-                    VStack{
+                    VStack {
                         Spacer()
-                        TimerView(vm: vm)
+                        TimerView(viewModel: viewModel)
                         Spacer()
                         guessButton
                         Spacer()
@@ -54,15 +59,15 @@ struct TimedGameBaseView: View {
             }
         }
         .padding()
-        .onAppear{
-            AudioPlayer.shared.startBackgroundLoop(sound: vm.audioFileName, type: "mp3")
+        .onAppear {
+            AudioPlayer.shared.startBackgroundLoop(sound: viewModel.audioFileName, type: "mp3")
         }
-        .onDisappear{
+        .onDisappear {
             AudioPlayer.shared.stopBackgroundSound()
         }
     }
 }
 
 #Preview {
-    TimedGameBaseView(vm: SurvivalGameViewModel())
+    TimedGameBaseView(viewModel: SurvivalGameViewModel())
 }

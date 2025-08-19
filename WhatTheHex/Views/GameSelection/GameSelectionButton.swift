@@ -10,7 +10,6 @@ import SwiftUI
 struct GameSelectionButton: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled: Bool
     func makeBody(configuration: Configuration) -> some View {
-        
         configuration.label
             .minimumScaleFactor(0.6)
             .padding()

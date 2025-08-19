@@ -8,32 +8,27 @@
 import SwiftUI
 
 struct GameplayTutorialView: View {
-    
     @Binding var hasOnboarded: Bool
     @State var playerHexcode = Hexcode()
     let targetHexcode = Hexcode.teal
     let tip = OnboardingTip()
-
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
-    
     @State var scale = 0.0
-    
     let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-    
     @State var circleFrameSize: CGFloat = 0
     @State var correctGuessTimeCounter = 0
     @State var showingCircle = false
-    
     var playerHexcodeSquare: some View {
-        Group{
+        Group {
             Text("#\(playerHexcode.display)")
                 .font(.largeTitle)
                 .padding()
             Spacer()
             ColorSquareView(title: "Your Color", hexcode: playerHexcode, showingCode: false)
+                .roundedCorner()
                 .padding(.horizontal)
                 .frame(width: 180, height: 180)
-                .overlay{
+                .overlay {
                     if playerHexcode == targetHexcode {
                         Image(systemName: "checkmark")
                             .resizable()
@@ -46,7 +41,7 @@ struct GameplayTutorialView: View {
                                 value: scale
                             )
                             // shows circle indicating tutorial is over after 2 seconds
-                            .onReceive(timer){ _ in
+                            .onReceive(timer) { _ in
                                 correctGuessTimeCounter += 10
                                 if correctGuessTimeCounter >= 2000 {
                                     showingCircle = true
@@ -56,10 +51,8 @@ struct GameplayTutorialView: View {
                 }
         }
     }
-    
     var shared: some View {
-        
-        VStack{
+        VStack {
             Text("Adjust the sliders below so your hexcode matches the target hexcode: ")
                 .font(.title3)
                 .padding(.bottom)
@@ -67,12 +60,12 @@ struct GameplayTutorialView: View {
                 .bold()
                 .font(.title)
             if dynamicTypeSize.isAccessibilitySize {
-                VStack{ playerHexcodeSquare }
+                VStack { playerHexcodeSquare }
             } else {
-                HStack{ playerHexcodeSquare }
+                HStack { playerHexcodeSquare }
             }
             RGBSlidersView(hexcode: $playerHexcode)
-                .onChange(of: playerHexcode){
+                .onChange(of: playerHexcode) {
                     if playerHexcode == targetHexcode {
                         scale = 1
                     } else {
@@ -81,40 +74,36 @@ struct GameplayTutorialView: View {
                     }
                 }
                 .padding()
-            Button("Skip"){
+            Button("Skip") {
                 hasOnboarded = true
             }
             .buttonStyle(GameSelectionButton())
         }
     }
-    
     var correctGuessView: some View {
-        
         Circle()
             .frame(width: circleFrameSize, height: circleFrameSize)
             .foregroundStyle(Color(targetHexcode))
-            .overlay{
-                Button("Begin"){
+            .overlay {
+                Button("Begin") {
                     hasOnboarded = true
                 }
                 .font(.largeTitle)
                 .buttonStyle(GameSelectionButton())
                 .opacity(circleFrameSize > 1000 ? 1 : 0)
             }
-            .onReceive(timer){ _ in
+            .onReceive(timer) { _ in
                 if circleFrameSize < 1000 {
                     circleFrameSize += 9
                 }
             }
     }
-    
     var body: some View {
-        
         if showingCircle {
             correctGuessView
         } else {
             if dynamicTypeSize.isAccessibilitySize {
-                ScrollView{
+                ScrollView {
                     shared
                 }
             } else {
@@ -122,7 +111,6 @@ struct GameplayTutorialView: View {
             }
         }
     }
-    
 }
 
 #Preview {
