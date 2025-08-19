@@ -13,7 +13,9 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Toggle("Upload scores to the leaderboard", isOn: $gameKitPreference)
+            Section("GameCenter") {
+                Toggle("Upload scores to the leaderboard", isOn: $gameKitPreference)
+            }
             Section("Theme") {
                 Picker("App Theme", selection: $preferredAppTheme) {
                     ForEach(AppTheme.allCases) { theme in
