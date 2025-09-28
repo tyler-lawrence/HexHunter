@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(AppState.self) var appState
     @AppStorage(DefaultsKey.gameCenterPreference) var gameKitPreference = true
     @AppStorage(DefaultsKey.preferredAppTheme) private var preferredAppTheme: AppTheme = .system
 
@@ -32,11 +33,18 @@ struct SettingsView: View {
                     }
                 }
             }
+            Section("About") {
+                Button("Learn more") {
+                    appState.path.append(.explanation)
+                }
+            }
         }
         .font(.body)
+        .navigationTitle("Settings")
     }
 }
 
 #Preview {
     SettingsView()
+        .environment(AppState())
 }

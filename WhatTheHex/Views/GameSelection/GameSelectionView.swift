@@ -46,12 +46,6 @@ struct GameSelectionView: View {
                 .padding()
                 .buttonStyle(GameSelectionButton())
             }
-            .sheet(isPresented: $showingSettingsSheet) {
-                SettingsView()
-            }
-            .sheet(isPresented: $showingExplanationSheet) {
-                ExplanationView()
-            }
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -69,14 +63,7 @@ struct GameSelectionView: View {
                 }
                 ToolbarItem {
                     Button {
-                        showingExplanationSheet.toggle()
-                    } label: {
-                        Image(systemName: "doc.text.magnifyingglass")
-                    }
-                }
-                ToolbarItem {
-                    Button {
-                        showingSettingsSheet.toggle()
+                        appState.path.append(AppRoute.settings)
                     } label: {
                         Image(systemName: "gear")
                     }
