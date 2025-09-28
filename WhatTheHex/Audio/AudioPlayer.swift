@@ -11,6 +11,22 @@ import AVFAudio
 @Observable
 final class AudioPlayer {
     var audioPlayer: AVAudioPlayer?
+
+    /// Controls whether audio should be muted. If true, playback is stopped/prevented.
+    @ObservationIgnored
+    var musicEnabled: Bool = true {
+        didSet {
+            UserDefaults.standard.set(musicEnabled, forKey: DefaultsKey.muteAudioPreference)
+            if musicEnabled {
+                stopBackgroundSound()
+            }
+        }
+    }
+
+    init() {
+        self.musicEnabled = UserDefaults.standard.bool(forKey: DefaultsKey.muteAudioPreference)
+    }
+
     static let shared = AudioPlayer()
     /// plays a file looping indefinitely
     ///
@@ -21,6 +37,7 @@ final class AudioPlayer {
     ///     - plays music if possible
     #if os(iOS)
     func startBackgroundLoop(sound: String, type: String) {
+        guard musicEnabled else { return }
         if let bundle = Bundle.main.path(forResource: sound, ofType: type) {
             let soundURL = NSURL(fileURLWithPath: bundle)
             do {
@@ -39,6 +56,7 @@ final class AudioPlayer {
     }
     #else
     func startBackgroundLoop(sound: String, type: String) {
+        guard musicEnabled else { return }
         if let bundle = Bundle.main.path(forResource: sound, ofType: type) {
             let soundURL = NSURL(fileURLWithPath: bundle)
             do {

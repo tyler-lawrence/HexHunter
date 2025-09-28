@@ -11,4 +11,5 @@ enum DefaultsKey {
     static var gameCenterDisplayName = "GameCenterDisplayName"
     static var gameCenterPreference = "GameKitPreference"
     static var preferredAppTheme = "PreferredAppTheme"
+    static var muteAudioPreference = "MuteAudioPreference"
 }

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Bindable(AudioPlayer.shared) var audioPlayer
     @Environment(AppState.self) var appState
+
     @AppStorage(DefaultsKey.gameCenterPreference) var gameKitPreference = true
     @AppStorage(DefaultsKey.preferredAppTheme) private var preferredAppTheme: AppTheme = .system
 
     var body: some View {
         Form {
-            Section("GameCenter") {
+            Section("Game Center") {
                 Toggle("Upload scores to the leaderboard", isOn: $gameKitPreference)
             }
             Section("Theme") {
@@ -23,6 +25,9 @@ struct SettingsView: View {
                         Text(theme.displayName).tag(theme)
                     }
                 }
+            }
+            Section("Sounds") {
+                Toggle("Music", isOn: $audioPlayer.musicEnabled)
             }
             Section("Notifications") {
                 Button("Open iOS Settings") {
