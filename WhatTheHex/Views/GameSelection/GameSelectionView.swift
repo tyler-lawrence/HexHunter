@@ -60,6 +60,7 @@ struct GameSelectionView: View {
                     } label: {
                         Image(systemName: "circle.dotted.circle")
                     }
+                    // TODO: add accessibility label modifier to the button
                 }
                 ToolbarItem {
                     Button {

@@ -164,6 +164,7 @@
 		5B558DCD2C176B750093963C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		5B558DCF2C176F570093963C /* DataController+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+Stats.swift"; sourceTree = "<group>"; };
 		5B558DD22C1775210093963C /* SubmissionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionRowView.swift; sourceTree = "<group>"; };
+		5B56E9A22E8AC5F8009763A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B5BA3752BB7433900B558EE /* WhatTheHex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheHex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5BA3782BB7433900B558EE /* WhatTheHexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheHexApp.swift; sourceTree = "<group>"; };
 		5B5BA37A2BB7433900B558EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -371,6 +372,7 @@
 		5B5BA3772BB7433900B558EE /* WhatTheHex */ = {
 			isa = PBXGroup;
 			children = (
+				5B56E9A22E8AC5F8009763A3 /* Info.plist */,
 				5BE676FA2DE9E85E006A26CE /* AppState.swift */,
 				5BAD10E92BD1B93E00E97FB1 /* DataController.swift */,
 				5BE676F82DE8D9E2006A26CE /* AppRoute.swift */,
@@ -940,6 +942,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatTheHex/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HexHunter;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -981,6 +984,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatTheHex/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HexHunter;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
